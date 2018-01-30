@@ -6,7 +6,7 @@
  //Imbrication à 100% (full nested)
  body .conteneur #header {
      z-index : 30;
-     width: susy-repeat(10 of 12);
+     width: span(10 of $desktopcol);
      &:after{
                 content: " ";
                 display: block;
@@ -14,8 +14,9 @@
      .headHaut {
       
          .logoHead {
-             padding:4em 0 1em 0;
-                    img{margin: 0 auto;
+             padding: 4em 0 1em 0;
+                    img{
+                    margin: 0 auto;
                     //display: block;//commenter si logo pas collé à gauche
                     max-height: 5em;//si logo trop gros
                     object-fit: contain;
@@ -40,10 +41,10 @@
      @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
           //@include clearfix;
          .headHaut {
-             width: susy-span(12);         
+             width: span(12);         
              .logoHead { 
-                /*@include span(first 2 of $desktopcol);*/
-                width: susy-span( 3 of $desktopcol);         
+                /*width: span(first 2 of $desktopcol);*/
+                width: span( 3 of $desktopcol);         
                 padding: 0;
              }
                    .menuHead{
@@ -55,9 +56,9 @@
             
          }
          .headBas {
-            width: susy-span( 12 );         
-             .site-slogan{width: susy-span(4 );         }
-             .headSearch{width: susy-span( 5 );         }
+            width: span( 12 );         
+             .site-slogan{width: span(4 of $desktopcol );         }
+             .headSearch{width: susy-span( 5 of $desktopcol );         }
        
 
          }
@@ -68,8 +69,8 @@
              .menuImg {}
          }
          .headBas {
-             .site-slogan{@include span(first 4 of $tabletcol);}
-             .headSearch{@include span( 4 of $tabletcol last);}
+             .site-slogan{width: span(first 4 of $tabletcol);}
+             .headSearch{width: span( 4 of $tabletcol last);}
              
          }
           .menuHead{
@@ -97,7 +98,7 @@
 /*---- HEADER BAS ----*/
 
 .headBas {
- background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
+ background: $gris-anthracite;//Modifier la couleur du fond de la partie basse selon couleur du lycée
 }
 
 .headSearch {
