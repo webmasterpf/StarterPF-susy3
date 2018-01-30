@@ -1,0 +1,231 @@
+/* Skins
+ *
+ * Pour adapter le style au lycée il faut remplacer la couleur
+ * utilisée comme base par la couleur du lycée.
+ * l'élément de base à chercher/remplacer est la couleur de
+ * .megamenu-skin-assopf .hovering .megamenu-parent-title span
+ * background: #E85134; =>> couleur arplan lien parent
+       
+* Couleurs:
+* CE = #AEC81F
+* CG = #E85134
+* BL = #02A7D5
+* LR = #911381
+* ER = #E30119
+* MG = #E3007A
+* CA = #9C9DA1
+ *--------------------------------------------------------*/
+
+/* @group AssoPF */
+
+/* overrides - begin */
+
+	.megamenu-skin-assopf li{
+		margin:0px;
+		padding:0px;
+		line-height:120%;
+	}
+  .megamenu-skin-assopf *{
+		list-style:none;
+	}
+/*.block ul {// ce code casse le bandeau HP du site
+    margin: 0;
+    padding: 0;
+}*/
+/* overrides - end */
+
+
+.megamenu-skin-assopf{
+	font-family:trebuchet-MS,Helvetica,sans-serif;
+	background: #CCC; /* ar-plan de UL principal = menu */ 
+	padding:0px 0px 5px 10px;
+        clear: both;
+        width: 990px;
+        border-bottom: 1px solid #911381;
+}
+.megamenu-skin-assopf a:hover{
+	text-decoration:none;
+}
+.megamenu-skin-assopf h2.megamenu-parent-title{
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+}
+.megamenu-skin-assopf h2.megamenu-parent-title a{
+    display: block;
+}
+.megamenu-skin-assopf .megamenu-parent-title{
+	text-transform: uppercase;
+}
+.megamenu-skin-assopf .megamenu-parent-title{
+	font-weight:normal;
+	font-size:100%;
+	vertical-align:bottom;
+}
+.megamenu-skin-assopf .megamenu-parent-title a,
+.megamenu-skin-assopf .megamenu-parent-title span,
+.megamenu-skin-assopf .megamenu-parent-title a:visited{
+	font-style:normal;
+	color:#000; /* black */
+	padding:5px;
+        
+}
+.megamenu-skin-assopf .megamenu-parent-title a,
+.megamenu-skin-assopf .megamenu-parent-title span,
+.megamenu-skin-assopf .hovering .megamenu-parent-title a:hover{/*style du bg parent*/
+	-moz-border-radius-topright:8px;
+	-webkit-border-top-right-radius:8px;
+	-moz-border-radius-topleft:8px;
+	-webkit-border-top-left-radius:8px;
+        border-radius: 5px;
+}
+/*.megamenu-skin-assopf .megamenu-slot,
+.megamenu-skin-assopf .megamenu-slot a:hover{Style bg enfant - bg arrondi
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}*/
+.megamenu-skin-assopf li.megamenu-slot{
+	/*width:auto;*/
+	/*max-width:200px;*/
+	width:200px;/*Largeur des sub-items*/
+	margin:10px 10px auto auto;
+	background: #911381; /*bg des colonnes de sub-item*/
+	padding: 10px 0;
+        
+}
+.megamenu-skin-assopf li.megamenu-slot:hover{
+	background: #bbb; /*bg des colonnes de sub-item hover*/
+}
+.megamenu-skin-assopf .hovering .megamenu-parent-title a,
+.megamenu-skin-assopf .hovering .megamenu-parent-title span{
+	color:#fff;
+	background: #911381; /* couleur arplan lien parent*/
+        width: auto;/*Largeur lien parent*/
+}
+.megamenu-skin-assopf .hovering .megamenu-parent-title span:hover,
+.megamenu-skin-assopf .megamenu-slot-title span{
+	cursor:default;
+}
+.megamenu-skin-assopf .hovering .megamenu-parent-title a:hover{/*Effet hover sur lien parent actif*/
+	color: white; 
+	background: #911381; 
+}
+/*Conteneur UL des sub-items*/
+.megamenu-skin-assopf ul.megamenu-bin{
+    background: #eee;/*Bg du block sub-items*/
+    vertical-align: baseline;
+    border: #DFDFDF solid 2px; 
+    padding: 3px;
+    margin: 0 5px !important;
+    margin: 45px 5px 0;/*Opera*/
+    max-width: 450px;
+   
+}
+.megamenu-skin-assopf .megamenu-bin{
+	margin:0px;/*Position du conteneur des sub-items*/
+	padding:0px;
+	color:#fff; /* white */
+       
+       
+}
+
+.megamenu-skin-assopf .megamenu-slot-title{
+	font-family:trebuchet-MS,Helvetica,sans-serif;
+	color:#f4ebcb; /* 80% white on pharmacy dark gold */
+}
+.megamenu-skin-assopf .megamenu-slot-title a:link,
+.megamenu-skin-assopf .megamenu-slot-title a:visited{
+	color: #606070; /* Lien sub-item si fond clair*/
+        color: white; /* Lien sub-item si fond foncé*/
+}
+.megamenu-skin-assopf .megamenu-slot-title a,
+.megamenu-skin-assopf .megamenu-slot-title span,
+.megamenu-skin-assopf .megamenu-item a,
+.megamenu-skin-assopf .megamenu-item span{
+	padding:3px 10px;/*Position lien sub-item*/
+	display:block;
+}
+.megamenu-skin-assopf .megamenu-slot a{
+	color:#fff; /* white */
+        font-weight: bold;
+        text-transform: capitalize;
+}
+.megamenu-skin-assopf .megamenu-slot a:hover{
+	color: #333;/*Style enfant hover*/
+	background: #CCC; 
+}
+.megamenu-skin-assopf .megamenu-item a,
+.megamenu-skin-assopf .megamenu-item span{
+	color: #eee; /* couleur sub-sub-item */
+	font-size:100%;
+        font-weight: normal;
+}
+.megamenu-skin-assopf .megamenu-item a:hover,h2.megamenu-parent-title .megamenu-active a{
+	color: #eee; /* white */
+	background: #911381; /*ar-plan du parent et sub-sub-item */
+}
+.megamenu-skin-assopf li.megamenu-slot{
+	z-index:3000;
+	margin-bottom:0.5em;
+	border:0px;
+}
+.megamenu-skin-assopf ul a:hover{
+	text-decoration:none;
+}
+
+.megamenu-skin-assopf .megamenu-slot-title{/*sub-item*/
+	font-size:115%;
+	line-height:115%;
+	font-weight:bold;
+}
+.megamenu-skin-assopf h3.megamenu-slot-title a{
+     font-variant: small-caps;
+     font-size: 1.1em;
+}
+.megamenu-skin-assopf h3.megamenu-slot-title a:hover{
+    background: #911381;
+    
+}
+.megamenu-skin-assopf h3.megamenu-slot-title a:visited{}
+/* start - ensure that #megamenu-menu bar is the same height in all browsers
+ * very frustrating to get this correct - do not touch!
+ *--------------------------------------------------------*/
+.megamenu-skin-assopf .megamenu-item a,
+.megamenu-skin-assopf .megamenu-item span
+{
+	font-size:0.96em;
+}
+.megamenu-menu,
+.megamenu-skin-assopf .megamenu-parent,
+.megamenu-skin-assopf .megamenu-parent-title
+/* this is the key -- all these must be set to the same value */
+{
+	font-size:100%;
+	line-height:100%;/*Placement du lien en hauteur*/
+	height:auto;/*hauteur de l'ul'*/
+        padding: 5px 0;
+}
+
+.megamenu-skin-assopf .megamenu-parent-title a,
+.megamenu-skin-assopf .megamenu-parent-title a:link,
+.megamenu-skin-assopf .megamenu-parent-title a:hover,
+.megamenu-skin-assopf .megamenu-parent-title span
+{
+        padding:4px 8px;
+        color: #606070;/*couleur des a *//*violet : #95107D vert :#AEC721 rose :#E1017B*/
+        text-decoration: none;
+        font-weight:bold;
+        margin: 0 5px;
+}
+/* end - ensure that #megamenu-menu bar is the same height in all browsers
+ *--------------------------------------------------------*/
+.megamenu-skin-assopf .megamenu-parent-title a:hover,
+.megamenu-skin-assopf .megamenu-parent-title a:active,
+.megamenu-skin-assopf .megamenu-parent-title a:focus{
+	text-decoration:none;
+	color: white;
+	background: #911381; /* bg parent hover */
+}
+.megamenu-skin-assopf .megamenu-parent-title a:visited{}
+/* @end Asso PF*/

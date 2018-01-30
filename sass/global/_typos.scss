@@ -1,0 +1,152 @@
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+----- TYPOS PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+ /*------- CONVERSION PX EN EM   ---------------*/
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+ /*------- TYPOS CUSTOM ---------------*/
+@font-face {
+    font-family : "Arista";
+    src: url(../typos/Arista2.0_light.eot); /* IE */
+    src: local("Arista"), url(../typos/Arista2.0_light.ttf) format('truetype');/* non-IE */
+}
+/*_____  POLICES _____*/
+$AristaFont : "Arista", Trebuchet MS, sans-serif;
+$TrebuchetFont : Trebuchet MS, Verdana, Helvetica, sans-serif;
+
+/*_____  GOOGLE FONTS _____*/
+$FontArvo : 'Arvo',Trebuchet MS, Verdana, sans-serif;
+$FontArimo : 'Arimo',Trebuchet MS, Verdana, sans-serif;
+$FontSortsMillGoudy : 'Sorts Mill Goudy',Trebuchet MS, Verdana, sans-serif;
+$FontRaleway : 'Raleway',Trebuchet MS, Verdana, sans-serif;
+
+
+/*---------------- TITRES -----------------------*/
+@mixin titre-page ($margin : 0.1em){
+     font-size : x-large;
+     margin: $margin;
+         
+}
+@mixin decotitre-formation ($margin : 0.1em, $paddingTop : 0.1em){
+     font-size : x-large;
+     margin: $margin;
+     line-height: 1.1em;
+     text-align: right;
+     padding: $paddingTop 0 0 0;
+     background: url("../images/deco_fiche_formation.gif") no-repeat top left;
+     }
+
+/*------------ PARAGRAPHES ---------------*/
+
+/*====================================|
+==             OVERRIDE TYPEY SETTINGS           ==|
+=====================================*/
+$base-unit: em;
+$line-height-method: ratio;
+
+$base-font-size: 16px;
+$base-line-height-ratio: 1.5;
+
+$font-size: (
+  xl: 32px,
+  l:  23px,
+  m: 16px,
+  s: 12px,
+  xs:9px,
+);
+
+$typey-debug: false;
+$typey-debug-color: red;
+
+/*====================================|
+==             VALEURS PAR DEFAUT             ==|
+=====================================*/
+//Pour les problèmes de hauteur parent/enfant
+html, body {
+    height:100%;
+}
+
+html {
+ margin: 0;
+ padding: 0;
+ @include define-type-sizing;
+}
+
+body {	
+    font-family: $FontRaleway;//Typo globale du site
+    color: $gris-clair-typo;
+/*@include font-size(m);*/
+}
+p,
+article.middle-content ul,
+article.middle-content ol
+{
+    @include font-size(s);
+    @include line-height(1.5);
+    @include typey-debug-grid(1);
+}
+ul.sf-menu{
+    @include font-size(13px);
+}
+/*====================================|
+==             REGLAGES DES TITRES           ==|
+=====================================*/
+h1, .h1,h2, .h2 ,h3, .h3,h4, .h4,h5, .h5,h6, .h6{
+    padding:0.3em;margin: 0.3em 0 0 0;color:#000;
+}
+
+h1, .h1 {
+        @include font-size(l);
+        /*font-size: em(20px);*/
+        //Pour empêcher les titres tout en majuscule
+          &::first-letter{
+        text-transform: capitalize;
+    }
+}
+  
+h2, .h2 {
+    
+	@include font-size(m);
+	/*font-size: em(18px);*/
+}
+
+h2.title{
+    @include font-size(m);
+    /*font-size: em(18px);*/
+
+    a{
+        color:$rouge;
+    }
+
+}
+h3, .h3{
+	@include font-size(s);
+        /*	font-size: em(16px);*/
+}
+h4, .h4{
+	
+	@include font-size(s);
+        /*	font-size: em(14px);*/
+}
+h5, .h5 {
+	@include font-size(xs);
+/*	font-size: em(12px);*/
+}
+h6, .h6 {
+    
+    @include font-size(xs);
+	/*font-size: em(10px);*/
+}

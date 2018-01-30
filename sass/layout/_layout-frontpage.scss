@@ -1,0 +1,32 @@
+
+/*-------------------------------------|
+|     PAGE ACCUEIL                         |
+|      PLEINE LARGEUR                    |
+|--------------------------------------*/
+
+  //@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
+  //@include breakpoint(($desktop,$tablet)){}
+
+
+/*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  PANORAMIQUE----*/
+
+// #############################
+// Layout avec body.conteneur
+// #############################
+
+
+//Code imbriqué à 100%
+body section.conteneur{
+            width: span(10 of $desktopcol);
+            padding:0, span(1),0,span(1);
+    .annonce_1{}
+    .annonce_2{}
+    .HPDiapo{}
+    .acces_rubriques{}
+    .logo_partenaires{}
+}
+// #############################
+// Layout avec body.conteneur-flex
+// #############################

@@ -1,0 +1,166 @@
+/*
+Override du style de galerie flexslider
+Indiquer les classes ou les IDs des enveloppes des galeries
+*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+//indiquer la classe qui gère flexslider
+#colonne-2 .galerie-vdl{
+    display:inline-block;
+    .flexslider, .flexslider-classic{
+        background : transparent;
+        border: 0;
+        .flex-control-nav{
+            // bottom: -1.1em;//position de la navigation
+            bottom: -50.1em;
+            position: inherit;
+            display: block;
+            //left: 4em;
+            width: 35%;
+        }
+        .flex-control-paging {
+            li a{
+                margin:  0.1em;
+                background: $violet;//couleur defaut
+                @include ombrage(0.1em,0.1em,0.1em);
+                &:hover{
+                    background: $vert;
+                }
+            }
+            li a.flex-active  {
+                background: $vert;//couleur image active
+            }
+        }
+
+    }        
+    .flexslider, .flexslider-classic{
+        ul.flex-direction-nav{
+            list-style: none;
+        }
+        .flex-direction-nav a{
+            height: 2em;
+            &:hover{
+                background: none;
+            }
+        }
+        .flex-direction-nav a:before {
+            font-size: em(40px);
+            display: inline-block;
+        }
+        .flex-direction-nav a.flex-next:before {
+            content: '\f002';
+        }
+        .flex-direction-nav .flex-prev {
+            left: em(-50px);
+        }
+        .flex-direction-nav .flex-next {
+            right: em(-50px);
+
+        }
+        .flexslider:hover .flex-direction-nav .flex-prev {
+            opacity: 0.7;
+            left: em(10px);
+        }
+        .flexslider:hover .flex-direction-nav .flex-prev:hover {
+            opacity: 1;
+        }
+        .flexslider:hover .flex-direction-nav .flex-next {
+            opacity: 0.7;
+            right: em(10px);
+        }
+        .flexslider:hover .flex-direction-nav .flex-next:hover {
+            opacity: 1;
+        }
+    }
+    //Pour le style des galeries quelques soit le type de nav
+    
+    .flexslider , .flexslider-thumbs, .flexslider-classic{
+        width: 85%;
+        display:inherit;
+        margin: 0 auto;
+        padding:1em;    
+        ul.slides{
+            padding: 0;
+            margin:0;
+            width: 1500%;//pas ajouté par js, mais nécessaire pour afficher correctement la galerie
+        }
+        li, ul.slides li{
+            padding: 0;
+            margin:0;
+        }
+        .slides img{
+            padding: 0em;
+            border: 0.1em solid $gris-clair;
+            @include arrondis;
+
+        }
+        *.flex-caption {
+            position: relative;
+            z-index: 3;
+            padding: 2%;
+            width: 94%;
+            left: 0.8em;
+            bottom: 6em;//position du cartouche
+            background: rgba(0,0,0,.5);
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+            font-size: x-small;
+            line-height: 1.15em;
+
+        }
+        @include breakpoint ($desktop){
+
+            .slides{
+                img{
+                    border: 0.3em solid $gris-clair;
+                    
+                }
+                > li, img{
+                    max-height: 33em;//fixe le problème du vide entre image et pager dû à l'overlay
+                }
+            }
+
+            *.flex-caption{
+                font-size: small;
+            }
+        }
+    }
+}
+//Override pour Version Classic
+#colonne-2 .galerie-vdl{
+    .flexslider-classic{
+        ul.slides{
+            padding: 0;
+            margin:0;
+            width: auto;//pas de taille pour la version classic
+        }
+        *.flex-caption{
+            max-width: 65%;
+            width: auto;
+        }
+    }
+}
+
+/*######-------- ||| POSITION NAV ||| --------######*/
+//Flexslider Thumbnails - retrait des fleches directionnelles via le JS
+#colonne-2 .galerie-vdl{
+    #carousel{
+        height: 9em;
+    overflow: hidden;
+    }
+    div#slider{
+
+        .flexslider:hover .flex-direction-nav .flex-prev {
+            opacity: 0.7;
+            left: 0;
+        }
+
+        .flexslider:hover .flex-direction-nav .flex-next {
+            opacity: 0.7;
+            right: 0;
+        }
+    }
+}

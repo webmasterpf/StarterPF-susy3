@@ -1,0 +1,133 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM              |
+|               NODE.TPL                     |
+|       CONTACT WEBFORM            |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.CLASS_NAME{order:1;}
+    #colonne-2.CLASS_NAME{order:2;}
+    #colonne-3.CLASS_NAME{order:3;}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        #colonne-2.webform{
+            @include border-L-violet;
+        }
+        }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+#colonne-2.webform{
+    table,tbody,tr,td{
+        //pas de display:block sinon stacktable conflit
+          width: 98%;
+          margin: 0 auto;
+          border: 0;
+      }
+      table{
+          tr.odd{
+              background: transparent;
+          }
+          tr.even{
+              background: transparent;
+          }
+      }
+
+    
+}
+
+h1.titre-webform{
+    font-size: em(24px);
+    color: $violet;
+    line-height: 1.0em;
+}
+
+#colonne-2.webform{
+    h2{
+        color: $rose-fushia;
+        padding: em(5px);
+    }
+    h3{
+        color: $violet;
+        padding: em(5px);
+        font-size: large;
+    }
+    h4{
+        padding: em(5px);
+        color: $rose-fushia;
+    }
+    p{
+        padding: em(3px);
+        font-size: small;
+    }
+    ul{
+        padding: em(5px);
+    }
+    img{
+        @include border-fuschia-violet;
+        margin: 0 auto;
+        display: block;
+    }
+    a{
+        color: $rose-fushia;
+        text-decoration: none;
+        padding: 2px;
+        &:hover{
+            color: white;
+            background: $rose-fushia;
+        }
+    }
+    a.gmap{
+
+        &:hover{
+
+            background: 0;
+        }
+        img{
+            @include zoom-css3(1);
+            &:hover{
+                @include zoom-css3-hover(0.97);
+            }
+        }
+    }
+    form{
+    background: transparent url(../images/bg_doc_utile_rp.gif) repeat ;
+    padding: 0.2em;
+    position: relative;
+    @include arrondis;
+    @include PIE;
+    }        
+}
+/*---- STYLE ELEMENTS FORMULAIRE ----*/
+form.webform-client-form{
+        width: 95%;margin: 0 auto;  display: block;
+    label{font-size: smaller;}
+    input[type="text"],input[type="email"],input[type="submit"],select{
+    width: 95%;margin: 0 auto;  display: block;
+    }
+    input[type="submit"]{
+        width: 95%;margin: 0 auto;  display: block;
+        @include cesure-txt;
+    }
+    .form-item{margin-bottom: 0.5em;margin-top: 0.5em;}
+}
+
+/*------------------------------------
+        PAGE INSCRIPTIONS WEBFORM
+_______________________________________*/
+#texte-sous-formulaire{
+    margin: 1em 0;
+    font-size: small;
+}

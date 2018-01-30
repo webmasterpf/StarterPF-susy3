@@ -1,0 +1,41 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       FRONTPAGE INSTITUTIONNEL       |
+|--------------------------------------*/
+
+  //@include susy-breakpoint ($mobile){}
+  //@include susy-breakpoint ($desktop){}
+  //@include susy-breakpoint ($tablet){}
+
+//Code imbriqué à 100%
+body .conteneur {
+    background:transparent image-url ("bg_content_etoile.gif") no-repeat left bottom;
+    .annonce_1{
+        
+    }
+    .annonce_2{}
+    .HPDiapo{}
+    .acces_rubriques{}
+    .logo_partenaires{}
+    
+    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    //Taille du conteneur du groupe    
+  .annonce_1{}
+    .annonce_2{}
+    .HPDiapo{}
+    .acces_rubriques{}
+    .logo_partenaires{}
+
+    }
+  
+    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+          .annonce_1{}
+    .annonce_2{}
+    .HPDiapo{}
+    .acces_rubriques{}
+    .logo_partenaires{}
+}
+}    

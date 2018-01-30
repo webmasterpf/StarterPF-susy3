@@ -1,0 +1,93 @@
+/*
+Mise en place / forme des items du mur d'images
+Indiquer les classes ou les IDs des enveloppes des galeries
+*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*
+<div id="grid" data-columns>
+	<div>Item #1</div>
+	<div>Item #2</div>
+	<div>Item #3</div>
+	…
+	<div>Item #20</div>
+</div>
+*/
+
+.vdl-global{
+    .view-content[data-columns]::before {
+        content: '3 .column.size-1of3';
+    }
+}
+ #grid[data-columns]::before {
+        content: '3 .column.size-1of3';
+    }
+
+
+/*--------------------
+|  MISE EN FORME|
+|  DES ITEMS         |
+|  DE LA VUE        |
+---------------------*/
+/*Changer l'ID selon les besoins, en général la #colonne-2 doit convenir*/
+#colonne-1,#colonne-2{
+    .vdl-global{
+        ul li{
+            list-style: none;
+        }
+        .tooltip-vdl{}
+/*style du terme de taxonomie selon son ID
+Vocabulaire: Type d'évènement
+Action: 3
+ Activité sportive : 24
+ Formation interne: 9
+ Foyer des élèves: 12
+Intervenant: 6	 
+Projet : 7 
+Revue de presse : 5
+Sortie : 8*/
+
+span{
+    &.vdl-tag{
+        font-size: xx-small;
+        padding: em(3px);
+        color: $gris-clair;
+        position: absolute;
+        margin: 0 em(3px);
+    }
+    &.titre-vdl{
+        a{
+            color: $violet;
+            &::first-letter,&:first-letter{
+                text-transform: capitalize;
+            }
+        }
+        &::first-letter,&:first-letter{
+                text-transform: capitalize;
+            }
+    }
+    &.vdl-3{background: $vert;}
+    &.vdl-5{background: $violet;}
+    &.vdl-6{background: $violet;}
+    &.vdl-7{background: $bleu-turquoise;}
+    &.vdl-8{background: $violet;}
+    &.vdl-9{background: $rouge;}
+    &.vdl-12{background: $gris-anthracite;}
+    &.vdl-24{background: $violet;}
+}
+div.img-vdl{
+    img{
+             }
+        a{
+            &:hover{
+            background: transparent;
+        }   
+    }
+}
+    }
+    
+
+}

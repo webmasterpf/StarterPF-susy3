@@ -1,0 +1,179 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*----------------------------------------
+*****~~~~~~ PAGE VDL  ~~~~~~~~~~~~*********
+-----LISTE DES VDL - TEMPLATE VUES -----
+------------------------------------------*/
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur {
+
+    #colonne-1.vdl-liste{order:1;}
+    #colonne-2.vdl-liste{order:2;}
+    #colonne-3.vdl-liste{order:3;}
+    @include breakpoint ($desktop){
+   
+    }
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        #colonne-2.vie-lycee{
+            @include border-L-violet;
+        }
+        }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+h1.titre_page_vdl{
+    color: $violet;
+     font-size: x-large;
+     line-height: 1.0em;
+}
+#colonne-2.vie-lycee{
+    h2,h3,h4,p,ul,ol,img{
+        margin: 0;
+    }
+    h2{
+        color: $violet;
+        padding: em(5px);
+    }
+    h3{
+        color: $violet;
+        padding: em(5px);
+    }
+    h4{
+        padding: em(5px);
+        color: $violet;
+    }
+    p{
+        padding: em(5px);
+        line-height: 1.5em;
+            }
+    ul{
+        padding: em(5px);
+            }
+    img{
+        
+    }
+    a{
+        color: $violet;
+        text-decoration: none;
+        padding: em(2px);
+        &:hover{
+            color: white;
+            background: $violet;
+        }
+    }
+    form{
+        margin: 0.5em auto;
+    }
+    table{
+        margin: 0 auto;
+        display:table;
+        tbody{
+            max-width: 100%;
+
+            tr{
+                border:0;
+            }
+            tr.even{
+                background: $gris-clair;
+            }
+            tr.odd{
+                background: $gris-clair-moyen;
+                color: $gris-clair;
+            }
+            td{}
+        }
+    }
+    table#archives-info-admin,.item-list-activites{
+    
+    h3{
+        color: $violet;
+        padding:5px;
+        text-align:center;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+        display:block;
+        &:hover{
+            color: black;
+            text-decoration: underline;
+            background: 0;
+        }
+    }
+
+    ul{
+        list-style: none;
+    }
+    li{
+        list-style: none;
+        background: $gris-clair;
+        padding: 3px;
+        margin:0 3px 3px;
+    }
+    .views-field-title a{
+        font-weight: bold;
+        text-transform: capitalize;
+        color: $vert;
+    }
+    .view-liste-activites-lycee a.field-content{
+        color: red;
+    }
+}
+}
+
+
+/*--------------------------------------------
+**********************************************
+        VUE BLOC VDL ARCHIVES FILTRE EXPOSE
+---------------------------------------------*/
+#vue-bloc-vdl-archives{
+    width: 99%;
+    margin: 0 auto;
+}
+#vue-bloc-vdl-archives table{
+    
+}
+#vue-bloc-vdl-archives tbody{}
+#vue-bloc-vdl-archives tr{
+    margin:5px 3px;
+    display: block;
+    background: #EFEFEF;
+}
+#vue-bloc-vdl-archives td{
+    padding: 3px;
+}
+#vue-bloc-vdl-archives td a{
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #AEC81F;
+    text-decoration: none;
+}
+#vue-bloc-vdl-archives td a:hover{
+    color: black;
+}
+
+/*________ FOYER (liste) - FORMULAIRE EXPOSE ________*/
+#views-exposed-form-liste-actu-foyer-page-1,#views-exposed-form-liste-activites-lycee-block-2,#views-exposed-form-liste-activites-lycee-block-3
+{
+    width: 65%;margin: 0 auto;padding: 5px;
+    background:$violet;
+    @include rgba-background($violet,0.35);
+    
+    label
+    {
+        color: $gris-anthracite;text-align: center;
+        font-size: small;
+    }
+    select{
+        font-size: small;
+    }
+}

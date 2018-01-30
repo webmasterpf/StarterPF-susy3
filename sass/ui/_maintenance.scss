@@ -1,0 +1,103 @@
+/* $Id: maintenance.css,v 1.1 2007/11/30 12:19:10 goba Exp $ */
+
+/* Update styles */
+#update-results {
+  margin-top: 3em;
+  padding: 0.25em;
+  border: 1px solid #ccc;
+  background: #eee;
+  font-size: smaller;
+}
+#update-results h2 {
+  margin-top: 0.25em;
+}
+#update-results h4 {
+  margin-bottom: 0.25em;
+}
+#update-results li.none {
+  color: #888;
+  font-style: italic;
+}
+#update-results li.failure strong {
+  color: #b63300;
+}
+/*STYLE MAINTENANCE OFFLINE*/
+#name-and-slogan-offline, #site-slogan-offline{
+     background: $violet;//couleur du bg du slogan du site - à changer selon le site
+    color: $gris-clair;//couleur du texte du slogan du site - à changer selon le site
+    padding: em(5px);
+    -moz-border-radius: em(5px);
+    -webkit-border-radius:em(5px);
+    border-radius: em(5px);
+}
+#contentPage-offline{
+
+	margin:0 auto;
+	padding:0;
+	max-width: 100%;
+	background-color:white;
+
+}
+#footer-offline{
+    margin:0 auto;
+    padding:em(5px) 0;
+    max-width: 100%;
+    background: white url(../images/bg_footer.jpg) no-repeat bottom right;
+    text-align: left;
+    color: $gris-clair-moyen;
+    height:auto;
+    
+}
+/*STYLE MAINTENANCE */
+#name-and-slogan-maintenance, #site-slogan-maintenance{
+    background: $rose-fushia;//couleur du bg du slogan du site - à changer selon le site
+    color: $gris-clair;//couleur du texte du slogan du site - à changer selon le site
+    padding: em(5px);
+    -moz-border-radius: em(5px);
+    -webkit-border-radius:em(5px);
+    border-radius: em(5px);
+}
+#site-name-maintenance{
+    margin: 0;
+    padding: em(15px);
+}
+#contentPage-maintenance{
+
+    margin:0 auto;
+    padding:10px 0;
+    max-width: 100%;
+    background-color:white;
+    text-align: center;
+
+}
+#middle-content-maintenance{
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
+     background: transparent url(../images/zebra-gros-clair.gif) repeat top left;
+     padding: em(15px) 0;
+     p{
+    background: white;
+    padding: 5px;
+    width: 75%;
+    margin: 0 auto;
+}
+}
+
+#footer-maintenance{
+    margin:0 auto;
+    padding:em(10px) 0;
+    max-width: 100%;
+    background: white url(../images/bg_footer.jpg) no-repeat bottom right;
+    text-align: left;
+    color: #9898a6;
+    height:auto;
+    font-size: small;
+    a{
+        color: $gris-anthracite;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

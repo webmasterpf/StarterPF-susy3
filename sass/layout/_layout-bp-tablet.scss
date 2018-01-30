@@ -1,0 +1,42 @@
+/*
+2015/03 - Layout TABLET
+Layout pour les tablettes.Breakpoint définit par variable dans _variables.scss
+*/
+
+@include susy-breakpoint($tablet)
+{
+    max-width: container($tabletcol);
+    //@debug susy-get(columns);
+    #header{
+        //pas besoin de mixin car bloc prend toute la largeur
+
+    }
+    .content-global{
+            
+    }
+    .content-inner{
+       
+        .content-header{}
+    } 
+    .content-top{}
+    .middle-content{
+      
+    }
+    .node-inner{
+      
+
+    }
+    .content-bottom{}
+    .content-bottom-home{
+        
+    }
+
+
+    #left-content{}
+    #right-content{}
+    #footer{
+        // max-width: container();
+        @include background-size();;
+    }
+
+}

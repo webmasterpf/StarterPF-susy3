@@ -1,0 +1,116 @@
+/*
+Mise en place / forme des items du mur d'images'
+Indiquer les classes ou les IDs des enveloppes des galeries
+*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*http://zellwk.com/blog/masonry-with-susy/*/
+.masonry {
+@include span($mobilecol);
+       
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include span(8 of $tabletcol);
+            
+        }
+        @include breakpoint ($desktop){
+           @include span(12 of $desktopcol);
+            @include gutters(.3em);/*Toujours en dernier pour override de la taille des gouttieres*/
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(3 of $tabletcol-landcsape);
+            
+        }
+}
+.masonry--gutter {
+  width: gutter();
+}
+.masonry--column {
+  width: span(3); 
+}
+.masonry--item {
+    @include gallery(3 of $mobilecol);
+       
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include gallery(3 of $tabletcol);
+            
+        }
+        @include breakpoint ($desktop){
+   @include gallery(3 of $desktopcol);
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+        @include gallery(3 of $tabletcol-landcsape);
+            
+        }
+   
+  //width: span(3);
+  margin-top: gutter();
+}
+
+/*--------------------
+|  MISE EN FORME|
+|  DES ITEMS         |
+|  DE LA VUE        |
+---------------------*/
+/*Changer l'ID selon les besoins, en général la #colonne-2 doit convenir*/
+#colonne-1,#colonne-2{
+    .tooltip-vdl{}
+/*style du terme de taxonomie selon son ID (change en fonction du site))
+Vocabulaire: Type d'évènement
+Entreprise 25
+Europe	13
+Innovation 14	
+Intervenant 15 	
+Mini-stage 16	
+Projet 17
+Sortie-action 18
+Vocabulaire: Lycée-Entreprise
+Journée Interprofessionnelle	22
+Visite d'entreprise 23
+Documents pratiques	 24
+*/
+
+span{
+    &.vdl-tag{
+        font-size: xx-small;
+        padding: em(3px);
+        color: $gris-clair;
+        position: absolute;
+        margin: 0 em(3px);
+    }
+    &.titre-vdl{
+        a{
+            color: $rose-fushia;
+            &::first-letter,&:first-letter{
+                text-transform: capitalize;
+            }
+        }
+        &::first-letter,&:first-letter{
+                text-transform: capitalize;
+            }
+    }
+    &.vdl-13{background: $vert;}
+    &.vdl-14{background: $violet;}
+    &.vdl-15{background: $bleu-turquoise;}
+    &.vdl-16{background: $rouge;}
+    &.vdl-17{background: $violet;}
+    &.vdl-18{background: $rose-fushia;}
+    &.vdl-25{background: $gris-anthracite;}
+}
+div.img-vdl{
+    img{
+             }
+        a{
+            &:hover{
+            background: transparent;
+        }   
+    }
+}
+
+}

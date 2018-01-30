@@ -1,0 +1,32 @@
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|       PAGE VDL MUR IMAGE         |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*== PAGE GLOBALE POUR VDL ou ACTU  override par tpl-ID.tpl.php ===*/
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+
+/*######-------- ||| LAYOUT SUSY GALLERY ||| --------######*/
+//avec views style liste - ajouter la classe dans 
+// le display style
+.table-vdl-global .mur-image .liste-image-ul .liste-image-item{
+    @include gallery(2 of $mobilecol);
+    @include breakpoint ($desktop){
+        @include gallery(2 of $desktopcol);//nombre de colonnes susy par item
+    }
+    
+}
+//avec views style non mis en forme (div)
+.table-vdl-global .liste-image-item{
+    @include gallery(2 of $mobilecol);
+    padding: 0.3em;
+    @include breakpoint ($desktop){
+        @include gallery(2 of $desktopcol);//nombre de colonnes susy par item
+    }
+    
+}

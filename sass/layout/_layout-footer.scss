@@ -1,0 +1,51 @@
+/*-------------------------------------|
+|       FOOTER DU SITE                 |
+|--------------------------------------*/
+
+//Breakpoints
+// @include breakpoint ($mobile){}
+// @include breakpoint ($desktop){}
+// @include breakpoint ($tablet){}
+
+ body .conteneur #footer{
+    padding:0;
+    color: $gris-clair-moyen;//Changer couleur selon besoin
+    background: transparent url("../images/bg_footer.jpg") no-repeat scroll right bottom;
+      aside{
+
+    }
+    p{
+        //Pour outrepasser la taille de texte de § selon le breakpoint voir fichier _layout-bp-desktop.scss
+        //Voir fichier typos.scss pour taille
+        
+    }
+    a {
+        color: $gris-clair-moyen;
+        text-decoration: none;
+        &:hover {
+            color: $gris-anthracite;
+        }
+    }
+
+    @include breakpoint ($mobile){
+
+        @include background-size();
+        p{
+            padding: 0 0 em(15px) 0;
+        }
+    }
+    @include breakpoint ($desktop){
+        @include background-size();;
+
+
+    }
+    @include breakpoint ($tablet){
+
+    }
+}
+/*Bas de page  FOOTER*/
+
+
+#bloc_stats{
+    color:red;        
+}

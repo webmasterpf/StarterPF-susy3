@@ -1,0 +1,142 @@
+
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       AG TEST GRID                   |
+|                                      |
+|--------------------------------------*/
+
+/**
+ * Styles for AG grids & Container
+ */
+
+.container {
+  background-color: #fbeecb;
+   @include container;
+     // This is the default clearfix from Compass. You can opt to use other clearfix methods
+  @include clearfix; 
+   //@include susy-grid-background;
+   
+}
+
+.ag1, .ag3 {
+  background-color: #71dad2;
+}
+
+.ag2 {
+  background-color: #fae7b3;
+}
+
+.ag4,.ag5,.ag8,.ag9 {
+  background-color: #ee9e9c;
+}
+
+.ag6 {
+  background-color: #f09671;
+}
+
+.ag7 {
+  background-color: #f6d784;
+}
+
+.ag10 {
+  background-color: #ea9fc3;
+}
+
+/**
+ * Text Styles
+ */
+h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: normal;
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+}
+.ag1 {
+      display: none;
+  // removes the left sidebar 
+
+  // Tells Susy that this portion should be used only in the large media query 
+  @include susy-breakpoint($desktop, $susy) {
+    display: block;
+    // shows the left sidebar at the $large layout
+    @include span(3 of $desktopcol);
+  }
+  
+}
+.ag2 {
+    // small layout
+  @include span(6 of 10);
+  @include clearfix; 
+
+  // medium layout
+  @include susy-breakpoint($tablet) {
+    @include span(6 of 8);
+  }
+
+  // large layout
+  @include susy-breakpoint($desktop) {
+    @include span(6 of $desktopcol);
+  // Optionally, you can choose to include the context.
+  }
+}
+.ag3 {
+     // small layout
+  display: none;
+
+  // medium layout
+  @include susy-breakpoint($tablet) {
+    display: block;
+    @include span(last 2 of 8);
+  }
+
+  // large layout
+  @include susy-breakpoint($desktop) {
+    @include span(last 3 of 12);
+  // The omega flag is set here to tell Susy that ag3 is the final column. 
+    // notice we don't need a display:block here because changes cascade from
+    //small to large in Susy. Since display block is declared in the medium layout, 
+    //the large layout will have the display:block property through inheritance. 
+  }
+  
+}
+
+
+.ag4 {
+  // Specifying the context with 6
+  @include span(3 of 6);
+}
+
+.ag5 {
+  // Additionally, adding omega to signify the last column
+  @include span(last 3 of 6);
+}
+
+.ag6 {
+  @include span(2 of 6);
+}
+
+.ag7 {
+  @include span(last 4 of 6);
+  @include clearfix;;
+}
+
+.ag8 {
+  @include span(2 of 4);
+}
+
+.ag9 {
+  @include span(last 2 of 4);
+}
+
+.ag10 {
+  // There is no need to use span columns on AG 10 since elements take up 100% of 
+  //the space by default in display block. In this case, we just have to make sure to clear the floats 
+  //from ag8 and ag9. 
+  clear: both;
+
+  // You can still use span if you want to though. There's no fault in using that. 
+  @include span(4 of 4);
+}

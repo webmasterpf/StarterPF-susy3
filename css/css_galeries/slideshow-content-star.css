@@ -1,0 +1,10 @@
+.contenu-star a{color:#000;font-family:"FranklinGothicStdExtraCondens",Arial,Helvetica,sans-serif;font-size:36px;line-height:36px;text-decoration:none;}
+.contenu-star .category{color:#545665;font-size:12px;font-weight:bold;margin:15px 0 5px;text-transform:uppercase;}
+.contenu-star a:hover{text-decoration:underline;}
+.contenu-star a img{border:2px solid #35363F}
+.contenu-star .metas{margin:15px 0 5px}
+.contenu-star .metas li.like:before{content:"";padding:0;}
+#IE7 .contenu-star .metas li.like{padding:0;background:none;}
+.contenu-star .metas li.like{float:right;}
+.contenu-star .metas strong{color:#ff0000;}
+.contenu-star .views_slideshow_singleframe_pager a{font-size: 10px;}

@@ -1,0 +1,43 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _CONTENT-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                      |
+|               MON TYPE                      |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.CLASS_NAME{order:1;}
+    #colonne-2.CLASS_NAME{order:2;}
+    #colonne-3.CLASS_NAME{order:3;}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur .conteneur-flex{
+   @include breakpoint(($desktop,$tablet)){
+        }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#colonne-1.CLASS_CONTENU,
+#colonne-2.CLASS_CONTENU,
+#colonne-3.CLASS_CONTENU
+{}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#colonne-1.CLASS_CONTENU{}
+#colonne-2.CLASS_CONTENU{}
+#colonne-3.CLASS_CONTENU{}

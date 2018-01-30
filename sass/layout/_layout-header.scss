@@ -1,0 +1,152 @@
+/*-------------------------------------|
+|       HEADER DU SITE                 |
+|--------------------------------------*/
+
+// Layout du header et de ses parties haute et basse (logique mobile first)
+ //Imbrication à 100% (full nested)
+ body .conteneur #header {
+     z-index : 30;
+     width: susy-repeat(10 of 12);
+     &:after{
+                content: " ";
+                display: block;
+                clear: both;}  
+     .headHaut {
+      
+         .logoHead {
+             padding:4em 0 1em 0;
+                    img{margin: 0 auto;
+                    //display: block;//commenter si logo pas collé à gauche
+                    max-height: 5em;//si logo trop gros
+                    object-fit: contain;
+                    }
+         }
+         .menuImg {
+             background: white;
+         }
+     }
+     .headBas {
+        @include clearfix; 
+         .site-slogan{}
+         .headSearch{
+          /*@include squish(0.3); //Ajoute un margin avant et aprés l'element pour le centrer*/
+          margin: span(0.3);
+         }
+        .menuHead{}  
+     }                
+     
+     
+               
+     @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+          //@include clearfix;
+         .headHaut {
+             width: susy-span(12);         
+             .logoHead { 
+                /*@include span(first 2 of $desktopcol);*/
+                width: susy-span( 3 of $desktopcol);         
+                padding: 0;
+             }
+                   .menuHead{
+             aside.menuDyn{
+
+                 ul#superfish-1{}
+             }
+             } 
+            
+         }
+         .headBas {
+            width: susy-span( 12 );         
+             .site-slogan{width: susy-span(4 );         }
+             .headSearch{width: susy-span( 5 );         }
+       
+
+         }
+     }
+     @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+         .headHaut {
+             .logoHead {}
+             .menuImg {}
+         }
+         .headBas {
+             .site-slogan{@include span(first 4 of $tabletcol);}
+             .headSearch{@include span( 4 of $tabletcol last);}
+             
+         }
+          .menuHead{
+           
+             aside.menuDyn{
+               
+             }
+         }
+     }
+   
+ }
+/*---- HEADER HAUT ----*/
+ 
+
+
+.logoHead {
+   img {
+    @include adaptable-img;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
+/*---- HEADER BAS ----*/
+
+.headBas {
+ background: $rose-fushia;//Modifier la couleur du fond de la partie basse selon couleur du lycée
+}
+
+.headSearch {
+    
+    padding: 0 0.5em;
+    text-align: right;
+    margin: em(2px) 0 0 0;
+    //background: transparent url("../images/'bg_recherche.gif') no-repeat scroll 6em em(7px);
+    /*.form-item > label{color: #DDD;font-family: $AristaFont;font-size: medium;}*/
+    input[type=image]{
+        vertical-align: middle;
+    }
+    @include breakpoint($desktop){
+        padding: 0;
+    }
+}
+
+
+
+.name-and-slogan {
+  vertical-align: bottom;
+}
+
+.site-name {
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+  }
+  padding: em(160px) 0 0 0;
+  margin: 0;
+}
+
+.site-slogan {
+  color: white;
+  font-size: small;
+  text-align: center;
+  
+  
+  @include breakpoint($desktop){
+      text-align: left;
+      padding: em(3px) 0 0 1em;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+  }
+}
+
+/*FIN CSS HEADER*/
+/*****************/

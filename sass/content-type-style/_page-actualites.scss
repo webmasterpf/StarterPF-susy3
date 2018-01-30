@@ -1,0 +1,277 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       PAGE ACTUALITE LISTE      |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.page-actualites{order:2;}
+    #colonne-2.page-actualites{order:1;}
+    #colonne-3.page-actualites{order:3;}
+    @include breakpoint ($desktop){
+    #colonne-1.page-actualites{order:1;}
+    #colonne-2.page-actualites{order:2;}
+    #colonne-3.page-actualites{order:3;}
+    }
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        #colonne-2.page-actualites{}
+    }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+h1.titre_page_actualites{
+    margin: em(3px);
+    color: $rose-fushia;
+    text-align: center;
+}
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#colonne-1.page-actualites,
+#colonne-2.page-actualites,
+#colonne-3.page-actualites{
+    .titre-actu{
+    bottom: -20px;
+    left: 3px;
+    position: relative;
+    width: 98%;
+    z-index: 20;
+    }
+.img-actu img{
+    float: left;
+    border: em(1px) solid white;
+    @include zoom-css3(1);
+    &:hover{
+        @include zoom-css3-hover(0.95);
+    }
+}
+
+    p{
+    padding: em(5px);
+}
+strong,b{
+    color: $prune;
+}
+    a{
+        color: $violet;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+        
+    }
+    span{
+        @include font-size(s);
+    }
+    tbody{
+     background: 0;
+     border: 0;
+ }
+ tr{
+      background: 0;
+     border: 0;
+ }
+}
+
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+#colonne-1.page-actualites{
+    /*Liste actu europe*/
+    #actu-liste-europe p.txt-vide-actu-globale{
+        width: 98%;
+        text-align: center;
+    }
+    #actu-liste-europe{
+        width: 98%;
+        margin: 0 auto;
+    }
+    #actu-liste-europe h3{
+        font-size: larger;
+        color: $violet;
+        margin: em(5px);
+        text-align: center;
+        font-family:$AristaFont;
+    }
+    #actu-liste-europe table{
+        border: 3px solid $violet;
+        background: $gris-clair;
+        @include ombrage-table-actu;
+        @include PIE;
+        position: relative;
+    }
+    #actu-liste-europe tbody{}
+    #actu-liste-europe tr{}
+    #actu-liste-europe td{
+        padding: em(2px);
+    }
+    #actu-liste-europe a{
+        color: $prune;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    #actu-liste-europe a:hover{
+        color: $rose-fushia;
+    }
+}
+#colonne-2.page-actualites{
+    /*Liste annonce RP - Big*/
+    #actu-liste-rp-annonce {
+        margin: 0 auto;
+        width: 98%;
+        p.txt-vide-actu-globale{
+            margin: 0 auto;
+            width: 98%;
+            text-align: center;
+            color: $orange-fonce;
+        }
+
+        h3{
+            color:$bleu-turquoise;
+            text-align: center;
+            margin: em(5px) 0;
+            font-size:large;
+        }
+        img{
+            border: em(2px) solid $rose-fushia;
+            padding: em(1px);
+        }
+        a{
+            color: $rose-fushia;
+            text-decoration: none;
+            &:hover{
+                color: $violet;
+            }
+        }
+
+    }
+/*Liste annonce RP - Small*/
+#actu-liste-rp-annonce2{
+     img{
+    border: em(1px) solid $rose-fushia;
+    padding: em(1px);
+}
+ a{
+    color: $rose-fushia;
+    text-decoration: none;
+    text-align: center;
+     &:hover{
+    color: $violet;
+}
+}
+
+ table{}
+ tbody{
+   
+ }
+ tr{
+
+ }
+ td{
+    padding: em(3px);
+    vertical-align: top;
+}
+td.col-2{
+    padding-left: em(5px);
+}
+p.txt-vide-actu-globale{
+     margin: 0 auto;
+    width: 98%;
+    text-align: center;
+    color: $orange-fonce;
+}
+}
+
+
+
+/*------------------------
+BLOC FLUX RSS ACTU DE L'ASSO
+-----------------------------*/
+#block-aggregator-feed-1{
+    h3{
+        color: $rose-fushia;
+        font-family: $AristaFont;
+        padding: 5px;
+        text-align: center;
+        font-size: large;
+    }
+    ul{
+        list-style: none;
+        background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
+        margin: 0 auto;
+        width: 85%;
+        padding: em(20px) 0;
+        @include arrondis (em(10px));
+        position: relative;
+    }
+    ul li{
+        margin: em(5px) 0;
+        list-style: none;
+
+    }
+    li a{
+        text-decoration: none;
+        padding: 2px;
+        display: block;
+        @include arrondis (em(5px));
+        position: relative;
+        width: 85%;
+        margin: 0 auto;
+        color: white;
+        background: $rose-fushia;
+        &:hover{
+            background: white;
+            color: $rose-fushia;
+            text-decoration: none;
+        }
+    }
+
+} 
+
+}
+
+#colonne-3.page-actualites{
+   /*Liste actu VDL*/
+#actu-liste-vdl p.txt-vide-actu-globale{}
+#actu-liste-vdl{
+     margin: 0 auto;
+    width: 98%;
+}
+#actu-liste-vdl h3{
+    font-size: larger;
+    color: $rose-fushia;
+    margin: em(5px);
+    text-align: center;
+    font-family:Arista,trebuchet-MS,sans-serif;
+}
+#actu-liste-vdl table{
+    border: em(3px) solid $rose-fushia;
+    background: $gris-clair;
+    @include ombrage-table-actu;
+    @include PIE;
+   position: relative;
+}
+#actu-liste-vdl tbody{}
+#actu-liste-vdl tr{}
+#actu-liste-vdl td{
+    padding: em(2px);
+}
+#actu-liste-vdl a{
+    color: #564E4E;
+    font-weight: bold;
+    text-decoration: none;
+}
+#actu-liste-vdl a:hover{
+    color: $rose-fushia;
+}
+}

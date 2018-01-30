@@ -1,0 +1,312 @@
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+----- MIXINS DE STYLES PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+/*------- Remplacement - Adaptation Mixins Compass -------*/
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin reset-box-model {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+@mixin horizontal-list-container {
+  @include reset-box-model;
+  @include clearfix;
+}
+@mixin horizontal-list {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+
+}
+@mixin horizontal-list-item {
+    display:block;
+    float:left;
+    &:last-child{
+        margin-right:0px;
+    }
+}
+@mixin background-size($taille-bg: auto){
+    //Possibles options auto,length,percentage,cover,contain,initial,inherit
+    //préfixage via Gulp autoprefixer aprés compilation
+    background-size: $taille-bg;
+}
+/*---------- PIE pour CSS3 IE --------------*/
+@mixin PIE {
+    behavior: url(./../sites/all/libraries/PIE/PIE.htc);
+}
+/*-------- LAYOUT CSS3 --------------*/
+@mixin colonnes($nb-col:3){
+     -webkit-column-count:$nb-col;
+     -moz-column-count:$nb-col;
+          column-count:$nb-col;
+}
+/*------- GESTION DU TEXTE -------------*/
+@mixin cesure-txt{
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+// ==========
+// TRANS-PREP
+// -----
+// Gives backface visibility hidden to remove flickering effect on Webkit browsers
+// http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
+// ==========
+@mixin trans-prep {
+  // backface visibility
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  // Resets perspectives
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}
+/*-------- IMAGES ADAPTABLES -----------*/
+@mixin adaptable-img {
+    max-width: 100%;
+    height:auto;//proportions
+    max-height: 100%;
+    @-moz-document url-prefix() {  
+        img{
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+@mixin img-centered {
+    display: block;
+    margin: 0 auto;
+    @-moz-document url-prefix() {  
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+@mixin zoom-css3($coeffzoom:1){
+    position: relative;
+    transform: translateZ(0);  /* activation de l'AM */
+    transition: all 100ms ease-in;
+    transform: scale($coeffzoom);
+    z-index: 20;
+}
+@mixin zoom-css3-hover($coeffzoom:1.05){
+    transform: translateZ(0);  /* activation de l'AM */
+    transform: scale($coeffzoom);
+    z-index: 20;
+    transition: all 100ms ease-in;
+    
+}
+/*--------- MASQUAGE ELEMENTS ---------*/
+@mixin visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+@mixin blinkEffect($opaciteDepart:1.0,$opaciteMedium:0.0,$opaciteFinal:1.0){
+    @-moz-keyframes blinker {  
+    0% { opacity: $opaciteDepart; }
+    50% { opacity: $opaciteMedium; }
+    100% { opacity: $opaciteFinal; }
+}
+
+@-webkit-keyframes blinker {  
+    0% { opacity: $opaciteDepart; }
+    50% { opacity: $opaciteMedium; }
+    100% { opacity: $opaciteFinal; }
+}
+
+@keyframes blinker {  
+   0% { opacity: $opaciteDepart; }
+    50% { opacity: $opaciteMedium; }
+    100% { opacity: $opaciteFinal; }
+}
+}
+/*------- EFFETS VISUELS GENERIQUES--------------*/
+@mixin forme-habillage($forme:inset(),$marge-forme:0){
+    //     circle()     ellipse()     inset()     polygon() , fonctionne uniquement sur élement flottant
+    shape-outside:$forme;
+    -webkit-shape-outside:$forme;
+    -moz-shape-outside:$forme;
+    shape-margin:$marge-forme;
+    -webkit-shape-margin:$marge-forme;
+    -moz-shape-margin:$marge-forme;
+}
+
+@mixin img-border-shadow ($margin : 0.3em, $bordersize:0.5em, $bordercolor : white,$shadowcolor : #AAAAAA) {
+    margin: $margin;
+    border: $bordersize solid $bordercolor;
+    -moz-box-shadow: $shadowcolor 0px 0px 5px ;
+    -webkit-box-shadow: $shadowcolor 0px 0px 5px;
+    box-shadow: $shadowcolor 0px 0px 5px;
+}
+
+@mixin cadre-ombre($epaisseur-cadre:0.5em,$couleur-cadre:#fff,$couleur-ombre:#AAAAAA){
+     border: $epaisseur-cadre solid $couleur-cadre;
+    -moz-box-shadow: $couleur-ombre 0px 0px 0.5em;
+    -webkit-box-shadow: $couleur-ombre 0px 0px 0.5em;
+    box-shadow: $couleur-ombre 0px 0px 0.5em;
+}
+@mixin ombrage ($contour:0.5em,$decalage-horizontal:0.5em,$decalage-vertical:0.5em,$couleur-ombre:#aaa){
+    border: $contour solid #fff;
+    -moz-box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
+    -webkit-box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
+    box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
+    }
+@mixin ombrage-interne($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$profondeur:0.3em,$couleur-ombre:#aaa){
+    -moz-box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
+    -webkit-box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
+    box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
+    }    
+@mixin ombrage-bas ($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$force-degrade:0.3em,$couleur-ombre:#aaa) {
+    -moz-box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
+    -webkit-box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
+    box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
+    }
+@mixin ombrage-effet-incurve($PositionHalo:-1em,$LargeurHalo:10em,$HauteurHalo:2em){
+        -moz-box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo  #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
+        box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
+    }    
+@mixin table-tr-ombrage-bas {
+        -moz-box-shadow: 1px 2px 2px #aaa;
+        -webkit-box-shadow: 1px 2px 2px #aaa;
+        box-shadow: 1px 2px 2px #555;
+    }
+    
+@mixin ombrage-bloc($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$force-degrade:0.3em,$couleur-ombre:#aaa) {
+       box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
+    }
+    
+    @mixin ombrage-texte($angle:0.5em,$distance:0.2em,$flou:0.6em,$couleur:#1a181a){
+        text-shadow: $angle $distance $flou $couleur;
+filter: dropshadow(color=$couleur, offx=$angle, offy=$distance);
+    }    
+@mixin ombrage-table-actu
+($decalage-horizontal:0em,$decalage-vertical:0em,$force-degrade:0.3em,$diffusion-degrade:0.1em,$couleur-ombre:$prune)
+{
+  box-shadow:$decalage-horizontal $decalage-vertical $force-degrade $diffusion-degrade $couleur-ombre;
+}
+
+@mixin opacity ($opacite:1){
+ opacity:$opacite;/*0.6*/
+-moz-opacity : $opacite;
+-ms-filter: "alpha(opacity=$opacite)"; /* IE 8 */
+filter : alpha(opacity=$opacite); /* IE < 8 */
+-khtml-opacity : $opacite;
+}
+
+@mixin rgba-background($color, $opacity) {
+    /*position: relative;*/
+    background: $color;
+    background: rgba($color, $opacity);
+    -pie-background: rgba($color, $opacity);
+    @include PIE;
+}
+
+@mixin arrondis ($angle : 0.5em){
+    -moz-border-radius: $angle;
+    -webkit-border-radius: $angle;
+    border-radius: $angle;
+}
+@mixin clignote($duree:1s,$startopacity:1.0,$midopacity:0.0,$finalopacity:1.0){
+     -webkit-animation-name: blinker;
+        -webkit-animation-duration: $duree;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+
+        -moz-animation-name: blinker;
+        -moz-animation-duration: $duree;
+        -moz-animation-timing-function: linear;
+        -moz-animation-iteration-count: infinite;
+
+        animation-name: blinker;
+        animation-duration: $duree;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite; 
+    
+    @-moz-keyframes blinker {  
+        0% { opacity: $startopacity; }
+        50% { opacity: $midopacity; }
+        100% { opacity: $finalopacity; }
+    }
+
+    @-webkit-keyframes blinker {  
+        0% { opacity: $startopacity; }
+        50% { opacity: $midopacity; }
+        100% { opacity: $finalopacity; }
+    }
+
+    @keyframes blinker {  
+        0% { opacity: $startopacity; }
+        50% { opacity: $midopacity; }
+        100% { opacity: $finalopacity; }
+}
+}
+
+/*//////////////// BORDER RIGHT \\\\\\\\\\\\\\\\*/
+@mixin border-R-bleu{border-right: em(1px) solid $bleu-turquoise;}
+@mixin border-R-grisclair{border-right: em(1px) solid $gris-clair;}
+@mixin border-R-vert{border-right: em(1px) solid $vert;}
+@mixin border-R-violet{border-right: em(1px) solid $violet;}
+@mixin border-R-anthracite{border-right: em(1px) solid $gris-anthracite;}
+@mixin border-R-rose { border-right: em(1px) solid $rose-fushia;}
+@mixin border-R-jaune { border-right: em(1px) solid $jaune;}
+@mixin border-R-rouge { border-right: em(1px) solid $rouge;}
+@mixin border-R-orangePF { border-right: em(1px) solid $orange-fonce;}
+@mixin border-R-orange { border-right: em(1px) solid $orange;}
+
+/*//////////////// BORDER COLONNE 2 \\\\\\\\\\\\\\\\*/
+@mixin border-rouge-bleu{ border-left: em(1px) solid $rouge; border-right: em(1px) solid $bleu-turquoise;}
+@mixin border-rose-bleu { border-left: em(1px) solid $rose-fushia; border-right: em(1px) solid $bleu-turquoise;}
+@mixin border-noir-vert { border-left: em(1px) solid $gris-anthracite; border-right: em(1px) solid $vert;}
+@mixin border-bleu-violet { border-left: em(1px) solid $bleu-turquoise; border-right: em(1px) solid $violet;}
+@mixin border-bleu-gris { border-left: em(1px) solid $bleu-turquoise; border-right: em(1px) solid $gris-anthracite;}
+@mixin border-vert-violet { border-left: em(1px) solid $vert; border-right: em(1px) solid $violet;}
+@mixin border-anthracite-anthracite { border-left: em(1px) solid $gris-anthracite; border-right: em(1px) solid $gris-anthracite;}
+@mixin border-anthracite-orangePF{border-left: em(1px) solid $gris-anthracite;border-right: em(1px) solid $orange-fonce;}
+@mixin border-orangePF-orangePF{border-left: em(1px) solid $orange-fonce;border-right: em(1px) solid $orange-fonce;}
+@mixin border-orange-violet{border-left: em(1px) solid $orange;border-right: em(1px) solid $violet;}
+@mixin border-violet-orange{border-left: em(1px) solid $violet;border-right: em(1px) solid $orange;}
+@mixin border-violet-fuschia{border-left: em(1px) solid $violet;border-right: em(1px) solid $rose-fushia;}
+@mixin border-fuschia-violet{border-left: em(1px) solid $rose-fushia;border-right: em(1px) solid $violet;}
+
+/*//////////////// BORDER LEFT \\\\\\\\\\\\\\\\*/
+@mixin border-L-bleu{border-left: em(1px) solid $bleu-turquoise;}
+@mixin border-L-grisclair{border-left: em(1px) solid $gris-clair;}
+@mixin border-L-vert{border-left: em(1px) solid $vert;}
+@mixin border-L-violet{border-left: em(1px) solid $violet;}
+@mixin border-L-anthracite{border-left: em(1px) solid $gris-anthracite;}
+@mixin border-L-rose { border-left: em(1px) solid $rose-fushia;}
+@mixin border-L-jaune { border-left: em(1px) solid $jaune;}
+@mixin border-L-rouge { border-left: em(1px) solid $rouge;}
+@mixin border-L-orangePF { border-left: em(1px) solid $orange-fonce;}
+@mixin border-L-orange { border-left: em(1px) solid $orange;}

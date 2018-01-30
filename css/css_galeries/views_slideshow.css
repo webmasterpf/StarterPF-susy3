@@ -1,0 +1,77 @@
+/*
+CSS pour navigation par image dans les slideshow créés par Views Slideshow (slider,singleframe...)
+*/
+/*
+VIEWS SLIDESHOW SINGLEFRAME ====================
+*/
+/*COMPTEUR*/
+.views-slideshow-controls-bottom{
+    width: 200px;
+}
+.pager{}
+.views_slideshow_singleframe_image_count{
+  background-color: #9FC4DC;
+  border-radius: 6px 6px 6px 6px;
+  float: left;
+  height: 12px;
+  width: 12px;
+  margin-right: 5px;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.views_slideshow_singleframe_image_count .active {
+  background-color: #2874A2;
+}
+/*PAGER*/
+.views_slideshow_singleframe_pager{
+    margin: 2px 0;
+}
+.views_slideshow_singleframe_pager a{
+  background-color: #E85134;
+  border-radius: 6px 6px 6px 6px;
+  float: left;
+  height: 12px;
+  width: 12px;
+  margin-right: 5px;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.views_slideshow_singleframe_pager .activeSlide a {
+  background-color: #93117E;
+}
+/*NAVIGATION*/
+.views_slideshow_singleframe_controls{height: 20px;margin: 0 auto;width: 200px;float: right;}
+.views_slideshow_singleframe_previous, .views_slideshow_singleframe_next, .views_slideshow_singleframe_pause {
+  width:18px;
+  height:0px;
+  padding-top:18px;
+  display: inline-block;
+  overflow:hidden;
+}
+.views_slideshow_singleframe_previous {
+  background:url('../css_galeries/images/button_nav.png') 0 18px;
+  
+}
+.views_slideshow_singleframe_next{
+  background:url('../css_galeries/images/button_nav.png')18px 18px;  
+}
+.views_slideshow_singleframe_previous :hover{}
+
+.views_slideshow_singleframe_next :hover{}
+/*
+VIEWS SLIDESHOW SLIDER ===================================
+*/
+.views_slideshow_slider_controls{height: 20px;margin: 0 auto;width: 400px;}
+.views_slideshow_slider_previous, .views_slideshow_slider_next, .views_slideshow_slider_pause{
+  width:18px;
+  height:0px;
+  padding-top:18px;
+  display: inline-block;
+  overflow:hidden;
+}
+.views_slideshow_slider_previous{background:url('../css_galeries/images/button_nav.png');}
+.views_slideshow_slider_pause{}
+.views_slideshow_slider_next{background:url('../css_galeries/images/button_nav.png') 18px 0;}
+.views_slideshow_slider_next a:hover{background:url('../css_galeries/images/button_nav.png') 18px 18px;}

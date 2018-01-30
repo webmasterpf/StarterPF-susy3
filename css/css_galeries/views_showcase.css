@@ -1,0 +1,122 @@
+/* $Id: views_showcase.css,v 1.1 2010/04/29 16:40:36 khaledzaidan Exp $ */ 
+
+/*'right' skin*/
+
+.skin-right .views-showcase-navigation-container {
+  float: right;
+}
+
+.skin-right .views-showcase-content-container {
+  float: left;
+}
+
+/*'left' skin*/
+
+.skin-left .views-showcase-navigation-container {
+  float: left;
+}
+
+.skin-left .views-showcase-content-container {
+  float: right;
+}
+
+
+/* Skin général  override pleine page 990px
+Classe du bloc : FPSlide-Bloc
+Réglages : ^pour afficher 4 éléèments mettre une height de 326px , pour 5 éléments mettre 420px.
+Créer les profils IC en fonction de cela pour la grande image : 4items : 615x325 5items: 615x419
+Il faut déplacer le texte en surimpression:
+4items = .views-showcase-big-box-teaser .field-content p{top:265px}
+5items = .views-showcase-big-box-teaser .field-content p{top:350px}
+*/
+.FPSlide-Bloc .views-showcase{background-color:#fff;width:974px;height:/*326px*/420px;padding:0 !important;}
+.FPSlide-Bloc .views-showcase-big-panel{width:622px;height:420px;background:#fff;}
+.FPSlide-Bloc .views-showcase div.views-showcase-big-panel{list-style-image:none;margin:0;padding:0;height:225px;}
+.FPSlide-Bloc .views-showcase .views-showcase-big-panel li,.FPSlide-Bloc .views-showcase .views-showcase-big-panel div{list-style-image:none;padding:0;background:none;}
+.FPSlide-Bloc .views-showcase-mini-list{width:360px;overflow:hidden;height:/*324px*/418px;background-color:transparent;}
+
+.FPSlide-Bloc .views-showcase-pager-item{background-color:#888;padding:0 5px;border-bottom:1px solid #FFF;margin-bottom:0;height:80px;}
+.FPSlide-Bloc .views-showcase-pager-subitem{}
+/*Style vignette ( changer classe selon fielfield name*/
+.FPSlide-Bloc .views-showcase-navigation-box-field_illustration_vdl_fid_1 img{margin: 2px; padding: 0px;}
+/* Style du titre cliquable*/
+.FPSlide-Bloc .views-showcase-navigation-box-title{ float: right;text-align: right; width: 185px;}
+.FPSlide-Bloc .views-showcase-navigation-box-title a{ color: red;display: block;margin: 5px 0;padding: 10px; text-decoration: none; text-transform: uppercase;}
+.FPSlide-Bloc .views-showcase-navigation-box-title a:hover{text-decoration: underline;}
+.FPSlide-Bloc .views-showcase-mini-list .activeItem,.FPSlide-Bloc .views-showcase-pager-item:hover{background-color:#555;}
+.FPSlide-Bloc .views-showcase-field-label,.views-showcase-field-content{display:inline;}
+/*Hauteur de la liste de navigation*/
+.FPSlide-Bloc ul.views-showcase-pager-item-sublist,.FPSlide-Bloc ul.views-showcase-mini-list{padding-bottom:0;height: 420px;}
+.FPSlide-Bloc .views-showcase-mini-list li.views-showcase-pager-item,.FPSlide-Bloc .views-showcase-mini-list li.views-showcase-pager-subitem{background-image:none;padding:0;}
+.FPSlide-Bloc .views-showcase-subitem label,.FPSlide-Bloc .views-showcase-content-title,.FPSlide-Bloc .views-showcase-naviation-title{display:none;}
+/*Override du style right*/
+.FPSlide-Bloc .skin-right .views-showcase-navigation-container{float:right;}
+.FPSlide-Bloc .skin-right .views-showcase-content-container{float:left;width:450px;}
+/*CSS Style des champs custom*/
+.FPSlide-Bloc .views-showcase-navigation-box-field_series_name_value{position:relative;bottom:69px;left:135px;font-size:18px;text-transform:uppercase;color:#fff;font-weight:700;}
+.FPSlide-Bloc .views-showcase-navigation-box-field_issue_number_value,.FPSlide-Bloc views-showcase-navigation-box-field_text2_value{position:relative;bottom:65px;left:135px;color:#fff;font-size:14px;font-weight:100;}
+.FPSlide-Bloc .views-showcase-navigation-box-value{position:relative;bottom:60px;left:135px;}
+.FPSlide-Bloc .views-showcase-pager-item-sublist{height:80px;}
+.FPSlide-Bloc .views-showcase-big-box-field_text1_value{position:relative;bottom:70px;left:20px;font-size:26px;font-variant:small-caps;color:#f1f1f1;font-weight:700;width:400px;}
+.FPSlide-Bloc .views-showcase-big-box-field_text2_value{position:relative;bottom:60px;left:25px;color:#fff;width:400px;}
+.FPSlide-Bloc .views-row-first views-showcase-pager-item{height:80px;}
+.FPSlide-Bloc span.views-field-field-series-name-value{color:#333;font-weight:700;font-size:12px;float:left;width:340px;margin-top:10px;}
+.FPSlide-Bloc div.views-field-field-series-name-value{color:#333;font-weight:700;font-size:12px;letter-spacing:1px;}
+.FPSlide-Bloc span.views-field-field-issue-title-value{color:#555;font-size:11px;float:left;padding-top:5px;margin-right:7px;min-width:280px;}
+.FPSlide-Bloc div.views-field-field-issue-title-value{color:#555;font-size:11px;letter-spacing:1px;}
+.FPSlide-Bloc .views-field-field-issue-number-value{color:#555;font-size:11px;float:left;width:170px;margin-bottom:0;letter-spacing:1px;}
+.FPSlide-Bloc .views-showcase-subitem {}
+/*Texte teaser*/
+.FPSlide-Bloc .views-showcase-big-box-teaser .field-content{ color: greenyellow;}
+.FPSlide-Bloc .views-showcase-big-box-teaser .field-content p{color:#fff;position:absolute;top:350px;left:20px;font-size:12px;font-style: italic;background: DodgerBlue;}
+
+
+/* Skin général  override demi page : 445px
+Classe du bloc : FPSlide50-Bloc
+Réglages : ^pour afficher 4 éléèments mettre une height de 326px , pour 5 éléments mettre 420px.
+Créer les profils IC en fonction de cela pour la grande image : 4items : 615x325 5items: 615x419
+Il faut déplacer le texte en surimpression:
+4items = .views-showcase-big-box-teaser .field-content p{top:265px}
+5items = .views-showcase-big-box-teaser .field-content p{top:350px}
+*/
+.FPSlide50-Bloc{background: red;padding: 8px;border-radius: 5px;margin: 5px 0;}
+.FPSlide50-Bloc .views-showcase{background-color:transparent;width:440px;height:405px;padding:0 !important;}
+.FPSlide50-Bloc .views-showcase-big-panel{width:310px;height:405px;background:transparent;}
+.FPSlide50-Bloc .views-showcase div.views-showcase-big-panel{list-style-image:none;margin:0;padding:0;height:225px;}
+.FPSlide50-Bloc .views-showcase .views-showcase-big-panel li,.FPSlide50-Bloc .views-showcase .views-showcase-big-panel div{list-style-image:none;padding:0;background:none;}
+/*Liste item */
+.FPSlide50-Bloc .views-showcase-pager-item{background-color:#F09500;padding:0 5px;border-bottom:1px solid #FFF;margin-bottom:0;height:80px;}
+.FPSlide50-Bloc .views-showcase-pager-subitem{}
+.FPSlide50-Bloc .views-showcase-mini-list .activeItem,.FPSlide50-Bloc .views-showcase-pager-item:hover{background-color:#555;}
+.FPSlide50-Bloc .views-showcase-mini-list{width:147px;overflow:hidden;height:/*324px*/418px;background-color:transparent;}
+.FPSlide50-Bloc .views-showcase-mini-list li.views-showcase-pager-item,.FPSlide50-Bloc .views-showcase-mini-list li.views-showcase-pager-subitem{background-image:none;padding:0;}
+/*Style vignette ( changer classe selon fielfield name*/
+.FPSlide50-Bloc .views-showcase-navigation-box-field_illustration_vdl_fid_1 img{margin: 2px; padding: 0px;}
+/* Style du titre cliquable*/
+.FPSlide50-Bloc .views-showcase-navigation-box-title{ float: right;text-align: right; width: 135px;}
+.FPSlide50-Bloc .views-showcase-navigation-box-title a{ color: red;display: block;margin: 5px 0;padding: 10px; text-decoration: none; text-transform: uppercase;}
+.FPSlide50-Bloc .views-showcase-navigation-box-title a:hover{text-decoration: underline;}
+.FPSlide50-Bloc .views-showcase-field-label,.FPSlide50-Bloc .views-showcase-field-content{display:inline;}
+/*Hauteur de la liste de navigation*/
+.FPSlide50-Bloc ul.views-showcase-pager-item-sublist,.FPSlide50-Bloc ul.views-showcase-mini-list{padding-bottom:0;height: 420px;}
+.FPSlide50-Bloc .views-showcase-subitem label,.views-showcase-content-title,.FPSlide50-Bloc .views-showcase-naviation-title{display:none;}
+/*Override du style right taille de la big box = image*/
+.skin-right .views-showcase-navigation-container{float:right;}
+.FPSlide50-Bloc .skin-right .views-showcase-content-container{float:left;width:260px;}
+/*CSS Style des champs custom*/
+.FPSlide50-Bloc .views-showcase-navigation-box-field_series_name_value{position:relative;bottom:69px;left:135px;font-size:18px;text-transform:uppercase;color:#fff;font-weight:700;}
+.FPSlide50-Bloc .views-showcase-navigation-box-field_issue_number_value,.FPSlide50-Bloc views-showcase-navigation-box-field_text2_value{position:relative;bottom:65px;left:135px;color:#fff;font-size:14px;font-weight:100;}
+.FPSlide50-Bloc .views-showcase-navigation-box-value{position:relative;bottom:60px;left:135px;}
+.FPSlide50-Bloc .views-showcase-pager-item-sublist{height:80px;}
+.FPSlide50-Bloc .views-showcase-big-box-field_text1_value{position:relative;bottom:70px;left:20px;font-size:26px;font-variant:small-caps;color:#f1f1f1;font-weight:700;width:400px;}
+.FPSlide50-Bloc .views-showcase-big-box-field_text2_value{position:relative;bottom:60px;left:25px;color:#fff;width:400px;}
+.FPSlide50-Bloc .views-row-first views-showcase-pager-item{height:80px;}
+.FPSlide50-Bloc span.views-field-field-series-name-value{color:#333;font-weight:700;font-size:12px;float:left;width:340px;margin-top:10px;}
+.FPSlide50-Bloc div.views-field-field-series-name-value{color:#333;font-weight:700;font-size:12px;letter-spacing:1px;}
+.FPSlide50-Bloc span.views-field-field-issue-title-value{color:#555;font-size:11px;float:left;padding-top:5px;margin-right:7px;min-width:280px;}
+.FPSlide50-Bloc div.views-field-field-issue-title-value{color:#555;font-size:11px;letter-spacing:1px;}
+.FPSlide50-Bloc .views-field-field-issue-number-value{color:#555;font-size:11px;float:left;width:170px;margin-bottom:0;letter-spacing:1px;}
+.FPSlide50-Bloc .views-showcase-subitem {}
+/*Texte teaser*/
+.FPSlide50-Bloc .views-showcase-big-box-teaser .field-content{ color:#FF00FF;}
+.FPSlide50-Bloc .views-showcase-big-box-teaser .field-content p{color:#FF00FF;position:absolute;top:315px;left:20px;font-size:12px;font-style: italic;background: DodgerBlue;}

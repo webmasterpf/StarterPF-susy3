@@ -1,0 +1,112 @@
+/*
+Style pour volet coulissant 100% CSS
+http://www.alsacreations.com/tuto/lire/1234-creer-volet-coulissant-CSS3-target-transition.html 
+*/
+
+
+/*Slider top en CSS - code dans le inc_header*/
+#volet {
+    width: 250px;
+    padding: 10px;
+    background: #6B9A49; color: #fff;	
+    ul{
+        li{list-style: none;
+        a{width: 22%;}
+        }
+    }
+     @include breakpoint($desktop){
+    width: 98%;
+    padding: em(10px);
+    height: 1.05em;
+    @include ombrage;
+    
+    left: 0;/*Position du volet fermé - au départ*/ 
+    top: -5em;
+    }
+}
+#volet a.ouvrir,#volet a.fermer {
+    padding: 10px 25px;
+    background: #555;
+    color: #fff;
+    text-decoration: none;
+}
+#volet {
+    position: absolute;//pour passer au dessus
+    z-index: 20;
+    left: -270px; top: 55px;
+}
+#volet a.ouvrir,#volet a.fermer 
+ {
+    position: absolute;
+   padding: 10px 25px;
+
+    /* quelques styles CSS3 */
+    -ms-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+     
+    /*Ombrage sur bouton*/
+     @include ombrage-effet-incurve($PositionHalo:0.3em,$LargeurHalo:7em,$HauteurHalo:0em);
+     
+    /*Coins arrondis*/
+     border-radius: 0 0 8px 8px;
+     
+      @include breakpoint($desktop){
+      
+             /* quelques styles CSS3 */
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    }
+}
+/*Position des boutons , différent à cause du contenu texte*/
+#volet a.ouvrir
+ {    
+    right: -7.5em;
+    top: 150px;
+    
+ }
+ #volet a.fermer 
+ {    
+    right: -4.5em;
+    top: 150px;
+    
+ }
+#volet {
+    -webkit-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+#volet:target {
+    left: 0;
+     @include breakpoint($desktop){
+    left: 0;
+    top:0.1em;
+    }
+}
+#volet_clos:target #volet {
+    /* retourne à ta place */
+}
+
+#volet a.fermer {/*Le bouton est caché / Volet fermé*/
+     display: none;
+}
+#volet:target a.ouvrir {
+    display: none;
+}
+#volet:target a.fermer {
+    display: block;
+    @include breakpoint($desktop){
+        display: block;
+        top: 2.6em; 
+        left: 48%;
+    }
+
+}
+#volet_clos:target #volet {
+    left: -270px;
+    @include breakpoint($desktop){
+        left: 0;    /*Retour position de depart*/
+    }
+}

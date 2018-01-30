@@ -1,0 +1,81 @@
+/*
+Style - layout pour le bandeau des autres sites de l'ASSO
+*/
+
+/*--------------------------------
+---- BANDEAU HAUT HOMEPAGE -------
+---------------------------------*/
+.bandeau-pagetop {
+    display: block;
+    
+    ul{
+            background: $blanc-casse;
+            
+            
+            li{
+                //@include span (1 of 7);
+                list-style : none;
+
+                &:last-child{
+                    //@include last;
+                }
+                a{
+                    text-decoration: none;font-size:small;
+                    &:hover{color: #FBFBFB;
+                            transition: background 2s ease,color 1000ms ease;-webkit-transition: background 2s ease,color 1000ms ease;}
+                }
+            }
+        }
+    @include breakpoint ($desktop){
+        display: block;
+        height: auto;
+        ul{
+            background: $blanc-casse;
+            display: block;
+            height: 2em;
+            @include squish (0.05,0.05);
+            li{
+                @include span (1 of 7);
+                list-style : none;
+
+                &:last-child{
+                    @include last;
+                }
+                a{
+                    text-decoration: none;font-size:x-small;
+                    &:hover{color: #FBFBFB;
+                            transition: background 2s ease,color 1000ms ease;-webkit-transition: background 2s ease,color 1000ms ease;}
+                }
+            }
+        }
+
+    }
+
+
+
+
+}
+
+/*Style de chaque boutons*/
+.bandeau-pagetop {
+    a.site_er{color: #E2001A;}
+    & a:hover.site_er{background: #E2001A;}
+
+    a.site_cg{color: #F29400;}
+    & a:hover.site_cg{background: #F29400;}
+
+    a.site_bl{color: #00AAD2;}
+    & a:hover.site_bl{background: #00AAD2;}
+
+    a.site_mg{color: #E10279;}
+    & a:hover.site_mg{background: #E10279;}
+
+    a.site_lr{color: #970F7D;}
+    & a:hover.site_lr{background: #970F7D;}
+
+    a.site_ca{color: #9B9C9E;}
+    & a:hover.site_ca{background: #9B9C9E;}
+
+    a.site_ce{color: #C8D215;}
+    & a:hover.site_ce{background:#C8D215;}
+}

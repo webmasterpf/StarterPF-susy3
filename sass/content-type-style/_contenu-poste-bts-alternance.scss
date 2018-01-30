@@ -1,0 +1,137 @@
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       Poste bts alternance           |
+|--------------------------------------*/
+
+
+#colonne-1.detail-offre-ctpro{
+     
+}
+#colonne-2.detail-offre-ctpro{
+   @include border-bleu-violet;
+}
+#colonne-3.detail-offre-ctpro{
+     
+}
+
+.titre-offre-ctpro{
+    @include titre-page;
+    color: $orange-fonce;
+}    
+.table-poste-bts{
+    background:none;
+    @include border-anthracite-anthracite;
+    
+    margin:0 auto;
+    text-align:center;
+    width:50%;
+    padding: em(5px) 0 em(10px) 0;
+    tbody{border: 0;}
+}
+.table-poste-bts tr.line1{
+    color: #950F7E;
+    background: white;
+}
+.table-poste-bts tr.line2{
+    background: #EFEFEF;
+    color: #E1017B;
+}
+.table-poste-bts td.etat{
+    font-weight: bold;
+}
+.table-poste-bts a{color: #E7512F;text-decoration: none;font-weight: bold;}
+.table-poste-bts a:hover{text-decoration: underline;}
+/*Vue liste des offres - style par taxonomie*/
+.liste-offres-bts-pro ul {
+    list-style: none;
+}
+.liste-offres-bts-pro ul li a{
+    text-decoration: none;
+    color: #606171;
+}
+.liste-offres-bts-pro a:hover{
+    color: #E85231;
+}
+.offre-bts-titre{/*titre dans la liste*/
+    display:block;
+    float:left;
+    font-size:em(14px);
+    margin:0 em(10px) 0 0;
+    text-transform:uppercase;
+}
+.offre-bts-date{
+    margin: 0;
+    padding:em(3px) 0 0;
+}
+.offre-bts-teaser{
+    margin: 0;
+    padding: 0;
+}
+.ref-offre{
+    float: left;
+    font-weight: bold;
+    padding: em(3px) em(55px) 0 0;
+    margin: 0;
+}
+.etat-76{/*a pourvoir*/
+         padding: em(5px);
+         margin:0 0 em(5px);
+    border-left:3px solid #AEC81F;
+}
+.etat-77{/*en cours*/
+         padding: em(5px);
+         margin:0 0 em(5px);
+   border-left:3px solid #F09500;
+}
+.etat-78{/*pourvu*/
+         padding: em(5px);
+         margin:0 0 em(5px);
+   border-left:3px solid #E0001A;
+}
+#postule{
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+#postule a{
+    color: #00AAD5;
+    text-transform: uppercase;
+}
+/*Table autres offres à pourvoir*/
+#block-views-postes_bts_alternance-block_1 h3{font-size: 14px;color: #D63E2A;text-align: center;margin: 5px;}
+.table-autre-offres {width: 95%;margin: 0 auto;}
+.table-autre-offres tbody{background: #EFEFEF;}
+.table-autre-offres tr{}
+.table-autre-offres td{}
+.table-autre-offres a{text-decoration: none;float: left;color: #94127F;padding: 3px;}
+.table-autre-offres a:hover{text-decoration: underline;}
+.table-autre-offres h4{font-size: 12px;}
+.table-autre-offres .ref-offre-autre{float: right;}
+/*style des boutons radios*/
+.bef-checkboxes,
+.bef-select-as-radios .form-radios {
+  /*
+   * Setting the height and overflow creates a scrollable <div> for the radio/checkbox elements.
+   * The border is just for looks -- adjust or remove as needed.
+   */
+  height: auto;
+  overflow: auto;
+  border: 0px solid #999;
+}
+
+/* Line up multi-line options nicely */
+.bef-group-items .form-item,
+.bef-select-as-radios .form-radios .form-item {
+  text-indent: -24px;
+  margin-left: em(24px);
+  float:left;
+}
+/*style lien en savoir plus*/
+li.node_read_more a{
+color : red;
+text-decoration: none;
+text-align:left;
+}
+li.node_read_more a:hover{
+text-decoration: underline;
+}    

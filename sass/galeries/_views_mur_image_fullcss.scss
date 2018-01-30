@@ -1,0 +1,126 @@
+/*
+Mise en place / forme des items du mur d'images'
+Indiquer les classes ou les IDs des enveloppes des galeries
+*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*http://w3bits.com/css-masonry/*/
+
+/*-------------------------
+|  LAYOUT FULL CSS  |
+--------------------------*/
+.vdl-global .view-content { /* Masonry container */
+    @include colonnes(1);
+    column-gap: gutter();
+    @include breakpoint ($desktop){
+    @include colonnes(4);
+    }
+    @include breakpoint ($tablet){
+        @include colonnes(3);
+    }
+}
+
+.item { /* Masonry bricks or child elements - classe ajoutée dans la vue */
+    background-color: #eee;
+    display: inline-block;
+    margin: 0 0 em(10px);
+    width: 100%;
+}
+
+/*--------------------
+|  MISE EN FORME|
+|  DES ITEMS         |
+|  DE LA VUE        |
+---------------------*/
+/*Changer l'ID selon les besoins, en général la #colonne-2 doit convenir*/
+#colonne-1,#colonne-2{
+    .vdl-global{
+        .view-filters{
+            .views-exposed-form{
+                font-size: small;
+            }
+            label{
+                font-size: small;
+            }
+        }
+    }
+    
+    .tooltip-vdl{}
+/*style du terme de taxonomie selon son ID
+Vocabulaire: Type d'évènement
+Action: 3
+ Activité sportive : 24
+ Formation interne: 9
+ Foyer des élèves: 12
+Intervenant: 6	 
+Projet : 7 
+Revue de presse : 5
+Sortie : 8*/
+
+span{
+    &.vdl-tag{
+        font-size: xx-small;
+        padding: em(3px);
+        color: $gris-clair;
+        position: relative;
+        top: em(20px);
+        margin: 0 em(10px);
+        z-index: 20;
+    }
+    &.titre-vdl{
+        a{
+            color: $violet;
+            text-align: center;
+            display: block;
+            font-size: small;
+            text-decoration: none;
+            text-transform: lowercase;
+            @include cesure-txt;
+            &::first-letter,&:first-letter{
+                text-transform: capitalize;
+            }
+        }
+        &::first-letter,&:first-letter{
+                text-transform: capitalize;
+            }
+    }
+    &.vdl-3{background: $vert;}
+    &.vdl-5{background: $violet;}
+    &.vdl-6{background: $bleu-turquoise;}
+    &.vdl-7{background: $vert;}
+    &.vdl-8{background: $violet;}
+    &.vdl-9{background: $bleu-turquoise;}
+    &.vdl-12{background: $vert;}
+    &.vdl-24{background: $violet;}
+}
+div.img-vdl{
+    &:hover{
+    &.vdl-3{background: $vert;}
+    &.vdl-5{background: $violet;}
+    &.vdl-6{background: $bleu-turquoise;}
+    &.vdl-7{background: $vert;}
+    &.vdl-8{background: $violet;}
+    &.vdl-9{background: $bleu-turquoise;}
+    &.vdl-12{background: $vert;}
+    &.vdl-24{background: $violet;}
+    }
+    img{
+        padding: 0;
+        margin: 0 auto;
+        display: block;
+        object-fit: cover;//ne déforme pas l'image mais la coupe à la différence de contain
+        &:hover{
+             @include opacity(0.3);
+        }
+    }
+    a{
+        &:hover{
+            background: transparent;
+        }   
+    }
+}
+
+}

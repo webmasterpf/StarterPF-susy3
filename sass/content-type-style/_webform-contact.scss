@@ -1,0 +1,40 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM              |
+|               NODE.TPL                     |
+|       CONTACT WEBFORM            |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.CLASS_NAME{order:1;}
+    #colonne-2.CLASS_NAME{order:2;}
+    #colonne-3.CLASS_NAME{order:3;}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        #colonne-1.contact{
+            @include border-R-violet;
+        }
+    }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+#colonne-1.contact{
+    table,tbody,tr,td,form,input[type="text"],input[type="email"]{
+          width: 98%;display: block;
+      }
+      tbody{
+          border: 0;
+      }
+    
+}

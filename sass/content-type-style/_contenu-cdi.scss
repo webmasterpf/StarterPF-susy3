@@ -1,0 +1,91 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                      |
+|       CONTENU CDI                       |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.contenu-actu{order:1;}
+    #colonne-2.contenu-actu{order:2;}
+    #colonne-3.contenu-actu{order:3;}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur .conteneur-flex{
+    @include breakpoint ($desktop){
+        #colonne-2.contenu-actu{
+            @include border-vert-violet;
+        }
+        }
+    
+}
+/*######-------- ||| STYLE ||| --------######*/
+
+/*Table globale*/
+#cdi-utile{
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+}
+#cdi-utile tbody{}
+#cdi-utile tr{}
+#cdi-utile td{
+    vertical-align: top;
+}
+
+/*reset style commun table CDI*/
+.table-cdi{
+    background: none;
+    border: 0;
+    margin: 5px;
+    tbody{}
+    tr{
+        background: none;
+        border-bottom: 1px solid $vert;
+    }
+    td{
+        background: none;
+    }
+    a{
+        padding: 3px;
+    }
+}
+
+/*Table fichiers joints*/
+#docs-utiles-cdi{}
+#docs-utiles-cdi h3{
+    color: #00ACD1;
+}
+#docs-utiles-cdi a{
+    background: none;
+    color: black;
+}
+#docs-utiles-cdi a:hover{
+    background: none;
+    color: black;
+}
+#docs-utiles-cdi .filefield-icon {
+    display: none;
+}
+/*Table liens*/
+#liens-utiles-cdi{
+    background: none repeat scroll 0 0 #EEEEE0;
+    h3{}
+    a{
+        background: none;
+        color: black;
+    }
+    &:hover{
+        background: none;
+        color: black;
+    }
+}

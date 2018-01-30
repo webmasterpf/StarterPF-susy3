@@ -1,0 +1,57 @@
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+----- STYLES PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+// Styles globaux
+/*------- EFFETS VISUELS GENERIQUES--------------*/
+
+
+/**-- style du fil d'ariane --**/
+
+.ariane .breadcrumb {
+    display: none;
+    @include breakpoint ($desktop){
+        display: block;
+        padding: 0 0 0 0.3em;
+        color: $violet;
+        text-decoration: none;
+        @include font-size(s);//taille avec typey
+//        background: chocolate;//supprimer en PROD
+        a {
+            color: $rose-fushia;
+            text-decoration: none;
+              font-size: small;
+            &:hover {
+                color: $violet;
+                text-decoration: underline;
+            }
+        }
+        span.menu-item-container{
+            color: $gris-anthracite;
+            text-decoration: none;
+              font-size: small;
+              display: initial;
+              text-transform: capitalize;
+              font-weight: normal;
+        }
+    }
+
+}
+/*---- STYLE TABLE GENERIK ----
+Avec des classes odd et even via JS
+js_jquery_new.js
+*/
+table{
+    tbody{
+        tr{
+            border:0;
+            .odd,&:odd{
+                background: $gris-clair;
+                
+            }
+            .even,&:even{
+                background: $gris-clair-moyen;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,72 @@
+/*
+Override du style de galerie Bxslider
+*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+.HPDiapoVerticalDroite,
+.galerie-vdl {
+    .bx-wrapper{
+    margin: 0 auto;
+    width: 95%;
+    a{
+      
+    }
+    li{
+        padding: 0;
+    }
+    .bx-viewport{
+        height: auto;
+    }
+    .bx-pager{
+        margin: 0 0.1em;
+    }
+}
+}
+
+.HPDiapoVerticalDroite{
+    .bx-wrapper{
+        .bx-viewport {
+        box-shadow: none;
+    border: none;
+        background: none;
+        }
+        .bx-caption{
+            bottom: em(9px);
+            left: em(11px);
+            width: 96%;
+            //couleur fond des captions
+            @include rgba-background($rose-fushia, 0.7);
+            span{
+                 color: white;
+                padding: em(5px);
+                font-family: $AristaFont;
+                line-height: 1.3em;
+                font-size: x-large;
+            }
+        }
+    }
+
+}
+
+#colonne-1.page-lycee{
+    .bx-wrapper{
+        max-width: 100% !important;
+        margin: em(10px) auto !important;
+        .bx-viewport{
+            background: 0;
+            border: 0;
+            max-width: 100%;
+            box-shadow:none;
+            img{
+                margin: 0;
+                transform: scale(0.85);
+            }
+            li{
+                position: relative !important;
+            }
+        }
+    }
+}
+

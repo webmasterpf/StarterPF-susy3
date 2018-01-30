@@ -1,0 +1,96 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|           DEFILANT VIEW              |
+|--------------------------------------*/
+
+  //@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
+
+.annonce-container{}
+/*-- DEFILANT ACCUEIL --*/
+aside.content_top{
+    text-align: center;
+}
+//Mettre à jour le nom de l'ID'
+#block-views-Defilant_accueil-block_1
+{
+    display: block;
+    max-width: 100%;
+    max-height: 120%;
+    margin: 0 auto;
+    min-height: 6em;
+    .views_slideshow_cycle_teaser_section,.views_slideshow_cycle_slide, .views_slideshow_slide{
+        margin: 0 auto;
+        width: 100%;//pleine largeur pour tous les items
+        max-width: 100%;
+    }
+    @include breakpoint ($desktop){
+        min-height: 0em;
+    }
+}
+
+/* Defilant RWD*/
+aside.annonce-container{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    .views_slideshow_cycle_main,div.annonce{
+        max-width: 100%;
+    }
+}
+
+/*Ajouter la classe via block-class dans les paramètres du bloc
+Aller à admin/build/block/configure/views/nom_de_la_vue
+*/
+
+aside.annonce-container .annonce,
+aside.annonce-container,
+aside .annonce-container .annonce
+{
+    // max-width: container();
+    color: $color-defilant;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-size: medium;
+    a {
+        color: $color-defilant-a;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform:capitalize;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    p, h2, h2 a{
+        margin: 0;
+        padding: 0;
+    }
+    p{
+        font-size: large;
+    }
+    img{
+        @include adaptable-img;
+    }
+    @include breakpoint ($tablet){
+        max-width: container($tabletcol);
+    }
+    @include breakpoint ($desktop){
+        max-width: container($desktopcol);
+       .views_slideshow_cycle_teaser_section,.views_slideshow_cycle_teaser_section,
+       .views_slideshow_cycle_slide, .views_slideshow_slide{
+            width: 100%;//pleine largeur pour tous les items
+        }
+    }
+
+}
+
+
+/*DEFILANT CLASSIQUE*/
+//#block-views-liste_annonce_accueil-block_1{display: block;margin: 5px 0;height: 50px;}
+/*DEFILANT CONTENU PONCTUEL*/
+//#block-views-liste_annonce_accueil-block_2{font-size: 16px;color: #E2017B;width: auto;display: block;text-align: center;font-weight: bold;margin: 10px 0;background: #CFD0D2;padding: 5px;height: 40px;}
+//#block-views-liste_annonce_accueil-block_2 #ponctuel{display: block;width: auto;}

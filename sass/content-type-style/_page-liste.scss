@@ -1,0 +1,173 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _CONTENT-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM              |
+|               NODE.TPL                    |
+|               LISTE                            |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #colonne-1.CLASS_NAME{order:1;}
+    #colonne-2.CLASS_NAME{order:2;}
+    #colonne-3.CLASS_NAME{order:3;}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur .conteneur-flex{
+   @include breakpoint(($desktop,$tablet)){
+        }
+    
+}
+body .conteneur{
+    @include breakpoint(($desktop,$tablet)){
+        #colonne-2.page-lycee-entreprise{
+            @include border-orange-violet;
+        }
+    }
+
+}
+/*######-------- ||| STYLE ||| --------######*/
+h1.titre_page_lycee_entreprise{
+    color: $orange;
+}
+#cg_logo_entreprise img{
+    display: block;
+    margin: 0 auto;
+}
+#colonne-2.page-lycee-entreprise{
+    p{
+        line-height: 1em;
+        padding: 0.05em;
+        margin: 0;
+    }
+}
+.table_liste_vdl{
+    padding: em(5px);
+    tbody{}
+    tr{
+        margin: em(5px) 0;
+        border: 0;
+        background: none;
+    }
+    td{
+        margin: em(5px) 0;
+        display: block;
+        padding: em(3px);
+        float: left;
+        width: 95%;
+    }
+    a{
+        text-decoration: none;
+        font-size: inherit;
+        font-weight: bold;
+        margin: 0 em(10px);
+        color: $orange;
+        &:hover{
+            color: $violet;
+        }
+    }
+    hr{
+        border: 0.09em solid $orange;
+        width: 75%;
+        margin: 0 auto;
+        
+    }
+    .deco_vdl img{
+        float: right;
+        border: 0.2em solid $orange;
+    }
+}
+
+/*==
+== Pager pour pages archives(listes) ===
+==*/
+#bloc_liste_vdl ul.pager,#bloc_liste_lycee-entreprise ul.pager,#bloc_liste_actus ul.pager{margin: em(3px) auto;width: 95%;display: block;padding: em(3px);}
+#bloc_liste_vdl .pager li,#bloc_liste_lycee-entreprise .pager li,#bloc_liste_actus .pager li
+{float: left;}
+#bloc_liste_vdl .pager li a,#bloc_liste_lycee-entreprise .pager li a,#bloc_liste_actus .pager li a{color: $gris-anthracite;}
+#bloc_liste_vdl .pager li.pager-item,#bloc_liste_lycee-entreprise .pager li.pager-item,#bloc_liste_actus .pager li.pager-item,
+#bloc_liste_vdl .pager li.pager-current,#bloc_liste_lycee-entreprise .pager li.pager-current,#bloc_liste_actus .pager li.pager-current
+{padding: em(3px);border-radius: em(10px); height: em(15px);width: em(15px);}
+#bloc_liste_vdl .pager li.pager-item,#bloc_liste_lycee-entreprise .pager li.pager-item,#bloc_liste_actus .pager li.pager-item
+{background:$violet ;color:$gris-clair;}
+#bloc_liste_vdl .pager li.pager-item a,#bloc_liste_lycee-entreprise .pager li.pager-item a,#bloc_liste_actus .pager li.pager-item a{color:#EFEFEF;}
+#bloc_liste_vdl .pager li.pager-current,#bloc_liste_lycee-entreprise .pager li.pager-current,#bloc_liste_actus .pager li.pager-current
+{background: $orange;color:$gris-anthracite;}
+
+/*********************************
+----------------------------------
+---- PAGE LYCEE-ENTREPRISE NODE.TPL --
+----------- LISTE --------------
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+h1.titre_page_lycee_entreprise{
+    margin: em(3px);
+}
+
+#bloc_liste_lycee-entreprise .views-exposed-form{
+ width: 95%;
+ margin: 0 auto;
+  .date-views-filter-wrapper{
+    width: auto;
+    min-width: 20%;
+}
+ span.views-field-name, span.views-field-created, span.views-field-field-date-evenement-value{
+    font-style: italic;
+    font-size: small;
+    padding: 0 em(5px);
+    text-align: right;
+
+}
+ span.date-display-single{
+    font-style: italic;
+    font-size: small;
+    padding: 0 em(5px);
+    text-align: right;
+}
+}
+
+.table_liste_lycee_entreprise{
+    padding: em(5px);
+    tbody{}
+    tr{
+        margin:  em(5px) 0;
+        border: 0;
+        background: none;
+    }
+    td{
+        margin: em(5px) 0;
+        display: block;
+        padding: em(3px);
+    }
+    a{
+        text-decoration: none;
+        font-size: medium;
+        font-weight: bold;
+        margin: 0 em(10px);
+        color: $orange;
+        &:hover{
+            color: $violet;
+        }
+    }
+
+    hr{
+        border-top: 0.2em solid $orange;
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+/*Vue dans region via bloc*/
+#block-views-Liste_lycee_entreprise-block_1 .views-exposed-form{
+    width: 90%;display: block;margin: em(2px) auto;
+}
+#block-views-Liste_lycee_entreprise-block_1 .views-widget-filter-field_date_evenement_value{width: 90%;display: block;}

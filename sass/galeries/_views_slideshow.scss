@@ -1,0 +1,145 @@
+/*
+CSS pour navigation par image dans les slideshow créés par Views Slideshow (slider,singleframe...)
+*/
+/*
+VIEWS SLIDESHOW SINGLEFRAME ====================
+*/
+/*COMPTEUR*/
+.views-slideshow-controls-bottom{
+}
+.pager{}
+.views_slideshow_singleframe_image_count{
+  background-color: #9FC4DC;
+  @include arrondis (em(6px));
+  float: left;
+  height: em(12px);
+  width: em(12px);
+  margin-right: em(5px);
+  text-indent: em(-9999px);
+  cursor: pointer;
+}
+
+.views_slideshow_singleframe_image_count .active {
+  background-color: #2874A2;
+}
+/*PAGER*/
+.views_slideshow_singleframe_pager{
+    margin: em(2px) 0 0 280px !important;
+    margin: em(2px) 0 0 80px;
+}
+.views_slideshow_singleframe_pager a{
+  background-color: #CFD0D2;
+  @include arrondis (em(6px));
+  float: left;
+  height: em(12px);
+  width: em(12px);
+  margin-right: em(5px);
+  text-indent: em(-9999px);
+  cursor: pointer;
+}
+
+.views_slideshow_singleframe_pager .activeSlide a {
+  background-color: $gris-clair-moyen;
+}
+/*NAVIGATION*/
+.views_slideshow_singleframe_controls{height: em(20px);margin: 0 auto;width: em(200px);float: right;}
+.views_slideshow_singleframe_previous, .views_slideshow_singleframe_next, .views_slideshow_singleframe_pause
+.views_slideshow_controls_text_previous,views_slideshow_controls_text_next,views_slideshow_controls_text_pause{
+  width:em(18px);
+  height:0px;
+  padding-top:em(18px);
+  display: inline-block;
+  overflow:hidden;
+}
+.views_slideshow_singleframe_previous,views_slideshow_controls_text_previous {
+  background:url('../css/css_galeries/images/button_nav.png') 0 em(18px);
+  
+}
+.views_slideshow_singleframe_nextviews_slideshow_controls_text_next{
+  background:url('../css/css_galeries/images/button_nav.png')em(18px) em(18px);  
+}
+.views_slideshow_singleframe_previous :hover{}
+
+.views_slideshow_singleframe_next :hover{}
+/*
+VIEWS SLIDESHOW SLIDER ===================================
+*/
+.views_slideshow_slider_controls{height: em(20px);margin: 0 auto;width: em(200px);float: right;}
+.views_slideshow_slider_previous, .views_slideshow_slider_next, .views_slideshow_slider_pause,
+.views_slideshow_controls_text_previous,.views_slideshow_controls_text_next,.views_slideshow_controls_text_pause{
+  width:em(18px);
+  height:0px;
+  padding-top:em(18px);
+  display: inline-block;
+  overflow:hidden;
+}
+.views_slideshow_slider_previous,.views_slideshow_controls_text_previous{
+    background:url('../css/css_galeries/images/button_nav.png');
+}
+.views_slideshow_slider_pause{}
+.views_slideshow_slider_next,.views_slideshow_controls_text_next{
+    background:url('../css/css_galeries/images/button_nav.png') em(18px) 0;
+    a{
+        &:hover{background:url('../css/css_galeries/images/button_nav.png') em(18px) em(18px);}
+    }
+}
+
+
+/*
+VIEWS 3 CYCLE ===================================
+*/
+/*Place le bloc du pager*/
+.views-slideshow-controls-bottom{
+    /*float: right;*/
+
+    @include breakpoint ($desktop){
+        margin: 0 0 em(10px) 0;
+        display: block;
+        padding: 0.5em 0 0 13.5em;
+        width: 50%;
+    }
+}
+#widget_pager_bottom_annonce_accueil-block_1 {margin: em(2px) 0 0 em(280px) !important;margin: em(2px) 0 0 em(80px);}
+/*Style */
+.widget_pager .views_slideshow_pager_field_item,.views_slideshow_pager_field_item .views-field-title,
+.views_slideshow_pager_field_item .views-content-title{ 
+  background-color: $orange-fonce;
+  @include arrondis (em(6px));
+  
+  float: left;
+  height: em(12px);
+  width: em(12px);
+  margin-right: em(5px);
+  text-indent: em(-9999px);
+  cursor: pointer;
+}
+.widget_pager .active,.widget_pager,.views-content-title{
+    &:hover, a:hover,&:active,a:active{
+        background-color: $violet;
+        @include arrondis (em(6px));
+    }
+}
+/* Defilant RWD
+Voir "../layout/_layout-defilant.scss";
+*/
+
+/*
+VIEWS 3 CYCLE: DIAPO CONTENU ===================================
+*/
+.galerie .views_slideshow_cycle_slide img{
+    border: 0.2em $rouge solid;padding: 0.2em;display: block;
+left: 8em;position: relative;
+@include adaptable-img;
+}
+.galerie .views_slideshow_controls_text_previous a,.galerie .views_slideshow_controls_text_next a{
+    width: 4.4em;height: 4.4em; overflow: hidden;text-indent: 5em;position: relative;
+}
+.galerie .views_slideshow_controls_text_pause{display: none;}
+.galerie .views_slideshow_controls_text_previous a{
+    background:url('../css/css_galeries/images/arrow-rond-pf.png') 4.3em 4.3em;float: left;}
+.galerie .views_slideshow_controls_text_previous a:hover{
+    background:url('../css/css_galeries/images/arrow-rond-pf.png') 4.3em 11.2em;float: left;}
+.galerie .views_slideshow_controls_text_next a{
+    background:url('../css/css_galeries/images/arrow-rond-pf.png') 0 4.3em;float: right;}
+.galerie .views_slideshow_controls_text_next a:hover{
+    background:url('../css/css_galeries/images/arrow-rond-pf.png') 0 11.2em;float: right;}

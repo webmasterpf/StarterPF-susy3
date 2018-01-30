@@ -1,0 +1,68 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _node-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM NODE.TPL        |
+|       CONTENU ACTU PRESSE ASSO       |
+|--------------------------------------*/
+
+//@include susy-breakpoint ($mobile){}
+//@include susy-breakpoint ($desktop){}
+//@include susy-breakpoint ($tablet){}
+
+.actu-presse 
+{
+    h1.titre_page{
+        @include titre-page;
+        color: $orange-fonce;
+    }
+    h3{
+        color: #931B7D;
+        font-size: 14px;
+        margin:5px;
+    }
+    h4{
+        color: #01ABCF;
+        font-size: 12px;
+    }
+    img{padding: 0;}
+    a{  color: #D63E2A;font-weight: bold;text-decoration: none;
+        &:hover{text-decoration: underline;}
+    }
+    @include breakpoint($desktop);@include breakpoint($tablet)
+    {
+        @include border-L-rose;
+    }
+
+}
+
+.actu-minipresse{float: right;}
+.actu-minipresse img{
+    @include adaptable-img;
+    border: em(2px) solid #ADC91F;
+    margin: em(5px);
+}
+.field-field-minipresse img{
+    float: right;
+    padding: 3px;
+    margin: 0;
+    line-height: 0;
+    -moz-box-shadow: 0px 0px 5px #888;
+    -webkit-box-shadow: 0px 0px 5px #888;
+    box-shadow: 0px 0px 5px #888;
+}
+table#doc-joints
+{
+    width: em(200px);margin: 10px auto;background: transparent;
+    a{color: #911381;}
+    th{text-align: center;font-size: em(14px);color: #606070;border-bottom: 3px solid #E85231;}
+    td{padding: em(2px);}
+    tbody, tr{background: transparent;border-bottom: 1px dashed #606070;}
+    thead{}
+
+}
+
+
+.slideshare,.video{width: em(500px);margin: 0 auto;}
+.slideshare{}
+.galerie{}

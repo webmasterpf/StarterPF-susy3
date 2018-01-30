@@ -1,0 +1,94 @@
+//Navigation horizontale secondaire, responsive pour mobile
+// Utilisation de selectnav.js pour avoir un menu responsive
+// http://lukaszfiszer.github.io/selectnav.js/
+// https://github.com/lukaszfiszer/selectnav.js
+// Utilisation de flexbox pour ordre des items
+aside.navStatic{
+    .horizontal-nav { display: none; }
+    .js #subnav { display: none; }
+    .js .selectnav {display: block;}
+    select{width: 100%}    
+    @include breakpoint ($desktop){
+        .selectnav { display: none; }
+        .horizontal-nav { display:block; }
+        ul.horizontal-nav {        
+     
+            //Flexbox initialisation du conteneur
+       /*@include flex;//Compass Mixin replacement issue de flex.scss*/
+       /*@include flex-flow(row wrap);*/
+            @include horizontal-list-container;//Compass Mixin
+            @include break;
+            @include horizontal-list;
+            padding-top: 1em;
+            li {
+                /*@include flex(1 0 auto);*/
+                @include horizontal-list-item;//Compass Mixin
+
+                padding: 0;
+                text-align:center;
+                list-style: none;
+                // float: right;//inverse ordre des items,pas besoin avec flexbox
+
+                &:last-child {
+                    //  @include last;
+                    // width: 30%;//Permet de limiter la taille de la derniere li
+                }
+                
+                a {
+                    // vertical alignment
+                    margin: 0.25em;
+                    border: 0;
+                    font-family: $AristaFont;
+                    color: $violet;//couleur des liens
+                    text-decoration: none;
+                    display: block;
+                    @include font-size(l);//taille avec typey
+                    /*font-size: x-large;//taille classique*/
+                    font-weight: bold;//si typo trop fine
+                    &:hover {
+                        color: $rose-fushia;//couleur du hover
+                    }
+                    img{
+                        @include adaptable-img;
+                        margin: 0;
+                    }
+
+                }
+                
+            }
+            li.logo{
+                
+                background-image: url("./images/logo-PF-lycees.svg");//sans compass
+                background-position: left 0.45em;
+                background-size: contain;
+                text-indent: -9999em;
+                width: 18em;//règle la taille du logo
+                height: 3.5em;
+                transform: scale(0.95);
+                zoom:95%;
+            }
+        }
+    }
+}
+
+
+//Subnav dans une table, comme système original, mais pas RWD
+aside.navPicto{
+    table{
+        display: table-row;
+    }
+    a {
+                    float: left;
+                    margin: 0 0 0 0.5em;
+                    border: 0;
+                    font-size: 1.55em;
+                    font-family: $AristaFont;
+                    color: $gris-anthracite;
+                    text-decoration: none;
+                    display: block;
+                    /*@include adjust-font-size-to(16px);//avec compass Vertical Rythm*/
+                    &:hover {
+                        color: $orange-fonce;
+                    }
+    }
+}

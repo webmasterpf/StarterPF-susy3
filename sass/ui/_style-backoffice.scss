@@ -1,0 +1,60 @@
+/*------------------------------------------------------*
+*-- CSS Drupal pour le backoffice --------------*
+*------------------------------------------------------*/
+
+/*------------------------------------------------*
+ *---  Provence Formation 2013-14 --*
+ *------------------------------------------------*/
+
+
+/*----Navigation backoffice------*/
+
+#block-user-1 {
+  background: url("../images/bg_nav_backoffice.gif") repeat scroll left top;
+  padding: 0;
+  margin: 0;
+  a {
+    color: #EB512F;
+    text-decoration: none;
+    background: white;
+    padding: 0 em(2px);
+    &:hover {
+      background: #EB512F;
+      color: white;
+    }
+  }
+}
+
+.item-list ul {
+  li {
+    margin: 0 0 0.25em 1.5em;
+    padding: 0;
+  }
+  margin: 0;
+  padding: 0;
+}
+
+/*----page login------*/
+
+#user-login {
+  margin: auto;
+  width: em(450px);
+  padding: em(10px) 0;
+}
+
+/*Workspace*/
+
+.sticky-table {
+  color: #606071;
+  a {
+    color: red;
+  }
+}
+
+/*-- EDIT MODE --*/
+ul.primary{
+    a{
+        color: $violet;
+        font-size: small;
+    }
+}

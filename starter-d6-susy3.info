@@ -1,0 +1,138 @@
+;Changer le nom du theme ici.Changer aussi le nom du fichier
+;Ajouter les regions utiles dans la liste ci apres, idem pour les CSS.
+;Changer le screenshot du site pour interface admin
+;
+name = SUSY 3 Template for PF
+description = Gabarit SCSS /HTML5 pour Drupal 6. Thème RWD utilisant Susy 3, GULP, Sans Compass
+version = VERSION
+core = 6.x
+engine = phptemplate
+
+;chargement des plugins Jquery
+
+;tous les scripts sont chargés via template.php !!!
+
+;Action des plugins Jquery
+;chargé via le template.php
+
+;Styles pour Superfish
+superfish_styles[assopf_superfish] = Style pour Superfish  - assopf_superfish.css
+
+stylesheets[all][] = css/application.css
+
+;Pour utiliser Buttons Zocial compilé (librairie de bouttons CSS3)
+stylesheets[all][] = css/vendor/buttons/buttons.css
+
+;Pour utiliser Buttons (librairie de bouttons CSS3)
+;stylesheets[all][] = 3rdparty/buttons/css/buttons.css
+;stylesheets[all][] = 3rdparty/buttons/css/font-awesome-ie7.min.css
+;stylesheets[all][] = 3rdparty/buttons/css/font-awesome.min.css
+scripts[] = 3rdparty/buttons/js/buttons.js
+
+;Style pour Flexslider
+stylesheets[all][] = 3rdparty/flexslider/flexslider.css
+
+;Style pour Bxslider
+stylesheets[all][] = 3rdparty/bxslider/jquery.bxslider.css
+
+;Style pour BaguetteBox
+stylesheets[all][] = 3rdparty/baguettebox/baguetteBox.min.css
+
+;Style pour Chocolat (vignettes zoomables RWD)
+;stylesheets[all][] = 3rdparty/chocolat/chocolat.css
+
+;Style pour Responsive Slides (diaporama RWD)
+stylesheets[all][] = js/jquery_plugin/responsiveslides/responsiveslides.css
+
+; CSS pour utiliser NiceMenu
+;stylesheets[all][] = css/navigation/nice_menus_custom.css
+;stylesheets[all][] = css/navigation/nice_menu_down-horiz-children.css
+;stylesheets[all][] = css/navigation/nice_menus_default.css
+; CSS pour utiliser MegaMenu
+stylesheets[all][] = css/navigation/megamenu-skins.css
+; CSS pour utiliser OM MaxiMenu
+stylesheets[all][] = css/navigation/om_maximenu/assopf-maximenu.css
+; CSS pour utiliser Superfish menu
+;stylesheets[all][] = css/navigation/superfish/assopf_superfish.css
+;stylesheets[all][] = css/navigation/superfish/superfish-navbar.css
+stylesheets[all][] = css/navigation/superfish/blue.css
+stylesheets[all][] = css/navigation/superfish/white.css
+;CSS Override pour le site : Galeries (inclus dans application.css
+;stylesheets[all][] = css/css_galeries/views_galleriffic_default.css
+;stylesheets[all][] = css/css_galeries/views_showcase.css
+;stylesheets[all][] = css/css_galeries/views_slideshow.css
+;CSS Slideshow Contenu Star
+stylesheets[all][] = css/css_galeries/slideshow-content-star.css
+; CSS pour utiliser NavJS (responsive menu)
+stylesheets[all][] = css/navigation/responsive-nav.css
+
+regions[header] = Header
+regions[menuDyn] = Menu Header - Menu dynamique JS
+regions[navStatic] = Navigation statique - Bloc
+regions[site_slogan] = Slogan du site - Bloc
+regions[search_box] = Zone recherche - Bloc
+
+;Bandeau haut de page accueil (si besoin)
+regions[bandeau1] = Bandeau haut de page
+
+;Homepage Pleine Page - Mobile First
+regions[Annonce1] = Dernières Actu Homepage - Bloc
+regions[AnnonceDeuil] = Deuil Homepage - Bloc
+regions[DiapoHPFull] = Diaporama Homepage - Bloc
+regions[RubriquesHP1] = Accès Rubriques 1 Homepage - Bloc
+regions[RubriquesHP2] = Accès Rubriques 2 Homepage - Bloc
+regions[RubriquesHP3] = Accès Rubriques 3 Homepage - Bloc
+regions[AccesLycees] = Accès Lycées Homepage - Bloc
+regions[LogoPart] = Logos Partenaires Homepage - Bloc
+
+
+;Regions customs pour site Provence Formation
+regions[centralBloc] = Zone pour bloc central - View Bloc
+regions[centre_partenaire] = Zone centrale page partenaire
+
+
+
+;Diaporama HP selon layout choisi (décommenter pour choisir)
+;regions[DiapoPanoHP] = Diaporama Panoramique Homepage - Bloc
+;regions[DiapoGaucheHP] = Diaporama Gauche Homepage - Bloc
+;regions[DiapoDroiteHP] = Diaporama Droite Homepage - Bloc
+
+
+;Region pour les node.tpl (ajouter dans template.php)
+regions[actuAssociation] = Zone pour RSS issu du site PF - Vue Bloc RSS
+regions[node_col_1] = Bloc pour colonne 1
+regions[node_col_2] = Bloc pour colonne 2
+regions[node_col_3] = Bloc pour colonne 3
+regions[node_col_4] = Bloc pour colonne 4
+regions[node_col_5] = Bloc pour colonne 5
+
+;Region pour page poles formation (ajouter dans template.php)
+regions[pole_bloc_G] = Bloc pour pole Gauche
+regions[pole_bloc_C] = Bloc pour pole Centre
+regions[pole_bloc_D] = Bloc pour pole Droit
+
+regions[content_top] = Content top
+regions[content_top_node] = Content top node
+regions[formulaire] = Zone formulaire bloc
+regions[left] = Colonne Gauche
+regions[decoTitre] = Titre deco image - Fiche Formations
+regions[right] = Colonne Droite
+regions[content_bottom] = Content bottom
+regions[content_bottom_home] = Content bottom homepage
+regions[footer_block] = Footer
+;Regions pour la page actu
+regions[revue_presse] = Zone pour les revues de presse - Vue bloc
+regions[sortie_action] = Zone pour les sorties/actions - Vue bloc
+regions[actuAssociation] = Zone pour RSS issu du site PF - Vue Bloc RSS
+regions[projets] = Zone pour les projets - Vue Bloc
+regions[intervenants] = Zone pour les Intervenants - Vue Bloc
+;Region pour formulaire
+regions[formulaire] = Formulaire (centre) - Webform Bloc
+;Region pour slideshow
+regions[frontpageSlideshow] = Zone Frontpage Slideshow
+
+
+settings[basic_zen_tabs]             = 1
+settings[basic_wireframe]            = 0
+settings[basic_block_editing]        = 1
+settings[basic_rebuild_registry]     = 1

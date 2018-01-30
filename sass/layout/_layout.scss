@@ -1,0 +1,91 @@
+// Importer les fichiers scss partiels (avec _) afin de compiler le
+// fichier css final utile pour le thème
+
+//Déplacement des valeurs pour le body à cause de problèmes de compilation
+
+ /*------------------------------------------------------*
+  *--------    CSS BLOCS     	 ----*
+  *------------------------------------------------------*/
+ 
+ //@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
+  
+// 
+ 
+/*-- LAYOUT PRINCIPAL --*/
+body {
+    
+    .conteneur{
+
+  
+    background: transparent;
+    
+    
+        #header{
+             //voir _layout-header.scss
+        }
+        .content-global{
+           //pour breakpoint voir _layout-bp-desktop.scss           
+        }
+        .content-inner{
+           //pour breakpoint voir _layout-bp-desktop.scss           
+            .content-header{
+                
+            }
+        }
+        .content-top{
+            //pour breakpoint voir _layout-bp-desktop.scss
+            img{@include adaptable-img;}
+            .ariane{}
+        }
+        .middle-content{
+            //pour breakpoint voir _layout-bp-desktop.scss
+            
+        }
+        .node-inner{
+            //pour breakpoint voir _layout-bp-desktop.scss
+            
+            
+        }
+        .content-bottom{
+            //pour breakpoint voir _layout-bp-desktop.scss
+        }
+        .content-bottom-home{
+            //pour breakpoint voir _layout-bp-desktop.scss
+        }
+        
+            #left-content{}
+            #right-content{}
+            #footer{
+             
+            
+            @include background-size();
+            //pour breakpoint voir _layout-bp-desktop.scss
+        }
+
+
+
+}//Fin definition du conteneur principal et ses enfants pour mobile
+
+
+//classe sur le bloc
+aside.content_top{
+ text-align: center;
+}
+.content-top-node{
+    background-color: #999;
+    margin: 0 auto;
+    padding: em(5px);  
+    @include breakpoint ($mobile){
+        padding: 0.5em 0 0 0 ;
+    }
+            }
+//Images RWD pour nodes
+.node-inner
+{
+    //réglages commun à surcharger si besoin
+    img,iframe,object,embed{@include adaptable-img;}
+    ul{list-style-position: inside;}
+    }
+}

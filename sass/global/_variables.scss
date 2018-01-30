@@ -1,0 +1,140 @@
+/* Changing Susy default global settings */
+//*Réglage de la grille de Susy3 - Basé sur la nouvelle propriété CSS grid-template-columns
+$susy: (
+  'columns': susy-repeat(12), // http://oddbird.net/susy/docs/a-config.html#variable--susy
+  'gutters': 0.5em,  // taille de la gouttière entre colonnes (px,em,%)
+  'spread': 'wide', // utilisation des gouttières par l'élément "span", 3 options possibles - http://oddbird.net/2017/06/13/susy-spread/
+  'container-spread': 'wide', // utilisation des gouttières par le container, 3 options possibles
+  
+      //Debug
+
+);
+
+
+
+
+/* First, fix the browser box-model by setting a global box-sizing:
+http://oddbird.net/2017/06/28/susy3/
+*/
+* { box-sizing: border-box; }
+
+//Mixins recréées pour Susy3
+// clearfix
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: ' ';
+    display: table;
+  }
+}
+
+// overall container mixin
+@mixin container(
+  $width: all,
+  $config: $susy,
+  $debug: false
+) {
+  $config: susy-settings($config);
+  $container-spread: map-get($config, 'container-spread');
+  $width: span($width $container-spread of $container-spread, $config);
+  
+  @include clearfix;
+  margin: 0 auto;
+  max-width: $width or 100%;
+  
+  @if $debug {
+    background: susy-svg-grid($grid: $config) no-repeat scroll;
+  }
+}
+
+
+// Span Mixin
+// ----------
+/*@mixin span(
+  $span,
+  $config: $susy
+) {
+  width: span($span, $config);
+  
+  @if index($span, 'last') {
+    float: right;
+    // margin-right: 0; if you want an explicit reset
+  } @else {
+    float: left;
+    margin-right: gutter();
+  }
+}*/
+
+
+//Pour eviter le Warning de Sass lors de la compilation
+@mixin box-sizing($value) {
+-moz-box-sizing: $value;
+box-sizing: $value;
+}
+
+//Réglage du nombre de pixel pour changer de breakpoint() mixin 
+// qui simplifie les media-queries.Donner la largeur mini de l'ecran
+$mobile   :  (max-width 799px);//500px
+$tablet   :  (min-width 800px) (max-width 989px);//800px
+
+$desktop  :  990px;// sortie=>> min-width: 990px
+
+// Breakpoint pour les format paysage 
+$mobilelandscape : (min-height 319px) (max-height 765px) (orientation landscape);//pour orientation paysage
+$tabletlandscape: (min-height 767px) (max-width 1024px) (orientation landscape);//pour orientation paysage
+
+//Valeurs de colonnes pour un contexte spécifié
+$mobilecol: susy-repeat(4);
+$mobilecol-landscape: susy-repeat(6);
+$tabletcol: susy-repeat(8);
+$tabletcol-landcsape: susy-repeat(10);
+$desktopcol: susy-repeat(12);
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+----- VARIABLES PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+/*-------- Couleurs charte graphique PF ----*/
+$vert : #ADC91F;
+$violet: #911381;
+$orange : #F29400;
+$orange-fonce: #DE603A;
+$bleu-turquoise: #01ABCF;
+$rouge : #E3001C;
+$rose-fushia : #E30078;
+$jaune : #FAEB0C;
+$gris-clair: #ECECED;
+$gris-clair-moyen : #9898a6;
+$gris-anthracite : #606070;
+$gris-clair-typo:#808080;
+$noir: #000000;
+$blanc-casse: #FBFBFB;
+
+/*------ Couleurs psécifiques site web ----- */
+$prune:#543F4F;
+
+// Ici paramétrer les couleurs pour l'annonce défilante
+$color-defilant:$rose-fushia;
+$color-defilant-a:$violet;
+
+// Defaults settings for Zocial Sass plugin
+$zocial-font-size: 1.8em;
+$zocial-font-weight: bold;
+$zocial-icon-font: zocial;
+$zocial-icon-default: "\0020";
+$zocial-text-font: helvetica;
+
+/*¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤
+
+----- FONCTIONS PROVENCE FORMATION -----
+¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+
+
+
+
+/* ==============================
+  Mixins custom Prefabriquées
+=================================*/
+//voir fichier mixins_custom

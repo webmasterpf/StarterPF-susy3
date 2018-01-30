@@ -1,0 +1,129 @@
+/*------------------------------------------------------*
+*-- CSS Drupal 6--------------*
+*------------------------------------------------------*/
+
+/*------------------------------------------------*
+ *---  Provence Formation 2011 --*
+ *------------------------------------------------*/
+
+/**----HEADER---***/
+
+/**----MIDDLE---***/
+
+#middle-content p {
+  color: #000;
+  padding: em(3px);
+}
+
+.item-list ul {
+  li {
+    list-style-image: none;
+    list-style-position: none;
+    list-style-type: none;
+    margin: 0 0 0.25em 1.5em;
+    padding: 0;
+  }
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/*style lien en savoir plus*/
+
+li.node_read_more a {
+  color: red;
+  text-decoration: none;
+  text-align: left;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/*
+BLOC CONNEXION COLORBOX==================================
+*/
+
+#colorbox #user-login .item-list a {
+  color: #E85134;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/*---------------------------*/
+/**----CONTENT TOP---***/
+
+#content-header {
+  padding: em(5px);
+}
+
+
+
+/**----CONTENT BOTTOM---***/
+
+#content-top {}
+
+.taxonomy {
+  text-align: right;
+  padding: em(3px);
+  margin: 0px;
+  a {
+    color: #FF00FF;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/*----page login------*/
+
+#user-login {
+  margin: auto;
+  width: em(450px);
+  padding: em(10px) 0;
+}
+
+/**----COLONNE GAUCHE---***/
+
+#left-content, #right-content {
+  p {
+    color: #000;
+  }
+  a {
+    color: #666666;
+    text-decoration: none;
+    &:hover {
+      color: #990000;
+      text-decoration: underline;
+    }
+  }
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+/**----COLONNE DROITE---***/
+
+.titre_page {
+  line-height: em(30px);
+}
+
+/*--------------------------------------------
+---- STYLE POUR PAGE.TPL ET NODE.TPL OVERRIDE
+**********************************************
+-------------- GENERIQUE --------------------*/
+
+/*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
+********** STYLE NODE.TPL OVERRIDE **********
+\\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
+/*//////////////// COLONNE 1 \\\\\\\\\\\\\\\\*/
+
+
+/*//////////////// COLONNE 2 \\\\\\\\\\\\\\\\*/
+
+
+/*//////////////// COLONNE 3 \\\\\\\\\\\\\\\\*/

@@ -1,0 +1,45 @@
+/*
+2015/03 - Layout MOBILE LANDCSAPE
+Layout pour les mobiles (paysage).Breakpoint définit par variable dans _variables.scss
+*/
+
+body .conteneur{
+    /*    //Dimensions pour orientation paysage mobile / tablette */
+    @include susy-breakpoint($mobilelandscape) {
+       max-width: container($mobilecol-landscape); 
+       @debug susy-get(columns);
+         #header{
+            //pas besoin de mixin car bloc prend toute la largeur
+           
+        }
+        .content-global{
+            max-width: container($mobilecol-landscape);        
+            
+        }
+        .content-inner{
+           max-width: container($mobilecol-landscape);
+           .content-header{}
+        }
+        .content-top{max-width: container($mobilecol-landscape);}
+        .middle-content{
+            max-width: container($mobilecol-landscape);
+            
+        }
+        .node-inner{  
+            max-width: container($mobilecol-landscape)
+        }                       
+        .content-bottom{max-width: container($mobilecol-landscape);}
+        .content-bottom-home{
+            //max-width: container($mobilecol-landscape);
+        }
+        
+       
+        #left-content{}
+        #right-content{}
+        #footer{
+            //max-width: container($mobilecol-landscape);
+            @include background-size();;
+        }
+
+    }
+}

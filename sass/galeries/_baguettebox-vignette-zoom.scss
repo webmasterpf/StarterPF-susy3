@@ -1,0 +1,24 @@
+/*
+Override du style de galerie vignettes BaguetteBox
+*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+
+
+.galerie-vdl .galerieBaguetteBox .view-content
+{
+    margin:0 em(30px);
+    >div{
+        @include gallery(2 of $mobilecol);
+        @include breakpoint ($desktop,$tablet){
+            @include gallery(4 of 12);
+        }
+    }
+    img{
+        //@include gallery(4 of 12);
+        @include cadre-ombre(0.3em,white,$gris-anthracite);
+    }
+}

@@ -1,0 +1,558 @@
+/*
+Défini les layouts possibles pour les node.tpl custom
+Ne s'applique que si présence d'un node-TYPE.tpl.php
+*/
+
+/*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
+********** LAYOUT NODE.TPL OVERRIDE **********
+\\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
+
+/*//////////////// 1 COLONNE PLEINE LARGEUR \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .col1_layout_max{
+        //@include span($mobilecol);
+        @include clearfix;
+        @include breakpoint ($mobile){
+            @include break;
+        }
+        @include breakpoint ($desktop){
+            @include span(12 of $desktopcol);
+                        &:after{
+                            content: " ";
+                            display: block;
+                            clear: both;
+                            
+                        } 
+        }
+    }
+
+}
+/*////////////// BLOCS IMBRIQUéS DANS BLOC PLEINE LARGEUR \\\\\\\\\*/
+body .conteneur{
+    .colonne-1-1{
+        @include breakpoint ($desktop){
+            @include span(first 3 of $desktopcol);
+        }
+    }
+    .colonne-1-2{
+        @include breakpoint ($desktop){
+            @include span(last 9 of $desktopcol);
+        }
+    }
+}
+/*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .col1_layout_3_6_3{
+       @include span($mobilecol);
+       
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include span(2 of $tabletcol);
+            
+        }
+        @include breakpoint ($desktop){
+           @include span(3 of $desktopcol);
+            @include gutters(.3em);/*Toujours en dernier pour override de la taille des gouttieres*/
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(3 of $tabletcol-landcsape);
+            
+        }
+    }
+    .col2_layout_3_6_3{
+       @include span($mobilecol);
+        
+        
+        @include clearfix;
+        @include breakpoint ($tablet){
+           @include span(4 of $tabletcol);
+        
+        }
+        @include breakpoint ($desktop){
+          @include span(6 of $desktopcol);
+        
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(4 of $tabletcol-landcsape);
+        
+        }
+
+    }
+    .col3_layout_3_6_3{
+        @include span($mobilecol);
+        @include clearfix;
+       
+        @include breakpoint ($tablet){
+             @include isolate(.3%);
+        }
+        
+        @include breakpoint ($desktop){
+           @include span(3 of $desktopcol);
+           @include gutters(.3em);/*Toujours en dernier pour override de la taille des gouttieres*/
+        }
+        
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+            @include isolate(.3%);
+        }
+
+    }
+}
+
+body .conteneur{
+    .col1_layout_2_7_3{
+       @include span($mobilecol);
+       
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include span(1 of $tabletcol);
+        
+        }
+        @include breakpoint ($desktop){
+           @include span(2 of $desktopcol);
+        
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(2 of $tabletcol-landcsape);
+        
+        }
+    }
+    .col2_layout_2_7_3{
+       @include span($mobilecol);
+        
+        @include clearfix;
+        @include breakpoint ($tablet){
+           @include span(5 of $tabletcol);
+          
+        }
+        @include breakpoint ($desktop){
+          @include span(7 of $desktopcol);
+          @include gutters(.3em);/*Toujours en dernier pour override de la taille des gouttieres*/
+          
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(5 of $tabletcol-landcsape);
+            
+        }
+
+    }
+    .col3_layout_2_7_3{
+        @include span($mobilecol);
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include isolate(.3%);
+           
+        }
+        @include breakpoint ($desktop){
+            @include span(last 3 of $desktopcol);
+          @include isolate(.3%);//permet d'isoler la colonne du flux sans qu'elle en sorte
+           //, fixe le margin-left, possible aussi avec option no-gutters
+           
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include isolate(.3%);
+       
+        }
+
+    }
+}
+body .conteneur{
+    .col1_layout_2_6_4{
+       @include span($mobilecol);
+       @include clearfix;
+       
+       @include breakpoint ($tablet){
+            @include span(2 of $tabletcol);
+        
+        }
+       
+       @include breakpoint ($desktop){
+           @include span( 2 of $desktopcol);
+        
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(3 of $tabletcol-landcsape);
+        
+        }
+    }
+    .col2_layout_2_6_4{
+       @include span($mobilecol);
+        
+        
+        @include clearfix;
+        @include breakpoint ($tablet){
+           @include span(4 of $tabletcol);
+        
+        }
+        @include breakpoint ($desktop){
+          @include span(6 of $desktopcol);
+        
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(4 of $tabletcol-landcsape);
+
+        }
+
+    }
+    .col3_layout_2_6_4{//pas de of pour le span car le contexte est définit par le breakpoint
+        @include span($mobilecol);
+       
+
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include span( 2 of $tabletcol);
+
+        }
+        @include breakpoint ($desktop){
+           @include span(last 4);
+
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(last 3 of $tabletcol-landcsape);
+
+        }
+
+    }
+}
+//3 colonnes asymétriques page actualités MG
+body .conteneur{
+    .col1_layout_3_5_4{
+       @include span($mobilecol);
+       @include clearfix;
+       
+       @include breakpoint ($tablet){
+            @include span(2 of $tabletcol);
+        
+        }
+       
+       @include breakpoint ($desktop){
+           @include span(3 of $desktopcol);
+        
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(3 of $tabletcol-landcsape);
+        
+        }
+    }
+    .col2_layout_3_5_4{
+       @include span($mobilecol);
+        
+        
+        @include clearfix;
+        @include breakpoint ($tablet){
+           @include span(4 of $tabletcol);
+        
+        }
+        @include breakpoint ($desktop){
+          @include span(5 of $desktopcol);
+        @include post(1%); //fixe la valeur du margin-right
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(4 of $tabletcol-landcsape);
+
+        }
+
+    }
+    .col3_layout_3_5_4{//pas de of pour le span car le contexte est définit par le breakpoint
+        @include span($mobilecol);
+       
+
+        @include clearfix;
+        @include breakpoint ($tablet){
+            @include span( 2 of $tabletcol);
+
+        }
+        @include breakpoint ($desktop){
+           @include span(last 4 of $desktopcol);
+           @include isolate(.3%);
+        }
+        //Pour orientation paysage
+         @include breakpoint ($tabletlandscape){
+           @include span(last 3 of $tabletcol-landcsape);
+
+        }
+
+    }
+}
+//Pour un 3 colonnes egales : page pole
+body .conteneur{
+    .layout_3col_all4{
+        
+        @include breakpoint ($tablet){
+            @include span(3 of $tabletcol);
+        
+        }
+        @include breakpoint ($desktop){
+           @include span(4 of $desktopcol );
+        @include gutters(.5em);
+        }
+    }
+    .layout_3col_all4last{
+       @include breakpoint ($tablet){
+            @include span(last 2 of $tabletcol);
+        
+        }
+        @include breakpoint ($desktop){
+            
+           @include span(4 of $desktopcol);//sinon colonne trop large, 
+           //possible aussi avec no-gutters
+           @include gutters(.5em);
+        
+        }
+    }
+}
+
+/*//////////////// 2 COLONNES ASYMETRIQUES \\\\\\\\\\\\\\\\*/
+body .conteneur{
+    .col1_layout_4_8{
+        @include breakpoint ($tablet){
+            @include span(first 3 of $tabletcol);
+
+        }
+        @include breakpoint ($desktop){
+            @include span(first 4 of $desktopcol);
+            @include clearfix;
+            @include post(-50%); //fixe la valeur du margin-right
+        }
+    }
+    .col2_layout_4_8{
+        
+        
+
+        @include breakpoint ($tablet){
+            @include span(last 5 of $tabletcol);
+
+        }
+        @include breakpoint ($desktop){
+           @include span(last 8 of $desktopcol);
+
+        }
+
+    }
+  
+    .col1_layout_3_9{
+         @include breakpoint ($tablet){
+            @include span(first 2 of $tabletcol);
+           
+        }
+        @include breakpoint ($desktop){
+            @include span(first 3 of $desktopcol);
+           
+        }
+    }
+    .col2_layout_3_9{
+         
+        @include breakpoint ($tablet){
+            @include span(last 6 of $tabletcol);
+         
+        }
+        @include breakpoint ($desktop){
+           @include span(last 9 of $desktopcol);
+         
+        }
+    }
+  
+    .col1_layout_2_10{
+           @include breakpoint ($tablet){
+            @include span(first 2 of $tabletcol);
+           
+        }
+        @include breakpoint ($desktop){
+            @include span(first 2 of $desktopcol);
+           
+        }
+    }
+    .col2_layout_2_10{
+         @include breakpoint ($tablet){
+            @include span(last 7 of $tabletcol);
+         
+        }
+        @include breakpoint ($desktop){
+           @include span(last 10 of $desktopcol);
+         
+        }
+    }
+  
+  .col1_layout_5_7{}
+  .col2_layout_5_7{}
+  
+  .col1_layout_6_6{
+      @include breakpoint ($tablet){}
+      @include breakpoint ($desktop){
+           @include span(6 of $desktopcol);
+      }
+  }
+  .col2_layout_6_6{
+         @include breakpoint ($tablet){}
+      @include breakpoint ($desktop){
+          @include span(last 6 of $desktopcol);
+          @include isolate(0%);//fixe le margin-left
+      }
+  }
+  
+  .col1_layout_7_5{
+      @include breakpoint ($tablet){}
+      @include breakpoint ($desktop){
+           @include span(first 7 of $desktopcol);
+      }
+  }
+  .col2_layout_7_5{
+      @include breakpoint ($tablet){}
+      @include breakpoint ($desktop){
+          @include span(last 5 of $desktopcol);
+      }
+  }
+  
+  .col1_layout_8_4{
+
+      @include breakpoint ($tablet){
+          @include span(first 5 of $tabletcol);
+
+      }
+      @include breakpoint ($desktop){
+          @include span(first 8 of $desktopcol);
+
+      }
+  }
+  .col2_layout_8_4{
+      @include breakpoint ($tablet){
+            @include span(last 3 of $tabletcol);
+        }
+        @include breakpoint ($desktop){
+            @include span(last 4 of $desktopcol);
+
+        }
+  }
+  
+    .col1_layout_9_3{
+            @include breakpoint ($tablet){
+            @include span(first 6 of $tabletcol);
+         
+        }
+        @include breakpoint ($desktop){
+           @include span(first 9 of $desktopcol);
+         
+        }
+    }
+    .col2_layout_9_3{
+         @include breakpoint ($tablet){
+            @include span(last 2 of $tabletcol);
+           
+        }
+        @include breakpoint ($desktop){
+            @include span(last 3 of $desktopcol);
+           
+        }
+    
+    }
+  
+  .col1_layout_10_2{}
+  .col2_layout_10_2{}
+}
+
+/*//////////////// 4 COLONNES \\\\\\\\\\\\\\\\*/
+//Pour un 4 colonnes egales
+body .conteneur{
+    .layout_4col_all3{
+        
+        @include breakpoint ($tablet){
+            @include span(2 of $tabletcol);
+        
+        }
+        @include breakpoint ($desktop){
+            @include span(3 of $desktopcol);
+            //@include gutters(.3em);/*Toujours en dernier pour override de la taille des gouttieres*/
+                
+        }
+    }
+    .layout_4col_all3last{
+        @include span($mobilecol);
+        
+       @include breakpoint ($tablet){
+            @include span(last 2 of $tabletcol);
+            @include isolate(0%);
+        
+        }
+        @include breakpoint ($desktop){
+            
+           @include span(last 3 of $desktopcol);//sinon colonne trop large, 
+           //possible aussi avec no-gutters
+          // @include gutters(0em);/*Toujours en dernier pour override de la taille des gouttieres,fixe le margin-right*/
+           @include isolate(0%);//permet d'isoler la colonne du flux sans qu'elle en sorte
+           //, fixe le margin-left, possible aussi avec option no-gutters
+        
+        }
+    }
+}
+/*//////////////// 5 COLONNES \\\\\\\\\\\\\\\\*/
+//technique inside-static
+body .conteneur{
+    .layout_5col{
+        @include span(5 inside-static);
+    }
+}
+@include with-layout(inside-static){
+    body .conteneur{
+        .layout_5col_is{
+            @include breakpoint ($desktop){
+                @include span($desktopcol/5 of $desktopcol);
+            }
+        }
+    }
+}
+/*\\\\\\\\\\\ LAYOUT IMBRIQUE (NESTED) - SPECIAUX ///////////*/
+body .conteneur {
+    @include breakpoint ($desktop){
+        
+        .layout_2col_items_4_8 {
+            @include span(last 12  nest);
+            &:nth-child(odd) {
+                //pour les blocs pairs
+                clear: both;
+                @include span(first 4 of $desktopcol);
+            }
+            &:nth-child(even) {
+                //pour les blocs impairs
+                @include span(last 8 of $desktopcol no-gutters);
+            }
+
+        }
+    }
+
+}
+/*body .conteneur{
+
+    @include breakpoint ($desktop){
+        .middle-content{
+           
+            @include span(12 of $desktopcol nest);
+            .layout_2col_4_8_bloc1 {
+                @include span(first 4 of $desktopcol);
+            }
+            .layout_2col_4_8_bloc2 {
+                @include span(last 8 of $desktopcol);
+            }
+
+            .layout_2col_4_8_bloc3 {
+                @include span(first 4 of 12);
+            }
+
+            .layout_2col_4_8_bloc4 {
+                @include span(last 8 no-gutters);
+            }
+        }
+
+
+    }
+
+}*/
