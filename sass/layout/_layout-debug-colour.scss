@@ -2,23 +2,18 @@
 Pour le dev, code visuel sur les blocs selon le breakpoint
 à commenter ou supprimer pour la production
 */
-
+//Layout de la page d'accueil - Version 2018 Susy 3
 body .conteneur {
     //Approche mobile-first,réglage pour mobile
 
-    #header{}
-    .content-global{}
+    #header{background-color: #F29400;}
+    .annonce_1{background-color: chocolate;}      
 
-    #left-content{}
-    .content-inner{
-        //@include susy-grid-background;
-        background-color: #F29400;
-        .content-top{background-color: chocolate;}
-        .content-bottom{}
-        .content-bottom-home{}
-    }
-    .middle-content{background-color:deeppink;}
-    #right-content{}
+    .annonce_2{background-color:deeppink;}
+    .HPDiapo{}
+    .acces_rubriques{}
+    .logo_partenaires{}
+
     #footer{background-color: firebrick;
             aside{
                 background-color: teal;     
@@ -29,15 +24,12 @@ body .conteneur {
                                   #header{
                                       background-color: sienna;
                                   }
-                                  .content-global{}
-                                  .content-top{background-color: mistyrose;}
-                                  .content-inner{}
-                                  .middle-content{
-                                      background-color: #C8D215;
+                                  .annonce_1{background-color: mistyrose;}
+                                  .annonce_2{background-color: #C8D215;}
+                                  .HPDiapo{}
+                                  .acces_rubriques{}
+                                  .logo_partenaires{}
 
-                                  }
-                                  #left-content{}
-                                  #right-content{}
                                   #footer{background-color: peachpuff;
                                           aside{
                                               background:sandybrown;
@@ -50,32 +42,14 @@ body .conteneur {
     @include breakpoint($desktop) {//Dimensions pour les pc
 
                                    #header{
-
                                        background: seashell;}
-                                   .content-global{
-
-
-                                   }
-                                   .content-inner{
+                                   .annonce_1{
                                        background-color: palevioletred;     
                                    }
-                                   .middle-content{
-                                       background-color:yellow;
-
-                                   }
-                                   .node-inner{
-                                       background-color: blanchedalmond;     
-                                   }
-                                   .content-top{background-color: yellowgreen;}
-                                   .content-bottom{}
-                                   .content-bottom-home{}
-                                   #left-content{background: tomato;}
-                                   #right-content{background: violet;}
-                                   #footer{background-color: palegreen;
-                                           aside{
-                                               background: yellowgreen;
-                                           }  
-                                   }
+                                   .annonce_2{background-color:yellow;}
+                                   .HPDiapo{background-color: blanchedalmond;     }
+                                   .acces_rubriques{background-color: yellowgreen;}
+                                   .logo_partenaires{background: tomato;}
 
     }
     @include breakpoint($tabletlandscape) {//Dimensions pour les tablettes
@@ -83,100 +57,19 @@ body .conteneur {
                                            #header{
 
                                                background: palevioletred;}
-                                           .content-global{
-
-
-                                           }
-                                           .content-inner{
+                                           .annonce_1{
                                                background-color: yellow;     
                                            }
-                                           .middle-content{
-                                               background-color: sandybrown;
+                                           .annonce_2{background-color: sandybrown;}
+                                           .HPDiapo{background-color: yellowgreen;}
+                                           .acces_rubriques{background: tomato;}
+                                           .logo_partenaires{background: violet;}
 
-                                           }
-                                           .content-top{background-color: yellowgreen;}
-                                           .content-bottom{}
-                                           .content-bottom-home{}
-                                           #left-content{background: tomato;}
-                                           #right-content{background: violet;}
                                            #footer{background-color: palegreen;
                                            }
 
     }
 }
-//Pour le dev, code visuel sur les blocs selon le breakpoint
-// à commenter ou supprimer pour la production
-body .conteneur {
-    .annonceImg {background: greenyellow;}
-        .blocLycee{background: pink;}
-        .contentAnim{background: #C8D215;}
-        .textAnim{background: salmon;}
-    
-   
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    .annonceImg {background: blueviolet;}
-        .blocLycee{background: royalblue;}
-        .contentAnim{background: gold;}
-        .textAnim{background: bisque;}
-    
-    }
-   
-    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-        .annonceImg {background: greenyellow;}
-        .blocLycee{background: pink;}
-        .contentAnim{background: #C8D215;}
-        .textAnim{background: red;}
-    
-    }
-}
-//Pour le dev, code visuel sur les blocs selon le breakpoint
-// HP Vertical Gauche ou HP Vertical Droite
-body .conteneur {
-
-    .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background: orangered;}
-    .HPDroite,.HPGauche{background-color: #ffff33;}
-    .HPDroite1,.HPGauche1{background: sienna;}
-    .HPDroite2,.HPGauche2{background: thistle;}
-    .HPDroite3,.HPGauche3{background: #00c9fe;}
-
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-        .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background-color:#red;}
-        .HPDroite,.HPGauche{background: #486900;}
-        .HPDroite1,.HPGauche1{background: gold;}
-        .HPDroite2,.HPGauche2{background: bisque;}
-        .HPDroite3,.HPGauche3{background: #00CC99;}
-    }
-
-    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-        .HPDiapoVerticalGauche,.HPDiapoVerticalDroite{background-color: fuchsia;}
-        .HPDroite,.HPGauche{background: #C8D215;}
-        .HPDroite1,.HPGauche1{background: royalblue;}
-        .HPDroite2,.HPGauche2{background: #00CC99;}
-        .HPDroite3,.HPGauche3{background: yellow;}
-    }
-}
-//Pour le dev, code visuel sur les blocs selon le breakpoint : HP Diapo Panoramique
-// à commenter ou supprimer pour la production
-body .conteneur{
-        
-    .HPDiapo{background:gold;}
-    .HPBasGauche{background: #C8D215;}
-    .HPBasDroit{background: salmon;}
-   
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-        
-    .HPDiapo{background:$rose-fushia;}
-    .HPBasGauche{background:gold;}
-    .HPBasDroit{background:bisque;}
-    }
-   
-    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-        .HPDiapo{background: $vert;}
-        .HPBasGauche{background: gold;}
-        .HPBasDroit{background: red;}
-    }
-}
-
 /*//////////////////////\\\\\\\\\\\\\\\\\\\\\\
 ********** COULEUR LAYOUT NODE.TPL OVERRIDE **********
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/

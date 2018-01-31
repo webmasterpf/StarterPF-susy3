@@ -19,10 +19,16 @@
 
 //Code imbriqué à 100%
 body section.conteneur{
-            width: span(10 of $desktopcol);
-            margin-left: span(1 wide);//push
-    .annonce_1{}
-    .annonce_2{}
+            //inutile de définir taille
+            
+            .annonce_1{
+                width: span(10 of $desktopcol);
+     margin-left: span(1 wide);//push
+            }
+            .annonce_2{
+                width: span(10 of $desktopcol);
+     margin-left: span(1 wide);//push
+            }
     .HPDiapo{}
     .acces_rubriques{}
     .logo_partenaires{}
