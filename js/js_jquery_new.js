@@ -41,7 +41,17 @@
             console.log('bouton referme volet fonctionne !');
             $transformer.removeClass('is-open');
         });
-});
+
+        //Menu Pleine Page Overlay
+
+        $(".icon").click(function () {
+            $(".mobilenav").fadeToggle(500);
+            $(".top-menu").toggleClass("top-animate");
+            $(".mid-menu").toggleClass("mid-animate");
+            $(".bottom-menu").toggleClass("bottom-animate");
+
+        });
+    });
 
 
 //Pour une galerie standard : Flexslider

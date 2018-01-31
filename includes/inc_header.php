@@ -56,7 +56,18 @@
             if (!empty($menuDyn)): ?>
 <nav class="menuOver">    
           <?php print $menuDyn; ?>
-</nav><!-- /menuHead  -->        
+    
+     <a href="javascript:void(0)" class="icon">
+<div class="hamburger">
+  <div class="menui top-menu"></div>
+  <div class="menui mid-menu"></div>
+  <div class="menui bottom-menu"></div>
+</div>
+</a>
+    
+</nav>
+           
+            <!-- /menuHead  -->        
     <?php endif; ?>
 
         
