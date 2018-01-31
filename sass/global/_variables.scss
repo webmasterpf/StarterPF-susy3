@@ -20,7 +20,7 @@ http://oddbird.net/2017/06/28/susy3/
 
 //Mixins recréées pour Susy3
 // clearfix
-@mixin clearfix {
+@mixin clearfixsusy3 {
   &::after {
     clear: both;
     content: ' ';
@@ -75,13 +75,13 @@ box-sizing: $value;
 //Réglage du nombre de pixel pour changer de breakpoint() mixin 
 // qui simplifie les media-queries.Donner la largeur mini de l'ecran
 $mobile   :  (max-width 799px);//500px
-$tablet   :  (min-width 800px) (max-width 989px);//800px
+$tablet   :  (min-width 800px) (max-width 1023px);//800px
 
-$desktop  :  990px;// sortie=>> min-width: 990px
+$desktop  :  1024px;// sortie=>> min-width: 990px
 
 // Breakpoint pour les format paysage 
 $mobilelandscape : (min-height 319px) (max-height 765px) (orientation landscape);//pour orientation paysage
-$tabletlandscape: (min-height 767px) (max-width 1024px) (orientation landscape);//pour orientation paysage
+$tabletlandscape: (min-height 767px) (max-width 1023px) (orientation landscape);//pour orientation paysage
 
 //Valeurs de colonnes pour un contexte spécifié
 $mobilecol: susy-repeat(4);

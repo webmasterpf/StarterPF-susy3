@@ -8,6 +8,8 @@
 // @include breakpoint ($tablet){}
 
  body .conteneur #footer{
+     width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
     padding:0;
     color: $gris-clair-moyen;//Changer couleur selon besoin
     background: transparent url("../images/bg_footer.jpg") no-repeat scroll right bottom;

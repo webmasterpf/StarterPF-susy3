@@ -50,12 +50,16 @@
                     <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/></a>
                 <?php endif; ?>
             </div>
-      <nav class="menuOver">
-            <?php if (!empty($menuDyn)): ?>
-                <?php print $menuDyn; ?>
-            <?php endif; ?>
+      
+            <?php
+            //- positionner le bloc fournissant le menu dans cette région, pour v2018,le bloc Menu Général suffit
+            if (!empty($menuDyn)): ?>
+<nav class="menuOver">    
+          <?php print $menuDyn; ?>
+</nav><!-- /menuHead  -->        
+    <?php endif; ?>
 
-        </nav><!-- /menuHead -->
+        
 
            
 
@@ -65,6 +69,12 @@
             <?php if (!empty($site_slogan)): ?>
                 <div class="site-slogan">
                     <?php print $site_slogan; ?>
+                </div><!-- /site-slogan -->
+            <?php endif; ?>
+                
+                          <?php if (!empty($mission)): ?>
+                <div class="objectif">
+                    <?php print $mission; ?>
                 </div><!-- /site-slogan -->
             <?php endif; ?>
 

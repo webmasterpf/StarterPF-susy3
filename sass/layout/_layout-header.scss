@@ -13,7 +13,7 @@
                 display: block;
                 clear: both;}  
      .headHaut {
-      
+                @include clearfixsusy3;//Dispo sur tous supports
          .logoHead {
              padding: 4em 0 1em 0;
                     img{
@@ -28,13 +28,15 @@
          }
      }
      .headBas {
-        @include clearfix; 
-         .site-slogan{}
+                  @include clearfixsusy3;//Dispo sur tous supports
+        .site-slogan,.objectif{
+            padding: em(5px) 0 0 0 //Ajoute un padding pour positionner boite
+        }
          .headSearch{
-          /*@include squish(0.3); //Ajoute un margin avant et aprés l'element pour le centrer*/
-          margin: span(0.3);
+          padding: em(5px) 0 0 0 //Ajoute un padding pour positionner boite de recherche
+          
          }
-        .menuHead{}  
+        nav.menuOver{}  
      }                
      
      
@@ -42,24 +44,26 @@
      @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
           //@include clearfix;
          .headHaut {
-             width: span(12);         
+                      width: span( 12 of $desktopcol);       
+            
              .logoHead { 
                 /*width: span(first 2 of $desktopcol);*/
-                width: span( 3 of $desktopcol);         
+                width: span( 3 of $desktopcol);       
+                float: left;
                 padding: 0;
              }
-                   .menuHead{
-             aside.menuDyn{
-
-                 ul#superfish-1{}
-             }
+                   nav.menuOver{
+                width: span( 3 of $desktopcol);       
+                float: right;
+         
              } 
             
          }
          .headBas {
-            width: span( 12 );         
-             .site-slogan{width: span(4 of $desktopcol ); float: left;        }
-             .headSearch{width: susy-span( 5 of $desktopcol );float: right;         }
+            width: span( 12 of $desktopcol);       
+            
+             .site-slogan,.objectif{width: span(8 of $desktopcol ); float: left;  margin-left: gutter(of 6);    }
+             .headSearch{width: span( 3 of $desktopcol );float: right; margin-right: gutter(of 6);        }
        
 
          }
@@ -70,11 +74,11 @@
              .menuImg {}
          }
          .headBas {
-             .site-slogan{width: span( 4 of $tabletcol);}
+             .site-slogan,.objectif{width: span( 4 of $tabletcol);}
              .headSearch{width: span( 4 of $tabletcol );}
              
          }
-          .menuHead{
+          nav.menuOver{
            
              aside.menuDyn{
                
@@ -133,7 +137,7 @@
   margin: 0;
 }
 
-.site-slogan {
+.site-slogan,.objectif {
   color: white;
   font-size: small;
   text-align: center;

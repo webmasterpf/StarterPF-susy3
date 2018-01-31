@@ -19,19 +19,30 @@
 
 //Code imbriqué à 100%
 body section.conteneur{
-            //inutile de définir taille
-            
-            .annonce_1{
-                width: span(10 of $desktopcol);
-     margin-left: span(1 wide);//push
-            }
-            .annonce_2{
-                width: span(10 of $desktopcol);
-     margin-left: span(1 wide);//push
-            }
-    .HPDiapo{}
-    .acces_rubriques{}
-    .logo_partenaires{}
+    //inutile de définir taille
+
+    .annonce_1{
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
+    }
+    .annonce_2{
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
+    }
+    .HPDiapo{
+        iframe{
+            @include adaptable-img;
+            @include img-centered;
+        }
+    }
+    .acces_rubriques{
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
+    }
+    .logo_partenaires{
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
+    }
 }
 // #############################
 // Layout avec body.conteneur-flex
