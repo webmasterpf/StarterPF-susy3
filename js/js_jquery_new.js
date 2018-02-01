@@ -42,15 +42,6 @@
             $transformer.removeClass('is-open');
         });
 
-        //Menu Pleine Page Overlay
-
-        $(".icon").click(function () {
-            $(".mobilenav").fadeToggle(500);
-            $(".top-menu").toggleClass("top-animate");
-            $(".mid-menu").toggleClass("mid-animate");
-            $(".bottom-menu").toggleClass("bottom-animate");
-
-        });
     });
 
 
@@ -332,8 +323,15 @@ $(window).resize(function(){
 //        $('.mixitup').mixItUp();
 //    });
 
-
-
-
+ //Menu Pleine Page Overlay
+$(document).ready(function () {
+  $(".icon").click(function () {
+        $('.mobilenav').fadeToggle(500);
+            $('.top-menu').toggleClass('top-animate');
+            $('.mid-menu').toggleClass('mid-animate');
+            $('.bottom-menu').toggleClass('bottom-animate');
+  });
+});
+      
 
 })(jQuery);

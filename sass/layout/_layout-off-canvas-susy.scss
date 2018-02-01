@@ -8,8 +8,8 @@ Quand la réorganisation via susy ne suffit pas
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
 
 body .conteneur {
-    $off-canvas-width: span(2 wide);
-    $off-canvas-left: 70%;
+    $off-canvas-width:  span(10 of $desktopcol);
+         $off-canvas-left: 70%;
 
     .transformer {
         @include trans-prep;
@@ -25,10 +25,10 @@ body .conteneur {
         top: 1em;//position de départ
         bottom: 0;
         height: auto;//limite la hauteur du bloc
-
+        margin-left: span(1 wide);//push;
     }
     .close{
-        background: $rose-fushia;//changer couleur selon le site !!!
+        background: $orange-fonce;//changer couleur selon le site !!!
     }
     img.close-btn{
         vertical-align: middle;
@@ -65,20 +65,20 @@ $off-canvas-top: 10.3em;
         }
         .off-canvas{
             position: absolute;
-            width: 100%;
+            
             left: 0;
             top: -$off-canvas-top;//position de départ
             bottom: 0;
             height: $off-canvas-height;//limite la hauteur du bloc
             @include arrondis;
-            background: $rose-fushia;//changer couleur selon le site !!!
+            background: $orange-fonce;//changer couleur selon le site !!!
         }
         
     .menu-toggle, .transformer.is-open > .menu-toggle{
             position: relative;
             padding: 0.3em;
             left: 40%;
-            top: -2.3em;//position de l'onglet
+            top: 0;//position de l'onglet
                     /* CSS3 : pour IE, fixer rotation */
         -ms-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
@@ -88,71 +88,3 @@ $off-canvas-top: 10.3em;
 
     }
 }
-/*body .conteneur {
-    $off-canvas-width: span(2 wide);
-
-    .transformer {
-        @include trans-prep;
-        transition: transform 0.3s ease;
-        &.is-open {
-            transform: translate3d($off-canvas-width, 0, 0);
-        }
-    }
-    .off-canvas {
-        position: absolute;
-        width: $off-canvas-width;
-        left: -$off-canvas-width;
-        top: 1em;//position de départ
-        bottom: 0;
-        height: auto;//limite la hauteur du bloc
-
-    }
-    .menu-toggle, .transformer.is-open > .menu-toggle{
-        position: absolute;
-        padding: 0 gutter();
-        Coins arrondis
-        border-radius: 0 0 em(8px) em(8px);
-        background: #555;
-        color: #fff;
-        text-decoration: none;
-        padding: 0.3em;
-        top: 4em;
-        left: -4em;
-        
-         quelques styles CSS3 
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    @include breakpoint ($desktop){
-$off-canvas-height: 10em;        
-        .transformer {
-
-            transition: transform 0.3s ease;
-            &.is-open {
-                transform: translate3d(0, 10em, 0);
-            }
-        }
-        .off-canvas{
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: -$off-canvas-height;//position de départ
-            bottom: 0;
-            height: $off-canvas-height;//limite la hauteur du bloc
-        }
-    .menu-toggle, .transformer.is-open > .menu-toggle{
-            position: relative;
-            padding: 0.3em;
-            left: 40%;
-            top: -2.0em;
-                     CSS3 : pour IE, fixer rotation 
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        }
-
-    }
-}*/

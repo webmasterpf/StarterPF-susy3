@@ -140,7 +140,7 @@ function starter_d6_susy3_preprocess_page(&$vars){
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_exit.js', 'theme');
    
 
-    //die('les JS sont chargés');
+//    die('les JS sont chargés');
     // We need to rebuild the scripts variable with the new script included.
     $vars['scripts'] = drupal_get_js();
 }

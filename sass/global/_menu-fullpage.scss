@@ -2,6 +2,10 @@
 https://www.jqueryscript.net/menu/Responsive-Fullscreen-Navigation-Menu-with-jQuery-CSS3.html
 Menu plein page en surimpression - Modernise la navigation pour la Version 2018
 */
+
+//@include breakpoint ($mobile){}
+  //@include breakpoint ($desktop){}
+  //@include breakpoint ($tablet){}
 body .conteneur{
 
     .menui {
@@ -14,14 +18,23 @@ body .conteneur{
 
     .icon {
         z-index: 999;
-        position: fixed;
+        position: relative;
         display: block;
-        padding: em(9px);
+        float: right;
+        margin: 0 0 10% 0;
+        top: 0;
+        left: -10%;
+        bottom: 0;
+   
+        @include breakpoint ($desktop){
+            padding: em(9px);
         height: em(32px);
         width: em(32px);
-        margin: 0px;
-        top: 0;
-        left: 0;
+        margin: 5% 5% 0 0;
+        top: em(0px);
+        left: em(0px);
+        }
+        
     }
 
     .mobilenav {
@@ -35,6 +48,9 @@ body .conteneur{
         height: 100%;
         background: $orange-fonce;
         opacity: 0.9;
+        ul{
+            list-style: none;
+        }
         li {
             list-style-type: none;
             text-align: center;
@@ -45,9 +61,16 @@ body .conteneur{
                 text-decoration: none;
                 font-weight: 300;
                 width: 100%;
+                &:hover{
+                    color: $gris-anthracite;
+                }
             }
         }
         li:first-child { margin-top: 60px; }
+        li.leaf {
+    list-style-type: none;
+    list-style-image: none;
+        }
     }
 
 
@@ -74,13 +97,11 @@ body .conteneur{
     }
     .top-menu {
         top: 5px;
-   
-    }
+       }
 
     .mid-menu {
         top: 13px;
-     
-    }
+         }
 
     .bottom-menu {
         top: 21px;

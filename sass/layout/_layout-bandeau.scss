@@ -7,7 +7,7 @@ Style - layout pour le bandeau des autres sites de l'ASSO
 ---------------------------------*/
 .bandeau-pagetop {
     display: block;
-    
+   // voir "_layout-off-canvas-susy.scss" pour taille du contenant
     ul{
             background: $blanc-casse;
             
@@ -33,16 +33,16 @@ Style - layout pour le bandeau des autres sites de l'ASSO
             background: $blanc-casse;
             display: block;
             height: 2em;
-            @include squish (0.05,0.05);
+            
             li{
-                @include span (1 of 7);
+                float: left;
                 list-style : none;
-
+                margin: 0 4%;
                 &:last-child{
-                    @include last;
+                    /*@include last;*/
                 }
                 a{
-                    text-decoration: none;font-size:x-small;
+                    text-decoration: none;font-size:small;
                     &:hover{color: #FBFBFB;
                             transition: background 2s ease,color 1000ms ease;-webkit-transition: background 2s ease,color 1000ms ease;}
                 }
