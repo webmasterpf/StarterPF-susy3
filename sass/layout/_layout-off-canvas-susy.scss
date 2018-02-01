@@ -8,7 +8,7 @@ Quand la réorganisation via susy ne suffit pas
 \\\\\\\\\\\\\\\\\\\\\\\//////////////////////*/
 
 body .conteneur {
-    $off-canvas-width:  span(10 of $desktopcol);
+    $off-canvas-width:  span(2 of $mobilecol);
     $off-canvas-left: 70%;
 
     .transformer {
@@ -45,7 +45,7 @@ body .conteneur {
         text-decoration: none;
         padding: 0.3em;
         top: 0;//vertical 4em
-        left: 2em; //vertical -4em
+        left: 20%; //vertical -4em- position onglet sur mobile
 
         /* quelques styles CSS3 270deg pour vertical gauche ; 0deg */
         -ms-transform: rotate(0deg);
@@ -56,6 +56,7 @@ body .conteneur {
     @include breakpoint ($desktop){
         $off-canvas-height: 7.8em;   
         $off-canvas-top: 10.3em;   
+        
         .transformer {
 
             transition: transform 0.3s ease;
@@ -64,8 +65,8 @@ body .conteneur {
             }
         }
         .off-canvas{
+            width: span(10 of $desktopcol);
             position: absolute;
-
             left: 0;
             top: -$off-canvas-top;//position de départ
             bottom: 0;
