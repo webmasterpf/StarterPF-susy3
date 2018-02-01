@@ -9,7 +9,7 @@ Quand la réorganisation via susy ne suffit pas
 
 body .conteneur {
     $off-canvas-width:  span(10 of $desktopcol);
-         $off-canvas-left: 70%;
+    $off-canvas-left: 70%;
 
     .transformer {
         @include trans-prep;
@@ -44,18 +44,18 @@ body .conteneur {
         color: #fff;
         text-decoration: none;
         padding: 0.3em;
-        top: 0em;//vertical 4em
+        top: 0;//vertical 4em
         left: 2em; //vertical -4em
-        
+
         /* quelques styles CSS3 270deg pour vertical gauche ; 0deg */
-      -ms-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
     }
     @include breakpoint ($desktop){
-$off-canvas-height: 7.8em;   
-$off-canvas-top: 10.3em;   
+        $off-canvas-height: 7.8em;   
+        $off-canvas-top: 10.3em;   
         .transformer {
 
             transition: transform 0.3s ease;
@@ -65,7 +65,7 @@ $off-canvas-top: 10.3em;
         }
         .off-canvas{
             position: absolute;
-            
+
             left: 0;
             top: -$off-canvas-top;//position de départ
             bottom: 0;
@@ -73,18 +73,23 @@ $off-canvas-top: 10.3em;
             @include arrondis;
             background: $orange-fonce;//changer couleur selon le site !!!
         }
-        
-    .menu-toggle, .transformer.is-open > .menu-toggle{
+
+        .menu-toggle,.transformer.is-open > .menu-toggle{
             position: relative;
             padding: 0.3em;
             left: 40%;
-            top: 0;//position de l'onglet
-                    /* CSS3 : pour IE, fixer rotation */
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        }
 
+            /* CSS3 : pour IE, fixer rotation */
+            -ms-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+        .menu-toggle{
+            top: 0;//position de l'onglet fermé
+        }
+        .transformer.is-open > .menu-toggle{
+            top: em(-37px);//position de l'onglet ouvert
+        }
     }
 }
