@@ -332,6 +332,9 @@ $(document).ready(function () {
             $('.bottom-menu').toggleClass('bottom-animate');
   });
 });
-      
+
+//  Utilisation du Lazyload pour les éléments contenus dans certains conteneurs
+$('.conteneur').find('img').lazyLoadXT();
+$('.conteneur').find('iframe').lazyLoadXT();
 
 })(jQuery);
