@@ -117,8 +117,8 @@ function starter_d6_susy3_preprocess_page(&$vars){
 // mise en place du noConflict pour utiliser plusieurs versions de jQuery   
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_init.js', 'theme');
 //chargement des plugins qui utilisent une version de jQuery plus récente
+    drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/3rdparty/bxslider/js/jquery.bxslider.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.flexslider.js', 'theme');
-    drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.bxslider.min.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/stacktable.min.js', 'theme');
     //drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/wookmark.min.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.masonry.min.js', 'theme');

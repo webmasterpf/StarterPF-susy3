@@ -17,7 +17,14 @@ body .conteneur {
         
     }
     .annonce_2{}
-    .HPDiapo{}
+    .HPDiapo{
+        a{
+            color: white;
+            font-family: $FontRaleway;
+            font-size: xx-large;
+            text-decoration: none;
+        }
+    }
     .acces_rubriques{}
     .logo_partenaires{}
     

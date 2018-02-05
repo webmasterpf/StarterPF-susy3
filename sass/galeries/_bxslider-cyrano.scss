@@ -5,7 +5,7 @@ Override du style de galerie Bxslider
 //@include breakpoint ($mobile){}
 //@include breakpoint ($desktop){}
 //@include breakpoint ($tablet){}
-.HPDiapoVerticalDroite,
+
 .galerie-vdl {
     .bx-wrapper{
     margin: 0 auto;
@@ -25,7 +25,7 @@ Override du style de galerie Bxslider
 }
 }
 
-.HPDiapoVerticalDroite{
+.HPDiapo{
     .bx-wrapper{
         .bx-viewport {
         box-shadow: none;
@@ -34,10 +34,11 @@ Override du style de galerie Bxslider
         }
         .bx-caption{
             bottom: em(9px);
-            left: em(11px);
-            width: 96%;
+            left: 8%;
+            width: 80%;
             //couleur fond des captions
-            @include rgba-background($rose-fushia, 0.7);
+            @include rgba-background($orange-fonce, 0.85);
+            margin: 0 auto;
             span{
                  color: white;
                 padding: em(5px);

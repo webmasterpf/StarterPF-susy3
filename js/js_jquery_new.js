@@ -90,7 +90,7 @@
         });
     });
     
-    //Pour le BxSlider - Ajouter la classe dans views au niveau des paramètres d'affichage
+    //Pour le BxSlider - Ajouter la classe dans views au niveau des paramètres d'affichage > classe de la liste
     //    jQuery(window).load(function (){
         jQuery(document).ready(function(){
         console.log('Chargement des paramètres de BxSlider');
@@ -112,11 +112,12 @@
         console.log('Chargement des paramètres de BxSlider HP');
         $('.bxslider-hp').bxSlider({
             mode: 'fade',
-            controls: false,
+            controls: true,
             captions: true,
             auto: true,
             autoStart: true,
-            pager: false
+            pager: false,
+            keyboardEnabled: true
         });
 //   alert('BxSlider est chargé');
    
