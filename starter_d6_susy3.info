@@ -41,6 +41,9 @@ stylesheets[all][] = 3rdparty/baguettebox/baguetteBox.min.css
 ;Style pour Chocolat (vignettes zoomables RWD)
 ;stylesheets[all][] = 3rdparty/chocolat/chocolat.css
 
+;Style pour Lightslider (galerie RWD)
+stylesheets[all][] = 3rdparty/lightslider/css/lightslider.css
+
 ;Style pour Responsive Slides (diaporama RWD)
 stylesheets[all][] = js/jquery_plugin/responsiveslides/responsiveslides.css
 

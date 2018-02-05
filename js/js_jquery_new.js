@@ -90,8 +90,8 @@
         });
     });
     
-    //Pour le BxSlider
-//    jQuery(window).load(function (){
+    //Pour le BxSlider - Ajouter la classe dans views au niveau des paramètres d'affichage
+    //    jQuery(window).load(function (){
         jQuery(document).ready(function(){
         console.log('Chargement des paramètres de BxSlider');
 //  $('.bxslider').bxSlider({
@@ -150,7 +150,9 @@
 
 
     });
-
+    jQuery(document).ready(function() {
+    $(".lightSlider").lightSlider(); 
+  });
    
   //Pour stacktable (tableaux RWD)
     jQuery(window).load(function (){

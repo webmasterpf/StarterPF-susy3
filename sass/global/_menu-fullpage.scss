@@ -50,6 +50,8 @@ body .conteneur{
         opacity: 0.9;
         ul{
             list-style: none;
+            width: span(5 of $desktopcol);
+        margin-left: span(3 wide);//push
         }
         li {
             list-style-type: none;

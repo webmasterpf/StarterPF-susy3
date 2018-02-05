@@ -94,3 +94,8 @@ par
 <div id="transparency">
 <h2>[teaser]</h2>
 </div>
+
+JAVASCRIPT
+------------------------
+LazyLoad : remplacer "src" par "data-src" pour images, video, etc, par exemple:
+>> data-src="https://www.youtube.com/embed/

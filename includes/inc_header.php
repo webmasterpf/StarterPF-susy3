@@ -53,18 +53,18 @@
             </div>
       
             <?php
-            //- positionner le bloc fournissant le menu dans cette région, pour v2018,le bloc Menu Général suffit
+            //- positionner le bloc fournissant le menu dans cette région, pour v2018,le bloc Menu Général suffit (avec classe mobilenav) + bloc avec JS (sans editeur)
             if (!empty($menuDyn)): ?>
 <nav class="menuOver">    
           <?php print $menuDyn; ?>
     
-     <a href="javascript:void(0)" class="icon">
+<!--     <a href="javascript:void(0)" class="icon">
 <div class="hamburger">
   <div class="menui top-menu"></div>
   <div class="menui mid-menu"></div>
   <div class="menui bottom-menu"></div>
 </div>
-</a>
+</a>-->
     
 </nav>
            
