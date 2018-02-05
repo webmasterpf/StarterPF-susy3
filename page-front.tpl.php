@@ -5,9 +5,9 @@ include ($theme_path . '/includes/inc_header.php');
 ?>  
 <!-- ______________________ ANNONCE _______________________ -->
 
-<?php if ($Annonce1): ?>
-    <div class="annonce_1">
-        <?php print $Annonce1; ?>
+<?php if ($AnnonceAlaUne): ?>
+    <div class="annonce_1 annonce_alaUne">
+        <?php print $AnnonceAlaUne; ?>
     </div> <!-- /#content-top -->
 <?php endif; ?>
 

@@ -79,7 +79,7 @@ regions[search_box] = Zone recherche - Bloc
 regions[bandeau1] = Bandeau haut de page
 
 ;Homepage Pleine Page - Mobile First
-regions[Annonce1] = Dernières Actu Homepage - Bloc
+regions[AnnonceAlaUne] = Dernières Actu Homepage - Bloc
 regions[AnnonceDeuil] = Deuil Homepage - Bloc
 regions[DiapoHPFull] = Diaporama Homepage - Bloc
 regions[RubriquesHP1] = Accès Rubriques 1 Homepage - Bloc

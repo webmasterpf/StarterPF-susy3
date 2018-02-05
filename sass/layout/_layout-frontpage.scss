@@ -4,10 +4,10 @@
 |      PLEINE LARGEUR                    |
 |--------------------------------------*/
 
-  //@include breakpoint ($mobile){}
-  //@include breakpoint ($desktop){}
-  //@include breakpoint ($tablet){}
-  //@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
 
 
 /*---DIAPORAMA HOMEPAGE TEXTE DYNAMIQUE  PANORAMIQUE----*/
@@ -20,20 +20,23 @@
 //Code imbriqué à 100%
 body section.conteneur{
     //inutile de définir taille
-
+    iframe,img{
+        @include adaptable-img;
+        @include img-centered;
+    }
     .annonce_1{
         width: span(10 of $desktopcol);
         margin-left: span(1 wide);//push
+        @include clearfixsusy3;
     }
     .annonce_2{
         width: span(10 of $desktopcol);
         margin-left: span(1 wide);//push
+        @include clearfixsusy3;
     }
     .HPDiapo{
-        iframe{
-            @include adaptable-img;
-            @include img-centered;
-        }
+        @include clearfixsusy3;
+
     }
     .acces_rubriques{
         width: span(10 of $desktopcol);

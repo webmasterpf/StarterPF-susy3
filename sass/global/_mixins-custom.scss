@@ -44,6 +44,13 @@
     //préfixage via Gulp autoprefixer aprés compilation
     background-size: $taille-bg;
 }
+
+$imagedir:'../images/'; // definir ici le chemin vers le dossier image
+
+@mixin backgroundImage($filename,$position:0 0,$repeat: no-repeat) {
+    background: transparent url('#{$imagedir}#{$filename}') $repeat $position;
+}
+
 /*---------- PIE pour CSS3 IE --------------*/
 @mixin PIE {
     behavior: url(./../sites/all/libraries/PIE/PIE.htc);
