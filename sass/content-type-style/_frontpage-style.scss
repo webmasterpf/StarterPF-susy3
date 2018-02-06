@@ -17,6 +17,13 @@ body .conteneur {
         
     }
     .annonce_alaUne{
+        h3{//ajout picto en place du titre h3
+            @include backgroundImage (('bg-merci.gif'));
+            text-indent: -9000px;
+            float: left;
+            height: em(80px);
+            margin-left: span(0.1);
+        }
         ul.actu-brulante{
             list-style: none;
             
@@ -27,7 +34,7 @@ body .conteneur {
                     float: none;
                 }
                 list-style: none;
-                margin: 0 0 0 span(0.2);
+                margin: span(0.1) 0 span(0.1) span(0.2);
                 float: left;
             }
             .breaking-news-element{
@@ -68,7 +75,7 @@ body .conteneur {
             border: em(3px) $noir solid;
             font-family: $FontRaleway;
             font-size: medium;
-            @include backgroundImage(('deuil.png'), no-repeat, top right);
+            @include backgroundImage(('deuil.png'), no-repeat, top right);//nouvelle mixin 2018
 
             text-transform: uppercase;
         }

@@ -12,7 +12,7 @@ body .conteneur{
         background: #fff;
         transition: 0.6s ease;
         transition-timing-function: cubic-bezier(.75, 0, .29, 1.01);
-        margin-top: 10px;
+        margin-top: span(0.2);
         position: absolute;
     }
 
@@ -50,25 +50,28 @@ body .conteneur{
         opacity: 0.9;
         ul{
             list-style: none;
-            width: span(5 of $desktopcol);
-        margin-left: span(3 wide);//push
+            width: span(7 of $desktopcol);
+        margin-left: span(2  wide);//push
+        font-family: $FontRaleway;
         }
         li {
             list-style-type: none;
             text-align: center;
-            padding: 10px;
+            padding: span(0.1);
             a {
-                font-size: 150%;
+                display: block;
+                font-size: xx-large;
                 color: #fff;
                 text-decoration: none;
-                font-weight: 300;
+                font-weight: lighter;
                 width: 100%;
                 &:hover{
                     color: $gris-anthracite;
+                    background: white;
                 }
             }
         }
-        li:first-child { margin-top: 60px; }
+        li:first-child { margin-top: span(0.5); }
         li.leaf {
     list-style-type: none;
     list-style-image: none;
