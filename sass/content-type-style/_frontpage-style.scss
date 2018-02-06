@@ -6,31 +6,31 @@
 |       FRONTPAGE INSTITUTIONNEL       |
 |--------------------------------------*/
 
-  //@include breakpoint ($mobile){}
-  //@include breakpoint ($desktop){}
-  //@include breakpoint ($tablet){}
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
 
 //Code imbriqué à 100%
 body .conteneur {
-    
+
     .annonce_1{
-        
+
     }
     .annonce_alaUne{
         h3{//ajout picto en place du titre h3
            display: none;
            @include breakpoint ($desktop){
                display: initial;
-            @include backgroundImage (('bg-merci.gif'));
-            text-indent: -9000px;
-            float: left;
-            height: em(80px);
-            margin-left: span(0.1);
-        }
+               @include backgroundImage (('bg-merci.gif'));
+               text-indent: -9000px;
+               float: left;
+               height: em(80px);
+               margin-left: span(0.1);
+           }
         }
         ul.actu-brulante{
             list-style: none;
-            
+
             li{
                 @include breakpoint ($mobile){
                     width: 95%;
@@ -42,21 +42,21 @@ body .conteneur {
                 float: left;
             }
             .breaking-news-element{
-            padding: span(0.005);
-            border: em(3px) $orange-fonce solid;
-            font-family: $FontRaleway;
-            font-size: medium;
-            
-            text-transform: uppercase;
-        }
-        a{
-            color: $gris-anthracite;
-            text-decoration:none;
-            
-            &:hover{
-                color: $gris-clair-moyen;
+                padding: span(0.005);
+                border: em(3px) $orange-fonce solid;
+                font-family: $FontRaleway;
+                font-size: medium;
+
+                text-transform: uppercase;
             }
-        }
+            a{
+                color: $gris-anthracite;
+                text-decoration:none;
+
+                &:hover{
+                    color: $gris-clair-moyen;
+                }
+            }
         }
     }
     .annonce_2{
@@ -64,35 +64,35 @@ body .conteneur {
             list-style: none;
             li{
                 @include breakpoint ($desktop){
-                    
-                    
+
+
                     float: none;
                 }
                 list-style: none;
                 width: 95%;
                 margin: 0 auto;
                 float: none;
-                
-            }
-              .breaking-news{
-            padding: span(0.005);
-            border: em(3px) $noir solid;
-            font-family: $FontRaleway;
-            font-size: medium;
-            @include backgroundImage(('deuil.png'), no-repeat, top right);//nouvelle mixin 2018
 
-            text-transform: uppercase;
-        }
-        a{
-            color: $gris-clair-moyen;
-            text-decoration:none;
-            @include breakpoint ($desktop){
-            color: $noir;
-                        }
-            &:hover{
-                color: $gris-clair-moyen;
             }
-        }
+            .breaking-news{
+                padding: span(0.005);
+                border: em(3px) $noir solid;
+                font-family: $FontRaleway;
+                font-size: medium;
+                @include backgroundImage(('deuil.png'), no-repeat, top right);//nouvelle mixin 2018
+
+                text-transform: uppercase;
+            }
+            a{
+                color: $gris-clair-moyen;
+                text-decoration:none;
+                @include breakpoint ($desktop){
+                    color: $noir;
+                }
+                &:hover{
+                    color: $gris-clair-moyen;
+                }
+            }
         }
     }
     .HPDiapo{
@@ -112,24 +112,102 @@ body .conteneur {
             }
         }
     }
-    .acces_rubriques{}
-    .logo_partenaires{}
-    
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-    //Taille du conteneur du groupe    
-  .annonce_1{}
-    .annonce_2{}
-    .HPDiapo{}
-    .acces_rubriques{}
-    .logo_partenaires{}
+    .acces_rubriques{
 
+        ul.rubriques-administratives{
+            list-style: none;
+            @include breakpoint ($desktop){
+            /*margin-left: span(2);*/
+            display: flex;
+            }
+            li{
+                margin: 0 0 em(5px) 0;
+                
+                background: $gris-anthracite;
+                color: whitesmoke;
+                @include breakpoint ($desktop){
+                max-width: 20%;
+                float: left;
+                display: block;
+                margin: 0;
+                cursor: pointer;
+                }
+                &:hover{
+                    background: $orange-fonce;
+                }
+                img{
+                    object-fit: cover;//permet que l'image occupe tout l'espace mais il faut définir une taille
+                    width: 100%;
+                    &:hover{
+                        filter: grayscale(100%);
+                    }
+                }
+                a{
+                    @include clearfixsusy3;
+                }
+                .overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+    
+}
+
+.rub-admin-image {
+    img:hover{
+        opacity: 1;
+    }
+    .overlay:hover{
+  bottom: 0;
+  height: 100%;
+  transform: translate(-50%, -50%);
     }
   
-    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-          .annonce_1{}
-    .annonce_2{}
-    .HPDiapo{}
-    .acces_rubriques{}
-    .logo_partenaires{}
 }
+
+.rub-admin-image:hover .overlay {
+  opacity: 1;
+}
+
+                span.titre-admin{
+                    display: block;
+                    text-align:center;
+                    a{
+                        color: whitesmoke;
+                        text-decoration: none;
+                        font-weight: bold;
+                    }
+                }
+                span.accroche-admin{
+                    font-size: small;
+                    padding: em(6px);
+                    display: block;
+                }
+            }
+        }
+    }
+    .logo_partenaires{}
+
+    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+        //Taille du conteneur du groupe    
+        .annonce_1{}
+        .annonce_2{}
+        .HPDiapo{}
+        .acces_rubriques{}
+        .logo_partenaires{}
+
+    }
+
+    @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
+        .annonce_1{}
+        .annonce_2{}
+        .HPDiapo{}
+        .acces_rubriques{}
+        .logo_partenaires{}
+    }
 }    
