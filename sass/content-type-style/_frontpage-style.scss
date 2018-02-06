@@ -18,11 +18,15 @@ body .conteneur {
     }
     .annonce_alaUne{
         h3{//ajout picto en place du titre h3
+           display: none;
+           @include breakpoint ($desktop){
+               display: initial;
             @include backgroundImage (('bg-merci.gif'));
             text-indent: -9000px;
             float: left;
             height: em(80px);
             margin-left: span(0.1);
+        }
         }
         ul.actu-brulante{
             list-style: none;
@@ -80,9 +84,11 @@ body .conteneur {
             text-transform: uppercase;
         }
         a{
-            color: $noir;
+            color: $gris-clair-moyen;
             text-decoration:none;
-            
+            @include breakpoint ($desktop){
+            color: $noir;
+                        }
             &:hover{
                 color: $gris-clair-moyen;
             }
@@ -95,6 +101,15 @@ body .conteneur {
             font-family: $FontRaleway;
             font-size: xx-large;
             text-decoration: none;
+        }
+        img{
+            zoom: 1.7;
+        }
+        .bxslider-hp{
+            a{
+                padding: 0 0 0 span(0.1);
+                display: block;
+            }
         }
     }
     .acces_rubriques{}

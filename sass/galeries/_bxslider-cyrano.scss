@@ -34,8 +34,9 @@ Override du style de galerie Bxslider
         max-height: 30em;
         }
         .bx-caption{
-            bottom: em(9px);
-            left: 8%;
+            position: fixed;
+            bottom: 0;
+            left: span(0.2);
             width: 80%;
             //couleur fond des captions
             @include rgba-background($orange-fonce, 0.85);
