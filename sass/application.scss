@@ -55,7 +55,7 @@ breakpoint-2.7.1
 
 // Import des partiels du layout du thème Drupal
 
-/*@import "./layout/_layout.scss";*/
+@import "./layout/_layout.scss";
 /*@import "./layout/_layout-nodes.scss";*/
 /*@import "./layout/_layout-nodes-flexbox.scss";*/
 @import "./layout/_layout-header.scss";
