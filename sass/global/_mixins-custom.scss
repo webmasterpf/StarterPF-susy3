@@ -288,9 +288,9 @@ filter : alpha(opacity=$opacite); /* IE < 8 */
 }
 //https://codepen.io/skeate/pen/YPyqWd
 @mixin textedansformeronde($radius){
-  width: $radius*2;
-  height: $radius*2;
-  border-radius: $radius;
+  min-width: #{$radius*2}vw;
+  min-height:#{$radius*2}vh;
+  border-radius: #{$radius}em;
   &::before{
     content: '';
     height: 100%;

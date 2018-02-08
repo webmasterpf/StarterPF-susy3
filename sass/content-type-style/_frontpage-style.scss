@@ -273,7 +273,7 @@ body .conteneur {
                         }
                     }
                     div.views-field-title{
-                        @include textedansformeronde(5.5em);
+                        @include textedansformeronde(5);
                         background: $gris-anthracite;
                         padding-top: span(3);
                               
@@ -283,7 +283,7 @@ body .conteneur {
                         word-break: break-word;
                         word-spacing: em(3px);
                              @include breakpoint($desktop) {
-                        padding-top: span(5);
+                        padding-top: span(1);
                       
                         }
                         &:hover{
