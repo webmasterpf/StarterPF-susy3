@@ -287,7 +287,7 @@
             $(this).removeAttr('width');
             $(this).removeAttr('height');
         });
-$("#media-vimeo-1 iframe").height('33vh').width('100vw');
+$("#media-vimeo-1 iframe").height('23vh').width('100vw');
 
 
         //Retrait position:absolute sur le Views Slideshow       
