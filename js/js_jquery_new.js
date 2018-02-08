@@ -258,6 +258,7 @@ $('#liste-vdl div.view-content').attr("data-columns","");
 
 //Action sur taille des images : retrait de toutes les tailles en dur (HTML) de manière ciblée
  //$('img').each(function(){
+ console.log('Nettoyage sur divers éléments : objets,iframe,....');
     $('.fiche-formation img').each(function(){
  $(this).removeAttr('width');
  $(this).removeAttr('height');
@@ -276,6 +277,10 @@ $('#liste-vdl span.titre-vdl > a').css('text-transform','lowercase');
         $("#colonne-2 p").removeAttr("style");
         $("#colonne-2 ul").removeAttr("style");
         $(".masonry-brick").removeAttr("style");//pas d'effet
+ 
+ //Retrait du style des objets imbriqués comme object,iframe,etc...
+ $("#media-youtube-default-external-object-1").removeAttr("style");
+ $("#media-youtube-1").remove();
  
     //Retrait position:absolute sur le Views Slideshow       
   $('.views_slideshow_cycle_slide:visible').css('position', 'relative', 'important');

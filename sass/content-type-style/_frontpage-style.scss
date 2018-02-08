@@ -278,25 +278,70 @@ body .conteneur {
             }
         }
         aside.AccesLycees{
-            .table-acces-lycees{
-                border:0;
-                tr{
-                    border: 0;
+            
+            ul.acces-lycees{
+                display: grid;//conserve ordre des lignes
+                @include breakpoint($desktop) {
+                    display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
                 }
-               
-                tr.row-1{
-                     td.col-1{
-                    background: $bleu-turquoise;
-                }
-                          td.col-2{
-                    background: $gris-clair-moyen;
-                }
-                td.col-3{
-                           background: $vert;
-                }
+  li{
+      list-style: none;
+      margin: 0;
+      text-align:center;
+      @include breakpoint($desktop) {
+      width: span(1 of 4);
+      margin: span(0.0001);
+      }
+  }
+  li.views-row-1{
+      order:9;
+      background: $orange-fonce;
+     }
+  li.views-row-2{
+      order:1;
+      background: $bleu-turquoise;
+     }
+     li.views-row-3{
+      order:2;
+      background: $gris-clair-moyen;
+     }
+     li.views-row-4{
+      order:3;
+      background: $vert;
+     }
+     li.views-row-5{
+      order:4;
+      background: $orange;
+     }
+     li.views-row-6{
+      order:6;
+         background: $rouge;
+     }
+     li.views-row-7{
+      order:7;
+      background: $violet;
+      object{
+          display: none !important;//Exclu la video du rocher de l'affichage
+      }
+     }
+     li.views-row-8{
+      order:8;
+      background: $rose-fushia;
+     }
+  li.views-row-9{
+      order:5;
+      background: $gris-anthracite;
+      a{
+          display: none;
+      }
+   
+  }
             }
-                }
-      
+            
+            
+
             .container {
                 position: relative;
             }
@@ -306,7 +351,7 @@ body .conteneur {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                
+
             }
 
             img { 
@@ -314,7 +359,7 @@ body .conteneur {
                 height: auto;
                 opacity: 0;
                 &:hover{
-                   
+
                 }
             }
             a{
@@ -322,12 +367,13 @@ body .conteneur {
                 color: whitesmoke;
                 text-transform: uppercase;
                 font-size: medium;
+                
                 &:hover{}
             }
             img:hover,a:hover{
-                 cursor: pointer;
-                    opacity: 0.8;
-        }
+                cursor: pointer;
+                opacity: 0.8;
+            }
         }
     }
     .logo_partenaires{}

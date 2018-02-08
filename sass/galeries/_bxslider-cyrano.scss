@@ -50,7 +50,12 @@ Override du style de galerie Bxslider
             }
         }
     }
-
+    ul.bxslider-hp{
+        li,img{
+            margin: 0;
+        }
+        
+    }
 }
 
 #colonne-1.page-lycee{
