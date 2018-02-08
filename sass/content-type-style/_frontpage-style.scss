@@ -257,22 +257,41 @@ body .conteneur {
 
                     a{
                         display: block;
-                        padding-top: span(5);
-                        background: $gris-anthracite;
-                        border-radius: 50%;
-                        width: 12em;
-                        height: 12em;
-                        color: whitesmoke;
-                        text-align: center;
-                        text-decoration: none;
+                        /*padding-top: span(3);*/
+                        
+               text-decoration: none;
                         text-transform: uppercase;
                         font-weight: bold;
-                        transition-duration: 0.4s;
+                        color: whitesmoke;
+                        @include breakpoint($desktop) {
+             
+                        }
                         &:hover{
 
                             color: $gris-clair-moyen;
-                            background:  $orange-fonce;
+                        
                         }
+                    }
+                    div.views-field-title{
+                        @include textedansformeronde(5.5em);
+                        background: $gris-anthracite;
+                        padding-top: span(3);
+                              
+                        text-align: center;
+                        
+                        transition-duration: 0.4s;
+                        word-break: break-word;
+                        word-spacing: em(3px);
+                             @include breakpoint($desktop) {
+                        padding-top: span(5);
+                      
+                        }
+                        &:hover{
+                                background:  $orange-fonce;
+                        }
+                    }
+                    span.field-content{
+                        
                     }
                 }
             }
@@ -332,7 +351,10 @@ body .conteneur {
      }
   li.views-row-9{
       order:5;
-      background: $gris-anthracite;
+      background: transparent;
+      iframe{
+          margin: em(18px) 0 !important;
+      }
       a{
           display: none;
       }
@@ -378,7 +400,7 @@ body .conteneur {
     }
     .logo_partenaires{}
 
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
+    @include breakpoint($desktop) {/*    //Dimensions pour les pc
         //Taille du conteneur du groupe    
         .annonce_1{}
         .annonce_2{}

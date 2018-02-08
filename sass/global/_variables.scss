@@ -20,13 +20,7 @@ http://oddbird.net/2017/06/28/susy3/
 
 //Mixins recréées pour Susy3
 // clearfix
-@mixin clearfixsusy3 {
-  &::after {
-    clear: both;
-    content: ' ';
-    display: table;
-  }
-}
+//voir fichier mixins_custom
 
 // overall container mixin
 @mixin container(
