@@ -268,8 +268,9 @@ body .conteneur {
                         /*background: $gris-anthracite;*/
                         @include backgroundImage("bg_acces_contact.svg");
                         background-size: cover;
-                        min-width: 13em;
-                        min-height: 15em; 
+                        background-clip: padding-box;
+                        min-width: 11vw;
+                        min-height: 11vw; 
                         transition-duration: 0.4s;
                         text-align: center;
                          @include cesure-txt(break-word);
@@ -277,27 +278,46 @@ body .conteneur {
                         clip-path: circle(50% at 50% 50%);
               
                         @include breakpoint($desktop) {
-                        min-height: 13em;          
-                       
-                        word-spacing: em(3px);
+                            min-height: 11vw;          
+
+                            word-spacing: em(3px);
                         }
                         &:hover{
-                             background:  $orange-fonce;
-                            /*color: $gris-clair-moyen;*/
-                            @include backgroundImage("bg_acces_contact.svg", -29em top);
+                            background:  $orange-fonce;
+                            
+/*                            @include backgroundImage("bg_acces_contact.svg", -29em top);*/
                             background-size: cover;
+                            
+                            text-indent: em(-9000px);
                         }
                     }
-                    .views-row-1 a:hover{
-                        @include backgroundImage("bg_acces_contact.svg", -14.5em top);
-                            background-size: cover;
-                    }
-                    .views-row-2 a:hover{
-                        @include backgroundImage("bg_acces_contact.svg", -60em top);
-                            background-size: cover;
-                    }
-                    
+                     
                 }
+                
+                .views-row-1{
+                         a:hover{
+                        @include backgroundImage("bg_acces_contact.svg", 25.5% top);
+                        background-size: cover;
+                    }
+                    }
+                    .views-row-2{
+                        a:hover{
+                        @include backgroundImage("bg_acces_contact.svg", 51% top);
+                        background-size: cover;
+                    }
+                    }
+                                .views-row-3{
+                        a:hover{
+                        @include backgroundImage("bg_acces_contact.svg", 76% top);
+                        background-size: cover;
+                    }
+                    }
+                                .views-row-4{
+                        a:hover{
+                        @include backgroundImage("bg_acces_contact.svg", 100%  top);
+                        background-size: cover;
+                    }
+                    }
             }
         }
         aside.AccesLycees{
