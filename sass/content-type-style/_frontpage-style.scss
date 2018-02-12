@@ -241,7 +241,7 @@ body .conteneur {
                 @include breakpoint($desktop) {
                     display:flex;
                     /*max-width: span(11);*/
-                    margin:0 span(2.5);
+                    margin:0 span(2);
                 }
                 li{
                     list-style: none;
@@ -252,7 +252,7 @@ body .conteneur {
                     
 
                     @include breakpoint($desktop) {
-                        margin: span(0.1);
+                        margin: span(0.25);
                         float: left;
                         /*min-width: span(3);*/
                         width: inherit;
@@ -271,7 +271,7 @@ body .conteneur {
                         background-clip: padding-box;
                         min-width: 11vw;
                         min-height: 11vw; 
-                        transition-duration: 0.4s;
+                        transition-duration: 0.1s;//Permet de jouer sur un effet de slide
                         text-align: center;
                          @include cesure-txt(break-word);
                         shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
@@ -283,7 +283,7 @@ body .conteneur {
                             word-spacing: em(3px);
                         }
                         &:hover{
-                            background:  $orange-fonce;
+                            /*background:  $orange-fonce;*/
                             
 /*                            @include backgroundImage("bg_acces_contact.svg", -29em top);*/
                             background-size: cover;
