@@ -70,14 +70,11 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
           column-count:$nb-col;
 }
 /*------- GESTION DU TEXTE -------------*/
-@mixin cesure-txt{
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -o-hyphens: auto;
+@mixin cesure-txt($typecesure : initial,$typecesure2 : initial){
     hyphens: auto;
     text-overflow: ellipsis;
-    word-wrap: break-word;
+    word-wrap: $typecesure;
+    word-break: $typecesure2;
 }
 // ==========
 // TRANS-PREP

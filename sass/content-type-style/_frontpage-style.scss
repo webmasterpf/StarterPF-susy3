@@ -190,6 +190,7 @@ body .conteneur {
                     font-size: small;
                     padding: em(6px);
                     display: block;
+                    word-break: break-word;
                 }
             }
         }
@@ -223,6 +224,7 @@ body .conteneur {
                         text-align: center;
                         font-size: x-large;
                         transition-duration: 0.4s;
+                        @include cesure-txt(break-word);
                         &:hover{
                             background: $gris-clair-moyen;
                             color: $orange-fonce;
@@ -238,8 +240,8 @@ body .conteneur {
                 margin: 0 span(2);
                 @include breakpoint($desktop) {
                     display:flex;
-                    max-width: span(11);
-                    margin:0 span(3);
+                    /*max-width: span(11);*/
+                    margin:0 span(2.5);
                 }
                 li{
                     list-style: none;
@@ -247,32 +249,46 @@ body .conteneur {
                     margin: 0 0 span(0.2) span(0.2);
                     float: none;
                     display: inline-block;
+                    
 
                     @include breakpoint($desktop) {
                         margin: span(0.1);
                         float: left;
-                        min-width: span(1);
+                        /*min-width: span(3);*/
                         width: inherit;
                     }
 
                     a{
                         display: block;
-                        /*padding-top: span(3);*/
-                        
-               text-decoration: none;
+                        padding: span(3) span(1) 0;
+                        text-decoration: none;
                         text-transform: uppercase;
                         font-weight: bold;
                         color: whitesmoke;
+                        /*background: $gris-anthracite;*/
+                        @include backgroundImage("bg_acces_contact.svg");
+                        background-size: cover;
+                        min-width: 13em;
+                        min-height: 15em; 
+                        transition-duration: 0.4s;
+                        text-align: center;
+                         @include cesure-txt(break-word);
+                        shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+                        clip-path: circle(50% at 50% 50%);
+              
                         @include breakpoint($desktop) {
-             
+                        min-height: 13em;          
+                       
+                        word-spacing: em(3px);
                         }
                         &:hover{
-
-                            color: $gris-clair-moyen;
-                        
+                             background:  $orange-fonce;
+                            /*color: $gris-clair-moyen;*/
+                            @include backgroundImage("bg_acces_contact.svg", top right);
+                            background-size: cover;
                         }
                     }
-                    div.views-field-title{
+/*                    div.views-field-title{
                         @include textedansformeronde(7);
                         background: $gris-anthracite;
                         padding-top: span(3);
@@ -289,7 +305,7 @@ body .conteneur {
                         &:hover{
                                 background:  $orange-fonce;
                         }
-                    }
+                    }*/
                     span.field-content{
                         
                     }
@@ -380,6 +396,7 @@ body .conteneur {
                 width: 100%;
                 height: auto;
                 opacity: 0;
+                transition-duration: 0.4s;
                 &:hover{
 
                 }
@@ -389,12 +406,13 @@ body .conteneur {
                 color: whitesmoke;
                 text-transform: uppercase;
                 font-size: medium;
-                
+                transition-duration: 0.4s;
                 &:hover{}
             }
             img:hover,a:hover{
                 cursor: pointer;
                 opacity: 0.8;
+                
             }
         }
     }
