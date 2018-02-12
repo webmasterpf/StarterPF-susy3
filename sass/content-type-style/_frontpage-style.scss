@@ -284,31 +284,19 @@ body .conteneur {
                         &:hover{
                              background:  $orange-fonce;
                             /*color: $gris-clair-moyen;*/
-                            @include backgroundImage("bg_acces_contact.svg", top right);
+                            @include backgroundImage("bg_acces_contact.svg", -29em top);
                             background-size: cover;
                         }
                     }
-/*                    div.views-field-title{
-                        @include textedansformeronde(7);
-                        background: $gris-anthracite;
-                        padding-top: span(3);
-                              
-                        text-align: center;
-                        
-                        transition-duration: 0.4s;
-                        word-break: break-word;
-                        word-spacing: em(3px);
-                             @include breakpoint($desktop) {
-                        padding-top: span(1);
-                      
-                        }
-                        &:hover{
-                                background:  $orange-fonce;
-                        }
-                    }*/
-                    span.field-content{
-                        
+                    .views-row-1 a:hover{
+                        @include backgroundImage("bg_acces_contact.svg", -14.5em top);
+                            background-size: cover;
                     }
+                    .views-row-2 a:hover{
+                        @include backgroundImage("bg_acces_contact.svg", -60em top);
+                            background-size: cover;
+                    }
+                    
                 }
             }
         }
