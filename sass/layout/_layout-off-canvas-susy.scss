@@ -49,9 +49,9 @@ body .conteneur {
         left: 20%; //vertical -4em- position onglet sur mobile
 
         /* quelques styles CSS3 270deg pour vertical gauche ; 0deg */
-        -ms-transform: rotate(0deg);
+/*        -ms-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);*/
         transform: rotate(0deg);
     }
     @include breakpoint ($desktop){
