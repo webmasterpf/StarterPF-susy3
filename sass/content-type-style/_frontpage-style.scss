@@ -249,7 +249,7 @@ body .conteneur {
                     margin: 0 0 span(0.2) span(0.2);
                     float: none;
                     display: inline-block;
-                    
+
 
                     @include breakpoint($desktop) {
                         margin: span(0.25);
@@ -265,7 +265,7 @@ body .conteneur {
                         text-transform: uppercase;
                         font-weight: bold;
                         color: whitesmoke;
-                        /*background: $gris-anthracite;*/
+
                         @include backgroundImage("SVG/bg_acces_contact.svg");
                         background-size: cover;
                         background-clip: padding-box;
@@ -273,10 +273,10 @@ body .conteneur {
                         min-height:  inherit; 
                         transition-duration: 0.1s;//Permet de jouer sur un effet de slide
                         text-align: center;
-                         @include cesure-txt(break-word);
+                        @include cesure-txt(break-word);
                         shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
                         clip-path: circle(50% at 50% 50%);
-              
+
                         @include breakpoint($desktop) {
                             padding: span(3) span(1) 0;
                             min-height: 11vw;          
@@ -284,110 +284,110 @@ body .conteneur {
                             word-spacing: em(3px);
                         }
                         &:hover{
-                            /*background:  $orange-fonce;*/
-                            
-/*                            @include backgroundImage("SVG/bg_acces_contact.svg", -29em top);*/
+
+
+                            /*                            @include backgroundImage("SVG/bg_acces_contact.svg", -29em top);*/
                             background-size: cover;
-                            
+
                             text-indent: em(-9000px);
                         }
                     }
-                     
+
                 }
-                
+
                 .views-row-1{
-                         a:hover{
+                    a:hover{
                         @include backgroundImage("SVG/bg_acces_contact.svg", 25.5% top);
                         background-size: cover;
                     }
-                    }
-                    .views-row-2{
-                        a:hover{
+                }
+                .views-row-2{
+                    a:hover{
                         @include backgroundImage("SVG/bg_acces_contact.svg", 51% top);
                         background-size: cover;
                     }
-                    }
-                                .views-row-3{
-                        a:hover{
+                }
+                .views-row-3{
+                    a:hover{
                         @include backgroundImage("SVG/bg_acces_contact.svg", 76% top);
                         background-size: cover;
                     }
-                    }
-                                .views-row-4{
-                        a:hover{
+                }
+                .views-row-4{
+                    a:hover{
                         @include backgroundImage("SVG/bg_acces_contact.svg", 100%  top);
                         background-size: cover;
                     }
-                    }
+                }
             }
         }
         aside.AccesLycees{
-            
+
             ul.acces-lycees{
                 display: grid;//conserve ordre des lignes
                 @include breakpoint($desktop) {
                     display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+                    justify-content: center;
+                    flex-wrap: wrap;
                 }
-  li{
-      list-style: none;
-      margin: 0;
-      text-align:center;
-      @include breakpoint($desktop) {
-      width: span(1 of 4);
-      margin: span(0.0001);
-      }
-  }
-  li.views-row-1{
-      order:9;
-      background: $orange-fonce;
-     }
-  li.views-row-2{
-      order:1;
-      background: $bleu-turquoise;
-     }
-     li.views-row-3{
-      order:2;
-      background: $gris-clair-moyen;
-     }
-     li.views-row-4{
-      order:3;
-      background: $vert;
-     }
-     li.views-row-5{
-      order:4;
-      background: $orange;
-     }
-     li.views-row-6{
-      order:6;
-         background: $rouge;
-     }
-     li.views-row-7{
-      order:7;
-      background: $violet;
-      object{
-          display: none !important;//Exclu la video du rocher de l'affichage
-      }
-     }
-     li.views-row-8{
-      order:8;
-      background: $rose-fushia;
-     }
-  li.views-row-9{
-      order:5;
-      background: transparent;
-      iframe{
-          margin: em(18px) 0 !important;
-      }
-      a{
-          display: none;
-      }
-   
-  }
+                li{
+                    list-style: none;
+                    margin: 0;
+                    text-align:center;
+                    @include breakpoint($desktop) {
+                        width: span(1 of 4);
+                        margin: span(0.0001);
+                    }
+                }
+                li.views-row-1{
+                    order:9;
+                    background: $orange-fonce;
+                }
+                li.views-row-2{
+                    order:1;
+                    background: $bleu-turquoise;
+                }
+                li.views-row-3{
+                    order:2;
+                    background: $gris-clair-moyen;
+                }
+                li.views-row-4{
+                    order:3;
+                    background: $vert;
+                }
+                li.views-row-5{
+                    order:4;
+                    background: $orange;
+                }
+                li.views-row-6{
+                    order:6;
+                    background: $rouge;
+                }
+                li.views-row-7{
+                    order:7;
+                    background: $violet;
+                    object{
+                        display: none !important;//Exclu la video du rocher de l'affichage
+                    }
+                }
+                li.views-row-8{
+                    order:8;
+                    background: $rose-fushia;
+                }
+                li.views-row-9{
+                    order:5;
+                    background: transparent;
+                    iframe{
+                        margin: em(18px) 0 !important;
+                    }
+                    a{
+                        display: none;
+                    }
+
+                }
             }
-            
-            
+
+
 
             .container {
                 position: relative;
@@ -421,11 +421,43 @@ body .conteneur {
             img:hover,a:hover{
                 cursor: pointer;
                 opacity: 0.8;
-                
+
             }
         }
     }
-    .logo_partenaires{}
+    .logo_partenaires{
+        .acces-partenaires{
+            ul{
+                       display: initial;//conserve ordre des lignes : grid,inutile ici
+                @include breakpoint($desktop) {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                }
+                li{
+                      list-style: none;
+                    margin: span(1) 0;
+                    text-align:center;
+                    @include breakpoint($desktop) {
+                        width: span(1 of 4);
+                        margin: span(0.0001);
+                    }
+                    img,object{
+                        max-height: 15vw;
+                        @include breakpoint($desktop) {
+                        max-height: 8vw;
+                        }
+                    }
+                    a{
+                        display: block;
+                    }
+                    object{
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
 
     @include breakpoint($desktop) {/*    //Dimensions pour les pc
         //Taille du conteneur du groupe    

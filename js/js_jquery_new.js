@@ -288,6 +288,8 @@
             $(this).removeAttr('height');
         });
 $("#media-vimeo-1 iframe").height('23vh').width('100vw');
+// Taille auto pour les images des logos partenaires sur accueil
+$(".logo_partenaires img").height('auto').width('auto');
 
 
         //Retrait position:absolute sur le Views Slideshow       
