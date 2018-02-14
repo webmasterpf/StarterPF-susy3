@@ -1,21 +1,22 @@
 <?php
 // permet template suggestions avec page-
-function phptemplate_preprocess(&$vars, $hook)
-{
-  switch($hook)
-  {
-        case 'page' :
-      if (arg(0) == 'node')
-      {
-        $vars['template_files'][]  = 'page-' . $vars['node']->type;
-        $vars['template_files'][] = "page-" . $vars['node']->type . "-" . $vars['node']->nid;
-        
-        //var_dump($vars);
-      }
-      break;
-
-  }
-}
+//function phptemplate_preprocess(&$vars, $hook)
+//{
+//  switch($hook)
+//  {
+//        case 'page' :
+//      if (arg(0) == 'node')
+//      {
+//        $vars['template_files'][]  = 'page-' . $vars['node']->type;
+//        $vars['template_files'][] = "page-" . $vars['node']->type . "-" . $vars['node']->nid;
+//        $vars['template_files'][]  = 'node-' . $vars['node']->type;
+//        //var_dump($vars);
+//      }
+//      break;
+//
+//  }
+//}
+// Voir function phptemplate_preprocess_page(&$vars)
 ?>
 <?php
 /*Permet d'attribuer un template de node différent selon terme de taxo et type de contenu
@@ -159,6 +160,12 @@ function phptemplate_preprocess_page(&$vars) {
       }
     }
   }
+
+  if ($vars['node']->type != "") {
+    $vars['template_files'][] = "page-" . $vars['node']->type;
+    $vars['template_files'][] = "node-" . $vars['node']->type . "-" . $vars['node']->nid;
+  }
+
 }
 ?>
 <?php

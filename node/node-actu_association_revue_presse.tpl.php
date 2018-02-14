@@ -1,14 +1,14 @@
 <?php
 /* Ce template permet la création d'un layout multicolonne pour les pages de base, en permettant la disposition facile
  * des champs CCK custom, si nécessaires pour une page de base.
- * Redesign V2018-02 *Susy 3*
+ * Redesign V2018-02 *Susy 3* 
 */?>
 <!--______________NODE TPL POUR PAGE.TPL CUSTOM ACTU ASSO RP ________________ -->
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
   <div class="node-inner">
         <!--______________COLONNE 1________________ -->
       
-        <div id="colonne-1" class="col1_layout_4_8">
+        <div id="colonne-1" class="col1_layout_9_3">
             <?php if ($title): /*copier le titre dans la colonne desirée*/?>
             <h1 class="titre_page"><?php print $title; ?></h1>
             <?php endif; ?>
@@ -28,7 +28,7 @@
         </div><!-- /col-1 -->
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="colonne-2" class="col2_layout_4_8 actu-presse">
+        <div id="colonne-2" class="col2_layout_9_3 actu-presse">
 
             <?php print $picture; ?>
 
