@@ -27,6 +27,7 @@ var folderPaths = {
     },
     templates: {
         d6: basePaths.project + '**/*.tpl.php',
+        d6nodestpl: basePaths.project + 'node/**/*.tpl.php',
         d8: basePaths.project + '**/*.html.twig'
     },
     settings: {
@@ -162,6 +163,7 @@ gulp.task('default', ['browser-sync'], function(){
 //    gulp.task('default', function(){
   gulp.watch(basePaths.src, ['sasscompil']);
   gulp.watch(folderPaths.templates.d6, bs_reload);
+  gulp.watch(folderPaths.templates.d6nodestpl, bs_reload);
   gulp.watch(folderPaths.settings.d6, bs_reload);
   gulp.watch(folderPaths.js.jsd68, bs_reload);
 });
