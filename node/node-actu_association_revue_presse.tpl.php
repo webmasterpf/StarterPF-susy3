@@ -1,6 +1,7 @@
 <?php
 /* Ce template permet la création d'un layout multicolonne pour les pages de base, en permettant la disposition facile
  * des champs CCK custom, si nécessaires pour une page de base.
+ * Redesign V2018-02 *Susy 3*
 */?>
 <!--______________NODE TPL POUR PAGE.TPL CUSTOM ACTU ASSO RP ________________ -->
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
