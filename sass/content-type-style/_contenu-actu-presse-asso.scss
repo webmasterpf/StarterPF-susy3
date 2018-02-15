@@ -6,10 +6,12 @@
 |       CONTENU ACTU PRESSE ASSO       |
 |--------------------------------------*/
 
-//@include susy-breakpoint ($mobile){}
-//@include susy-breakpoint ($desktop){}
-//@include susy-breakpoint ($tablet){}
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
 
+body .conteneur {
 .actu-presse 
 {
     h1.titre_page{
@@ -17,30 +19,29 @@
         color: $orange-fonce;
     }
     h3{
-        color: #931B7D;
+        color: $violet;
         font-size: 14px;
         margin:5px;
     }
     h4{
-        color: #01ABCF;
+        color: $bleu-turquoise;
         font-size: 12px;
     }
     img{padding: 0;}
-    a{  color: #D63E2A;font-weight: bold;text-decoration: none;
+    a{  color: $orange-fonce;font-weight: bold;text-decoration: none;
         &:hover{text-decoration: underline;}
     }
-    @include breakpoint($desktop);@include breakpoint($tablet)
+    @include breakpoint(($desktop,$tablet))
     {
         @include border-L-rose;
     }
 
 }
 
-.actu-minipresse{float: right;}
-.actu-minipresse img{
+.actu-minipresse{
+    img{
     @include adaptable-img;
-    border: em(2px) solid #ADC91F;
-    margin: em(5px);
+     margin: 0 auto;
 }
 .field-field-minipresse img{
     float: right;
@@ -51,6 +52,8 @@
     -webkit-box-shadow: 0px 0px 5px #888;
     box-shadow: 0px 0px 5px #888;
 }
+}
+.actu-minipresse 
 table#doc-joints
 {
     width: em(200px);margin: 10px auto;background: transparent;
@@ -66,3 +69,4 @@ table#doc-joints
 .slideshare,.video{width: em(500px);margin: 0 auto;}
 .slideshare{}
 .galerie{}
+}

@@ -1,21 +1,21 @@
 <?php
 // permet template suggestions avec page-
-//function phptemplate_preprocess(&$vars, $hook)
-//{
-//  switch($hook)
-//  {
-//        case 'page' :
-//      if (arg(0) == 'node')
-//      {
-//        $vars['template_files'][]  = 'page-' . $vars['node']->type;
-//        $vars['template_files'][] = "page-" . $vars['node']->type . "-" . $vars['node']->nid;
-//        $vars['template_files'][]  = 'node-' . $vars['node']->type;
-//        //var_dump($vars);
-//      }
-//      break;
-//
-//  }
-//}
+function phptemplate_preprocess(&$variables, $hook)
+{
+  switch($hook)
+  {
+        case 'page' :
+      if (arg(0) == 'node')
+      {
+        $variables['template_files'][]  = 'page-' . $variables['node']->type;
+        $variables['template_files'][] = "page-" . $variables['node']->type . "-" . $variables['node']->nid;
+        $variables['template_files'][]  = 'node-' . $variables['node']->type;
+//        var_dump($variables);
+      }
+      break;
+
+  }
+}
 // Voir function phptemplate_preprocess_page(&$vars)
 ?>
 <?php
@@ -92,6 +92,9 @@ if ( in_array($node->type, $lesTypes) ) {
 ?>
 <?php
 function starter_d6_susy3_preprocess_page(&$vars){
+  
+    
+    
     //http://www.zites.net/en/load-external-javascript-files-drupal-6/
     // JS externe avec le module advagg qui permet d'utiliser 'external'
 //   drupal_add_js('http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js', 'external');
@@ -161,10 +164,7 @@ function phptemplate_preprocess_page(&$vars) {
     }
   }
 
-  if ($vars['node']->type != "") {
-    $vars['template_files'][] = "page-" . $vars['node']->type;
-    $vars['template_files'][] = "node-" . $vars['node']->type . "-" . $vars['node']->nid;
-  }
+
 
 }
 ?>

@@ -29,6 +29,20 @@ body .conteneur{
 }
 /*////////////// BLOCS IMBRIQUéS DANS BLOC PLEINE LARGEUR \\\\\\\\\*/
 body .conteneur{
+    display:grid;
+    .node-inner,#zone-centrale-node{
+        @include breakpoint ($desktop){
+            
+         
+        }
+    }
+    #zone-illustration{
+        @include breakpoint ($desktop){
+            width: span(12 of $desktopcol);
+            /*@include clearfixsusy3;*/
+         
+        }
+    }
     .col1_layout_9_3{
         @include breakpoint ($desktop){
             width: span(9 of $desktopcol);
@@ -37,8 +51,14 @@ body .conteneur{
     }
     .col2_layout_9_3{
         @include breakpoint ($desktop){
+            
             width: span(3 of $desktopcol);
-            float: right;
+            float:left;
+        }
+    }
+    .acces-contact{
+        @include breakpoint ($desktop){
+        @include clearfix;
         }
     }
 }
