@@ -425,4 +425,15 @@ body .conteneur{
             background: indianred;
         }
     }
+    #zone-illustration{
+                background: khaki;
+        @include breakpoint ($tablet){
+           
+            background: tomato;
+        }
+        @include breakpoint ($desktop){
+           
+            background: indianred;
+        }
+    }
 }

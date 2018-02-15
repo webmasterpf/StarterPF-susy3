@@ -23,7 +23,7 @@
             
         <!--______________COLONNE 1________________ -->
       
-        <div id="colonne-1" class="col1_layout_9_3">
+        <div id="colonne-1" class="col1_layout_9_3 actu-presse">
       
              <?php print $picture; ?>
 
@@ -66,7 +66,7 @@
             if ($node->field_fichier_joint[0]['view']):
 
               global $theme_path;
-                include($theme_path . '/includes/inc_docs_actu.php');
+                include($theme_path . '/includes/dedicates_inc/inc_docs_actu.php');
             endif;
             //il ne s'agit pas d'une vue mais de code PHP !!
             ?>

@@ -10,19 +10,19 @@ Ne s'applique que si présence d'un node-TYPE.tpl.php
 /*//////////////// 1 COLONNE PLEINE LARGEUR \\\\\\\\\\\\\\\\*/
 body .conteneur{
     .col1_layout_max{
-        
+
         @include clearfixsusy3;
         @include breakpoint ($mobile){
             /*@include break;*/
         }
         @include breakpoint ($desktop){
             width: span(12 of $desktopcol);
-                        &:after{
-                            content: " ";
-                            display: block;
-                            clear: both;
-                            
-                        } 
+            &:after{
+                content: " ";
+                display: block;
+                clear: both;
+
+            } 
         }
     }
 
@@ -32,33 +32,46 @@ body .conteneur{
     display:grid;
     .node-inner,#zone-centrale-node{
         @include breakpoint ($desktop){
-            
-         
+
+
         }
     }
     #zone-illustration{
         @include breakpoint ($desktop){
             width: span(12 of $desktopcol);
             /*@include clearfixsusy3;*/
-         
+
         }
     }
     .col1_layout_9_3{
+        padding: span(0.2);
         @include breakpoint ($desktop){
             width: span(9 of $desktopcol);
             float:left;
         }
+        @include breakpoint(($desktop,$tablet))
+        {
+            padding: span(0.5);
+        }
     }
     .col2_layout_9_3{
         @include breakpoint ($desktop){
-            
+
             width: span(3 of $desktopcol);
             float:left;
         }
     }
-    .acces-contact{
+    .acces_rubriques{
         @include breakpoint ($desktop){
-        @include clearfix;
+            @include clearfix;
+            display: grid;
         }
+    }
+
+    .acces-contact
+    {        @include breakpoint ($desktop){
+/*                 @include clearfix;
+                 display: grid;*/
+             }
     }
 }
