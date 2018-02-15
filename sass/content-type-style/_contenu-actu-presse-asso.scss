@@ -12,86 +12,132 @@
 //@include breakpoint(($desktop,$tablet)){}
 
 body .conteneur {
-.actu-presse {
-    p,ul,li{
-        font-size: medium;
-    }
-    h1.titre_page{
-        @include titre-page;
-        color: $blanc-casse;
-        background: $orange-fonce;
-    }
-    /*Positionnement du titre sur l'image pleine page*/
-    h1.titre_overlay{
-        display: block;
-    }
-    h3{
-        color: $violet;
-        font-size: medium;
-        margin:5px;
-    }
-    h4{
-        color: $bleu-turquoise;
-        font-size: small;
-    }
-    img{padding: 0;}
-    a{  color: $orange-fonce;font-weight: bold;text-decoration: none;
-        &:hover{text-decoration: underline;}
-    }
-    @include breakpoint(($desktop,$tablet))
-    {
-        @include border-L-orangePF;
-    }
-    table.table-jpo{
-        width: span(8);
-        margin: 0 auto;
-    }
-}
+    h1.titre_page_tpl{
+            display: none;//Effacement du titre issue de page.tpl
+        }
+        #zone-illustration{
+            @include backgroundImage('SVG/image_defaut_actu_2500.svg');
+            @include background-size(contain);
+        }
+    .actu-presse {
+        
+        p,ul,li{
+            font-size: medium;
+        }
+        h1.titre_page{
+            @include titre-page;
+            color: $blanc-casse;
+            @include rgba-background($orange-fonce, 0.8);
+            
+        }
 
-.actu-minipresse{
-    img{
-    @include adaptable-img;
-     margin: 0 auto;
-}
-.field-field-minipresse img{
-    float: right;
-    padding: 3px;
-    margin: 0;
-    line-height: 0;
-    -moz-box-shadow: 0px 0px 5px #888;
-    -webkit-box-shadow: 0px 0px 5px #888;
-    box-shadow: 0px 0px 5px #888;
-}
-}
-.actu-minipresse 
-table#doc-joints
-{
-    width: em(200px);margin: 10px auto;background: transparent;
-    a{color: $violet;}
-    th{text-align: center;font-size: em(14px);color: $gris-anthracite;border-bottom: 3px solid $orange-fonce;}
-    td{padding: em(2px);}
-    tbody, tr{background: transparent;border-bottom: 1px dashed #606070;}
-    thead{}
-
-}
-
-
-.slideshare,.video{width: em(500px);margin: 0 auto;}
-.slideshare{}
-.galerie{}
-
-#colonne-2{
-    ul.actu-hasard-list-ul{
-        padding:span(0.5);
-        li{
-            list-style:none;
-            a{
-                text-align: center;
+        h3{
+            color: $violet;
+            font-size: medium;
+            margin:5px;
+        }
+        h4{
+            color: $bleu-turquoise;
+            font-size: small;
+        }
+        img{padding: 0;}
+        a{  color: $orange-fonce;font-weight: bold;text-decoration: none;
+            &:hover{text-decoration: underline;}
+        }
+        @include breakpoint(($desktop,$tablet))
+        {
+            @include border-L-orangePF;
+        }
+        table.table-jpo{
+            width: span(8);
+            margin: 0 auto;
+        }
+        /*Positionnement du titre sur l'image pleine page*/
+        h1.titre_overlay{
+       
+/*            top: 200vw;//15%
+            left: 0;
+            right: 0;
+            bottom: 1054.4vw;//83%*/
+          
+            
+            @include breakpoint(($desktop,$tablet)){
+                position: absolute;
+                display: inline-block;
+                z-index: 2;
+                top: 0;//120% 17vw mieux comme ça avec titre en haut et non en bas de la photo
+                /*                left: 0;
+                                right: 60vw;//60%
+                                bottom: -10.4vw;//-29.5%*/
+                transform: translate(0%, 5%);
+                max-height: 2.7vw;
             }
-            span.titre-au-hasard{
-                text-align: center;
+            &:before {
+   content: '';
+   display: inline-block;
+   height: 100%;
+   vertical-align: middle;
+        }
+        }
+        #illustration-pleinepage {
+            position: relative;
+            display: inline-block;
+                overflow: hidden;
+            img{
+                @include breakpoint(($desktop,$tablet)){
+margin: 0 12vw;
+    max-height: 30vw;
+    transform: scale(1.4);
+                }
+            }
+        }
+
+
+    }
+
+    .actu-minipresse{
+        img{
+            @include adaptable-img;
+            margin: 0 auto;
+        }
+        .field-field-minipresse img{
+            float: right;
+            padding: 3px;
+            margin: 0;
+            line-height: 0;
+     
+            box-shadow: 0px 0px 5px #888;
+        }
+    }
+    .actu-minipresse 
+    table#doc-joints
+    {
+        width: em(200px);margin: 10px auto;background: transparent;
+        a{color: $violet;}
+        th{text-align: center;font-size: em(14px);color: $gris-anthracite;border-bottom: 3px solid $orange-fonce;}
+        td{padding: em(2px);}
+        tbody, tr{background: transparent;border-bottom: 1px dashed #606070;}
+        thead{}
+
+    }
+
+
+    .slideshare,.video{width: em(500px);margin: 0 auto;}
+    .slideshare{}
+    .galerie{}
+
+    #colonne-2{
+        ul.actu-hasard-list-ul{
+            padding:span(0.5);
+            li{
+                list-style:none;
+                a{
+                    text-align: center;
+                }
+                span.titre-au-hasard{
+                    text-align: center;
+                }
             }
         }
     }
-}
 }

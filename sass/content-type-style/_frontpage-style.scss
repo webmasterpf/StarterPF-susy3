@@ -107,6 +107,7 @@ body .conteneur {
         }
         img{
             zoom: 1.7;
+            transform: scale (1.7);
         }
         .bxslider-hp{
             a{
@@ -271,7 +272,7 @@ body .conteneur {
                         background-clip: padding-box;
                         min-width: inherit;
                         min-height:  inherit; 
-                        transition-duration: 0.1s;//Permet de jouer sur un effet de slide
+                        transition-duration: 0.0s;//Permet de jouer sur un effet de slide
                         text-align: center;
                         @include cesure-txt(break-word);
                         shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);

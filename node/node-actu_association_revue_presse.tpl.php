@@ -8,14 +8,20 @@
   <div class="node-inner">
         <!--______________ ILLUSTRATION et TITRE ________________ -->
         <div id="zone-illustration" class="actu-presse">
-             <?php if ($node->field_minipresse[0]['view']): ?>
+                     <?php if ($title): /*copier le titre dans la colonne desirée*/?>
+         
+            <?php endif; ?>
+            
+             <?php if ($node->field_minipresse[0]['view']
+                 OR
+                 $title
+                 ): ?>
             <div id="illustration-pleinepage" class="actu-minipresse">
+                   <h1 class="titre_overlay titre_page"><?php print $title; ?></h1>
                     <?php  print $node->field_minipresse[0]['view']  ?>
             </div>
             <?php endif;?>
-              <?php if ($title): /*copier le titre dans la colonne desirée*/?>
-            <h1 class="titre_overlay titre_page"><?php print $title; ?></h1>
-            <?php endif; ?>
+     
             
             </div><!-- /zone-illustration -->
         <div id="zone-centrale-node" class="#">
