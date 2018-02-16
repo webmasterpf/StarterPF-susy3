@@ -17,7 +17,7 @@ body .conteneur {
         }
         #zone-illustration{
             @include backgroundImage('SVG/image_defaut_actu_2500.svg');
-            @include background-size(contain);
+            @include background-size(cover);
         }
     .actu-presse {
         
@@ -83,6 +83,10 @@ body .conteneur {
             position: relative;
             display: inline-block;
                 overflow: hidden;
+                min-height: 15vw;
+                @include breakpoint(($desktop,$tablet)){
+                    min-height: 20vw;
+                }
             img{
                 @include breakpoint(($desktop,$tablet)){
 margin: 0 12vw;

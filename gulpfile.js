@@ -12,7 +12,10 @@ var basePaths = {
     dest:  './css/', // dossier à livrer
     tpl: '**/*.tpl.php',
     node_modules: './node_modules/',
-    gems:'/home/webmaster/vendor/bundle/gems/'
+    gems:'/home/webmaster/vendor/bundle/gems/',
+    drushscript:'/home/webmaster/.config/composer/vendor/drush/drush/drush.php',
+    drushd6aliasfile:'/home/webmaster/.drush/sitesvmd6.aliases.drushrc.php',
+    drushd8aliasfile:'/home/webmaster/.drush/sitesvmd8.aliases.drushrc.php'
 };
 
 //Chemins spécifiques
@@ -103,7 +106,9 @@ var AUTOPREFIXER_BROWSERS = [
 //    console.error(errorString);
 //}
 
-
+//Variables spécifiques au thèmes
+var urlSite = ['http://d6-provence-formation.vmdev/'];
+var aliasDrush = ['@vmdevd6pf'];
 // #############################
 // Tâches à accomplir - Tasks
 // #############################
@@ -148,10 +153,30 @@ gulp.task('sasscompil', function () {
             ;
 });
 
+//Vidage de cache Drupal avec Drush
+gulp.task('drush', function() {
+  return gulp.src(basePaths.drushscript, {
+      read: false
+    })
+    
+    .pipe(plugins.shell([
+      'drush cc all'
+      
+    ]))
+    .pipe(plugins.notify({
+      title: "Vidage de Cache",
+      message: "Cache Drupal vidé complètement.",
+      onLast: true
+    }));
+});
+
+
+//Initialisation de la tâche de browser-sync
 gulp.task('browser-sync', function() {
 browserSync.init({
-        //changer l'adresse du site pour lequel utiliser browserSync
-        proxy: "http://d6-provence-formation.vmdev/",
+        //changer l'adresse du site pour lequel utiliser browserSync, solution par variable fonctionne pas
+//        proxy: '.urlSite.',
+        proxy: 'http://d6-provence-formation.vmdev/',
         open: false,
         logLevel: 'info',//pour avoir toutes les infos ,utiliser "debug", pour infos de base "info"
         logConnections: true
@@ -166,4 +191,7 @@ gulp.task('default', ['browser-sync'], function(){
   gulp.watch(folderPaths.templates.d6nodestpl, bs_reload);
   gulp.watch(folderPaths.settings.d6, bs_reload);
   gulp.watch(folderPaths.js.jsd68, bs_reload);
+  gulp.watch(basePaths.src, ['drush']);
+  gulp.watch(folderPaths.templates.d6, ['drush']);
+  gulp.watch(folderPaths.js.jsd68, ['drush']);
 });

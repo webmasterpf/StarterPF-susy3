@@ -268,7 +268,7 @@
 
 
 //Changer la casse des titres H1 qui sont en Majuscules
-        $('h1').css('text-transform', 'lowercase');
+        $('h1').css('text-transform', 'capitalize');
         $('.titre-vdl a').css('text-transform', 'lowercase');
         $('#liste-vdl span.titre-vdl > a').css('text-transform', 'lowercase');
 
