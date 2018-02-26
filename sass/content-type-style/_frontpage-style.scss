@@ -441,7 +441,7 @@ body .conteneur {
                     margin: span(1) 0;
                     text-align:center;
                     @include breakpoint($desktop) {
-                        width: span(1 of 4);
+                        width: span(1 of 5);
                         margin: span(0.0001);
                     }
                     img,object{

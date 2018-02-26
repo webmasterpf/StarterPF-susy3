@@ -8,17 +8,19 @@ Override du style de galerie vignettes BaguetteBox
 //@include breakpoint(($desktop,$tablet)){}
 
 
-.galerie-vdl .galerieBaguetteBox .view-content
+aside.galerie .galerieBaguetteBox .view-content
 {
-    margin:0 em(30px);
-    >div{
-        @include gallery(2 of $mobilecol);
-        @include breakpoint ($desktop,$tablet){
-            @include gallery(4 of 12);
-        }
+    > div{
+               width: span(1 of 3);
+                margin: span(0.0001);
+                float: left;
+            @include breakpoint(($desktop,$tablet)){
+                width: span(1 of 6);
+                              
+            }
     }
     img{
-        //@include gallery(4 of 12);
+        
         @include cadre-ombre(0.3em,white,$gris-anthracite);
     }
 }

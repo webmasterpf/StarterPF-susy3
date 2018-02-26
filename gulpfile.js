@@ -187,11 +187,12 @@ browserSync.init({
 gulp.task('default', ['browser-sync'], function(){
 //    gulp.task('default', function(){
   gulp.watch(basePaths.src, ['sasscompil']);
+  gulp.watch(folderPaths.styles.src, bs_reload);
   gulp.watch(folderPaths.templates.d6, bs_reload);
   gulp.watch(folderPaths.templates.d6nodestpl, bs_reload);
   gulp.watch(folderPaths.settings.d6, bs_reload);
   gulp.watch(folderPaths.js.jsd68, bs_reload);
-  gulp.watch(basePaths.src, ['drush']);
-  gulp.watch(folderPaths.templates.d6, ['drush']);
-  gulp.watch(folderPaths.js.jsd68, ['drush']);
+//  gulp.watch(basePaths.src, ['drush']);
+//  gulp.watch(folderPaths.templates.d6, ['drush']);
+//  gulp.watch(folderPaths.js.jsd68, ['drush']);
 });

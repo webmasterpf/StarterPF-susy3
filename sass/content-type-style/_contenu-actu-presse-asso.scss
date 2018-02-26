@@ -11,6 +11,20 @@
 //@include breakpoint ($tablet){}
 //@include breakpoint(($desktop,$tablet)){}
 
+/*\\\\\\\\\\  LAYOUT STRUCTURE ///////////*/
+body .conteneur {
+    #colonne-1.actu-presse{
+        .content{
+            padding: span(0.2);
+            @include breakpoint(($desktop,$tablet)){
+                padding: span(0.5);
+            }
+        }
+    }
+
+
+}
+/*\\\\\\\\\\  STYLE ///////////*/
 body .conteneur {
     h1.titre_page_tpl{
             display: none;//Effacement du titre issue de page.tpl
@@ -95,8 +109,16 @@ margin: 0 12vw;
                 }
             }
         }
-
-
+        //Galerie d'image
+        aside.galerie{
+         background: $orange-fonce;   
+         display: flex;
+         @include breakpoint(($desktop,$tablet)){
+             
+         }
+            
+        }
+        
     }
 
     .actu-minipresse{
@@ -128,7 +150,7 @@ margin: 0 12vw;
 
     .slideshare,.video{width: em(500px);margin: 0 auto;}
     .slideshare{}
-    .galerie{}
+    
 
     #colonne-2{
         ul.actu-hasard-list-ul{

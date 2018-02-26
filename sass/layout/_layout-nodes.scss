@@ -44,14 +44,14 @@ body .conteneur{
         }
     }
     .col1_layout_9_3{
-        padding: span(0.2);
+        
         @include breakpoint ($desktop){
             width: span(9 of $desktopcol);
             float:left;
         }
         @include breakpoint(($desktop,$tablet))
         {
-            padding: span(0.5);
+            
         }
     }
     .col2_layout_9_3{

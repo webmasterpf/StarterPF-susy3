@@ -43,7 +43,7 @@
                 <?php print $node->content['body']['#value'];?>
                  </div><!-- /content -->   
                 <?php if ($node->field_diapo_lycee_type[0]['view']): ?>
-            <div class="galerie">
+                 <aside class="galerie">
                     <?php  print $node->field_diapo_lycee_type[0]['view'];?>
             </div>
             <?php endif;?>
