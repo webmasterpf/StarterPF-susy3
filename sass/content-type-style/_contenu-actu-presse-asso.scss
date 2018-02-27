@@ -114,7 +114,7 @@ margin: 0 12vw;
          background: $orange-fonce;   
          display: flex;
          @include breakpoint(($desktop,$tablet)){
-             
+             padding: span(0.05);
          }
             
         }
