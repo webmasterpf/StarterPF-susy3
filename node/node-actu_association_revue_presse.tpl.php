@@ -41,11 +41,22 @@
            
 
                 <?php print $node->content['body']['#value'];?>
+                
+                       <?php
+            if ($node->field_fichier_joint[0]['view']):
+
+              global $theme_path;
+                include($theme_path . '/includes/dedicates_inc/inc_docs_actu.php');
+            endif;
+            //il ne s'agit pas d'une vue mais de code PHP !!
+            ?>
+                
+                
                  </div><!-- /content -->   
                 <?php if ($node->field_diapo_lycee_type[0]['view']): ?>
                  <aside class="galerie">
                     <?php  print $node->field_diapo_lycee_type[0]['view'];?>
-            </div>
+            </aside>
             <?php endif;?>
                 
                 <?php
@@ -68,20 +79,17 @@
                         </div>
                     <?php endif; ?>
                 
-            <?php
-            if ($node->field_fichier_joint[0]['view']):
-
-              global $theme_path;
-                include($theme_path . '/includes/dedicates_inc/inc_docs_actu.php');
-            endif;
-            //il ne s'agit pas d'une vue mais de code PHP !!
-            ?>
+     
        
        <?php
               global $theme_path;
               include ($theme_path.'/includes/regions_inc/inc_region_col_1.php');
               ?>
-        </div><!-- /col-1 -->
+                     
+                     </div><!-- /col-1 -->
+        </div><!-- /zone-centrale -->
+        
+        
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
         <div id="colonne-2" class="col2_layout_9_3 actu-presse">

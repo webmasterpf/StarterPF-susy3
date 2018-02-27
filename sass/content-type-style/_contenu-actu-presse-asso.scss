@@ -27,14 +27,14 @@ body .conteneur {
 /*\\\\\\\\\\  STYLE ///////////*/
 body .conteneur {
     h1.titre_page_tpl{
-            display: none;//Effacement du titre issue de page.tpl
-        }
-        #zone-illustration{
-            @include backgroundImage('SVG/image_defaut_actu_2500.svg');
-            @include background-size(cover);
-        }
+        display: none;//Effacement du titre issue de page.tpl
+    }
+    #zone-illustration{
+        @include backgroundImage('SVG/image_defaut_actu_2500.svg');
+        @include background-size(cover);
+    }
     .actu-presse {
-        
+
         p,ul,li{
             font-size: medium;
         }
@@ -42,7 +42,7 @@ body .conteneur {
             @include titre-page;
             color: $blanc-casse;
             @include rgba-background($orange-fonce, 0.8);
-            
+
         }
 
         h3{
@@ -60,7 +60,7 @@ body .conteneur {
         }
         @include breakpoint(($desktop,$tablet))
         {
-            @include border-L-orangePF;
+            
         }
         table.table-jpo{
             width: span(8);
@@ -68,13 +68,13 @@ body .conteneur {
         }
         /*Positionnement du titre sur l'image pleine page*/
         h1.titre_overlay{
-       
-/*            top: 200vw;//15%
-            left: 0;
-            right: 0;
-            bottom: 1054.4vw;//83%*/
-          
-            
+
+            /*            top: 200vw;//15%
+                        left: 0;
+                        right: 0;
+                        bottom: 1054.4vw;//83%*/
+
+
             @include breakpoint(($desktop,$tablet)){
                 position: absolute;
                 display: inline-block;
@@ -87,38 +87,73 @@ body .conteneur {
                 max-height: 2.7vw;
             }
             &:before {
-   content: '';
-   display: inline-block;
-   height: 100%;
-   vertical-align: middle;
-        }
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
         }
         #illustration-pleinepage {
             position: relative;
-            display: inline-block;
-                overflow: hidden;
-                min-height: 15vw;
-                @include breakpoint(($desktop,$tablet)){
-                    min-height: 20vw;
-                }
+            /*display: inline-block;*/
+            overflow: hidden;
+            /*min-height: 15vw;*/
+            @include breakpoint(($desktop,$tablet)){
+                /*min-height: 20vw;*/
+            }
             img{
                 @include breakpoint(($desktop,$tablet)){
-margin: 0 12vw;
-    max-height: 30vw;
-    transform: scale(1.4);
+                    margin: 0 12vw;
+                    max-height: 30vw;
+                    transform: scale(1.4);
                 }
             }
         }
         //Galerie d'image
         aside.galerie{
-         background: $orange-fonce;   
-         display: flex;
-         @include breakpoint(($desktop,$tablet)){
-             padding: span(0.05);
-         }
+            background: $orange-fonce;   
+            display: flex;
+            @include breakpoint(($desktop,$tablet)){
+                padding: span(0.05);
+            }
+
+        }
+
+        table.doc-joints
+    {
+           width: span(10);
+            margin: 0 auto;
+        
+        background: transparent;
+        a{color: $violet;
+          @include backgroundImage('SVG/image_defaut_actu_2500.svg');
+                @include breakpoint(($desktop,$tablet)){
+                display: inline-block;
+                text-indent: em(65px);
+                width: 2vw;
+                height: 2vw;
+            }
+        }
+        th{text-align: center;font-size: large;color: $gris-anthracite;border-bottom: em(3px) solid $orange-fonce;}
+        td{padding: em(2px);}
+        tbody, tr{background: transparent;border-bottom: 1px dashed #606070;}
+        thead{}
+        img.filefield-icon{
+            @include backgroundImage('SVG/image_defaut_actu_2500.svg');
+            background-size: cover;
+            @include breakpoint(($desktop,$tablet)){
+                display: inline-block;
+                text-indent: em(2px);
+                visibility: hidden;
+                width: 2vw;
+                height: 2vw;
+            }
+            
+            
             
         }
-        
+
+    }
     }
 
     .actu-minipresse{
@@ -131,37 +166,54 @@ margin: 0 12vw;
             padding: 3px;
             margin: 0;
             line-height: 0;
-     
+
             box-shadow: 0px 0px 5px #888;
         }
     }
-    .actu-minipresse 
-    table#doc-joints
-    {
-        width: em(200px);margin: 10px auto;background: transparent;
-        a{color: $violet;}
-        th{text-align: center;font-size: em(14px);color: $gris-anthracite;border-bottom: 3px solid $orange-fonce;}
-        td{padding: em(2px);}
-        tbody, tr{background: transparent;border-bottom: 1px dashed #606070;}
-        thead{}
-
-    }
+    .actu-minipresse {}
+    
 
 
     .slideshare,.video{width: em(500px);margin: 0 auto;}
     .slideshare{}
-    
 
-    #colonne-2{
+
+    #colonne-2.actu-presse{
+        @include breakpoint(($desktop,$tablet)){
+        @include border-L-orangePF;
+        }
+        aside{
+            h3{
+                text-align: center;
+            }
+        }
         ul.actu-hasard-list-ul{
             padding:span(0.5);
+            @include breakpoint(($desktop,$tablet)){
+                display: flow-root;
+            }
             li{
                 list-style:none;
+                @include breakpoint(($desktop,$tablet)){
+                    padding: span(0.5);
+                    display: inherit;
+                }
                 a{
                     text-align: center;
                 }
                 span.titre-au-hasard{
                     text-align: center;
+                    @include breakpoint(($desktop,$tablet)){
+                        float: left;
+                        clear: both;
+                    }
+
+                }
+                img{
+                    @include cadre-ombre(0.3em,white,$gris-anthracite);
+                    @include breakpoint(($desktop,$tablet)){
+                        float: right;
+                    }
                 }
             }
         }

@@ -7,21 +7,21 @@
 
 /**-- style du fil d'ariane --**/
 
-.ariane .breadcrumb {
+.ariane, .breadcrumb {
     display: none;
     @include breakpoint ($desktop){
         display: block;
         padding: 0 0 0 0.3em;
-        color: $violet;
+        color: $orange-fonce;
         text-decoration: none;
         @include font-size(s);//taille avec typey
 //        background: chocolate;//supprimer en PROD
         a {
-            color: $rose-fushia;
+            color: $orange-fonce;
             text-decoration: none;
               font-size: small;
             &:hover {
-                color: $violet;
+                color: $gris-anthracite;
                 text-decoration: underline;
             }
         }

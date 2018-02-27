@@ -7,9 +7,8 @@ body .conteneur{
     @include breakpoint($desktop)
     {
         padding-top: 2em;  
-        //mixin container n'existe plus avec susy3, tout se fait avec susy-span
-        //width: susy-span ($desktopcol of $desktopcol);
-        width: susy-span (12);
+        //mixin container n'existe plus avec susy3, tout se fait avec span
+        
         //@debug susy3
         background: susy-svg-grid() no-repeat scroll;
         #header{
@@ -36,16 +35,13 @@ body .conteneur{
             }
         }
         .middle-content{
-            width: susy-span( 12 of $desktopcol);         
-margin-left: span(3 wide);//push
+
         }
         .node-inner{  
-            width: susy-span( 12 of $desktopcol);
-            /*@include clearfix;*/
         }                       
         .content-bottom{}
         .content-bottom-home{
-            /*@include break;*/
+
                 &:before{
                 content: " ";
                 display: block;
@@ -57,7 +53,7 @@ margin-left: span(3 wide);//push
         #left-content{}
         #right-content{}
         #footer{
-            /*@include break;*/
+
             @include background-size();
             &:before{
                 content: " ";
@@ -78,10 +74,18 @@ margin-left: span(3 wide);//push
 ---------------------------------*/
 .service-links{
     background: none repeat scroll 0 0 $gris-clair;
-    display: block;
-    margin: 0 auto;
-    padding: em(2px);
+    
+    
+    padding: span(0.002);
     text-align: center;
+        transform: translate(790%, 100%);
+    /* top: 10%; */
+    width: 5vw;
+    height: 10vw;
+    
+    position: fixed;
+    /* left: 85%; */
+    z-index: 10;
     //@include squish(0.5,0.5); //Ajoute un margin avant et aprés l'element pour le centrer
     
     @include arrondis (em(5px));

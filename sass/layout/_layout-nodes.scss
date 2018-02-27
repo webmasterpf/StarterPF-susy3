@@ -30,6 +30,17 @@ body .conteneur{
 /*////////////// BLOCS IMBRIQUéS DANS BLOC PLEINE LARGEUR \\\\\\\\\*/
 body .conteneur{
     display:grid;
+    .content-top{
+        @include breakpoint ($desktop){
+            width: span(10 of $desktopcol);
+            margin: 0 auto;
+        }
+    }
+    .middle-content{
+        @include breakpoint ($desktop){
+            /*width: span(12 of $desktopcol);*/
+        }
+    }
     .node-inner,#zone-centrale-node{
         @include breakpoint ($desktop){
 

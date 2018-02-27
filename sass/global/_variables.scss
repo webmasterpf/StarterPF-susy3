@@ -16,7 +16,9 @@ $susy: (
 /* First, fix the browser box-model by setting a global box-sizing:
 http://oddbird.net/2017/06/28/susy3/
 */
-* { box-sizing: border-box; }
+*, *:before, *:after {
+  box-sizing: border-box;
+}
 
 //Mixins recréées pour Susy3
 // clearfix
