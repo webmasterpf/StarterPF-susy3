@@ -130,7 +130,7 @@ body .conteneur {
                 @include breakpoint(($desktop,$tablet)){
                 display: inline-block;
                 text-indent: em(65px);
-                width: 2vw;
+                width: 20vw;
                 height: 2vw;
             }
         }
