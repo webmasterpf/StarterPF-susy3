@@ -155,8 +155,11 @@
         $(".lightSlider").lightSlider();
     });
     
- 
-
+    // StickUp pour barre de partage social 
+    jQuery(window).load(function () {
+    console.log('Chargement de StickUp.js pour jQuery>=1.11');
+$('.service-links').stickUp();
+});
 
 
     //Pour stacktable (tableaux RWD)

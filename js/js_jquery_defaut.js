@@ -25,11 +25,16 @@
     });
     
        //Pour Sticky.js - Partage social en position fixe
-    jQuery(document).ready(function(){
-        console.log('Appel du script Sticky.js');
-    $('.service-links').sticky({topSpacing:0});
-});
+       // Fonctionne pas
+       
+//    jQuery(window).load(function(){
+//      
+//        console.log('Appel du script Sticky.js');
+//    $('.service-links').sticky({topSpacing: 50, zIndex: 10});
+//});
     
-    
+// Sticky-kit pour barre de partage social 
+//console.log('Appel du script sticky-kit.js pour jQuery 1.3');
+//$('.service-links').stick_in_parent();
        
 })(jQuery);

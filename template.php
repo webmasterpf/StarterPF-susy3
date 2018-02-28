@@ -113,7 +113,8 @@ function starter_d6_susy3_preprocess_page(&$vars){
     //   drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery.navobile.min.js','theme');
     //   drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery.jpanelmenu.min.js','theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/selectnav.min.js', 'theme');
-    drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.sticky.js', 'theme');
+//    drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.sticky.js', 'theme');
+    drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.sticky-kit.js', 'theme');
   //  drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery.sidebar.min.js', 'theme');
 
 //chargement des scripts qui utilisent la version de jQuery par défaut du site
@@ -124,6 +125,8 @@ function starter_d6_susy3_preprocess_page(&$vars){
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/3rdparty/bxslider/js/jquery.bxslider.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.flexslider.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/stacktable.min.js', 'theme');
+//    drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.lockfixed.min.js', 'theme');
+    drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/stickUp.js', 'theme');
     //drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/wookmark.min.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.masonry.min.js', 'theme');
     //drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/ninja-slider/ninja-slider.js', 'theme');
