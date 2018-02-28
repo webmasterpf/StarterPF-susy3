@@ -7,8 +7,9 @@
 |--------------------------------------*/
 
 //@include breakpoint ($mobile){}
-//@include breakpoint ($desktop){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
 //@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
 
 //Code imbriqué à 100%
 body .conteneur {
@@ -19,7 +20,7 @@ body .conteneur {
     .annonce_alaUne{
         h3{//ajout picto en place du titre h3
            display: none;
-           @include breakpoint ($desktop){
+           @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                display: initial;
                @include backgroundImage (('bg-merci.gif'));
                text-indent: -9000px;
@@ -66,7 +67,7 @@ body .conteneur {
         ul.badnews{
             list-style: none;
             li{
-                @include breakpoint ($desktop){
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
 
 
                     float: none;
@@ -89,7 +90,7 @@ body .conteneur {
             a{
                 color: $gris-clair-moyen;
                 text-decoration:none;
-                @include breakpoint ($desktop){
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     color: $noir;
                 }
                 &:hover{
@@ -121,7 +122,7 @@ body .conteneur {
 
         ul.rubriques-administratives{
             list-style: none;
-            @include breakpoint ($desktop){
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 /*margin-left: span(2);*/
                 display: flex;
             }
@@ -130,7 +131,7 @@ body .conteneur {
 
                 background: $gris-anthracite;
                 color: whitesmoke;
-                @include breakpoint ($desktop){
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     max-width: 20%;
                     float: left;
                     display: block;
@@ -203,7 +204,7 @@ body .conteneur {
                 //pas besoin de fixer un display en mobile, vertical automatique
                 max-width: span(11);
                 margin:0 auto;
-                @include breakpoint($desktop) {
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     display:flex;
                 }
                 li{
@@ -212,7 +213,7 @@ body .conteneur {
                     margin: 0 0 span(0.2) span(0.2);
                     float: none;
 
-                    @include breakpoint($desktop) {
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         margin: span(0.1);
                         float: left;
                         min-width: span(1);
@@ -240,7 +241,7 @@ body .conteneur {
                 //pas besoin de fixer un display en mobile, vertical automatique
                 max-width: span(11);
                 margin: 0 span(2);
-                @include breakpoint($desktop) {
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     display:flex;
                     /*max-width: span(11);*/
                     margin:0 span(2);
@@ -253,7 +254,7 @@ body .conteneur {
                     display: inline-block;
 
 
-                    @include breakpoint($desktop) {
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         margin: span(0.25);
                         float: left;
                         /*min-width: span(3);*/
@@ -279,7 +280,7 @@ body .conteneur {
                         shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
                         clip-path: circle(50% at 50% 50%);
 
-                        @include breakpoint($desktop) {
+                        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                             padding: span(3) span(1) 0;
                             min-height: 11vw;          
                             min-width: 11vw;
@@ -288,7 +289,7 @@ body .conteneur {
                         &:hover{
 
 
-                            /*                            @include backgroundImage("SVG/bg_acces_contact.svg", -29em top);*/
+                            /*        @include backgroundImage("SVG/bg_acces_contact.svg", -29em top);*/
                             background-size: cover;
 
                             text-indent: em(-9000px);
@@ -327,7 +328,7 @@ body .conteneur {
 
             ul.acces-lycees{
                 display: grid;//conserve ordre des lignes
-                @include breakpoint($desktop) {
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     display: flex;
                     justify-content: center;
                     flex-wrap: wrap;
@@ -336,7 +337,7 @@ body .conteneur {
                     list-style: none;
                     margin: 0;
                     text-align:center;
-                    @include breakpoint($desktop) {
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         width: span(1 of 4);
                         margin: span(0.0001);
                     }
@@ -431,7 +432,7 @@ body .conteneur {
         .acces-partenaires{
             ul{
                        display: initial;//conserve ordre des lignes : grid,inutile ici
-                @include breakpoint($desktop) {
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     display: flex;
                     justify-content: center;
                     flex-wrap: wrap;
@@ -440,13 +441,13 @@ body .conteneur {
                       list-style: none;
                     margin: span(1) 0;
                     text-align:center;
-                    @include breakpoint($desktop) {
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         width: span(1 of 5);
                         margin: span(0.0001);
                     }
                     img,object{
                         max-height: 15vw;
-                        @include breakpoint($desktop) {
+                        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         max-height: 8vw;
                         }
                     }
@@ -461,7 +462,7 @@ body .conteneur {
         }
     }
 
-    @include breakpoint($desktop) {/*    //Dimensions pour les pc
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){/*    //Dimensions pour les pc
         //Taille du conteneur du groupe    
         .annonce_1{}
         .annonce_2{}

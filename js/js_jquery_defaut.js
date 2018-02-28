@@ -24,6 +24,12 @@
 
     });
     
+       //Pour Sticky.js - Partage social en position fixe
+    jQuery(document).ready(function(){
+        console.log('Appel du script Sticky.js');
+    $('.service-links').sticky({topSpacing:0});
+});
+    
     
        
 })(jQuery);

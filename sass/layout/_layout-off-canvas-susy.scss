@@ -54,7 +54,7 @@ body .conteneur {
         -webkit-transform: rotate(0deg);*/
         transform: rotate(0deg);
     }
-    @include breakpoint ($desktop){
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         $off-canvas-height: 7.8em;   
         $off-canvas-top: 10.3em;   
         

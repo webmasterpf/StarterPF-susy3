@@ -15,7 +15,7 @@ body .conteneur{
         @include breakpoint ($mobile){
             /*@include break;*/
         }
-        @include breakpoint ($desktop){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(12 of $desktopcol);
             &:after{
                 content: " ";
@@ -31,24 +31,24 @@ body .conteneur{
 body .conteneur{
     display:grid;
     .content-top{
-        @include breakpoint ($desktop){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(10 of $desktopcol);
             margin: 0 auto;
         }
     }
     .middle-content{
-        @include breakpoint ($desktop){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             /*width: span(12 of $desktopcol);*/
         }
     }
     .node-inner,#zone-centrale-node{
-        @include breakpoint ($desktop){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
 
 
         }
     }
     #zone-illustration{
-        @include breakpoint ($desktop){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(12 of $desktopcol);
             /*@include clearfixsusy3;*/
 
@@ -56,31 +56,32 @@ body .conteneur{
     }
     .col1_layout_9_3{
         
-        @include breakpoint ($desktop){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(9 of $desktopcol);
             float:left;
         }
-        @include breakpoint(($desktop,$tablet))
-        {
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        
             
         }
     }
     .col2_layout_9_3{
-        @include breakpoint ($desktop){
+@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
 
             width: span(3 of $desktopcol);
             float:left;
         }
     }
     .acces_rubriques{
-        @include breakpoint ($desktop){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             @include clearfix;
             display: grid;
         }
     }
 
     .acces-contact
-    {        @include breakpoint ($desktop){
+    {        
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
 /*                 @include clearfix;
                  display: grid;*/
              }

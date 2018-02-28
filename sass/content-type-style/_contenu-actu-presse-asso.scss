@@ -7,16 +7,16 @@
 |--------------------------------------*/
 
 //@include breakpoint ($mobile){}
-//@include breakpoint ($desktop){}
+//@include breakpoint ($desktopwide){}
 //@include breakpoint ($tablet){}
-//@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
 
 /*\\\\\\\\\\  LAYOUT STRUCTURE ///////////*/
 body .conteneur {
     #colonne-1.actu-presse{
         .content{
             padding: span(0.2);
-            @include breakpoint(($desktop,$tablet)){
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 padding: span(0.5);
             }
         }
@@ -75,7 +75,7 @@ body .conteneur {
                         bottom: 1054.4vw;//83%*/
 
 
-            @include breakpoint(($desktop,$tablet)){
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 position: absolute;
                 display: inline-block;
                 z-index: 2;
@@ -98,11 +98,11 @@ body .conteneur {
             /*display: inline-block;*/
             overflow: hidden;
             /*min-height: 15vw;*/
-            @include breakpoint(($desktop,$tablet)){
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 /*min-height: 20vw;*/
             }
             img{
-                @include breakpoint(($desktop,$tablet)){
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     margin: 0 12vw;
                     max-height: 30vw;
                     transform: scale(1.4);
@@ -113,21 +113,21 @@ body .conteneur {
         aside.galerie{
             background: $orange-fonce;   
             display: flex;
-            @include breakpoint(($desktop,$tablet)){
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 padding: span(0.05);
             }
 
         }
 
-        table.doc-joints
-    {
+        table.doc-joints{
+            
            width: span(10);
             margin: 0 auto;
         
         background: transparent;
         a{color: $violet;
           @include backgroundImage('SVG/image_defaut_actu_2500.svg');
-                @include breakpoint(($desktop,$tablet)){
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 display: inline-block;
                 text-indent: em(65px);
                 width: 20vw;
@@ -141,7 +141,7 @@ body .conteneur {
         img.filefield-icon{
             @include backgroundImage('SVG/image_defaut_actu_2500.svg');
             background-size: cover;
-            @include breakpoint(($desktop,$tablet)){
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 display: inline-block;
                 text-indent: em(2px);
                 visibility: hidden;
@@ -149,11 +149,11 @@ body .conteneur {
                 height: 2vw;
             }
             
-            
-            
+           
         }
 
     }
+    .slideshare,.video{width: em(500px);margin: 0 auto;}
     }
 
     .actu-minipresse{
@@ -170,16 +170,16 @@ body .conteneur {
             box-shadow: 0px 0px 5px #888;
         }
     }
-    .actu-minipresse {}
+    
     
 
 
-    .slideshare,.video{width: em(500px);margin: 0 auto;}
-    .slideshare{}
+    
+    
 
 
     #colonne-2.actu-presse{
-        @include breakpoint(($desktop,$tablet)){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         @include border-L-orangePF;
         }
         aside{
@@ -189,12 +189,12 @@ body .conteneur {
         }
         ul.actu-hasard-list-ul{
             padding:span(0.5);
-            @include breakpoint(($desktop,$tablet)){
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 display: flow-root;
             }
             li{
                 list-style:none;
-                @include breakpoint(($desktop,$tablet)){
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     padding: span(0.5);
                     display: inherit;
                 }
@@ -203,7 +203,7 @@ body .conteneur {
                 }
                 span.titre-au-hasard{
                     text-align: center;
-                    @include breakpoint(($desktop,$tablet)){
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         float: left;
                         clear: both;
                     }
@@ -211,7 +211,7 @@ body .conteneur {
                 }
                 img{
                     @include cadre-ombre(0.3em,white,$gris-anthracite);
-                    @include breakpoint(($desktop,$tablet)){
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         float: right;
                     }
                 }

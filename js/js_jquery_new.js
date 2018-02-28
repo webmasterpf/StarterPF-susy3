@@ -154,6 +154,10 @@
     jQuery(document).ready(function () {
         $(".lightSlider").lightSlider();
     });
+    
+ 
+
+
 
     //Pour stacktable (tableaux RWD)
     jQuery(window).load(function () {
