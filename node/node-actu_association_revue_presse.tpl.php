@@ -68,15 +68,15 @@
                 
                 
         <?php if ($node->field_video_externe[0]['view']): ?>
-                        <div class="video">
+                 <aside class="video">
                             <?php print $node->field_video_externe[0]['view'];?>
-                        </div>
+                 </aside>
                     <?php endif; ?>
 
                     <?php if ($node->field_slideshare_actu[0]['view']): ?>
-                        <div class="slideshare">
+                 <aside class="slideshare">
                             <?php print $node->field_slideshare_actu[0]['view'] ?>
-                        </div>
+                 </aside>>
                     <?php endif; ?>
                 
      

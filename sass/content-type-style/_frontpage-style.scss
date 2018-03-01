@@ -281,7 +281,7 @@ body .conteneur {
                         clip-path: circle(50% at 50% 50%);
 
                         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                            padding: span(3) span(1) 0;
+                            padding: span(5) span(1) 0;
                             min-height: 11vw;          
                             min-width: 11vw;
                             word-spacing: em(3px);

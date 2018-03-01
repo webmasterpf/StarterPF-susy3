@@ -6,6 +6,11 @@ Override du style de galerie Bxslider
 //@include breakpoint ($desktop){}
 //@include breakpoint ($tablet){}
 
+body .conteneur{
+
+.bx-wrapper .bx-controls-direction a{
+    z-index: 888;//pour écraser valeur donnée par défaut de 9999
+}
 .galerie-vdl {
     .bx-wrapper{
     margin: 0 auto;
@@ -76,5 +81,6 @@ Override du style de galerie Bxslider
             }
         }
     }
+}
 }
 

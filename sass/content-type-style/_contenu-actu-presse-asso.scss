@@ -153,7 +153,15 @@ body .conteneur {
         }
 
     }
-    .slideshare,.video{width: em(500px);margin: 0 auto;}
+    .slideshare,.video{
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                padding: span(0.05);
+                width: span(6);
+                margin: 0 auto;
+            }    
+    
+    
+    }
     }
 
     .actu-minipresse{
