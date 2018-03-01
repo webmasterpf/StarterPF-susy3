@@ -73,13 +73,21 @@ body .conteneur{
 ---- RESEAUX SOCIAUX Service links
 ---------------------------------*/
 .service-links{
+    background: none repeat scroll 0 0 $orange-fonce;
+    padding: span(0.002);
+    z-index: 10;
+    @include arrondis (em(5px));
+    @include clearfixsusy3;
+    @include PIE;
+    
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-    background: none repeat scroll 0 0 $gris-clair;
+    
+    
 /*       
   right: 0;
   bottom: 90%;
   left: 50%;
-    padding: span(0.002);
+    
     text-align: center;
         transform: translate(790%, 100%);*/
     /* top: 10%; */
@@ -87,11 +95,10 @@ body .conteneur{
     height: 10vw;
       position: relative;
          left: 90%; 
-    z-index: 10;
+    
     //@include squish(0.5,0.5); //Ajoute un margin avant et aprés l'element pour le centrer
     
-    @include arrondis (em(5px));
-    @include PIE;
+    
 
     a{
         margin: 0 em(5px);
@@ -104,7 +111,7 @@ body .conteneur{
     iframe, span, div,button,
     .twitter-share-button,.fb_iframe_widget,#___plusone_0,.IN-widget
     {
-        padding: 0 span(0.001);
+        padding: 0;
         vertical-align: super;
         margin: 0 auto;
     }

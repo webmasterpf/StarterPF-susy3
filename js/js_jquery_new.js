@@ -291,9 +291,9 @@ $('#block-service_links-service_links').floatit({
         $('#liste-vdl span.titre-vdl > a').css('text-transform', 'lowercase');
 
 //Retirer les style en ligne issus de copier/coller
-        $("#colonne-2 span").removeAttr("style");
-        $("#colonne-2 p").removeAttr("style");
-        $("#colonne-2 ul").removeAttr("style");
+        $("#zone-2 span").removeAttr("style");
+        $("#zone-2 p").removeAttr("style");
+        $("#zone-2 ul").removeAttr("style");
         $(".masonry-brick").removeAttr("style");//pas d'effet
 
         //Retrait du style des objets imbriqués comme object,iframe,etc...
@@ -305,9 +305,14 @@ $('#block-service_links-service_links').floatit({
             $(this).removeAttr('width');
             $(this).removeAttr('height');
         });
-$("#media-vimeo-1 iframe").height('23vh').width('100vw');
+$("#zone-1 #media-vimeo-1 iframe").height('23vw').width('100vw');
+$("#zone-2 #media-vimeo-1 iframe").height('23vw').width('100vw');
+$("#zone-1 #media-youtube-1").height('23vw').width('100vw');
+$("#zone-2 #media-youtube-1").height('23vw').width('100vw');
+//$("#media-vimeo-1 iframe").attr('src','autoplay=0');
 // Taille auto pour les images des logos partenaires sur accueil
 $(".logo_partenaires img").height('auto').width('auto');
+$(".acces-lycees #media-vimeo-1 iframe").height('11.5vw').width('100vw');
 
 
         //Retrait position:absolute sur le Views Slideshow       

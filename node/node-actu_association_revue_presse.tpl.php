@@ -1,5 +1,5 @@
 <?php
-/* Ce template permet la création d'un layout multicolonne pour les pages de base, en permettant la disposition facile
+/* Ce template permet la création d'un layout multizone pour les pages de base, en permettant la disposition facile
  * des champs CCK custom, si nécessaires pour une page de base.
  * Redesign V2018-02 *Susy 3* 
 */?>
@@ -8,7 +8,7 @@
   <div class="node-inner">
         <!--______________ ILLUSTRATION et TITRE ________________ -->
         <div id="zone-illustration" class="actu-presse">
-                     <?php if ($title): /*copier le titre dans la colonne desirée*/?>
+                     <?php if ($title): /*copier le titre dans la zone desirée*/?>
          
             <?php endif; ?>
             
@@ -29,7 +29,7 @@
             
         <!--______________COLONNE 1________________ -->
       
-        <div id="colonne-1" class="col1_layout_9_3 actu-presse">
+        <div id="zone-1" class="col1_layout_9_3 actu-presse">
       
              <?php print $picture; ?>
 
@@ -92,7 +92,7 @@
         
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="colonne-2" class="col2_layout_9_3 actu-presse">
+        <div id="zone-2" class="col2_layout_9_3 actu-presse">
 
            
                <?php

@@ -48,8 +48,12 @@ body .conteneur{
         }
     }
     #zone-illustration{
+        display: list-item;
+        margin: span(2) 0 0;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(12 of $desktopcol);
+            display: inherit;
+        margin: 0;
             /*@include clearfixsusy3;*/
 
         }
