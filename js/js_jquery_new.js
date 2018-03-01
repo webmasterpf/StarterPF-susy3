@@ -14,8 +14,8 @@
 
         //Pour surcharger éléments des diaporama de views
         $('.diapo_fiche div.views_slideshow_cycle_teaser_section').css('width', 'auto'),
-                $('.diapo_fiche .views_slideshow_cycle_teaser_section').css('height', 'auto'),
-                $('.diapo_fiche  .views_slideshow_cycle_teaser_section').css('max-width', '100%');
+        $('.diapo_fiche .views_slideshow_cycle_teaser_section').css('height', 'auto'),
+        $('.diapo_fiche  .views_slideshow_cycle_teaser_section').css('max-width', '100%');
         $('.views_slideshow_cycle_slide').css('position', 'relative', 'important');
         $('.views_slideshow_cycle_hidden').css('position', 'relative', 'important');
         $('#views_slideshow_cycle_div_Diapo_illustration-block_1_0').css('position', 'relative', 'important');
@@ -156,9 +156,20 @@
     });
     
     // StickUp pour barre de partage social 
-    jQuery(window).load(function () {
-    console.log('Chargement de StickUp.js pour jQuery>=1.11');
-$('.service-links').stickUp();
+//    jQuery(window).load(function () {
+//    console.log('Chargement de StickUp.js pour jQuery>=1.11');
+//$('.service-links').stickUp();
+//});
+
+jQuery(document).ready(function () {
+    console.log('Chargement de Floatit.js pour jQuery>=1.12');
+$('#block-service_links-service_links').floatit({
+		  limiter: 'footer',
+		preserve_width: true,
+		top_spacing: 40,
+		bottom_spacing: 10,
+		recalculate: true
+	  });
 });
 
 

@@ -4,8 +4,8 @@ Layout pour les desktop.Breakpoint définit par variable dans _variables.scss
 */
 body .conteneur{
     
-    @include breakpoint($desktop)
-    {
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+    
         padding-top: 2em;  
         //mixin container n'existe plus avec susy3, tout se fait avec span
         
@@ -73,8 +73,9 @@ body .conteneur{
 ---- RESEAUX SOCIAUX Service links
 ---------------------------------*/
 .service-links{
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
     background: none repeat scroll 0 0 $gris-clair;
-/*         position: absolute;
+/*       
   right: 0;
   bottom: 90%;
   left: 50%;
@@ -84,8 +85,8 @@ body .conteneur{
     /* top: 10%; */
     width: 5vw;
     height: 10vw;
-    
-        /* left: 85%; */
+      position: relative;
+         left: 90%; 
     z-index: 10;
     //@include squish(0.5,0.5); //Ajoute un margin avant et aprés l'element pour le centrer
     
@@ -99,6 +100,13 @@ body .conteneur{
             text-decoration: none;
         }
 
+    }
+    iframe, span, div,button,
+    .twitter-share-button,.fb_iframe_widget,#___plusone_0,.IN-widget
+    {
+        padding: 0 span(0.001);
+        vertical-align: super;
+        margin: 0 auto;
     }
     iframe{
         height: em(20px);
@@ -117,6 +125,7 @@ body .conteneur{
        
     }
     .twitter-share-button,.fb_iframe_widget,#___plusone_0,.IN-widget{
-        padding: 0 0.3em;
+        
+    }
     }
 }

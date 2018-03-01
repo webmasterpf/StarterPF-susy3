@@ -121,11 +121,13 @@ function starter_d6_susy3_preprocess_page(&$vars){
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/js_jquery_defaut.js', 'theme');
 // mise en place du noConflict pour utiliser plusieurs versions de jQuery   
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_init.js', 'theme');
+//******************************______________________________********************
 //chargement des plugins qui utilisent une version de jQuery plus récente
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/3rdparty/bxslider/js/jquery.bxslider.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.flexslider.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/stacktable.min.js', 'theme');
-//    drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.lockfixed.min.js', 'theme');
+//  drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.lockfixed.min.js', 'theme');
+     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.floatit.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/stickUp.js', 'theme');
     //drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/wookmark.min.js', 'theme');
     drupal_add_js(drupal_get_path('theme', 'starter_d6_susy3') . '/js/jquery_plugin/jquery.masonry.min.js', 'theme');

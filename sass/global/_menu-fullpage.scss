@@ -6,6 +6,7 @@ Menu plein page en surimpression - Modernise la navigation pour la Version 2018
 //@include breakpoint ($mobile){}
   //@include breakpoint ($desktop){}
   //@include breakpoint ($tablet){}
+  //@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
 body .conteneur{
 
     .menui {
@@ -26,7 +27,7 @@ body .conteneur{
         left: -10%;
         bottom: 0;
    
-        @include breakpoint ($desktop){
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             padding: em(9px);
         height: em(32px);
         width: em(32px);
@@ -60,11 +61,14 @@ body .conteneur{
             padding: span(0.1);
             a {
                 display: block;
-                font-size: xx-large;
+                font-size: smaller;
                 color: #fff;
                 text-decoration: none;
                 font-weight: lighter;
                 width: 100%;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    font-size: xx-large;
+                }
                 &:hover{
                     color: $gris-anthracite;
                     background: white;
