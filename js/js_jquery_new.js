@@ -309,7 +309,7 @@ $("#zone-1 #media-vimeo-1 iframe").height('23vw').width('100vw');
 $("#zone-2 #media-vimeo-1 iframe").height('23vw').width('100vw');
 $("#zone-1 #media-youtube-1").height('23vw').width('100vw');
 $("#zone-2 #media-youtube-1").height('23vw').width('100vw');
-//$("#media-vimeo-1 iframe").attr('src','autoplay=0');
+
 // Taille auto pour les images des logos partenaires sur accueil
 $(".logo_partenaires img").height('auto').width('auto');
 $(".acces-lycees #media-vimeo-1 iframe").height('11.5vw').width('100vw');
@@ -372,6 +372,19 @@ $(".acces-lycees #media-vimeo-1 iframe").height('11.5vw').width('100vw');
             $('.mid-menu').toggleClass('mid-animate');
             $('.bottom-menu').toggleClass('bottom-animate');
         });
+        
+//Retrait de l'autoplay des videos Vimeo
+//https://stackoverflow.com/questions/49053072/change-part-of-src-attribute-of-iframe-with-jquery
+  var oldSrc = $("#media-vimeo-1 iframe").attr("src"); //Get the src of the iframe
+  var newSrc = oldSrc.replace("autoplay=1", "autoplay=0"); //Replace "autoplay=1" by "autoplay=0"
+  
+  $("#media-vimeo-1 iframe").attr("src", newSrc); //Change the src attr to the new value
+    console.log("Retrait de l'autoplay de Vimeo: ");
+  console.log("Old Src: " + oldSrc);
+  console.log("New Src: " + newSrc);
+
+        
+        
     });
 
 //  Utilisation du Lazyload pour les éléments contenus dans certains conteneurs

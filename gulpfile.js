@@ -160,7 +160,7 @@ gulp.task('drush', function() {
     })
     
     .pipe(plugins.shell([
-      'drush cc all'
+      'drush @vmdevd6pf cron && drush @vmdevd6pf cc all'
       
     ]))
     .pipe(plugins.notify({

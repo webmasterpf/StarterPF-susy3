@@ -53,9 +53,6 @@
             <?php if ($submitted): ?>
             <span class="submitted"><?php print $submitted; ?></span>
             <?php endif; ?>
-  <?php if ($title): /*copier le titre dans la colonne desirée*/?>
-            <h1 class="titre-lycee"><?php print $title; ?></h1>
-            <?php endif; ?>
             <div class="content">
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
             </div>
