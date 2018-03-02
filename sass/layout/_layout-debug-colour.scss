@@ -356,14 +356,18 @@ body .conteneur{
   }
   
   .zone1_layout_7_5{
+      
+      background: orangered;
       @include breakpoint ($tablet){
-          background: tomato;
+              background: thistle;
+          
       }
       @include breakpoint ($desktop){
-          background: thistle;
+      background: royalblue;
       }
   }
   .zone2_layout_7_5{
+      background: orange;
       @include breakpoint ($tablet){
           background: #00CC99;
       }
