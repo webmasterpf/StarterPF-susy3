@@ -13,7 +13,7 @@
 
 /*\\\\\\\\\\  LAYOUT STRUCTURE ///////////*/
 body .conteneur {
-    #colonne-1.actu-presse{
+    #zone-1.actu-presse{
         .content{
             padding: span(0.2);
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
@@ -186,7 +186,7 @@ body .conteneur {
     
 
 
-    #colonne-2.actu-presse{
+    #zone-2.actu-presse{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         @include border-L-orangePF;
         }

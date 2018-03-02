@@ -76,7 +76,7 @@ body .conteneur {
 
 
 body .conteneur{
-    .col1_layout_max{
+    .zone_layout_max{
         background: #f5bdac;
         @include breakpoint ($mobile){
             
@@ -90,7 +90,7 @@ body .conteneur{
 
 /*//////////////// 3 COLONNES \\\\\\\\\\\\\\\\*/
 body .conteneur{
-    .col1_layout_3_6_3{
+    .zone1_layout_3_6_3{
        
         @include breakpoint ($tablet){
        
@@ -106,7 +106,7 @@ body .conteneur{
             background: violet;
         }
     }
-    .col2_layout_3_6_3{
+    .zone2_layout_3_6_3{
        
         
         background: khaki;
@@ -126,7 +126,7 @@ body .conteneur{
         }
 
     }
-    .col3_layout_3_6_3{
+    .zone3_layout_3_6_3{
         background: #00c9fe;
        
         @include breakpoint ($tablet){
@@ -147,7 +147,7 @@ body .conteneur{
 }
 
 body .conteneur{
-    .col1_layout_2_7_3{
+    .zone1_layout_2_7_3{
      
         @include breakpoint ($tablet){
             background: #00CC99;
@@ -160,7 +160,7 @@ body .conteneur{
                  background: violet;
         }
     }
-    .col2_layout_2_7_3{
+    .zone2_layout_2_7_3{
         background: khaki;
         @include breakpoint ($tablet){
             background: tomato;
@@ -173,7 +173,7 @@ body .conteneur{
             background: royalblue;
         }
    }
-    .col3_layout_2_7_3{
+    .zone3_layout_2_7_3{
          background: #00c9fe;
         @include breakpoint ($tablet){
             background: purple;
@@ -190,7 +190,7 @@ body .conteneur{
     }
 }
 body .conteneur{
-    .col1_layout_2_6_4{
+    .zone1_layout_2_6_4{
        
        
        @include breakpoint ($tablet){
@@ -208,7 +208,7 @@ body .conteneur{
             background: violet;
         }
     }
-    .col2_layout_2_6_4{
+    .zone2_layout_2_6_4{
        
         
         background: khaki;
@@ -228,7 +228,7 @@ body .conteneur{
         }
 
     }
-    .col3_layout_2_6_4{//pas de of pour le span car le contexte est définit par le breakpoint
+    .zone3_layout_2_6_4{//pas de of pour le span car le contexte est définit par le breakpoint
        
        
         background: #00c9fe;
@@ -275,7 +275,7 @@ body .conteneur{
 }
 /*//////////////// 2 COLONNES ASYMETRIQUES \\\\\\\\\\\\\\\\*/
 body .conteneur{
-    .col1_layout_4_8{
+    .zone1_layout_4_8{
         @include breakpoint ($tablet){
        
             background: #00CC99;
@@ -285,7 +285,7 @@ body .conteneur{
             background: #cccccc;
         }
     }
-    .col2_layout_4_8{
+    .zone2_layout_4_8{
         
         
         background: khaki;
@@ -299,7 +299,7 @@ body .conteneur{
     }
   
     
-    .col1_layout_3_9{
+    .zone1_layout_3_9{
         @include breakpoint ($tablet){
             background: #00CC99;
         }
@@ -307,7 +307,7 @@ body .conteneur{
             background: #cccccc;
         }
     }
-    .col2_layout_3_9{
+    .zone2_layout_3_9{
         background: khaki;
         @include breakpoint ($tablet){
             background: tomato;
@@ -317,13 +317,13 @@ body .conteneur{
         }
     }
   
-  .col1_layout_2_10{}
-  .col2_layout_2_10{}
+  .zone1_layout_2_10{}
+  .zone2_layout_2_10{}
   
-  .col1_layout_5_7{}
-  .col2_layout_5_7{}
+  .zone1_layout_5_7{}
+  .zone2_layout_5_7{}
   
-  .col1_layout_6_6,.col1_layoutflex_6_6{
+  .zone1_layout_6_6,.zone1_layoutflex_6_6{
       @include breakpoint ($tablet){
           background: tomato;
       }
@@ -331,7 +331,7 @@ body .conteneur{
           background: thistle;
       }
   }
-  .col2_layout_6_6,.col2_layoutflex_6_6{
+  .zone2_layout_6_6,.zone2_layoutflex_6_6{
       @include breakpoint ($tablet){
           background: #00CC99;
       }
@@ -340,7 +340,7 @@ body .conteneur{
       }
   }
   
-  .col1_layout_7_5{
+  .zone1_layout_7_5{
       @include breakpoint ($tablet){
           background: tomato;
       }
@@ -348,7 +348,7 @@ body .conteneur{
           background: thistle;
       }
   }
-  .col2_layout_7_5{
+  .zone2_layout_7_5{
       @include breakpoint ($tablet){
           background: #00CC99;
       }
@@ -357,7 +357,7 @@ body .conteneur{
       }
   }
   
-  .col1_layout_8_4{
+  .zone1_layout_8_4{
       @include breakpoint ($tablet){
           background: tomato;
       }
@@ -365,7 +365,7 @@ body .conteneur{
           background: thistle;
       }
   }
-  .col2_layout_8_4{
+  .zone2_layout_8_4{
       @include breakpoint ($tablet){
           background: #00CC99;
       }
@@ -374,7 +374,7 @@ body .conteneur{
       }
   }
   
-  .col1_layout_9_3{
+  .zone1_layout_9_3{
           background: #764479;
         @include breakpoint ($tablet){
           background: #00CC99;
@@ -383,7 +383,7 @@ body .conteneur{
           background: #cccccc;
       }
   }
-  .col2_layout_9_3{
+  .zone2_layout_9_3{
       background: tan;
           @include breakpoint ($tablet){
           background: tomato;
@@ -393,8 +393,8 @@ body .conteneur{
       }
   }
   
-  .col1_layout_10_2{}
-  .col2_layout_10_2{}
+  .zone1_layout_10_2{}
+  .zone2_layout_10_2{}
 }
 
 /*//////////////// 4 COLONNES \\\\\\\\\\\\\\\\*/

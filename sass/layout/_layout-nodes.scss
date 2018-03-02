@@ -9,7 +9,7 @@ Ne s'applique que si présence d'un node-TYPE.tpl.php
 
 /*//////////////// 1 COLONNE PLEINE LARGEUR \\\\\\\\\\\\\\\\*/
 body .conteneur{
-    .col1_layout_max{
+    .zone_layout_max{
 
         @include clearfixsusy3;
         @include breakpoint ($mobile){
@@ -58,7 +58,7 @@ body .conteneur{
 
         }
     }
-    .col1_layout_9_3{
+    .zone1_layout_9_3{
         
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(9 of $desktopcol);
@@ -69,7 +69,7 @@ body .conteneur{
             
         }
     }
-    .col2_layout_9_3{
+    .zone2_layout_9_3{
 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
 
             width: span(3 of $desktopcol);

@@ -29,7 +29,7 @@
             
         <!--______________COLONNE 1________________ -->
       
-        <div id="zone-1" class="col1_layout_9_3 actu-presse">
+        <div id="zone-1" class="zone1_layout_9_3 actu-presse">
       
              <?php print $picture; ?>
 
@@ -83,21 +83,21 @@
        
        <?php
               global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_col_1.php');
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
               ?>
                      
-                     </div><!-- /col-1 -->
+                     </div><!-- /zone-1 -->
         </div><!-- /zone-centrale -->
         
         
         <!--______________COLONNE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="zone-2" class="col2_layout_9_3 actu-presse">
+        <div id="zone-2" class="zone2_layout_9_3 actu-presse">
 
            
                <?php
               global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_col_2.php');
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_2.php');
               ?>
 
              <?php if ($terms): ?>
@@ -108,7 +108,7 @@
         <div class="links"> <?php //print $links; ?></div>
         <?php endif; ?>
         
-        </div><!-- /col-2 -->
+        </div><!-- /zone-2 -->
 
         </div><!-- /zone-centrale -->
 

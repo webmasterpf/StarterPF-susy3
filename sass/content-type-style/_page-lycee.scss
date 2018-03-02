@@ -12,22 +12,22 @@
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #colonne-1.page-lycee {order:1;}
-    #colonne-1.page-lycee span{display: none;}
-    #colonne-2.page-lycee {order:1;}
-    #colonne-3.page-lycee {order:2;}
+    #zone-1.page-lycee {order:1;}
+    #zone-1.page-lycee span{display: none;}
+    #zone-2.page-lycee {order:1;}
+    #zone-3.page-lycee {order:2;}
     @include breakpoint ($desktop){
-    #colonne-1.page-lycee {order:1;}
-    #colonne-1.page-lycee span{display: initial;}
-    #colonne-2.page-lycee {order:2;}
-    #colonne-3.page-lycee {order:3;}
+    #zone-1.page-lycee {order:1;}
+    #zone-1.page-lycee span{display: initial;}
+    #zone-2.page-lycee {order:2;}
+    #zone-3.page-lycee {order:3;}
     }
 }
 
 /*######-------- ||| BORDURES ||| --------######*/
 body .conteneur{
     @include breakpoint ($desktop){
-        #colonne-2.page-lycee{@include border-L-violet;}
+        #zone-2.page-lycee{@include border-L-violet;}
     }
     
 }
@@ -46,9 +46,9 @@ h1.titre-lycee,h1.title-classes{
 }
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
-#colonne-1.page-lycee,
-#colonne-2.page-lycee,
-#colonne-3.page-lycee{
+#zone-1.page-lycee,
+#zone-2.page-lycee,
+#zone-3.page-lycee{
     p{
     padding: em(5px);
 }
@@ -73,7 +73,7 @@ strong,b{
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
-#colonne-1.page-lycee{
+#zone-1.page-lycee{
     h2{}
 h3{}
 h4{}
@@ -133,7 +133,7 @@ aside.diapo_lycee{
 
 } 
 /*######-------- COLONNE 2 --------######*/
-#colonne-2.page-lycee{
+#zone-2.page-lycee{
     h2,h3,h4,p,ul,ol,img{
         margin: 0;
     }
@@ -251,13 +251,13 @@ aside.diapo_lycee{
    
 }
 
-#colonne-2.page-classes{
+#zone-2.page-classes{
     padding: 0.5em;
 }
 
 
 
-#colonne-3.page-lycee{
+#zone-3.page-lycee{
  #docs_lycee{
     
      h3{

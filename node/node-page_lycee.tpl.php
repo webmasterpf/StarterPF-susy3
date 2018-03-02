@@ -23,8 +23,8 @@
      
             
             </div><!-- /zone-illustration -->
-        <!--______________COLONNE 1________________ -->
-      <div id="colonne-1" class="layout_3col_all4 page-lycee">
+        <!--______________ ZONE 1 ________________ -->
+      <div id="zone-1" class="zone_layout_max page-lycee">
           
         <?php if ($node->field_lycee_logocoordtxt[0]['view']): ?>
       <span id="lycee-coordlogo">
@@ -44,9 +44,9 @@
               include ($theme_path.'/includes/regions_inc/inc_region_col_1.php');
               ?>
         </div>
-        <!--______________COLONNE 2________________ -->
+        <!--______________ZONE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="colonne-2" class="layout_3col_all4 page-lycee">
+        <div id="zone-2" class="layout_3col_all4 page-lycee">
 
             <?php print $picture; ?>
 
@@ -69,7 +69,7 @@
         <div class="links"> <?php //print $links; ?></div>
         <?php endif; ?>
         </div>
-         <!--______________COLONNE 3________________ -->
+         <!--______________ZONE 3________________ -->
             <div id="colonne-3" class="layout_3col_all4last page-lycee">
                 
              
