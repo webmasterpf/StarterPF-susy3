@@ -17,19 +17,19 @@ body .conteneur .conteneur-flex{
     #zone-2.page-lycee {order:1;}
     #zone-3.page-lycee {order:2;}
     @include breakpoint ($desktop){
-    #zone-1.page-lycee {order:1;}
-    #zone-1.page-lycee span{display: initial;}
-    #zone-2.page-lycee {order:2;}
-    #zone-3.page-lycee {order:3;}
+        #zone-1.page-lycee {order:1;}
+        #zone-1.page-lycee span{display: initial;}
+        #zone-2.page-lycee {order:2;}
+        #zone-3.page-lycee {order:3;}
     }
 }
 
 /*######-------- ||| BORDURES ||| --------######*/
 body .conteneur{
     @include breakpoint ($desktop){
-        #zone-2.page-lycee{@include border-L-violet;}
+        #zone-2.page-lycee{}
     }
-    
+
 }
 /*######-------- ||| BREAKPOINTS ||| --------######*/
 @include breakpoint ($mobile){
@@ -50,24 +50,24 @@ h1.titre-lycee,h1.title-classes{
 #zone-2.page-lycee,
 #zone-3.page-lycee{
     p{
-    padding: em(5px);
-}
-span{
-    font-size: small;
-    padding: em(5px);
-}
-strong,b{
-    color: $rose-fushia;
-}
+        padding: em(5px);
+    }
+    span{
+        font-size: small;
+        padding: em(5px);
+    }
+    strong,b{
+        color: $rose-fushia;
+    }
     a{
         color: $violet;
         text-decoration: none;
         &:hover{
             text-decoration: underline;
         }
-        
+
     }
-    
+
 }
 
 /*------------------------------------
@@ -75,64 +75,74 @@ strong,b{
 ______________________________*/
 #zone-1.page-lycee{
     h2{}
-h3{}
-h4{}
-p{}
-ul{
-    width: auto;
-}
-img{
-    //@include ombrage(0.3em,0,0,0.1em);
-    display: block;
-    margin: 0 auto;
-    @include adaptable-img;
-    width: auto;
-    float: none;
-    border: em(2px) solid $violet;
-    padding: em(2px);
-}
-div.illus-lycee{
-    img{
-        
-        transform: scale(0.8);
-    }
-}
-a{
-    &:hover{}
-}
-
-h2 a{}
-h2 a:hover{}
-h3 a{}
-h3 a:hover{}
-h4 a{}
-h4 a:hover{}
-aside.diapo_lycee{
-    display: block;
-    margin: 0 auto;
-    width: em(175px) !important;
-    width: em(174px);/*IE*/
-     * {//cible le contenu
-        position:relative;
-        /*position:relative !important;*/
-        min-height: 100%;
-    }
-    .views_slideshow_cycle_main{
-        /*position:relative !important;*/
-        
-        
-    }
-    .views_slideshow_cycle_slide{
-        overflow: auto;
+    h3{}
+    h4{}
+    p{}
+    ul{
+        width: auto;
     }
     img{
+        //@include ombrage(0.3em,0,0,0.1em);
+        display: block;
+        margin: 0 auto;
+        @include adaptable-img;
+        width: auto;
+        float: none;
         border: em(2px) solid $violet;
-        margin: em(10px) 0 0;
+        padding: em(2px);
     }
-}
+    #lycee-coordlogo {
+        background: $gris-anthracite;
+        display:block;
+        img[src*="logo"]{
+            float: left;
+            margin: 0 span(0.5);
+        }   
+
+        h2#logo_lpp{}
+    }
+    div.illus-lycee{
+        img{
+
+            transform: scale(0.8);
+        }
+    }
+    a{
+        &:hover{}
+    }
+
+    h2 a{}
+    h2 a:hover{}
+    h3 a{}
+    h3 a:hover{}
+    h4 a{}
+    h4 a:hover{}
+    aside.diapo_lycee{
+        display: block;
+        margin: 0 auto;
+        width: em(175px) !important;
+        width: em(174px);/*IE*/
+        * {//cible le contenu
+           position:relative;
+           /*position:relative !important;*/
+           min-height: 100%;
+        }
+        .views_slideshow_cycle_main{
+            /*position:relative !important;*/
+
+
+        }
+        .views_slideshow_cycle_slide{
+            overflow: auto;
+        }
+        img{
+            border: em(2px) solid $violet;
+            margin: em(10px) 0 0;
+        }
+    }
 
 } 
-/*######-------- COLONNE 2 --------######*/
+/*######-------- ZONE 2 --------######*/
 #zone-2.page-lycee{
     h2,h3,h4,p,ul,ol,img{
         margin: 0;
@@ -150,15 +160,17 @@ aside.diapo_lycee{
         color: $violet;
     }
     p{
+        @include font-size(m);
         padding: em(5px);
         line-height: 1.5em;
-            }
+    }
     ul{
         padding: em(5px);
-            }
-    img{
-        
     }
+    img{
+
+    }
+
     a{
         color: $violet;
         text-decoration: none;
@@ -191,64 +203,64 @@ aside.diapo_lycee{
         //style pour le dernier élément § de content
         p.external-content{
             width: 95%;
+            margin: em(15px) auto;
+            @include breakpoint ($desktop){
+                position: relative;
+                padding-bottom: 56.25%;
+                padding-top: em(85px);
+                height: 0;
+                overflow: initial;
+            }
+        }
+        //style particulier pour le 1er § qui ne contient pas la iframe 
+        p,p:first-child {
+            margin: 0 em(15px);
+            padding: 0;
+        }
+        iframe,object{
+            border: em(2px) solid $violet;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
+
+            @include breakpoint ($desktop){
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+            }
+        }
+    }
+
+    #video_lycee{
+        width: 95%;
         margin: em(15px) auto;
         @include breakpoint ($desktop){
             position: relative;
             padding-bottom: 56.25%;
-            padding-top: em(85px);
+            padding-top: em(35px);
             height: 0;
             overflow: initial;
         }
-        }
-       //style particulier pour le 1er § qui ne contient pas la iframe 
-       p,p:first-child {
-            margin: 0 em(15px);
-            padding: 0;
-        }
-         iframe,object{
-        border: em(2px) solid $violet;
-        padding: em(1px);
-        @include img-centered;
-        max-width: 95%;
+        iframe,object{
+            border: em(2px) solid $violet;
+            padding: em(1px);
+            @include img-centered;
+            max-width: 95%;
 
-        @include breakpoint ($desktop){
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            @include breakpoint ($desktop){
+                position: absolute;
+                top:0;
+                left: 0;
+                width: 100%;
+                height: 100%;
 
+            }
         }
     }
-    }
-    
-  #video_lycee{
-    width: 95%;
-    margin: em(15px) auto;
-    @include breakpoint ($desktop){
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: em(35px);
-        height: 0;
-        overflow: initial;
-    }
-    iframe,object{
-        border: em(2px) solid $violet;
-        padding: em(1px);
-        @include img-centered;
-        max-width: 95%;
 
-        @include breakpoint ($desktop){
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-
-        }
-    }
-}
-   
 }
 
 #zone-2.page-classes{
@@ -258,61 +270,61 @@ aside.diapo_lycee{
 
 
 #zone-3.page-lycee{
- #docs_lycee{
-    
-     h3{
-    font-family:$AristaFont;
-    text-align: center;
-    color: $violet;
-    padding: 5px 0;
-    font-size: medium;
-    margin: 0 0 5px 0;
-}
- table{
-    
-    margin: 0 auto;
-    width: 95%;
-    
-    border: em(3px) solid $gris-clair-moyen;
-    background: #EFEFEF;
-    box-shadow:0px 0px 7px 1px $prune;
-    -moz-box-shadow: 3px $prune;
-    -webkit-box-shadow: 3px $prune;
-    behavior: url(/sites/all/libraries/PIE/PIE.htc);
-   position: relative;
-}
- tbody{
-   border: 0;
-    padding: em(10px) em(15px);
-    
-}
-tr{
-    border: 0;
-    background: 0;
+    #docs_lycee{
 
-}
-td{
-    text-align: center;
-   
-    a{
-    display: block;
-    color: $prune;
-    text-decoration: none;
-   
-    font-size: small;
-    &:hover{
-    background: $rose-fushia;
-    @include arrondis(em(10px));
-    @include PIE;
-   position: relative;
-}
-}
-}
- 
- 
- .filefield-icon{
-    display: none;
-}
-}
+        h3{
+            font-family:$AristaFont;
+            text-align: center;
+            color: $violet;
+            padding: 5px 0;
+            font-size: medium;
+            margin: 0 0 5px 0;
+        }
+        table{
+
+            margin: 0 auto;
+            width: 95%;
+
+            border: em(3px) solid $gris-clair-moyen;
+            background: #EFEFEF;
+            box-shadow:0px 0px 7px 1px $prune;
+            -moz-box-shadow: 3px $prune;
+            -webkit-box-shadow: 3px $prune;
+            behavior: url(/sites/all/libraries/PIE/PIE.htc);
+            position: relative;
+        }
+        tbody{
+            border: 0;
+            padding: em(10px) em(15px);
+
+        }
+        tr{
+            border: 0;
+            background: 0;
+
+        }
+        td{
+            text-align: center;
+
+            a{
+                display: block;
+                color: $prune;
+                text-decoration: none;
+
+                font-size: small;
+                &:hover{
+                    background: $rose-fushia;
+                    @include arrondis(em(10px));
+                    @include PIE;
+                    position: relative;
+                }
+            }
+        }
+
+
+        .filefield-icon{
+            display: none;
+        }
+    }
 
 }

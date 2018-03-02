@@ -25,7 +25,12 @@ body .conteneur{
             } 
         }
     }
-
+    .zone_layout_max_centre{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+         width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
+        }
+    }
 }
 /*////////////// BLOCS IMBRIQUéS DANS BLOC PLEINE LARGEUR \\\\\\\\\*/
 body .conteneur{
@@ -60,7 +65,7 @@ body .conteneur{
     }
     .zone1_layout_9_3{
         
-        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        @include breakpoint(($desktop)){
             width: span(9 of $desktopcol);
             float:left;
         }
@@ -90,4 +95,22 @@ body .conteneur{
                  display: grid;*/
              }
     }
+}
+
+/*---  2 ZONES INEGALES  ---*/
+body .conteneur{
+    display: grid;
+    .zone1_layout_7_5{
+             @include breakpoint(($desktop)){
+            width: span(7 of $desktopcol);
+            float:left;
+        }
+    }
+    .zone2_layout_7_5{
+             @include breakpoint(($desktop)){
+            width: span(5 of $desktopcol);
+            float:left;
+        }
+    }
+    
 }

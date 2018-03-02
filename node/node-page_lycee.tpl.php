@@ -24,7 +24,7 @@
             
             </div><!-- /zone-illustration -->
         <!--______________ ZONE 1 ________________ -->
-      <div id="zone-1" class="zone_layout_max page-lycee">
+      <div id="zone-1" class="zone_layout_max_centre page-lycee">
           
         <?php if ($node->field_lycee_logocoordtxt[0]['view']): ?>
       <span id="lycee-coordlogo">
@@ -32,21 +32,17 @@
       </span>
              <?php endif; ?>    
              
-       <br clear="all"/>      
-    <?php if ($node->field_lycee_form[0]['view']): ?>
-      <span id="lycee-formation">
-                 <?php  print $node->field_lycee_form[0]['view'] ?>
-      </span>
-             <?php endif; ?>
+       
+
             
           <?php
               global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_col_1.php');
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
               ?>
         </div>
         <!--______________ZONE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="zone-2" class="layout_3col_all4 page-lycee">
+        <div id="zone-2" class="zone_layout_max_centre page-lycee">
 
             <?php print $picture; ?>
 
@@ -56,9 +52,16 @@
             <div class="content">
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
             </div>
+            
+                   <?php if ($node->field_video_externe[0]['view']): ?>
+      <span class="video-lycee">
+                 <?php  print $node->field_video_externe[0]['view'] ?>
+      </span>
+             <?php endif; ?>     
+            
      <?php
               global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_col_2.php');
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_2.php');
               ?>
             
               <?php if ($terms): ?>
@@ -70,16 +73,17 @@
         <?php endif; ?>
         </div>
          <!--______________ZONE 3________________ -->
-            <div id="colonne-3" class="layout_3col_all4last page-lycee">
+         <div id="colonne-3" class="zone1_layout_7_5 page-lycee">
                 
-             
-       <?php if ($node->field_video_externe[0]['view']): ?>
-      <span class="video-lycee">
-                 <?php  print $node->field_video_externe[0]['view'] ?>
+                 <?php if ($node->field_lycee_form[0]['view']): ?>
+      <span id="lycee-formation">
+                 <?php  print $node->field_lycee_form[0]['view'] ?>
       </span>
-             <?php endif; ?>           
+             <?php endif; ?>
+      </div><!-- /zone3-->
        
-             
+              <!--______________ZONE 4________________ -->
+              <div id="colonne-3" class="zone2_layout_7_5 page-lycee">
       <?php if ($node->field_lycee_gmap[0]['view']): ?>
       <span id="gmap-lycee">
                  <?php  print $node->field_lycee_gmap[0]['view'] ?>
@@ -87,10 +91,10 @@
              <?php endif; ?>
                     <?php
               global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_col_3.php');
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_3.php');
               ?>
             
-        </div>
+      </div><!-- /zone4-->
       
       
     </div> <!-- /node-inner -->

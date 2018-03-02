@@ -85,6 +85,21 @@ body .conteneur{
          background: peachpuff;
         }
     }
+    .zone_layout_max_centre{
+        
+        background: peachpuff;
+        @include breakpoint ($mobile){
+            
+        }
+        @include breakpoint ($desktop){
+            background: violet;
+         
+        }
+          @include breakpoint ($tabletlandscape){
+       background: #f5bdac;
+         
+        }
+    }
 
 }
 
@@ -353,7 +368,7 @@ body .conteneur{
           background: #00CC99;
       }
       @include breakpoint ($desktop){
-          background: #cccccc;
+          background: aquamarine;
       }
   }
   
