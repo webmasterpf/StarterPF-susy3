@@ -44,7 +44,31 @@ h1.titre-lycee,h1.title-classes{
     color: $violet;
     line-height: 1.0em
 }
+ h1.titre_overlay{
 
+          
+
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                position: absolute;
+                display: inline-block;
+                z-index: 2;
+                top: 0;//120% 17vw mieux comme ça avec titre en haut et non en bas de la photo
+                transform: translate(5%, 410%);
+                max-height: 2.7vw;
+            }
+            &:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+        }
+        h1.titre_page{
+            @include titre-page;
+            color: $blanc-casse;
+            @include rgba-background($orange-fonce, 0.8);
+
+        }
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
 #zone-1.page-lycee,
 #zone-2.page-lycee,
@@ -348,7 +372,10 @@ ______________________________*/
     iframe[src*="maps"],
     iframe[src*="umap"]
     {
-        min-height: 20vw;
+        min-height: 100vw;
         min-width: 35vw;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 20vw;    
+        }
     }
 }

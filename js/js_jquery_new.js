@@ -102,7 +102,7 @@
         console.log('Chargement des paramètres de BxSlider Illus');
         $('.bxslider-illus').bxSlider({
             mode: 'fade',
-            controls: false,
+            controls: true,
             captions: false,
             auto: true,
             autoStart: true,
