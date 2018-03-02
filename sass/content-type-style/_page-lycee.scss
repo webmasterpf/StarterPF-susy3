@@ -48,7 +48,9 @@ h1.titre-lycee,h1.title-classes{
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
 #zone-1.page-lycee,
 #zone-2.page-lycee,
-#zone-3.page-lycee{
+#zone-3.page-lycee,
+#zone-4.page-lycee
+{
     p{
         padding: em(5px);
     }
@@ -268,8 +270,14 @@ ______________________________*/
 }
 
 
-
+/*######-------- ZONE 3 --------######*/
 #zone-3.page-lycee{
+    span#lycee-formation{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            padding: span(0.5) span(1);
+            display: grid;
+        }
+    }
     #docs_lycee{
 
         h3{
@@ -327,4 +335,20 @@ ______________________________*/
         }
     }
 
+
+}
+/*######-------- ZONE 4 --------######*/
+#zone-4.page-lycee{
+    span#gmap-lycee{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            padding: span(0.4);
+            display: grid;
+        }
+    }
+    iframe[src*="maps"],
+    iframe[src*="umap"]
+    {
+        min-height: 20vw;
+        min-width: 35vw;
+    }
 }

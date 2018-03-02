@@ -1,5 +1,5 @@
 <?php
-/* Ce template permet la création d'un layout multicolonne pour les pages de base, en permettant la disposition facile
+/* Ce template permet la création d'un layout multizone pour les pages de base, en permettant la disposition facile
  * des champs CCK custom, si nécessaires pour une page de base.
 */?>
 <!--______________NODE TPL POUR PAGE.TPL CUSTOM________________ -->
@@ -50,7 +50,7 @@
             <span class="submitted"><?php print $submitted; ?></span>
             <?php endif; ?>
             <div class="content">
-                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
+                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la zone désirée*/ ?>
             </div>
             
                    <?php if ($node->field_video_externe[0]['view']): ?>
@@ -73,7 +73,7 @@
         <?php endif; ?>
         </div>
          <!--______________ZONE 3________________ -->
-         <div id="colonne-3" class="zone1_layout_7_5 page-lycee">
+         <div id="zone-3" class="zone1_layout_7_5 page-lycee">
                 
                  <?php if ($node->field_lycee_form[0]['view']): ?>
       <span id="lycee-formation">
@@ -83,7 +83,7 @@
       </div><!-- /zone3-->
        
               <!--______________ZONE 4________________ -->
-              <div id="colonne-3" class="zone2_layout_7_5 page-lycee">
+              <div id="zone-4" class="zone2_layout_7_5 page-lycee">
       <?php if ($node->field_lycee_gmap[0]['view']): ?>
       <span id="gmap-lycee">
                  <?php  print $node->field_lycee_gmap[0]['view'] ?>
