@@ -71,8 +71,10 @@ var bs_stream = browserSync.stream();
 
 // Include plugins
 // tous les plugins de package.json
+var postcss = require('gulp-postcss');
 var plugins = require('gulp-load-plugins')();
 var gutil = require('gulp-util');
+var autoprefixer = require('autoprefixer');
 
 
 // Autoprefixer : Navigateurs à cibler pour le préfixage CSS
@@ -80,6 +82,7 @@ var AUTOPREFIXER_BROWSERS = [
 
 '> 1%',
 'ie >= 8',
+'edge >= 15',
 'ie_mob >= 10',
 'ff >= 45',
 'chrome >= 45',
@@ -134,7 +137,7 @@ gulp.task('sasscompil', function () {
                         folderPaths.styles.src
                         )
             }).on('error', plugins.sass.logError))
-            .pipe(plugins.autoprefixer
+            .pipe(postcss(autoprefixer)
                     (
                             {
                                 browsers: AUTOPREFIXER_BROWSERS,
