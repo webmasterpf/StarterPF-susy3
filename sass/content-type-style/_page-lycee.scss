@@ -99,6 +99,24 @@ h1.titre-lycee,h1.title-classes{
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
+#zone-illustration.page-lycee{
+      #illustration-pleinepage {
+            position: relative;
+            /*display: inline-block;*/
+            overflow: hidden;
+            /*min-height: 15vw;*/
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                /*min-height: 20vw;*/
+            }
+            img{
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    margin: 0 12vw;
+                    max-height: 30vw;
+                    transform: scale(1.4);
+                }
+            }
+        }
+}
 #zone-1.page-lycee{
     h2{}
     h3{}
@@ -121,10 +139,11 @@ ______________________________*/
         background: $gris-anthracite;
         display:block;
         img[src*="logo"]{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             float: left;
             margin: 0 span(0.5);
         }   
-
+        }
         h2#logo_lpp{}
     }
     div.illus-lycee{

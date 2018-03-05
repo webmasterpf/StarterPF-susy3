@@ -6,7 +6,7 @@
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
     <div class="node-inner">
                 <!--______________ ILLUSTRATION et TITRE ________________ -->
-        <div id="zone-illustration" class="page-lycee">
+        <div id="zone-diaporama" class="page-lycee">
                      <?php if ($title): /*copier le titre dans la zone desirée*/?>
          
             <?php endif; ?>

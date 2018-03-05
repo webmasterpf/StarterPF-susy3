@@ -72,6 +72,11 @@ body .conteneur{
 ----------------------------------
 ---- RESEAUX SOCIAUX Service links
 ---------------------------------*/
+aside#block-service_links-service_links{
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+     width: 6vw;   
+    }
+    }
 .service-links{
     background: none repeat scroll 0 0 $orange-fonce;
     padding: span(0.002);
@@ -94,7 +99,7 @@ body .conteneur{
     width: 5vw;
     height: 10vw;
       position: relative;
-         left: 90%; 
+         left: 1250%; 
     
     //@include squish(0.5,0.5); //Ajoute un margin avant et aprés l'element pour le centrer
     

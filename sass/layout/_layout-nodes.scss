@@ -33,6 +33,7 @@ body .conteneur{
     }
 }
 /*////////////// BLOCS IMBRIQUéS DANS BLOC PLEINE LARGEUR \\\\\\\\\*/
+/*---  LAYOUT CONTENU ACTU ---*/
 body .conteneur{
     display:grid;
     .content-top{
@@ -97,9 +98,20 @@ body .conteneur{
     }
 }
 
-/*---  2 ZONES INEGALES  ---*/
+/*---  2 ZONES INEGALES - PAGES LYCEES ---*/
 body .conteneur{
     display: grid;
+        #zone-diaporama{
+/*        display: list-item;
+        margin: span(2) 0 0;*/
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+/*            width: span(12 of $desktopcol);
+            display: inherit;
+        margin: 0;*/
+            /*@include clearfixsusy3;*/
+
+        }
+    }
     .zone1_layout_7_5{
              @include breakpoint(($desktop)){
             width: span(7 of $desktopcol);
