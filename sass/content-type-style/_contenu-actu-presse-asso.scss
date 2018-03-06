@@ -66,32 +66,8 @@ body .conteneur {
             width: span(8);
             margin: 0 auto;
         }
-        /*Positionnement du titre sur l'image pleine page*/
         h1.titre_overlay{
-
-            /*            top: 200vw;//15%
-                        left: 0;
-                        right: 0;
-                        bottom: 1054.4vw;//83%*/
-
-
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                position: absolute;
-                display: inline-block;
-                z-index: 2;
-                top: 0;//120% 17vw mieux comme ça avec titre en haut et non en bas de la photo
-                /*                left: 0;
-                                right: 60vw;//60%
-                                bottom: -10.4vw;//-29.5%*/
-                transform: translate(0%, 5%);
-                max-height: 2.7vw;
-            }
-            &:before {
-                content: '';
-                display: inline-block;
-                height: 100%;
-                vertical-align: middle;
-            }
+            @include titre_overlay();
         }
         #illustration-pleinepage {
             position: relative;

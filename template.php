@@ -44,6 +44,10 @@ function starter_d6_susy3_preprocess_node(&$vars, $hook) {
  $vars['node_col_4'] = theme('blocks', 'node_col_4');
  $vars['node_col_5'] = theme('blocks', 'node_col_5');
  $vars['actuAssociation'] = theme('blocks', 'actuAssociation');
+ //Regions spécifique au site PF
+ $vars['centralBloc'] = theme('blocks', 'centralBloc');
+ $vars['centre_partenaire'] = theme('blocks', 'centre_partenaire');
+ $vars['formulaire'] = theme('blocks', 'formulaire');
  //Regions custom pour theme suite generalisation node.tpl
 // $vars['pole_bloc_G'] = theme('blocks', 'pole_bloc_G');
 // $vars['pole_bloc_C'] = theme('blocks', 'pole_bloc_C');

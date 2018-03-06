@@ -15,11 +15,11 @@
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #zone-1.CLASS_NAME{order:1;}
-    #zone-2.CLASS_NAME{order:2;}
-    #zone-3.CLASS_NAME{order:3;}
-    #zone-4.CLASS_CONTENU{}
-    #zone-5.CLASS_CONTENU{}
+    #zone-1.CLASS_NAME_CONTENU{order:1;}
+    #zone-2.CLASS_NAME_CONTENU{order:2;}
+    #zone-3.CLASS_NAME_CONTENU{order:3;}
+    #zone-4.CLASS_NAME_CONTENU{}
+    #zone-5.CLASS_NAME_CONTENU{}
     @include breakpoint ($desktop){}
 }
 
@@ -37,19 +37,19 @@ body .conteneur{
 /*######-------- ||| STYLE ||| --------######*/
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
-#zone-1.CLASS_CONTENU,
-#zone-2.CLASS_CONTENU,
-#zone-3.CLASS_CONTENU,
-#zone-4.CLASS_CONTENU,
-#zone-5.CLASS_CONTENU
+#zone-1.CLASS_NAME_CONTENU,
+#zone-2.CLASS_NAME_CONTENU,
+#zone-3.CLASS_NAME_CONTENU,
+#zone-4.CLASS_NAME_CONTENU,
+#zone-5.CLASS_NAME_CONTENU
 {}
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 
-#zone-1.CLASS_CONTENU{}
-#zone-2.CLASS_CONTENU{}
-#zone-3.CLASS_CONTENU{}
-#zone-4.CLASS_CONTENU{}
-#zone-5.CLASS_CONTENU{}
+#zone-1.CLASS_NAME_CONTENU{}
+#zone-2.CLASS_NAME_CONTENU{}
+#zone-3.CLASS_NAME_CONTENU{}
+#zone-4.CLASS_NAME_CONTENU{}
+#zone-5.CLASS_NAME_CONTENU{}

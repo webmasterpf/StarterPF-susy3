@@ -67,23 +67,7 @@ h1.titre-lycee,h1.title-classes{
     line-height: 1.0em
 }
 h1.titre_overlay{
-
-
-
-    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-        position: absolute;
-        display: inline-block;
-        z-index: 2;
-        top: 0;//120% 17vw mieux comme ça avec titre en haut et non en bas de la photo
-        transform: translate(5%, 620%);
-        max-height: 2.7vw;
-    }
-    &:before {
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-    }
+    @include titre_overlay();
 }
 h1.titre_page{
     @include titre-page;

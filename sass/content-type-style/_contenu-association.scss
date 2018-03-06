@@ -12,14 +12,15 @@
 //@include breakpoint ($tablet){}
 //@include breakpoint(($desktop,$tablet)){}
 //@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+//@include font-size(smlxl);//utilisation de typey
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #zone-1.CLASS_NAME{order:1;}
-    #zone-2.CLASS_NAME{order:2;}
-    #zone-3.CLASS_NAME{order:3;}
-    #zone-4.CLASS_CONTENU{}
-    #zone-5.CLASS_CONTENU{}
+    #zone-1.page-association{order:1;}
+    #zone-2.page-association{order:2;}
+    #zone-3.page-association{order:3;}
+    #zone-4.page-association{}
+    #zone-5.page-association{}
     @include breakpoint ($desktop){}
 }
 
@@ -32,24 +33,104 @@ body .conteneur{
 }
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
-
+#zone-illustration.page-association{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
+    
+    img{
+        
+            transform: translate(0%,-35%);
+        }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-35%);
+        }
+    }
+}
+#zone-1.page-association{
+    padding: span(0.2);
+}
 
 /*######-------- ||| STYLE ||| --------######*/
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
-#zone-1.CLASS_CONTENU,
-#zone-2.CLASS_CONTENU,
-#zone-3.CLASS_CONTENU,
-#zone-4.CLASS_CONTENU,
-#zone-5.CLASS_CONTENU
-{}
+h1.titre_overlay{
+    @include titre_overlay();
+}
+#zone-1.page-association,
+#zone-2.page-association,
+#zone-3.page-association,
+#zone-4.page-association,
+#zone-5.page-association
+{
+    p,li{
+        @include font-size(m);//utilisation de typey
+    }
+    h2{
+        color: $orange-fonce;
+        @include font-size(xl);
+    }
+    h3{
+        color: $orange-fonce;
+        @include font-size(l);
+    }
+    h4{
+        color: $orange-fonce;
+        @include font-size(m);
+    }
+    strong{
+        color: $orange-fonce;
+    }
+    a{
+        color: $orange-fonce;
+        text-decoration:none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 
-#zone-1.CLASS_CONTENU{}
-#zone-2.CLASS_CONTENU{}
-#zone-3.CLASS_CONTENU{}
-#zone-4.CLASS_CONTENU{}
-#zone-5.CLASS_CONTENU{}
+#zone-1.page-association{
+        .entrefilet{
+            @include backgroundImage('bg-merci.gif');
+            display: block;
+            color: $orange-fonce;
+            @include font-size(l);//utilisation de typey
+            text-transform: capitalize;
+            font-weight: bold;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            padding: span(0.2);
+            transform: translate(1%,2%);
+            float: right;
+                margin: span(0.1);
+                min-width: span(3);
+                max-width: span(5);
+            }
+        }
+        aside{
+            img[src*="deco"]{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                float: right;
+                margin: span(0.01);
+            }
+            }
+            &.video{
+                @include backgroundImage('zebra-gros-clair.gif',0 ,repeat);
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                padding: span(0.01);
+                margin: 0 span(2);
+            }
+            }
+        }
+}
+#zone-2.page-association{}
+#zone-3.page-association{}
+#zone-4.page-association{}
+#zone-5.page-association{}

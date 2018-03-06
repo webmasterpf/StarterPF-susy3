@@ -70,6 +70,36 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     -moz-column-count:$nb-col;
     column-count:$nb-col;
 }
+
+/*------------  TITRES ----------------*/
+@mixin titre_overlay() {
+             /*Positionnement du titre sur l'image pleine page*/
+                z-index: 2;
+                position: relative;
+            /*            top: 200vw;//15%
+                        left: 0;
+                        right: 0;
+                        bottom: 1054.4vw;//83%*/
+
+
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                
+                display: inline-block;
+            
+                top: 0;//120% 17vw mieux comme ça avec titre en haut et non en bas de la photo
+                /*                left: 0;
+                                right: 60vw;//60%
+                                bottom: -10.4vw;//-29.5%*/
+                transform: translate(0%, 5%);
+                max-height: 2.7vw;
+            }
+            &:before {
+                content: '';
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+            }
+        }
 /*------- GESTION DU TEXTE -------------*/
 @mixin cesure-txt($typecesure : initial,$typecesure2 : initial){
     hyphens: auto;
