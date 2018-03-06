@@ -305,10 +305,13 @@ $('#block-service_links-service_links').floatit({
             $(this).removeAttr('width');
             $(this).removeAttr('height');
         });
-$("#zone-1 #media-vimeo-1 iframe").height('23vw').width('100vw');
+         if (parseInt($(window).width()) > 500) {
+        $("#zone-1 #media-vimeo-1 iframe").height('23vw').width('100vw');
 $("#zone-2 #media-vimeo-1 iframe").height('23vw').width('100vw');
 $("#zone-1 #media-youtube-1").height('23vw').width('100vw');
 $("#zone-2 #media-youtube-1").height('23vw').width('100vw');
+    }
+
 
 // Taille auto pour les images des logos partenaires sur accueil
 $(".logo_partenaires img").height('auto').width('auto');
