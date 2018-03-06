@@ -23,11 +23,28 @@
      
             
             </div><!-- /zone-illustration -->
+             <!--______________ ZONE 5 ________________ -->
+<!--         <div id="zone-5" class="zone1_layout_3_7 page-lycee">
+                
+              
+      </div> /zone5-->
         <!--______________ ZONE 1 ________________ -->
       <div id="zone-1" class="zone_layout_max_centre page-lycee">
           
+          <div class="logos_lycee">
+             <?php if ($node->field_logolycee[0]['view']): ?>
+             <aside class="logo-lycee">
+                 <?php  print $node->field_logolycee[0]['view'] ?>
+             </aside>
+             <?php endif; ?>
+                              <?php if ($node->field_logo_lyc_metiers[0]['view']): ?>
+             <aside class="logo-lycee-metiers">
+                 <?php  print $node->field_logo_lyc_metiers[0]['view'] ?>
+             </aside>
+             <?php endif; ?>
+          </div>
         <?php if ($node->field_lycee_logocoordtxt[0]['view']): ?>
-      <span id="lycee-coordlogo">
+      <span class="lycee-coordlogo">
                  <?php  print $node->field_lycee_logocoordtxt[0]['view'] ?>
       </span>
              <?php endif; ?>    
@@ -50,7 +67,18 @@
             <span class="submitted"><?php print $submitted; ?></span>
             <?php endif; ?>
             <div class="content">
-                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la zone désirée*/ ?>
+                
+                 
+                
+                <?php if ($node->field_entrefilet[0]['view']): ?>
+                <blockquote class="entrefilet">
+                 <?php  print $node->field_entrefilet[0]['view'] ?>
+                </blockquote>
+             <?php endif; ?> 
+                
+               <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la zone désirée*/ ?>
+                     
+                
             </div>
             
                    <?php if ($node->field_video_externe[0]['view']): ?>

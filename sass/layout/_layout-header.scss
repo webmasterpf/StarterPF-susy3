@@ -5,88 +5,63 @@
 // Layout du header et de ses parties haute et basse (logique mobile first)
  //Imbrication à 100% (full nested)
  body .conteneur #header {
+     /*width: span(4 of $mobilecol);*/
+     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
      z-index : 30;
      width: span(10 of $desktopcol);
      margin-left: span(1 wide);//push
+     }
      &:after{
                 content: " ";
                 display: block;
                 clear: both;}  
      .headHaut {
+         
                 @include clearfixsusy3;//Dispo sur tous supports
          .logoHead {
-             padding: 4em 0 1em 0;
+             padding: span(1) 0 0;
+             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+             padding: span(0.1) 0 1em 0;
+             }
                     img{
-                    margin: 0 auto;
+                        margin: 0 auto;
+             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){           
+                    margin: 0;
                     //display: block;//commenter si logo pas collé à gauche
                     max-height: 5em;//si logo trop gros
                     object-fit: contain;
                     }
+                    }
          }
-         .menuImg {
-             background: white;
-         }
-     }
+         nav.menuOver{
+             margin: 0 span(0.3) 0 0;
+             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){           
+             margin: 0;
+             }
+         }  
+     }               
+     
      .headBas {
+         /*width: span(4 of $mobilecol);*/
                   @include clearfixsusy3;//Dispo sur tous supports
         .site-slogan,.objectif{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             padding: em(5px) 0 0 0 //Ajoute un padding pour positionner boite
         }
+        }
          .headSearch{
-          padding: em(5px) 0 0 0 //Ajoute un padding pour positionner boite de recherche
-          
+             margin: 0 30%;
+             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+          padding: em(5px) 0 0 0; //Ajoute un padding pour positionner boite de recherche
+              margin: 0 span(0.2);
+             }
          }
-        nav.menuOver{}  
+        
      }                
      
-     
-               
-     @include breakpoint($desktop) {/*    //Dimensions pour les pc*/
-          //@include clearfix;
-         .headHaut {
-                      width: span( 12 of $desktopcol);       
-            
-             .logoHead { 
-                /*width: span(first 2 of $desktopcol);*/
-                width: span( 3 of $desktopcol);       
-                float: left;
-                padding: 0;
-             }
-                   nav.menuOver{
-                width: span( 3 of $desktopcol);       
-                float: right;
-         
-             } 
-            
-         }
-         .headBas {
-            width: span( 12 of $desktopcol);       
-            
-             .site-slogan,.objectif{width: span(8 of $desktopcol ); float: left;  margin-left: gutter(of 6);    }
-             .headSearch{width: span( 3 of $desktopcol );float: right; margin-right: gutter(of 6);        }
-       
-
-         }
      }
-     @include breakpoint($tablet) {/*     //Dimensions pour les tablettes*/
-         .headHaut {
-             .logoHead {}
-             .menuImg {}
-         }
-         .headBas {
-             .site-slogan,.objectif{width: span( 4 of $tabletcol);}
-             .headSearch{width: span( 4 of $tabletcol );}
-             
-         }
-          nav.menuOver{
-           
-             aside.menuDyn{
-               
-             }
-         }
-     }
-   
- }
+      
+ 
 /*---- HEADER HAUT ----*/
  
 

@@ -39,13 +39,17 @@ body section.conteneur{
 
     }
     .acces_rubriques{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         width: span(10 of $desktopcol);
         margin-left: span(1 wide);//push
+        }
         @include clearfixsusy3;
     }
     .logo_partenaires{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         width: span(10 of $desktopcol);
         margin-left: span(1 wide);//push
+        }
     }
 }
 // #############################

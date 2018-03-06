@@ -4,19 +4,19 @@
 
 /*------- Remplacement - Adaptation Mixins Compass -------*/
 @mixin clearfixsusy3 {
-  &::after {
-    clear: both;
-    content: ' ';
-    display: table;
-  }
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
 @mixin clearfix() {
     &:before,
-    &:after {
+        &:after {
         content: "";
         display: table;
-         clear: both;
+        clear: both;
     }
     &:after {
         clear: both;
@@ -24,15 +24,15 @@
 }
 
 @mixin reset-box-model {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
 }
 
 @mixin horizontal-list-container {
-  @include reset-box-model;
-  @include clearfix;
+    @include reset-box-model;
+    @include clearfix;
 }
 @mixin horizontal-list {
     list-style-type:none;
@@ -66,9 +66,9 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
 }
 /*-------- LAYOUT CSS3 --------------*/
 @mixin colonnes($nb-col:3){
-     -webkit-column-count:$nb-col;
-     -moz-column-count:$nb-col;
-          column-count:$nb-col;
+    -webkit-column-count:$nb-col;
+    -moz-column-count:$nb-col;
+    column-count:$nb-col;
 }
 /*------- GESTION DU TEXTE -------------*/
 @mixin cesure-txt($typecesure : initial,$typecesure2 : initial){
@@ -84,17 +84,17 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
 // http://blog.teamtreehouse.com/increase-your-sites-performance-with-hardware-accelerated-css
 // ==========
 @mixin trans-prep {
-  // backface visibility
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
+    // backface visibility
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
 
-  // Resets perspectives
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  perspective: 1000;
+    // Resets perspectives
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
 }
 /*-------- IMAGES ADAPTABLES -----------*/
 @mixin adaptable-img {
@@ -131,37 +131,37 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     transform: scale($coeffzoom);
     z-index: 20;
     transition: all 100ms ease-in;
-    
+
 }
 /*--------- MASQUAGE ELEMENTS ---------*/
 @mixin visuallyhidden {
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
 }
 @mixin blinkEffect($opaciteDepart:1.0,$opaciteMedium:0.0,$opaciteFinal:1.0){
     @-moz-keyframes blinker {  
-    0% { opacity: $opaciteDepart; }
-    50% { opacity: $opaciteMedium; }
-    100% { opacity: $opaciteFinal; }
-}
+        0% { opacity: $opaciteDepart; }
+        50% { opacity: $opaciteMedium; }
+        100% { opacity: $opaciteFinal; }
+    }
 
-@-webkit-keyframes blinker {  
-    0% { opacity: $opaciteDepart; }
-    50% { opacity: $opaciteMedium; }
-    100% { opacity: $opaciteFinal; }
-}
+    @-webkit-keyframes blinker {  
+        0% { opacity: $opaciteDepart; }
+        50% { opacity: $opaciteMedium; }
+        100% { opacity: $opaciteFinal; }
+    }
 
-@keyframes blinker {  
-   0% { opacity: $opaciteDepart; }
-    50% { opacity: $opaciteMedium; }
-    100% { opacity: $opaciteFinal; }
-}
+    @keyframes blinker {  
+        0% { opacity: $opaciteDepart; }
+        50% { opacity: $opaciteMedium; }
+        100% { opacity: $opaciteFinal; }
+    }
 }
 /*------- EFFETS VISUELS GENERIQUES--------------*/
 @mixin forme-habillage($forme:inset(),$marge-forme:0){
@@ -183,7 +183,7 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
 }
 
 @mixin cadre-ombre($epaisseur-cadre:0.5em,$couleur-cadre:#fff,$couleur-ombre:#AAAAAA){
-     border: $epaisseur-cadre solid $couleur-cadre;
+    border: $epaisseur-cadre solid $couleur-cadre;
     -moz-box-shadow: $couleur-ombre 0px 0px 0.5em;
     -webkit-box-shadow: $couleur-ombre 0px 0px 0.5em;
     box-shadow: $couleur-ombre 0px 0px 0.5em;
@@ -193,48 +193,48 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     -moz-box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
     -webkit-box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
     box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
-    }
+}
 @mixin ombrage-interne($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$profondeur:0.3em,$couleur-ombre:#aaa){
     -moz-box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
     -webkit-box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
     box-shadow: inset $decalage-horizontal $decalage-vertical $profondeur $couleur-ombre;
-    }    
+}    
 @mixin ombrage-bas ($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$force-degrade:0.3em,$couleur-ombre:#aaa) {
     -moz-box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
     -webkit-box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
     box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
-    }
+}
 @mixin ombrage-effet-incurve($PositionHalo:-1em,$LargeurHalo:10em,$HauteurHalo:2em){
-        -moz-box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
-        -webkit-box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo  #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
-        box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
-    }    
+    -moz-box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo  #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
+    box-shadow: 0 $PositionHalo $LargeurHalo $HauteurHalo #FFF, 0 0.8em 0.7em -0.2em rgba(0, 0, 0, 1);
+}    
 @mixin table-tr-ombrage-bas {
-        -moz-box-shadow: 1px 2px 2px #aaa;
-        -webkit-box-shadow: 1px 2px 2px #aaa;
-        box-shadow: 1px 2px 2px #555;
-    }
-    
+    -moz-box-shadow: 1px 2px 2px #aaa;
+    -webkit-box-shadow: 1px 2px 2px #aaa;
+    box-shadow: 1px 2px 2px #555;
+}
+
 @mixin ombrage-bloc($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$force-degrade:0.3em,$couleur-ombre:#aaa) {
-       box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
-    }
-    
-    @mixin ombrage-texte($angle:0.5em,$distance:0.2em,$flou:0.6em,$couleur:#1a181a){
-        text-shadow: $angle $distance $flou $couleur;
-filter: dropshadow(color=$couleur, offx=$angle, offy=$distance);
-    }    
+    box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
+}
+
+@mixin ombrage-texte($angle:0.5em,$distance:0.2em,$flou:0.6em,$couleur:#1a181a){
+    text-shadow: $angle $distance $flou $couleur;
+    filter: dropshadow(color=$couleur, offx=$angle, offy=$distance);
+}    
 @mixin ombrage-table-actu
 ($decalage-horizontal:0em,$decalage-vertical:0em,$force-degrade:0.3em,$diffusion-degrade:0.1em,$couleur-ombre:$prune)
 {
-  box-shadow:$decalage-horizontal $decalage-vertical $force-degrade $diffusion-degrade $couleur-ombre;
+    box-shadow:$decalage-horizontal $decalage-vertical $force-degrade $diffusion-degrade $couleur-ombre;
 }
 
 @mixin opacity ($opacite:1){
- opacity:$opacite;/*0.6*/
--moz-opacity : $opacite;
--ms-filter: "alpha(opacity=$opacite)"; /* IE 8 */
-filter : alpha(opacity=$opacite); /* IE < 8 */
--khtml-opacity : $opacite;
+    opacity:$opacite;/*0.6*/
+    -moz-opacity : $opacite;
+    -ms-filter: "alpha(opacity=$opacite)"; /* IE 8 */
+    filter : alpha(opacity=$opacite); /* IE < 8 */
+    -khtml-opacity : $opacite;
 }
 
 @mixin rgba-background($color, $opacity) {
@@ -251,21 +251,21 @@ filter : alpha(opacity=$opacite); /* IE < 8 */
     border-radius: $angle;
 }
 @mixin clignote($duree:1s,$startopacity:1.0,$midopacity:0.0,$finalopacity:1.0){
-     -webkit-animation-name: blinker;
-        -webkit-animation-duration: $duree;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: $duree;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
 
-        -moz-animation-name: blinker;
-        -moz-animation-duration: $duree;
-        -moz-animation-timing-function: linear;
-        -moz-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: $duree;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
 
-        animation-name: blinker;
-        animation-duration: $duree;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite; 
-    
+    animation-name: blinker;
+    animation-duration: $duree;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; 
+
     @-moz-keyframes blinker {  
         0% { opacity: $startopacity; }
         50% { opacity: $midopacity; }
@@ -282,59 +282,59 @@ filter : alpha(opacity=$opacite); /* IE < 8 */
         0% { opacity: $startopacity; }
         50% { opacity: $midopacity; }
         100% { opacity: $finalopacity; }
-}
+    }
 }
 //https://codepen.io/skeate/pen/YPyqWd
 @mixin textedansformeronde($radius){
-  min-width: #{$radius}vw;
-  min-height:#{$radius*2}vh;
-  border-radius: #{$radius}em;
-  &::before{
-    content: '';
-    height: 100%;
-    width: 50%;
-    float: left;
-    shape-outside: polygon(
-      0 0,
-      100% 0,
-      60% 4%,
-      40% 10%,
-      20% 20%,
-      10% 28.2%,
-      5% 34.4%,
-      0 50%,
-      5% 65.6%,
-      10% 71.8%,
-      20% 80%,
-      40% 90%,
-      60% 96%,
-      100% 100%,
-      0% 100%
-    );
-  }
-  > a::before{
-    content: '';
-    height: 100%;
-    width: 50%;
-    float: right;
-    shape-outside: polygon(
-      100% 0,
-      0 0,
-      40% 4%,
-      60% 10%,
-      80% 20%,
-      90% 28.2%,
-      95% 34.4%,
-      100% 50%,
-      95% 65.6%,
-      90% 71.8%,
-      80% 80%,
-      60% 90%,
-      40% 96%,
-      0 100%,
-      100% 100%
-    );
-  }
+    min-width: #{$radius}vw;
+    min-height:#{$radius*2}vh;
+    border-radius: #{$radius}em;
+    &::before{
+        content: '';
+        height: 100%;
+        width: 50%;
+        float: left;
+        shape-outside: polygon(
+            0 0,
+            100% 0,
+            60% 4%,
+            40% 10%,
+            20% 20%,
+            10% 28.2%,
+            5% 34.4%,
+            0 50%,
+            5% 65.6%,
+            10% 71.8%,
+            20% 80%,
+            40% 90%,
+            60% 96%,
+            100% 100%,
+            0% 100%
+            );
+    }
+    > a::before{
+        content: '';
+        height: 100%;
+        width: 50%;
+        float: right;
+        shape-outside: polygon(
+            100% 0,
+            0 0,
+            40% 4%,
+            60% 10%,
+            80% 20%,
+            90% 28.2%,
+            95% 34.4%,
+            100% 50%,
+            95% 65.6%,
+            90% 71.8%,
+            80% 80%,
+            60% 90%,
+            40% 96%,
+            0 100%,
+            100% 100%
+            );
+    }
 }
 
 /*//////////////// BORDER RIGHT \\\\\\\\\\\\\\\\*/

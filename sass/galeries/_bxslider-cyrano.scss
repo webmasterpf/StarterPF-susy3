@@ -10,6 +10,7 @@ body .conteneur{
 
 .bx-wrapper .bx-controls-direction a{
     z-index: 888;//pour écraser valeur donnée par défaut de 9999
+    
 }
 .galerie-vdl {
     .bx-wrapper{
@@ -32,6 +33,7 @@ body .conteneur{
 
 .HPDiapo{
     .bx-wrapper{
+        margin:0;
         .bx-viewport {
         box-shadow: none;
     border: none;
@@ -66,6 +68,7 @@ body .conteneur{
 #illustration-pleinepage.diapo-lycee{
     .bx-wrapper{
             border: 0;
+            margin:0;
            .bx-viewport{
             background: 0;
             border: 0;
@@ -74,10 +77,14 @@ body .conteneur{
             max-height: 30em;
             img{
                 margin: 0;
+                padding: 0;
                 /*transform: scale(0.85);*/
             }
             li{
                 position: relative !important;
+                margin: 0;
+                padding: 0;
+                max-width: 100%;
             }
         }
     }

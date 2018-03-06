@@ -29,6 +29,7 @@ body .conteneur{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
          width: span(10 of $desktopcol);
         margin-left: span(1 wide);//push
+        @include clearfix;
         }
     }
 }
@@ -69,6 +70,7 @@ body .conteneur{
         @include breakpoint(($desktop)){
             width: span(9 of $desktopcol);
             float:left;
+            
         }
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         
@@ -110,6 +112,20 @@ body .conteneur{
         margin: 0;*/
             /*@include clearfixsusy3;*/
 
+        }
+    }
+    .zone1_layout_3_7{
+             @include breakpoint(($desktop)){
+            width: span(3 of $desktopcol);
+            float:left;
+            margin-left: span(1 wide);//push
+        }
+    }
+    .zone2_layout_3_7{
+              @include breakpoint(($desktop)){
+            width: span(7 of $desktopcol);
+            float:left;
+             @include clearfixsusy3;
         }
     }
     .zone1_layout_7_5{

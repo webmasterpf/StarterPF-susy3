@@ -23,7 +23,29 @@ body .conteneur .conteneur-flex{
         #zone-3.page-lycee {order:3;}
     }
 }
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+.logos_lycee{
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        width: span(3 of $desktopcol);
+        margin-left: span(1 wide);//push
+        display: inline-block;
+    }
+}
+aside.logo-lycee,aside.logo-lycee-metiers{
+    margin: span(0.01) 0;
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        float: left;
+        
+    }
+}
 
+.lycee-coordlogo{
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        float: right;
+        width: span(7 of $desktopcol);
+        padding: span(0.01);
+    }
+}
 /*######-------- ||| BORDURES ||| --------######*/
 body .conteneur{
     @include breakpoint ($desktop){
@@ -44,31 +66,31 @@ h1.titre-lycee,h1.title-classes{
     color: $violet;
     line-height: 1.0em
 }
- h1.titre_overlay{
+h1.titre_overlay{
 
-          
 
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                position: absolute;
-                display: inline-block;
-                z-index: 2;
-                top: 0;//120% 17vw mieux comme ça avec titre en haut et non en bas de la photo
-                transform: translate(5%, 410%);
-                max-height: 2.7vw;
-            }
-            &:before {
-                content: '';
-                display: inline-block;
-                height: 100%;
-                vertical-align: middle;
-            }
-        }
-        h1.titre_page{
-            @include titre-page;
-            color: $blanc-casse;
-            @include rgba-background($orange-fonce, 0.8);
 
-        }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        position: absolute;
+        display: inline-block;
+        z-index: 2;
+        top: 0;//120% 17vw mieux comme ça avec titre en haut et non en bas de la photo
+        transform: translate(5%, 620%);
+        max-height: 2.7vw;
+    }
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+h1.titre_page{
+    @include titre-page;
+    color: $blanc-casse;
+    @include rgba-background($orange-fonce, 0.8);
+
+}
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
 #zone-1.page-lycee,
 #zone-2.page-lycee,
@@ -100,22 +122,22 @@ h1.titre-lycee,h1.title-classes{
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 #zone-illustration.page-lycee{
-      #illustration-pleinepage {
-            position: relative;
-            /*display: inline-block;*/
-            overflow: hidden;
-            /*min-height: 15vw;*/
+    #illustration-pleinepage {
+        position: relative;
+        /*display: inline-block;*/
+        overflow: hidden;
+        /*min-height: 15vw;*/
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            /*min-height: 20vw;*/
+        }
+        img{
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                /*min-height: 20vw;*/
-            }
-            img{
-                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                    margin: 0 12vw;
-                    max-height: 30vw;
-                    transform: scale(1.4);
-                }
+                margin: 0 12vw;
+                max-height: 30vw;
+                transform: scale(1.4);
             }
         }
+    }
 }
 #zone-1.page-lycee{
     h2{}
@@ -135,16 +157,34 @@ ______________________________*/
         border: em(2px) solid $violet;
         padding: em(2px);
     }
-    #lycee-coordlogo {
+    .lycee-coordlogo {
         background: $gris-anthracite;
         display:block;
-        img[src*="logo"]{
+        color:$blanc-casse;
+        font-size: medium;
+/*        img[src*="logo"]{
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-            float: left;
-            margin: 0 span(0.5);
-        }   
+                float: left;
+                margin: 0 span(0.5);
+            }   
         }
-        h2#logo_lpp{}
+        img[src*="label"]{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                padding: 0;
+                transform: translate(em(-550px), em(-40px));
+    
+            }
+        }*/
+h2#logo_lpp{
+    color: $blanc-casse;
+    font-size: large;
+}
+a{
+    color:$orange;
+    &:hover{
+        color: $blanc-casse;
+    }
+}
     }
     div.illus-lycee{
         img{
@@ -204,8 +244,8 @@ ______________________________*/
         padding: em(5px);
         color: $violet;
     }
-    p{
-        @include font-size(m);
+    p,li{
+        @include font-size(m);//utilisation de typey
         padding: em(5px);
         line-height: 1.5em;
     }
@@ -215,7 +255,6 @@ ______________________________*/
     img{
 
     }
-
     a{
         color: $violet;
         text-decoration: none;
@@ -245,6 +284,22 @@ ______________________________*/
         }
     }
     div.content{
+        .entrefilet{
+            @include backgroundImage('bg-merci.gif');
+            display: block;
+            color: $orange-fonce;
+            @include font-size(l);//utilisation de typey
+            text-transform: capitalize;
+            font-weight: bold;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            padding: span(0.2);
+            transform: translate(1%,2%);
+            float: right;
+                margin: span(0.1);
+                min-width: span(3);
+                max-width: span(5);
+            }
+        }
         //style pour le dernier élément § de content
         p.external-content{
             width: 95%;
@@ -316,9 +371,33 @@ ______________________________*/
 /*######-------- ZONE 3 --------######*/
 #zone-3.page-lycee{
     span#lycee-formation{
+        background: $orange-fonce;
+        display: grid;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             padding: span(0.5) span(1);
-            display: grid;
+
+        }
+        h3{
+            color: $blanc-casse;
+            text-transform: uppercase;
+            font-size: large;
+        }
+        ul.liste-formations-lycee{
+
+            li{
+                list-style:none;
+                margin:span(0.01);          
+                a{
+                    font-size: medium;
+                    color: $blanc-casse;
+                    text-decoration: none;
+                    padding: span(0.02);
+                    @include cesure-txt;
+                    &:hover{
+                        background: $gris-anthracite;
+                    }
+                }
+            }
         }
     }
     #docs_lycee{
@@ -331,6 +410,7 @@ ______________________________*/
             font-size: medium;
             margin: 0 0 5px 0;
         }
+
         table{
 
             margin: 0 auto;
@@ -371,13 +451,11 @@ ______________________________*/
                 }
             }
         }
-
-
+        
         .filefield-icon{
             display: none;
         }
     }
-
 
 }
 /*######-------- ZONE 4 --------######*/
@@ -394,7 +472,7 @@ ______________________________*/
         min-height: 100vw;
         min-width: 35vw;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-        min-height: 20vw;    
+            min-height: 20vw;    
         }
     }
 }
