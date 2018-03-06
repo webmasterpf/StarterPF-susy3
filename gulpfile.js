@@ -74,7 +74,9 @@ var bs_stream = browserSync.stream();
 var postcss = require('gulp-postcss');
 var plugins = require('gulp-load-plugins')();
 var gutil = require('gulp-util');
+//Plugins de PostCSS
 var autoprefixer = require('autoprefixer');
+
 
 
 // Autoprefixer : Navigateurs à cibler pour le préfixage CSS
@@ -93,6 +95,17 @@ var AUTOPREFIXER_BROWSERS = [
 'bb >= 10'
 ];
 
+//Tableau pour utiliser les plugins de PostCSS
+//https://webdesign.tutsplus.com/tutorials/postcss-quickstart-guide-gulp-setup--cms-24543
+var processors = [
+  autoprefixer(  {
+                                browsers: AUTOPREFIXER_BROWSERS,
+                                cascade: false
+                            })
+                            
+//  cssnext,
+//  precss
+];
 // A display error function, to format and make custom errors more uniform
 // Could be combined with gulp-util or npm colors for nicer output
 //var displayError = function(error) {
@@ -137,13 +150,7 @@ gulp.task('sasscompil', function () {
                         folderPaths.styles.src
                         )
             }).on('error', plugins.sass.logError))
-            .pipe(postcss(autoprefixer)
-                    (
-                            {
-                                browsers: AUTOPREFIXER_BROWSERS,
-                                cascade: false
-                            }
-                    ))
+           .pipe(postcss(processors))//Utilisation des plugins de PostCSS dont Autoprefixer
             .pipe(plugins.sourcemaps.write('.', {sourceRoot: folderPaths.styles.src}))//Pour créer le fichier css.map à coté du css
             .pipe(gulp.dest(basePaths.dest))
             .pipe(plugins.size({title: 'Taille du fichier css'}))
