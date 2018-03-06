@@ -67,36 +67,16 @@
                            
 
           </div>
-  
-           
-     
-       </div> <!-- /zone-1-->
-        <!--______________COLONNE 2________________ -->
-         <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="colonne-2" class="col2_layout_2_7_3 page-association">
-
-          
-            
-                   <?php if ($terms): ?>
+      <?php if ($terms): ?>
         <div class="taxonomy"><?php //print $terms; ?></div>
         <?php endif;?>
 
         <?php if ($links): ?>
         <div class="links"> <?php //print $links; ?></div>
         <?php endif; ?>
-        
-        </div>
-        
-        <!-- ______________________ COLONNE DROITE _______________________ -->
-                   
-          
-           <div id="colonne-3" class="col3_layout_2_7_3 page-association">
-                                             
-          <?php
-              global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_zone_3.php');
-              ?>
-            </div>
-
+           
+     
+       </div> <!-- /zone-1-->
+ 
     </div> <!-- /node-inner -->
 </div> <!-- /node-->

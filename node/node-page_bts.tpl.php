@@ -75,7 +75,7 @@
     <?php if ($terms): ?>
 
       <div id="taxonomy">
-<?php //print Cyrano_PF_print_terms($node);?>
+<?php print Cyrano_PF_print_terms($node);?>
       </div>
     <?php endif;?>
 

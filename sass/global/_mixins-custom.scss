@@ -59,7 +59,14 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
 @mixin backgroundImage($filename,$position:0 0,$repeat: no-repeat) {
     background: transparent url('#{$imagedir}#{$filename}') $repeat $position;
 }
-
+@mixin maskImage($filename,$position:0 0,$repeat: no-repeat, $taille: 50%) {
+    mask: url('#{$imagedir}#{$filename}') $repeat $position;
+    mask-size:$taille;
+}
+@mixin backgroundSVGandColor($filename,$color:red) {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns='#{$imagedir}#{$filename}'><g stroke="#{$color}" ... /></g></svg>');
+   //En travaux !!!
+}
 /*---------- PIE pour CSS3 IE --------------*/
 @mixin PIE {
     behavior: url(./../sites/all/libraries/PIE/PIE.htc);
@@ -76,6 +83,7 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
              /*Positionnement du titre sur l'image pleine page*/
                 z-index: 2;
                 position: relative;
+                margin: 0;
             /*            top: 200vw;//15%
                         left: 0;
                         right: 0;
@@ -85,7 +93,7 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 
                 display: inline-block;
-            
+                margin: 0 0 0 span(0.1);
                 top: 0;//120% 17vw mieux comme ça avec titre en haut et non en bas de la photo
                 /*                left: 0;
                                 right: 60vw;//60%

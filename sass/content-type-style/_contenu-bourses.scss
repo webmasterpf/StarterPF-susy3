@@ -16,11 +16,11 @@
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #zone-1.page-association{order:1;}
-    #zone-2.page-association{order:2;}
-    #zone-3.page-association{order:3;}
-    #zone-4.page-association{}
-    #zone-5.page-association{}
+    #zone-1.page-bourses{order:1;}
+    #zone-2.page-bourses{order:2;}
+    #zone-3.page-bourses{order:3;}
+    #zone-4.page-bourses{}
+    #zone-5.page-bourses{}
     @include breakpoint ($desktop){}
 }
 
@@ -29,18 +29,16 @@ body .conteneur .conteneur-flex,
 body .conteneur{
     @include breakpoint(($desktop,$tablet)){
     }
-
 }
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
-#zone-illustration.page-association{
+#zone-illustration.page-bourses{
     min-height: 35vw;
     max-height: 90vw;
     overflow: hidden;
     
     img{
-        
-            transform: translate(0%,-35%);
+                    transform: translate(0%,-35%);
         }
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         min-height: 25vw;
@@ -50,7 +48,7 @@ body .conteneur{
         }
     }
 }
-#zone-1.page-association{
+#zone-1.page-bourses{
     padding: span(0.2);
 }
 
@@ -60,11 +58,11 @@ body .conteneur{
 h1.titre_overlay{
     @include titre_overlay();
 }
-#zone-1.page-association,
-#zone-2.page-association,
-#zone-3.page-association,
-#zone-4.page-association,
-#zone-5.page-association
+#zone-1.page-bourses,
+#zone-2.page-bourses,
+#zone-3.page-bourses,
+#zone-4.page-bourses,
+#zone-5.page-bourses
 {
     p,li{
         @include font-size(m);//utilisation de typey
@@ -97,9 +95,11 @@ h1.titre_overlay{
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 
-#zone-1.page-association{
+#zone-1.page-bourses{
         .entrefilet{
-            @include backgroundImage('bg-merci.gif');
+            @include maskImage('SVG/quotes.svg', 0,no-repeat,6%);
+            background-color: $gris-anthracite;
+            
             display: block;
             color: $orange-fonce;
             @include font-size(l);//utilisation de typey
@@ -130,7 +130,7 @@ ______________________________*/
             }
         }
 }
-#zone-2.page-association{}
-#zone-3.page-association{}
-#zone-4.page-association{}
-#zone-5.page-association{}
+#zone-2.page-bourses{}
+#zone-3.page-bourses{}
+#zone-4.page-bourses{}
+#zone-5.page-bourses{}

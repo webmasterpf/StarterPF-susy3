@@ -100,7 +100,9 @@ var AUTOPREFIXER_BROWSERS = [
 var processors = [
   autoprefixer(  {
                                 browsers: AUTOPREFIXER_BROWSERS,
-                                cascade: false
+                                cascade: false,
+                                //activation du prefixage pour grid
+                                grid: true 
                             })
                             
 //  cssnext,
