@@ -27,7 +27,7 @@
         <div id="zone-centrale-node" class="#">
 <!--            Inutile-->
             
-        <!--______________COLONNE 1________________ -->
+        <!--______________ZONE 1________________ -->
       
         <div id="zone-1" class="zone1_layout_9_3 actu-presse">
       
@@ -90,7 +90,7 @@
         </div><!-- /zone-centrale -->
         
         
-        <!--______________COLONNE 2________________ -->
+        <!--______________ZONE 2________________ -->
          <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
         <div id="zone-2" class="zone2_layout_9_3 actu-presse">
 

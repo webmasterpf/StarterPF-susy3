@@ -6,40 +6,27 @@
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
     <div class="node-inner">
             <!--______________ ILLUSTRATION et TITRE ________________ -->
-        <div id="zone-diaporama" class="page-lycee">
+        <div id="zone-illustration" class="page-association">
                      <?php if ($title): /*copier le titre dans la zone desirée*/?>
          
             <?php endif; ?>
             
-             <?php if ($node->field_diapo_lycee_type[0]['view']
+             <?php if ($node->field_illus_administratif[0]['view']
                  OR
                  $title
                  ): ?>
-            <div id="illustration-pleinepage" class="diapo-lycee">
+            <div id="illustration-pleinepage" class="illustration-association">
                    <h1 class="titre_overlay titre_page"><?php print $title; ?></h1>
-                 <?php  print $node->field_diapo_lycee_type[0]['view'] ?>
+                 <?php  print $node->field_illus_administratif[0]['view'] ?>
             </div>
             <?php endif;?>
      
             
             </div><!-- /zone-illustration -->
-        <div id="colonne-1" class="col1_layout_2_7_3 page-association">
-            <?php if ($title): /*copier le titre dans la colonne desirée*/?>
-            <h1 class="title-association"><?php print $title; ?></h1>
-            <?php endif; ?>
-           
-          <?php
-              global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
-              ?>
-          
-     
-        </div>
-        <!--______________COLONNE 2________________ -->
-         <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="colonne-2" class="col2_layout_2_7_3 page-association">
-
-            <?php print $picture; ?>
+            <!--______________ZONE 1________________ -->
+      
+        <div id="zone-1" class="zone_layout_max_centre page-association">
+          <?php print $picture; ?>
 
             <?php if ($submitted): ?>
             <span class="submitted"><?php print $submitted; ?></span>
@@ -64,13 +51,26 @@
             <?php print $centre_partenaire; ?>
           </div>
              <?php endif; ?>
-   
+    <?php if ($node->field_video_externe[0]['view']): ?>
+                 <aside class="video">
+                            <?php print $node->field_video_externe[0]['view'];?>
+                 </aside>
+                    <?php endif; ?>
                            
           <?php
               global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_zone_2.php');
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
               ?>
           </div>
+  
+           
+     
+       </div> <!-- /zone-1-->
+        <!--______________COLONNE 2________________ -->
+         <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
+        <div id="colonne-2" class="col2_layout_2_7_3 page-association">
+
+          
             
                    <?php if ($terms): ?>
         <div class="taxonomy"><?php //print $terms; ?></div>
