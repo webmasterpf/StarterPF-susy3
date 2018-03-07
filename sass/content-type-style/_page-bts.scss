@@ -36,10 +36,12 @@ body .conteneur{
     min-height: 35vw;
     max-height: 90vw;
     overflow: hidden;
-    
+
     img{
-                    transform: translate(0%,-35%);
-        }
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        transform: translate(0%,-35%);
+            }
+    }
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         min-height: 25vw;
         max-height: 30vw;
@@ -49,7 +51,40 @@ body .conteneur{
     }
 }
 #zone-1.page-bts{
-    padding: span(0.2);
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        padding: span(0.2);
+    }
+    aside.node_col_1{
+        padding: 0;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            width: span(3 of $desktopcol);
+            margin-left: span(1 wide);//push
+            display: inline-block;
+            padding: span(0.01);
+        }
+    }
+    aside.node_col_2{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            float: right;
+            width: span(6 of $desktopcol);
+            padding: span(0.01);
+        }
+    }
+    #vue-liste-bts{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            margin: span(0.5) 0 0 0;
+
+        }
+        ul.liste-bts-centres{
+            column-count: 1;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                column-count: 2;
+                li{
+                    break-inside: avoid-column;
+                }
+            }
+        }
+    }
 }
 
 /*######-------- ||| STYLE ||| --------######*/
@@ -60,7 +95,93 @@ body .conteneur{
 #zone-3.page-bts,
 #zone-4.page-bts,
 #zone-5.page-bts
-{}
+{
+    p,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    aside{
+        //FormulaireRWD via Mixin
+        @include FormulaireRWD(90%);
+        background:$orange-fonce;
+        h3{
+            color: $gris-anthracite;
+            @include font-size(m);//utilisation de typey
+        }
+        .description p{
+            @include font-size(s);//utilisation de typey
+        }
+        p,label{
+            color: white;
+        }
+        input[type="submit"]{
+            @include font-size(m);//utilisation de typey
+        }
+    }
+
+
+    #vue-liste-bts{
+        @include backgroundImage('bg_nav_backoffice.gif',0, repeat );
+        padding:  span(0.1) 0;
+        .view-header p{
+            background: white;
+            text-indent: 3vw;
+        }
+        ul.liste-bts-centres{
+            padding: span(0.001) ;
+            li{
+                list-style: none;
+                padding: span(0.001) 0 ;
+                margin:0;
+                a{
+                    display: block;
+                    font-weight: bold;
+                    padding: span(0.001) 0;
+                    
+                        font-size: large;
+                    color: $violet;
+                    &:hover{
+                        background: $violet;
+                        color: white;
+                    }
+                }
+                span.centre{
+                    background: white;
+                    
+                    white-space: nowrap;
+                }
+                span.complement-bts{
+                    background: white;
+                    font-size: small;
+                    color: $orange-fonce;
+                }
+            }
+        }
+    }
+    table.table-bts-coord{
+        width: 97%;border: none;
+        tbody{height: auto;margin: 0;padding: 0;border: none;}
+        tr{border: none;}
+        td{vertical-align: middle;border: none;}
+    }
+}
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤

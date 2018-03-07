@@ -29,7 +29,17 @@
     <?php if ($submitted): ?>
       <span class="submitted"><?php print $submitted; ?></span>
     <?php endif; ?>
-
+           
+        <?php
+              global $theme_path;
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
+              ?>
+      
+             <?php
+              global $theme_path;
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_2.php');
+              ?>
+      
     <div class="content">
       <?php  print $node->content['body']['#value']; ?>
 
@@ -64,12 +74,7 @@
         </div>
    <?php endif; ?>        
 
-           <?php
-              global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
-              ?>
-      
-      
+
     </div>
 
     <?php if ($terms): ?>

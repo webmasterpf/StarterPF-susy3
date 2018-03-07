@@ -15,7 +15,8 @@
  
 /*-- LAYOUT PRINCIPAL --*/
 body {
-    @include backgroundImage(('bg_pf_2018.jpg'), repeat-x, top left);//nouvelle mixin 2018
+    /*@include backgroundImage(('bg_pf_2018.jpg'), repeat-x, top left);//nouvelle mixin 2018*/
+    @include backgroundImage(('bg_site_pf_2018_v2.jpg'), repeat-x, top left);//nouvelle mixin 2018
     .conteneur{
 
   

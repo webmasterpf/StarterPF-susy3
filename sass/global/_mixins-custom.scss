@@ -64,7 +64,8 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     mask-size:$taille;
 }
 @mixin backgroundSVGandColor($filename,$color:red) {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns='#{$imagedir}#{$filename}'><g stroke="#{$color}" ... /></g></svg>');
+/* background-image: url("data:image/svg+xml,<'svg xmlns="http://www.w3.org/2000/svg" "'#{$imagedir}#{$filename}",{$color}'></svg>");
+      url('data:image/svg+xml;utf8,<svg xmlns='#{$imagedir}#{$filename}'><g stroke="#{$color}" ... /></g></svg>');*/
    //En travaux !!!
 }
 /*---------- PIE pour CSS3 IE --------------*/
@@ -170,6 +171,27 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     z-index: 20;
     transition: all 100ms ease-in;
 
+}
+/*----------  FORMULAIRES RWD -----------*/
+@mixin FormulaireRWD($largeurFormulaire:65%,$largeurChamp:98%){
+    form{
+        width: $largeurFormulaire;
+        margin: 0 auto;
+        padding: 0;
+        @include arrondis;
+    }
+    label{font-size: smaller;}
+    p{padding: 0;margin: 0;}
+    input[type="text"],input[type="email"],input[type="submit"],select{
+          width: $largeurChamp;
+          display: block;
+          padding: 0;margin: 0;
+      }
+    input[type="submit"]{
+          margin: 0 auto;  display: block;
+          @include cesure-txt;
+    }
+    .form-item{margin-bottom: 0.5em;margin-top: 0.5em;}
 }
 /*--------- MASQUAGE ELEMENTS ---------*/
 @mixin visuallyhidden {
