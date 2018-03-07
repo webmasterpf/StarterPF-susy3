@@ -33,20 +33,19 @@ body .conteneur{
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
 #zone-illustration.page-bts{
-    min-height: 35vw;
+   min-height: 35vw;
     max-height: 90vw;
     overflow: hidden;
 
     img{
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-        transform: translate(0%,-35%);
-            }
+        transform: translate(0%,0%);
+            
     }
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         min-height: 25vw;
         max-height: 30vw;
         img{
-            transform: translate(0%,-35%);
+            transform: translate(0%,-15%);
         }
     }
 }

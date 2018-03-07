@@ -36,31 +36,37 @@
                 
             <?php
             if ($node->field_intro_fiche_bts[0]['view']):
-                print '<div class="intro-fiche-bts">' . $node->field_intro_fiche_bts[0]['view'] . '</div>';
+                print '<div class="intro-fiche-bts">'.$node->field_intro_fiche_bts[0]['view'].'</div>';
             endif;
             ?>
 
 
             <?php
             if ($node->field_abreviation_bts[0]['view']):
-                print '<span id="abreviation-bts">' . $node->field_abreviation_bts[0]['view'] . '</span>';
+                print '<span id="abreviation-bts">'.$node->field_abreviation_bts[0]['view'].'</span>';
             endif;
             ?>
 
             <?php
             if ($node->field_complement_fiche_bts[0]['view']):
-                print '<div class="complement-bts"><span><span><span>' . print $node->field_complement_fiche_bts[0]['view'] . '</span></span></span></div>';
+                print '<div class="complement-bts"><span><span><span>'.$node->field_complement_fiche_bts[0]['view'].'</span></span></span></div>';
             endif;
             ?>
   
+                <div class="content">
+
+                
+                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
+                </div>
+                
             <table id="infos-pratiques-bts">
                 <tbody>
                     <tr>
                         <td class="col1">
                             <h4>Des liens...</h4>
 <?php
-$theme_path = drupal_get_path('theme', 'susy2_pf_cyrano');
-include ($theme_path . '/includes/inc_fiche_bts_liste_liens.php');
+global $theme_path;
+include ($theme_path . '/includes/dedicates_inc/inc_fiche_bts_liste_liens.php');
 ?>
                         </td>
                         <td class="col2">
@@ -96,6 +102,8 @@ include ($theme_path . '/includes/inc_fiche_bts_liste_liens.php');
 <?php if ($links): ?> 
                 <div class="links"> <?php print $links; ?></div>
 <?php endif; ?>
+                
+                
         </div> <!--/zone-1-->
 
 

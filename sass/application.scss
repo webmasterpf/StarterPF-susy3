@@ -16,8 +16,8 @@
 
 sass-3.4.13
 susy-3.0.0
-breakpoint-2.7.1
--- voir le Gemfile pour les versions utilisées
+breakpoint-2.7.1-
+- voir le Gemfile pour les versions utilisées
 ---------------------*/
 
 //Reset des propriétés : via node-normalize-scss (npm))
@@ -110,6 +110,7 @@ breakpoint-2.7.1
 /*@import "./content-type-style/_contenu-cdi.scss";*/
 /*@import "./content-type-style/_webform-contact.scss";*/
 /*@import "./content-type-style/_fiche-formation.scss";*/
+@import "./content-type-style/_fiche-bts.scss";
 @import "./content-type-style/_webform.scss";
 /*@import "./content-type-style/_calendrier.scss";*/
 /*@import "./content-type-style/_page-archives.scss";*/
