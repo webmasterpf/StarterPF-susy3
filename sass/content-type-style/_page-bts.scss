@@ -122,7 +122,7 @@ body .conteneur{
         @include FormulaireRWD(90%);
         background:$orange-fonce;
         h3{
-            color: $gris-anthracite;
+            color: $blanc-casse;
             @include font-size(m);//utilisation de typey
         }
         .description p{
@@ -153,8 +153,8 @@ body .conteneur{
                 a{
                     display: block;
                     font-weight: bold;
-                    padding: span(0.001) 0;
-                    
+                    padding: span(0.001) span(0.01);
+                    max-width: fit-content;
                         font-size: large;
                     color: $violet;
                     &:hover{
@@ -179,7 +179,11 @@ body .conteneur{
         width: 97%;border: none;
         tbody{height: auto;margin: 0;padding: 0;border: none;}
         tr{border: none;}
-        td{vertical-align: middle;border: none;}
+        td{vertical-align: middle;border: none;
+           em{
+               padding: 0 span(0.01);
+           }
+        }
     }
 }
 
