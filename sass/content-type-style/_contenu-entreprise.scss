@@ -1,0 +1,154 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _CONTENT-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                      |
+|         contenu-entreprise            |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #zone-1.contenu-entreprise{order:1;}
+    #zone-2.contenu-entreprise{order:2;}
+    #zone-3.contenu-entreprise{order:3;}
+    #zone-4.contenu-entreprise{}
+    #zone-5.contenu-entreprise{}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur .conteneur-flex,
+body .conteneur{
+    @include breakpoint(($desktop,$tablet)){
+    }
+
+}
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.contenu-entreprise{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
+
+    img{
+        transform: translate(0%,0%);
+            
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-15%);
+        }
+    }
+}
+
+/*######-------- ||| STYLE ||| --------######*/
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-1.contenu-entreprise,
+#zone-2.contenu-entreprise,
+#zone-3.contenu-entreprise,
+#zone-4.contenu-entreprise,
+#zone-5.contenu-entreprise
+{
+     p,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h4{
+        @include font-size(s);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h5{
+        @include font-size(xs);//utilisation de typey
+        color: $orange-fonce;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        margin: 0 50em;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
+    table.table_generik{
+        max-width: 98%;
+            margin: 0 auto;
+        tbody{
+            
+        }
+        tr{
+            background: $gris-anthracite;
+            color: $blanc-casse;
+        }
+        td{
+            background: $orange-fonce;
+            padding: em(5px);
+            display: table-cell;
+        }
+    }
+    
+        table.table-bts-coord{
+        width: 80%;
+        border: em(3px) solid $orange-fonce;
+        margin: 0 auto;
+        tbody{
+            background: $gris-anthracite;
+        color:$blanc-casse;
+            height: auto;
+              margin: span(0.1) 0;
+              padding: 0;
+              border: none;}
+        tr{
+            background: none;
+            border: none;}
+        td{vertical-align: middle;
+           border: em(1px) solid $blanc-casse;
+           em{
+               padding: 0 span(0.01);
+           }
+        }
+    }
+}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#zone-1.contenu-entreprise{
+    //Pour node/111 Tableau objectifs BTS
+    table#doc-joints{
+                width: 80%;
+        border: em(3px) dotted $orange-fonce;
+        margin: 0 auto;
+        tr{
+            @include backgroundImage('zebra-gros-clair.gif',0, repeat );
+            
+        }
+        td{}
+    }
+}
+#zone-2.contenu-entreprise{}
+#zone-3.contenu-entreprise{}
+#zone-4.contenu-entreprise{}
+#zone-5.contenu-entreprise{}

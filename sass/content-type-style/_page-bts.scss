@@ -176,10 +176,21 @@ body .conteneur{
         }
     }
     table.table-bts-coord{
-        width: 97%;border: none;
-        tbody{height: auto;margin: 0;padding: 0;border: none;}
-        tr{border: none;}
-        td{vertical-align: middle;border: none;
+        width: 97%;
+        border: em(3px) solid $orange-fonce;
+        
+        tbody{
+            background: $gris-anthracite;
+        color:$blanc-casse;
+            height: auto;
+              margin: span(0.1) 0;
+              padding: 0;
+              border: none;}
+        tr{
+            background: none;
+            border: none;}
+        td{vertical-align: middle;
+           border: em(1px) solid $blanc-casse;
            em{
                padding: 0 span(0.01);
            }

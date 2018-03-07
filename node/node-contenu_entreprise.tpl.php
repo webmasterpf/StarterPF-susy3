@@ -6,29 +6,29 @@
 <!--______________NODE TPL POUR Contenu Entreprise .TPL CUSTOM________________ -->
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
     <div class="node-inner">
-        <!--______________COLONNE 1________________ -->
-      
-        <div id="colonne-1" class="col1_layout_3_9 page-partenaires">
-            <?php if ($title): /*copier le titre dans la colonne desirée*/?>
-            <h1 class="titre_partenaires"><?php print $title; ?></h1>
+                 <!--______________ ILLUSTRATION et TITRE ________________ -->
+        <div id="zone-illustration" class="contenu-entreprise">
+                     <?php if ($title): /*copier le titre dans la zone desirée*/?>
+         
             <?php endif; ?>
-            <?php
-            if ($node->field_fichier_joint_partenaires[0]['view']):
-
-              global $theme_path;
-                include($theme_path . '/includes/inc_docs_entreprise.php');
-            endif;
-            //il ne s'agit pas d'une vue mais de code PHP !!
-            ?>
-            <?php
-            $theme_path = drupal_get_path('theme', 'susy2_pf_cyrano'); 
-            include ($theme_path . '/includes/inc_region_col_1.php');
-            ?>
-        </div>
-        <!--______________COLONNE 2________________ -->
-         <!-- <pre> <?php //print_r($node); ?> </pre>-->   <!-- listage des variables du $content -->
-        <div id="colonne-2" class="col2_layout_3_9 page-partenaires">
-
+            
+             <?php if ($node->field_illus_entreprise[0]['view']
+                 OR
+                 $title
+                 ): ?>
+            <div id="illustration-pleinepage" class="illustration-contenu-entreprise">
+                   <h1 class="titre_overlay titre_page"><?php print $title; ?></h1>
+                 <?php  print $node->field_illus_entreprise[0]['view'] ?>
+            </div>
+            <?php endif;?>
+     
+            
+            </div><!-- /zone-illustration -->
+        <!--______________ ZONE 1 ________________ -->
+      
+        <div id="zone-1" class="zone_layout_max_centre contenu-entreprise">
+        
+            
             <?php print $picture; ?>
 
             <?php if ($submitted): ?>
@@ -36,11 +36,7 @@
             <?php endif; ?>
 
             <div class="content">
-                       <?php if ($node->field_illus_entreprise[0]['view']): ?>
-            <div class="illustration-rubentreprise">
-                    <?php  print $node->field_illus_entreprise[0]['view']  ?>
-            </div>
-            <?php endif;?>
+
                 
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
                 
@@ -62,14 +58,30 @@
             </div>
             <?php endif;?>
                     
-                          <?php
+                               
+          <?php
               global $theme_path;
-              include ($theme_path.'/includes/inc_region_col_2.php');
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_2.php');
               ?>
             </div>
 
             
-        <?php if ($terms): ?>
+        
+            <?php
+            if ($node->field_fichier_joint_partenaires[0]['view']):
+
+              global $theme_path;
+                include($theme_path . '/includes/dedicates_inc/inc_docs_entreprise.php');
+            endif;
+            //il ne s'agit pas d'une vue mais de code PHP !!
+            ?>
+            
+          <?php
+              global $theme_path;
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
+              ?>
+            
+            <?php if ($terms): ?>
         <div class="taxonomy"><?php //print $terms; ?></div>
         <?php endif;?>
 
@@ -77,8 +89,7 @@
         <div class="links"> <?php //print $links; ?></div>
         <?php endif; ?>
         </div>
-
-       
+           
 
 
     </div> <!-- /node-inner -->

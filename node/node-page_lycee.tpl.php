@@ -23,11 +23,7 @@
      
             
             </div><!-- /zone-illustration -->
-             <!--______________ ZONE 5 ________________ -->
-<!--         <div id="zone-5" class="zone1_layout_3_7 page-lycee">
-                
-              
-      </div> /zone5-->
+  
         <!--______________ ZONE 1 ________________ -->
       <div id="zone-1" class="zone_layout_max_centre page-lycee">
           
