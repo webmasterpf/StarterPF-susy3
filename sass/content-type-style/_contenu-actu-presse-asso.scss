@@ -38,6 +38,9 @@ body .conteneur {
         p,ul,li{
             font-size: medium;
         }
+           strong{
+        color: $orange-fonce;
+    }
         h1.titre_page{
             @include titre-page;
             color: $blanc-casse;

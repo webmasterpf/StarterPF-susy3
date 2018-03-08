@@ -7,8 +7,11 @@ Override du style de galerie vignettes BaguetteBox
 //@include breakpoint ($tablet){}
 //@include breakpoint(($desktop,$tablet)){}
 
-
-aside.galerie .galerieBaguetteBox .view-content
+//définir ici les types de contenus qui appliqueront ce style & layout
+// Vignettes carrées à la suite
+.actu-presse
+{
+    aside.galerie .galerieBaguetteBox .view-content
 {
     > div{
                width: span(1 of 3);
@@ -23,4 +26,34 @@ aside.galerie .galerieBaguetteBox .view-content
         
         @include cadre-ombre(0.3em,white,$gris-anthracite);
     }
+
+}
+}
+
+//définir ici les types de contenus qui appliqueront ce style & layout
+//Galerie Asymétrique
+.fiche-bts
+{
+        aside.galerie .galerieBaguetteBox .view-content
+{
+    > div{
+/*               width: span(1 of 3);
+                margin: span(0.0001);
+                float: left;*/
+            @include breakpoint(($desktop,$tablet)){
+                /*width: span(1 of 6);*/
+                              
+            }
+    }
+    img{
+        transform: scale(1);
+        @include cadre-ombre(0.3em,white,$gris-anthracite);
+    }
+    a.asymetrique-gd{
+        img{
+            transform: scale(1);
+        }
+    }
+
+}
 }

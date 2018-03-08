@@ -52,7 +52,16 @@
                 print '<div class="complement-bts"><span><span><span>'.$node->field_complement_fiche_bts[0]['view'].'</span></span></span></div>';
             endif;
             ?>
-  
+        </div><!--  /zone-1-->
+<div id="zone-2" class="zone_layout_max fiche-bts">
+                      <?php if ($node->field_diapo_lycee_type[0]['view']): ?>
+                 <aside class="galerie">
+                    <?php  print $node->field_diapo_lycee_type[0]['view'];?>
+            </aside>
+            <?php endif;?>
+                
+</div> <!-- /zone-2 -->
+    <div id="zone-3" class="zone_layout_max_centre fiche-bts">
                 <div class="content">
 
                 
@@ -90,7 +99,7 @@ include ($theme_path . '/includes/dedicates_inc/inc_fiche_bts_liste_liens.php');
                     </tr>
 
                 </tbody>
-
+              
             </table>
            <?php if ($node->field_info_plus_bts[0]['view']): ?>
                 <div id="info-plus-fiche-bts">
@@ -104,7 +113,7 @@ include ($theme_path . '/includes/dedicates_inc/inc_fiche_bts_liste_liens.php');
 <?php endif; ?>
                 
                 
-        </div> <!--/zone-1-->
+        </div> <!--/zone-3-->
 
 
     </div> <!-- /node-inner -->

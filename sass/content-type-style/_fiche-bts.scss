@@ -39,7 +39,7 @@ body .conteneur{
 
     img{
         transform: translate(0%,0%);
-            
+
     }
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         min-height: 25vw;
@@ -49,6 +49,38 @@ body .conteneur{
         }
     }
 }
+#zone-2.fiche-bts{
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        padding: span(0.1) 0;
+    }
+    aside.galerie{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            margin: 0 0 0 span(1.5);
+            display: flex;
+        }
+    }
+    a.asymetrique-gd{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            width: span(6);
+            float: left;
+        }
+    }
+    div.asymetrique-petit{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            width: span(6);
+            float: right;
+        }
+    }
+}
+#zone-3.fiche-bts{
+    table#infos-pratiques-bts,div#info-plus-fiche-bts{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            width: span(7);
+            margin: 0 auto;
+        }
+    }
+}
+
 
 /*######-------- ||| STYLE ||| --------######*/
 
@@ -59,7 +91,7 @@ body .conteneur{
 #zone-4.fiche-bts,
 #zone-5.fiche-bts
 {
-     p,li{
+    p,li{
         @include font-size(m);//utilisation de typey
         padding: em(5px);
         line-height: 1.5em;
@@ -79,7 +111,10 @@ body .conteneur{
             text-decoration: underline;
         }
     }
-    
+    strong{
+        color: $orange-fonce;
+    }
+
 }
 
 /*------------------------------------
@@ -88,14 +123,29 @@ ______________________________*/
 
 #zone-1.fiche-bts{
     #abreviation-bts{
-     color: $violet;
-    float: right;
-    padding: 0 em(5px);
-    font-style: italic;
-    text-align: right;display: block;margin: em(5px);
+        color: $violet;
+        float: right;
+        padding: 0 em(5px);
+        font-style: italic;
+        text-align: right;display: block;margin: em(5px);
+    }
 }
+#zone-2.fiche-bts{
+    .galerie{
+        //Voir  "../galeries/_baguettebox-vignette-zoom.scss";
+    }
 }
-#zone-2.fiche-bts{}
-#zone-3.fiche-bts{}
+#zone-3.fiche-bts{
+    table#infos-pratiques-bts{
+
+    }
+    #info-plus-fiche-bts{
+        ul{
+            li{
+                list-style: none;
+            }
+        }
+    }
+}
 #zone-4.fiche-bts{}
 #zone-5.fiche-bts{}
