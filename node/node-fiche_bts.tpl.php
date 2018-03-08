@@ -33,6 +33,13 @@
 <?php if ($submitted): ?>
                 <span class="submitted"><?php print $submitted; ?></span>
 <?php endif; ?>
+
+                
+                   <?php
+            if ($node->field_complement_fiche_bts[0]['view']):
+                print '<div class="complement-bts"><span><span><span>'.$node->field_complement_fiche_bts[0]['view'].'</span></span></span></div>';
+            endif;
+            ?>
                 
             <?php
             if ($node->field_intro_fiche_bts[0]['view']):
@@ -47,11 +54,7 @@
             endif;
             ?>
 
-            <?php
-            if ($node->field_complement_fiche_bts[0]['view']):
-                print '<div class="complement-bts"><span><span><span>'.$node->field_complement_fiche_bts[0]['view'].'</span></span></span></div>';
-            endif;
-            ?>
+         
         </div><!--  /zone-1-->
 <div id="zone-2" class="zone_layout_max fiche-bts">
                       <?php if ($node->field_diapo_lycee_type[0]['view']): ?>
@@ -80,6 +83,10 @@ include ($theme_path . '/includes/dedicates_inc/inc_fiche_bts_liste_liens.php');
                         </td>
                         <td class="col2">
                             <h4>En détail...</h4>
+                            <?php
+global $theme_path;
+include ($theme_path . '/includes/dedicates_inc/inc_fiche_bts_liste_fiches_details.php');
+?>
                             <?php if ($node->field_detail_fiche_bts[0]['view']): ?>
                                 <div id="fiche-detaille-bts">
     <?php print $node->field_detail_fiche_bts[0]['view'] ?>
