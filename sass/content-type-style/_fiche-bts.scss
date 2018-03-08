@@ -82,6 +82,12 @@ body .conteneur{
     }
 }
 #zone-3.fiche-bts{
+        .content{
+            column-count: inherit;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        column-count: 2;
+    }
+        }
     table#infos-pratiques-bts,div#info-plus-fiche-bts{
         width: 100%;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
@@ -114,6 +120,7 @@ body .conteneur{
     h3{
         @include font-size(m);//utilisation de typey
         color: $orange-fonce;
+        
     }
     a{
         text-decoration: none;
@@ -156,6 +163,15 @@ ______________________________*/
     }
 }
 #zone-3.fiche-bts{
+
+    h3{
+        transform: rotate(-1deg);
+             color: $jaune;
+        background: $gris-anthracite;
+        padding: em(3px);
+        margin: em(5px) em(20px);
+        max-width: fit-content;
+    }
     table#infos-pratiques-bts{
         border-top: em(1px) solid  $vert;
         border-bottom: em(2px) solid $gris-anthracite;

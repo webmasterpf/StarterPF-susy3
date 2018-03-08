@@ -50,20 +50,22 @@
 
             <?php
             if ($node->field_abreviation_bts[0]['view']):
-                print '<span id="abreviation-bts">'.$node->field_abreviation_bts[0]['view'].'</span>';
+//                print '<span id="abreviation-bts">'.$node->field_abreviation_bts[0]['view'].'</span>';
             endif;
             ?>
 
          
         </div><!--  /zone-1-->
-<div id="zone-2" class="zone_layout_max fiche-bts">
+
                       <?php if ($node->field_diapo_lycee_type[0]['view']): ?>
-                 <aside class="galerie">
+        <div id="zone-2" class="zone_layout_max fiche-bts">         
+        <aside class="galerie">
                     <?php  print $node->field_diapo_lycee_type[0]['view'];?>
             </aside>
+    </div> <!-- /zone-2 -->
             <?php endif;?>
                 
-</div> <!-- /zone-2 -->
+
     <div id="zone-3" class="zone_layout_max_centre fiche-bts">
                 <div class="content">
 
