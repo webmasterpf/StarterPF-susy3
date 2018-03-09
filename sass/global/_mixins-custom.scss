@@ -64,8 +64,9 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     mask-size:$taille;
 }
 @mixin backgroundSVGandColor($filename,$color:red) {
-/* background-image: url("data:image/svg+xml,<'svg xmlns="http://www.w3.org/2000/svg" "'#{$imagedir}#{$filename}",{$color}'></svg>");
-      url('data:image/svg+xml;utf8,<svg xmlns='#{$imagedir}#{$filename}'><g stroke="#{$color}" ... /></g></svg>');*/
+/* background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="url('#{$imagedir}#{$filename}')" color="$color" ');
+
+*/
    //En travaux !!!
 }
 /*---------- PIE pour CSS3 IE --------------*/

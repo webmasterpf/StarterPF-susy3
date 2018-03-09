@@ -52,10 +52,10 @@ body .conteneur{
 #zone-1.fiche-bts{
     .complement-bts{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-         width: span(4);
+            width: span(4);
             margin: span(0.02) auto;   
         }
-        
+
     }
 }
 #zone-2.fiche-bts{
@@ -82,18 +82,19 @@ body .conteneur{
     }
 }
 #zone-3.fiche-bts{
-        .content{
-            column-count: inherit;
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-        column-count: 2;
-    }
+    .content{
+        column-count: inherit;
+        @include breakpoint(($desktop,$desktopwide,$tabletlandscape)){
+            column-count: 2;
         }
+    }
     table#infos-pratiques-bts,div#info-plus-fiche-bts{
-        width: 100%;
+
+        margin: span(0.02) auto;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(7);
-            margin: span(0.02) auto;
-            
+
+
         }
     }
 }
@@ -108,10 +109,14 @@ body .conteneur{
 #zone-4.fiche-bts,
 #zone-5.fiche-bts
 {
-    p,li{
+    p,ul,li{
         @include font-size(m);//utilisation de typey
         padding: em(5px);
         line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
     }
     h2{
         @include font-size(l);//utilisation de typey
@@ -120,7 +125,6 @@ body .conteneur{
     h3{
         @include font-size(m);//utilisation de typey
         color: $orange-fonce;
-        
     }
     a{
         text-decoration: none;
@@ -166,7 +170,7 @@ ______________________________*/
 
     h3{
         transform: rotate(-1deg);
-             color: $jaune;
+        color: $jaune;
         background: $gris-anthracite;
         padding: em(3px);
         margin: em(5px) em(20px);
@@ -175,25 +179,25 @@ ______________________________*/
     table#infos-pratiques-bts{
         border-top: em(1px) solid  $vert;
         border-bottom: em(2px) solid $gris-anthracite;
-        
+        @include font-size(s);//utilisation de typey
         tbody{}
         tr{}
         td{
             padding: em(2px);background: $gris-clair;vertical-align: top;}
         a{
-            
+
             &:hover{}
         }
-        
+
         td h4{
             text-align: center;
             color: $violet;
-              /*text-shadow: 0px 0px em(5px) $gris-anthracite;*/
-              /*filter: dropshadow(color=$gris-anthracite, offx=0, offy=0);*/
-              
-              behavior: url(/sites/all/libraries/PIE/PIE.htc);
-              @include font-size(l);//utilisation de typey
-              
+            /*text-shadow: 0px 0px em(5px) $gris-anthracite;*/
+            /*filter: dropshadow(color=$gris-anthracite, offx=0, offy=0);*/
+
+            behavior: url(/sites/all/libraries/PIE/PIE.htc);
+            @include font-size(l);//utilisation de typey
+
         }
         ul{
             padding: 0;
@@ -219,28 +223,33 @@ ______________________________*/
 
 
     #info-plus-fiche-bts{
-           background-color: $gris-clair;
-    
-    
-    margin: 0 auto;
-    padding: 0.5em;
-    
-    border-radius: 1em;
-    
-    a{
-        color: $bleu-turquoise;
-        text-decoration: none;
-    }
-    &a:hover{
-        text-decoration: underline;
-    }
-    h3{
-                color: $orange-fonce;
-                text-align: center;
-    }
+        background-color: $gris-clair;
+
+
+        margin: 0 auto;
+        padding: 0.5em;
+
+        border-radius: 1em;
+
+        a{
+            color: $bleu-turquoise;
+            text-decoration: none;
+        }
+        &a:hover{
+            text-decoration: underline;
+        }
+        h3{
+            color: $orange-fonce;
+            text-align: center;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                margin: 0 0 0 span(5.5);
+            }
+        }
         ul{
             li{
                 list-style: square;
+                list-style-position: inside;
+                @include font-size(s);//utilisation de typey
             }
         }
     }

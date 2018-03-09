@@ -95,7 +95,7 @@ body .conteneur{
 #zone-4.page-bts,
 #zone-5.page-bts
 {
-    p,li{
+    p,ul,li{
         @include font-size(m);//utilisation de typey
         padding: em(5px);
         line-height: 1.5em;
