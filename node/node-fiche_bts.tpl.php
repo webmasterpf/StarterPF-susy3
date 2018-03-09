@@ -58,6 +58,7 @@
         </div><!--  /zone-1-->
 
                       <?php if ($node->field_diapo_lycee_type[0]['view']): ?>
+           <!--______________ ZONE 2 ________________ -->
         <div id="zone-2" class="zone_layout_max fiche-bts">         
         <aside class="galerie">
                     <?php  print $node->field_diapo_lycee_type[0]['view'];?>
@@ -65,6 +66,7 @@
     </div> <!-- /zone-2 -->
             <?php endif;?>
                 
+<!--______________ ZONE 3 ________________ -->
 
     <div id="zone-3" class="zone_layout_max_centre fiche-bts">
                 <div class="content">
