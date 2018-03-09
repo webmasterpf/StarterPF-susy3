@@ -32,22 +32,22 @@
 <?php endif; ?>
 
                <?php if ($node->field_complement_info_formation[0]['view']): ?>
-                    <div class="complement_titre_fiche">
+                    <div class="complement-titre-fiche">
                         <?php (print $node->field_complement_info_formation[0]['view']); /* Info complementaire sur formation */ ?>
                     </div>
                 <?php endif; ?>
                 
                    <?php if ($node->field_intro_fiche_formation[0]['view']): ?>
-                    <div class="complement_titre_fiche">
-                        <?php (print $node->field_intro_fiche_formation[0]['view']); /* Info complementaire sur formation */ ?>
+                    <div class="intro-fiche">
+                        <?php (print $node->field_intro_fiche_formation[0]['view']); /* Inutile */?>
                     </div>
                 <?php endif; ?>
                 
-   <?php if ($node->field_savoir_plus_fiche_formatio[0]['view']): ?>
-                    <div class="complement_titre_fiche">
-                        <?php (print $node->field_savoir_plus_fiche_formatio[0]['view']); /* Info complementaire sur formation */ ?>
-                    </div>
-                <?php endif; ?>     
+                
+                        <div class="content">
+                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
+                </div>
+
                 
                      <?php
               global $theme_path;
@@ -67,11 +67,22 @@
                 
 <!--______________ ZONE 3 ________________ -->
     <div id="zone-3" class="zone_layout_max_centre fiche-formation">
-                <div class="content">
+        
+        
+        <?php if ($node->field_texte_section_europe[0]['view']): ?>
+        <article class="paragraphe-section-europe">
+                        <?php (print $node->field_texte_section_europe[0]['view']); /* Textfield pour § Section Europe */ ?>
+        </article>
+                <?php endif; ?>             
+        
+        
+           <?php if ($node->field_savoir_plus_fiche_formatio[0]['view']): ?>
+                    <div class="savoir-plus-fiche">
+                        <?php (print $node->field_savoir_plus_fiche_formatio[0]['view']); /* Inutile */ ?>
+                    </div>
+                <?php endif; ?>             
+        
 
-                
-                <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
-                </div>
            <?php
               global $theme_path;
               include ($theme_path.'/includes/regions_inc/inc_region_zone_2.php');

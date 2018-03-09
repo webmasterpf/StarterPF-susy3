@@ -86,6 +86,8 @@ body .conteneur{
         column-count: inherit;
         @include breakpoint(($desktop,$desktopwide,$tabletlandscape)){
             column-count: 2;
+            column-fill: balance;
+            column-rule: em(2px) dashed $gris-anthracite;
         }
     }
     table#infos-pratiques-bts,div#info-plus-fiche-bts{

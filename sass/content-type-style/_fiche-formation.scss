@@ -33,12 +33,32 @@ body .conteneur{
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
 #zone-1.fiche-formation{
-       .complement_titre_fiche{
+       .complement-titre-fiche{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(4);
             margin: span(0.02) auto;   
         }
        }
+       .content{
+        column-count: inherit;
+        @include breakpoint(($desktop,$desktopwide,$tabletlandscape)){
+            column-count: 2;
+            column-fill: balance;
+            column-rule: em(2px) dashed $gris-anthracite;
+             
+        }
+    }
+}
+#zone-3.fiche-formation{
+    article.paragraphe-section-europe{
+        column-count: inherit;
+        margin: span(0.2) 0;
+        @include breakpoint(($desktop,$desktopwide,$tabletlandscape)){
+            column-count: 2;
+            column-fill: balance;
+         white-space: nowrap;   
+        }
+    }
 }
 
 /*######-------- ||| STYLE ||| --------######*/
@@ -84,7 +104,7 @@ body .conteneur{
 ______________________________*/
 
 #zone-1.fiche-formation{
-    .complement_titre_fiche{
+    .complement-titre-fiche{
         
             
             max-width: fit-content;
@@ -97,6 +117,7 @@ ______________________________*/
         @include font-size(m);//utilisation de typey
         }
     }
+    aside.ficheform-savoirplus{}
 }
 #zone-2.fiche-formation{}
 #zone-3.fiche-formation{
@@ -113,6 +134,12 @@ ______________________________*/
             margin:0;
             li{
                 list-style: square;
+            }
+        }
+        article.paragraphe-section-europe{
+            h3{
+                color: $blanc-casse;
+        background: $bleu-turquoise;
             }
         }
 }
