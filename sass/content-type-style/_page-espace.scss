@@ -1,0 +1,134 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _CONTENT-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                      |
+|             PAGE ESPACE                   |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #zone-1.page-espace{order:1;}
+    #zone-2.page-espace{order:2;}
+    #zone-3.page-espace{order:3;}
+    #zone-4.page-espace{}
+    #zone-5.page-espace{}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur .conteneur-flex,
+body .conteneur{
+    @include breakpoint(($desktop,$tablet)){
+    }
+
+}
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.page-espace{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
+
+    img{
+        transform: translate(0%,0%);
+
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-15%);
+        }
+    }
+}
+aside.contenu-rubrique{
+    li{
+        display: table;
+        margin: span(0.2) 0;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            min-width: 95%;
+        }
+        img{
+            float: left;
+        }
+    }
+    .rubrique-lycees{
+        column-count: 0;
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        column-count: 2;
+        column-fill: balance;
+        white-space: nowrap;
+        
+    }
+    }
+}
+/*######-------- ||| STYLE ||| --------######*/
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-illustration.page-espace{
+    h1.titre_overlay{
+        @include titre_overlay();
+    }
+}
+
+
+#zone-1.page-espace,
+#zone-2.page-espace,
+#zone-3.page-espace,
+#zone-4.page-espace,
+#zone-5.page-espace
+{}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#zone-1.page-espace{
+    aside.contenu-rubrique{
+        ul{
+            //Classes dynamiques attribuées par le titre dans la vue
+            li{
+                &.Rostand{
+                background: $rouge;
+            }
+               &.Célony{
+                background: $vert;
+            }
+               &.Rocher{
+                background: $violet;
+            }
+            }
+            
+          //Style général des éléments  
+            li{
+                list-style: none;
+                background: $orange-fonce;
+                @include cesure-txt();
+                
+                a{
+                    color: $blanc-casse;
+                    text-decoration: none;
+                    font-weight: bold;
+                    @include font-size(l);//utilisation de typey
+                    padding: 0 0 0 span(0.01);
+                }
+                span{
+                    max-width: 80%;
+                    
+                }
+            }
+        }
+    }
+}
+#zone-2.page-espace{}
+#zone-3.page-espace{}
+#zone-4.page-espace{}
+#zone-5.page-espace{}

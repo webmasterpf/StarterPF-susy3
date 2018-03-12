@@ -33,19 +33,19 @@ body .conteneur{
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
 #zone-1.fiche-formation{
-       .complement-titre-fiche{
+    .complement-titre-fiche{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             width: span(4);
             margin: span(0.02) auto;   
         }
-       }
-       .content{
+    }
+    .content{
         column-count: inherit;
         @include breakpoint(($desktop,$desktopwide,$tabletlandscape)){
             column-count: 2;
             column-fill: balance;
             column-rule: em(2px) dashed $gris-anthracite;
-             
+
         }
     }
 }
@@ -56,7 +56,7 @@ body .conteneur{
         @include breakpoint(($desktop,$desktopwide,$tabletlandscape)){
             column-count: 2;
             column-fill: balance;
-         white-space: nowrap;   
+            white-space: nowrap;   
         }
     }
 }
@@ -70,7 +70,7 @@ body .conteneur{
 #zone-4.fiche-formation,
 #zone-5.fiche-formation
 {
-     p,ul,li{
+    p,ul,li{
         @include font-size(m);//utilisation de typey
         padding: em(5px);
         line-height: 1.5em;
@@ -105,43 +105,91 @@ ______________________________*/
 
 #zone-1.fiche-formation{
     .complement-titre-fiche{
-        
-            
-            max-width: fit-content;
-         p{
+
+
+        max-width: fit-content;
+        p{
             background: $gris-anthracite;
             color: $jaune;
             font-weight: bold;
-        padding: span(0.02);    
-        margin: span(0.01) 0;
-        @include font-size(m);//utilisation de typey
+            padding: span(0.02);    
+            margin: span(0.01) 0;
+            @include font-size(m);//utilisation de typey
         }
     }
     aside.ficheform-savoirplus{}
 }
 #zone-2.fiche-formation{}
 #zone-3.fiche-formation{
-      h3{
+    h3{
         transform: rotate(-1deg);
+        max-width: fit-content;
+
         color: $jaune;
         background: $gris-anthracite;
         padding: em(3px);
         margin: em(5px) em(20px);
-        max-width: fit-content;
+
     }
-          ul{
-            padding: 0;
-            margin:0;
+    ul{
+        padding: 0;
+        margin:0;
+        li{
+            list-style: square;
+        }
+    }
+    article.paragraphe-section-europe{
+        h3{
+            color: $blanc-casse;
+            background: $bleu-turquoise;
+            @include cesure-txt;
+            @include font-size(s);//utilisation de typey
+            margin: em(10px) em(20px);
+        }
+        h4{
+            @include font-size(m);//utilisation de typey
+            color: $gris-anthracite;
+        }
+    }
+
+    aside.ficheform-savoirplus{
+        
+        background-color: $gris-clair;
+        margin: span(0.01) auto;
+        padding: span(0.01);
+        @include arrondis(1em);
+        
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            width: span(5);
+        }
+        a{
+            color: $bleu-turquoise;
+            text-decoration: none;
+        }
+        &a:hover{
+            text-decoration: underline;
+        }
+        .views-field-title >span{
+            color: $orange-fonce;
+            background: $gris-anthracite;
+            text-align: center;
+            font-weight: bold;
+            transform: rotate(-1deg);
+            max-width: fit-content;
+            display: block;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                margin: 0 0 0 span(5.5);
+                padding: span(0.001);
+            }
+        }
+        ul{
             li{
                 list-style: square;
+                list-style-position: inside;
+                @include font-size(s);//utilisation de typey
             }
         }
-        article.paragraphe-section-europe{
-            h3{
-                color: $blanc-casse;
-        background: $bleu-turquoise;
-            }
-        }
+    }
 }
 #zone-4.fiche-formation{}
 #zone-5.fiche-formation{}
