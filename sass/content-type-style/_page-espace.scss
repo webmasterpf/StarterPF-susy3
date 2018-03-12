@@ -50,6 +50,7 @@ body .conteneur{
     }
 }
 aside.contenu-rubrique{
+    padding:span(0.2) 0;
     li{
         display: table;
         margin: span(0.2) 0;
@@ -105,6 +106,18 @@ ______________________________*/
                &.Rocher{
                 background: $violet;
             }
+              &.Gasquet{
+                background: $rose-fushia;
+            }
+            &.Caucadis{
+                background: $gris-clair-moyen;
+            }
+            &.Brise-Lames{
+                background: $bleu-turquoise;
+            }
+            &.Grawitz{
+                background: $orange;
+            }
             }
             
           //Style général des éléments  
@@ -124,6 +137,25 @@ ______________________________*/
                     max-width: 80%;
                     
                 }
+                div{
+                    
+                }
+                a >img.imagecache{
+                  content: "";  
+                 &:after
+                 { /* add the transparent pattern overlay */
+                 background: url(images/see-through-pattern-background-2.png) center repeat pink;
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	opacity: 0.7;
+	z-index: -1;
+                }
+                }
+                
             }
         }
     }
