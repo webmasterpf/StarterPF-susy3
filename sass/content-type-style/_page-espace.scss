@@ -137,11 +137,18 @@ ______________________________*/
                     }
                     span{
                         color: $blanc-casse;
-                        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                        @include txt-cesure();
+                        @include breakpoint(($desktop,$desktopwide)){
                         max-width: span(4);
+                        
                         display: inline-block;
                         float: left;
-                        @include txt-cesure();
+                        
+                        }
+                        @include breakpoint(($mobilelandscape,$tablet,$tabletlandscape)){
+                            max-width: span(1);
+                        display: inline-block;
+                        float: left;
                         }
                     }
                     div{

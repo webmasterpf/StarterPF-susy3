@@ -1,0 +1,152 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _CONTENT-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                      |
+|          PAGE FORMATIONS             |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #zone-1.page-formations{order:1;}
+    #zone-2.page-formations{order:2;}
+    #zone-3.page-formations{order:3;}
+    #zone-4.page-formations{}
+    #zone-5.page-formations{}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur .conteneur-flex,
+body .conteneur{
+    @include breakpoint(($desktop,$tablet)){
+    }
+
+}
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.page-formations{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
+
+    img{
+        transform: translate(0%,0%);
+
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-15%);
+        }
+    }
+}
+#zone-1.page-formations{
+    >.content{
+             column-count: 0;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            column-count: 2;
+            column-fill: balance;
+            white-space: normal;
+            padding: span(0.1);
+        }
+    }
+    aside.liste-formations-initiales{
+        ul.formations-initiales{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                column-count: 6;
+                column-fill: balance;
+            white-space: normal;
+            }
+            li{
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    :not(img) :not(a){
+                        padding: span(0.1);
+                    }
+                    a{
+                        display: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
+/*######-------- ||| STYLE ||| --------######*/
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-illustration.page-formations{
+    h1.titre_overlay{
+        @include titre_overlay();
+    }
+}
+
+#zone-1.page-formations,
+#zone-2.page-formations,
+#zone-3.page-formations,
+#zone-4.page-formations,
+#zone-5.page-formations
+{}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#zone-1.page-formations{
+    aside.liste-formations-initiales{
+        ul.formations-initiales{
+            li{
+                list-style: none;
+                color: $blanc-casse;
+                a{
+                    color: $blanc-casse;
+                text-decoration: none;
+                font-weight: bold;
+                @include font-size(l);//utilisation de typey
+                }
+                &.tid-98{
+                    background: $violet;
+                }
+                &.tid-99{
+                    background: $vert;
+                }
+                &.tid-100{
+                    background: $jaune;
+                    *{
+                        color: $gris-anthracite;
+                    }
+                    
+                }
+                &.tid-101{
+                    background: $orange-fonce;
+                }
+                &.tid-102{
+                    background: $rouge;
+                }
+                &.tid-103{
+                    background: $rose-fushia;
+                }
+                &.tid-106{
+                    background: $gris-clair-moyen;
+                }
+                &.tid-107{
+                    background: $bleu-turquoise;
+                }
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+#zone-2.page-formations{}
+#zone-3.page-formations{}
+#zone-4.page-formations{}
+#zone-5.page-formations{}
