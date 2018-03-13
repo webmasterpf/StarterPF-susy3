@@ -58,17 +58,18 @@ aside.contenu-rubrique{
             min-width: 95%;
         }
         img{
-            float: left;
+            /*float: left;*/
         }
     }
-    .rubrique-lycees{
+    .rubrique-lycees,.rubrique-association{
         column-count: 0;
-    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-        column-count: 2;
-        column-fill: balance;
-        white-space: nowrap;
-        
-    }
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            column-count: 2;
+            column-fill: balance;
+            white-space: nowrap;
+            padding: span(0.1);
+
+        }
     }
 }
 /*######-------- ||| STYLE ||| --------######*/
@@ -94,38 +95,89 @@ ______________________________*/
 
 #zone-1.page-espace{
     aside.contenu-rubrique{
-        ul{
-            //Classes dynamiques attribuées par le titre dans la vue
-            li{
-                &.Rostand{
-                background: $rouge;
+        .rubrique-lycees{
+            ul{
+                //Classes dynamiques attribuées par le titre dans la vue
+                li{
+                    &.Rostand{
+                        background: $rouge;
+                    }
+                    &.Célony{
+                        background: $vert;
+                    }
+                    &.Rocher{
+                        background: $violet;
+                    }
+                    &.Gasquet{
+                        background: $rose-fushia;
+                    }
+                    &.Caucadis{
+                        background: $gris-clair-moyen;
+                    }
+                    &.Brise-Lames{
+                        background: $bleu-turquoise;
+                    }
+                    &.Grawitz{
+                        background: $orange;
+                    }
+                }
+
+                //Style général des éléments  
+                li{
+                    list-style: none;
+                    background: $orange-fonce;
+                    @include cesure-txt();
+
+                    a{
+                        color: $blanc-casse;
+                        text-decoration: none;
+                        font-weight: bold;
+                        @include font-size(l);//utilisation de typey
+                        
+                    }
+                    span{
+                        color: $blanc-casse;
+                        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                        max-width: 30%;
+                        display: block;
+                        float: left;
+                        }
+                    }
+                    div{
+                        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                        /*display: inline-block;*/
+                        float: left;
+                        content: "";  
+                        padding: 0 span(0.01) 0 0;
+                        }
+                    }
+                    div > a > img.imagecache{
+                        content: "";  
+                        position: relative;
+                        &:after,&:before
+                            { /* add the transparent pattern overlay */
+                            background: url(http://via.placeholder.com/350x150) center repeat pink;
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            opacity: 0.7;
+                            z-index: -1;
+                        }
+                    }
+
+                }
             }
-               &.Célony{
-                background: $vert;
-            }
-               &.Rocher{
-                background: $violet;
-            }
-              &.Gasquet{
-                background: $rose-fushia;
-            }
-            &.Caucadis{
-                background: $gris-clair-moyen;
-            }
-            &.Brise-Lames{
-                background: $bleu-turquoise;
-            }
-            &.Grawitz{
-                background: $orange;
-            }
-            }
-            
-          //Style général des éléments  
-            li{
-                list-style: none;
-                background: $orange-fonce;
-                @include cesure-txt();
-                
+        }
+        .rubrique-association{
+            ul{
+                li{
+                    list-style: none;
+                    background: $orange-fonce;
+                    @include cesure-txt(); 
+                }
                 a{
                     color: $blanc-casse;
                     text-decoration: none;
@@ -134,28 +186,19 @@ ______________________________*/
                     padding: 0 0 0 span(0.01);
                 }
                 span{
-                    max-width: 80%;
-                    
+                    color: $blanc-casse;
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                             max-width: span(3);
+                        display: block;
+                        /*float: left;*/
+                    }
+                    }
+                //Float de la div contenant l'image,structure HTML différente de page lycées 
+                li > div{
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    float: right;
+                    }
                 }
-                div{
-                    
-                }
-                a >img.imagecache{
-                  content: "";  
-                 &:after
-                 { /* add the transparent pattern overlay */
-                 background: url(images/see-through-pattern-background-2.png) center repeat pink;
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	top: 0;
-	opacity: 0.7;
-	z-index: -1;
-                }
-                }
-                
             }
         }
     }
