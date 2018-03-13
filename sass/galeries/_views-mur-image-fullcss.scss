@@ -82,7 +82,7 @@ span{
             font-size: small;
             text-decoration: none;
             text-transform: lowercase;
-            @include cesure-txt;
+            @include txt-cesure;
             &::first-letter,&:first-letter{
                 text-transform: capitalize;
             }

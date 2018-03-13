@@ -118,7 +118,7 @@ form.webform-client-form{
     }
     input[type="submit"]{
         width: 95%;margin: 0 auto;  display: block;
-        @include cesure-txt;
+        @include txt-cesure;
     }
     .form-item{margin-bottom: 0.5em;margin-top: 0.5em;}
 }

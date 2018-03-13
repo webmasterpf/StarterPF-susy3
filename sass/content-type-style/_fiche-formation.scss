@@ -142,7 +142,7 @@ ______________________________*/
         h3{
             color: $blanc-casse;
             background: $bleu-turquoise;
-            @include cesure-txt;
+            @include txt-cesure;
             @include font-size(s);//utilisation de typey
             margin: em(10px) em(20px);
         }

@@ -376,7 +376,7 @@ a{
                     color: $blanc-casse;
                     text-decoration: none;
                     padding: span(0.02);
-                    @include cesure-txt;
+                    @include txt-cesure;
                     &:hover{
                         background: $gris-anthracite;
                     }

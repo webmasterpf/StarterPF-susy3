@@ -126,7 +126,7 @@ ______________________________*/
                 li{
                     list-style: none;
                     background: $orange-fonce;
-                    @include cesure-txt();
+                    @include txt-cesure();
 
                     a{
                         color: $blanc-casse;
@@ -141,7 +141,7 @@ ______________________________*/
                         max-width: span(4);
                         display: inline-block;
                         float: left;
-                        @include cesure-txt();
+                        @include txt-cesure();
                         }
                     }
                     div{
@@ -157,7 +157,8 @@ ______________________________*/
                         position: relative;
                         &:after,&:before
                             { /* add the transparent pattern overlay */
-                            background: url(http://via.placeholder.com/350x150) center repeat pink;
+                            @include backgroundImage('motif_img_overlay.png');
+                            
                             content: "";
                             position: absolute;
                             bottom: 0;
@@ -177,14 +178,14 @@ ______________________________*/
                 li{
                     list-style: none;
                     background: $orange-fonce;
-                    @include cesure-txt(); 
+                    @include txt-cesure(); 
                 }
                 a{
                     color: $blanc-casse;
                     text-decoration: none;
                     font-weight: bold;
                     @include font-size(l);//utilisation de typey
-                    
+                    @include txt-ellipse();
                 }
                 span{
                     color: $blanc-casse;
@@ -192,7 +193,7 @@ ______________________________*/
                              max-width: span(4);
                              padding: span(0.1);
                         display: inline-block;
-                        @include cesure-txt();
+                        @include txt-cesure();
                         /*float: left;*/
                     }
                     }

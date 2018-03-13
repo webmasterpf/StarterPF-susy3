@@ -111,12 +111,15 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
             }
         }
 /*------- GESTION DU TEXTE -------------*/
-@mixin cesure-txt($typecesure : break-word,$typecesure2 : break-word){
-    hyphens: auto;
-    text-overflow: ellipsis;
+@mixin txt-cesure($typecesure : break-word,$typecesure2 : break-word){
     word-wrap: $typecesure;
     word-break: $typecesure2;
-    
+    overflow-wrap: break-word;
+}
+@mixin txt-ellipse($hyphenation:auto,$surplustxt:ellipsis){
+    overflow:hidden; 
+    hyphens: $hyphenation;
+    text-overflow: $surplustxt;
 }
 // ==========
 // TRANS-PREP
@@ -191,7 +194,7 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
       }
     input[type="submit"]{
           margin: 0 auto;  display: block;
-          @include cesure-txt;
+          @include txt-cesure;
     }
     .form-item{margin-bottom: 0.5em;margin-top: 0.5em;}
 }

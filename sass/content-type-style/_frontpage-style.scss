@@ -227,7 +227,7 @@ body .conteneur {
                         text-align: center;
                         font-size: x-large;
                         transition-duration: 0.4s;
-                        @include cesure-txt(break-word);
+                        @include txt-cesure(break-word);
                         &:hover{
                             background: $gris-clair-moyen;
                             color: $orange-fonce;
@@ -276,7 +276,7 @@ body .conteneur {
                         min-height:  inherit; 
                         transition-duration: 0.0s;//Permet de jouer sur un effet de slide
                         text-align: center;
-                        @include cesure-txt(break-word);
+                        @include txt-cesure(break-word);
                         shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
                         clip-path: circle(50% at 50% 50%);
 
