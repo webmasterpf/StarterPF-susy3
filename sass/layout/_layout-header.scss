@@ -3,86 +3,84 @@
 |--------------------------------------*/
 
 // Layout du header et de ses parties haute et basse (logique mobile first)
- //Imbrication à 100% (full nested)
- body .conteneur #header {
-     /*width: span(4 of $mobilecol);*/
-     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-     z-index : 30;
-     width: span(10 of $desktopcol);
-     margin-left: span(1 wide);//push
-     }
-     &:after{
-                content: " ";
-                display: block;
-                clear: both;}  
-     .headHaut {
-         
-                @include clearfixsusy3;//Dispo sur tous supports
-         .logoHead {
-             padding: span(1) 0 0;
-             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-             padding: span(0.1) 0 1em 0;
-             }
-                    img{
-                        margin: 0 auto;
-             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){           
+//Imbrication à 100% (full nested)
+body .conteneur #header {
+    /*width: span(4 of $mobilecol);*/
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        z-index : 30;
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
+    }
+    &:after{
+        content: " ";
+        display: block;
+        clear: both;}  
+    .headHaut {
+
+        @include clearfixsusy3;//Dispo sur tous supports
+        .logoHead {
+            padding: span(1) 0 0;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                padding: span(0.1) 0 1em 0;
+            }
+            img{
+                margin: 0 auto;
+                @include breakpoint(($mobile,$mobilelandscape)){           }
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){    
+                    width: auto;
                     margin: 0;
+                    padding: 0;
                     //display: block;//commenter si logo pas collé à gauche
                     max-height: 5em;//si logo trop gros
                     object-fit: contain;
-                    }
-                    }
-         }
-         nav.menuOver{
-             margin: 0 span(0.3) 0 0;
-             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){           
-             margin: 0;
-             }
-         }  
-     }               
-     
-     .headBas {
-         /*width: span(4 of $mobilecol);*/
-                  @include clearfixsusy3;//Dispo sur tous supports
-        .site-slogan,.objectif{
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                }
+
+            }
+        }
+        nav.menuOver{
+    margin: 0 span(0.3) 0 0;
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){           
+        margin: 0;
+    }
+}  
+    }
+}
+
+               
+
+
+.headBas {
+    /*width: span(4 of $mobilecol);*/
+    @include clearfixsusy3;//Dispo sur tous supports
+    .site-slogan,.objectif{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             padding: em(5px) 0 0 0 //Ajoute un padding pour positionner boite
         }
+    }
+    .headSearch{
+        margin: 0 30%;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            padding: em(5px) 0 0 0; //Ajoute un padding pour positionner boite de recherche
+            margin: 0 span(0.2);
         }
-         .headSearch{
-             margin: 0 30%;
-             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-          padding: em(5px) 0 0 0; //Ajoute un padding pour positionner boite de recherche
-              margin: 0 span(0.2);
-             }
-         }
-        
-     }                
-     
-     }
-      
- 
+    }
+
+}                
+
+
+
+
 /*---- HEADER HAUT ----*/
- 
-
-
-.logoHead {
-   img {
-    @include adaptable-img;
-    padding: 0;
-    margin: 0;
-  }
-}
 
 
 /*---- HEADER BAS ----*/
 
 .headBas {
- background: $gris-anthracite;//Modifier la couleur du fond de la partie basse selon couleur du lycée
+    background: $gris-anthracite;//Modifier la couleur du fond de la partie basse selon couleur du lycée
 }
 
 .headSearch {
-    
+
     padding: 0 0.5em;
     text-align: right;
     margin: 0;
@@ -91,7 +89,7 @@
     input[type=image]{
         vertical-align: middle;
     }
-    @include breakpoint($desktop){
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         padding: 0;
     }
 }
@@ -99,34 +97,34 @@
 
 
 .name-and-slogan {
-  vertical-align: bottom;
+    vertical-align: bottom;
 }
 
 .site-name {
-  a {
-    text-decoration: none;
-    color: white;
-    text-transform: uppercase;
-  }
-  padding: em(160px) 0 0 0;
-  margin: 0;
+    a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
+    padding: em(160px) 0 0 0;
+    margin: 0;
 }
 
 .site-slogan,.objectif {
-  color: white;
-  font-size: small;
-  text-align: center;
-  
-  
-  @include breakpoint($desktop){
-      text-align: left;
-      padding: em(3px) 0 0 1em;
-  }
-  a {
-    text-decoration: none;
     color: white;
-    text-transform: uppercase;
-  }
+    font-size: small;
+    text-align: center;
+
+
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        text-align: left;
+        padding: em(3px) 0 0 1em;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+    }
 }
 
 /*FIN CSS HEADER*/

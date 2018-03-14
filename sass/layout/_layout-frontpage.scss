@@ -20,41 +20,39 @@
 //Code imbriqué à 100%
 body section.conteneur{
     //inutile de définir taille
-    .content-inner{
-        iframe,img:not(.close-btn){
-            @include adaptable-img;
-            @include img-centered;
+    iframe,img:not(.close-btn){
+        @include adaptable-img;
+        @include img-centered;
+    }
+    .annonce_1{
+               @include clearfixsusy3;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
         }
-        .annonce_1{
-            @include clearfixsusy3;
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                width: span(10 of $desktopcol);
-                margin-left: span(1 wide);//push
-            }
+    }
+    .annonce_2{
+                @include clearfixsusy3;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
         }
-        .annonce_2{
-            @include clearfixsusy3;
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                width: span(10 of $desktopcol);
-                margin-left: span(1 wide);//push
-            }
-        }
-        .HPDiapo{
-            @include clearfixsusy3;
+    }
+    .HPDiapo{
+        @include clearfixsusy3;
 
+    }
+    .acces_rubriques{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
         }
-        .acces_rubriques{
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                width: span(10 of $desktopcol);
-                margin-left: span(1 wide);//push
-            }
-            @include clearfixsusy3;
-        }
-        .logo_partenaires{
-            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                width: span(10 of $desktopcol);
-                margin-left: span(1 wide);//push
-            }
+        @include clearfixsusy3;
+    }
+    .logo_partenaires{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
         }
     }
 }

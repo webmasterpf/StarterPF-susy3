@@ -51,7 +51,7 @@ body .conteneur{
 }
 #zone-1.page-formations{
     >.content{
-             column-count: 0;
+        column-count: 0;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             column-count: 2;
             column-fill: balance;
@@ -64,10 +64,12 @@ body .conteneur{
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 column-count: 6;
                 column-fill: balance;
-            white-space: normal;
+                white-space: normal;
+
             }
             li{
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    @include  txt-colonnes();
                     :not(img) :not(a){
                         padding: span(0.1);
                     }
@@ -105,11 +107,15 @@ ______________________________*/
             li{
                 list-style: none;
                 color: $blanc-casse;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    @include ombrage-bloc(0em,0em,0.5em,$gris-anthracite);
+                    margin: span(0.1) 0;
+                }
                 a{
                     color: $blanc-casse;
-                text-decoration: none;
-                font-weight: bold;
-                @include font-size(l);//utilisation de typey
+                    text-decoration: none;
+                    font-weight: bold;
+                    @include font-size(l);//utilisation de typey
                 }
                 &.tid-98{
                     background: $violet;
@@ -120,9 +126,9 @@ ______________________________*/
                 &.tid-100{
                     background: $jaune;
                     *{
-                        color: $gris-anthracite;
+                        color: $gris-anthracite;//cas particulier du fond clair
                     }
-                    
+
                 }
                 &.tid-101{
                     background: $orange-fonce;
@@ -140,7 +146,7 @@ ______________________________*/
                     background: $bleu-turquoise;
                 }
                 img{
-                    width: 100%;
+                    
                 }
             }
         }

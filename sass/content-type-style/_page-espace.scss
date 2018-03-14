@@ -53,7 +53,7 @@ aside.contenu-rubrique{
     padding:span(0.2) 0;
     li{
         display: table;
-        margin: span(0.2) 0;
+        margin: 0 0 span(0.2) 0;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             min-width: 95%;
         }
@@ -68,7 +68,12 @@ aside.contenu-rubrique{
             column-fill: balance;
             white-space: normal;
             padding: span(0.1);
-
+            li{
+                @include  txt-colonnes();
+                a{
+                    display: inherit;
+                }
+            }
         }
     }
 }
@@ -138,18 +143,18 @@ ______________________________*/
                     span{
                         color: $blanc-casse;
                         @include txt-cesure();
-                        @include breakpoint(($desktop,$desktopwide)){
-                        max-width: span(4);
-                        
                         display: inline-block;
                         float: left;
-                        
-                        }
                         @include breakpoint(($mobilelandscape,$tablet,$tabletlandscape)){
-                            max-width: span(1);
-                        display: inline-block;
-                        float: left;
+                         max-width: span(1);
+                        
                         }
+                        @include breakpoint(($desktop,$desktopwide)){
+                        max-width: 25%;
+                                             
+                        
+                        }
+                        
                     }
                     div{
                         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
@@ -197,7 +202,7 @@ ______________________________*/
                 span{
                     color: $blanc-casse;
                     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                             max-width: span(4);
+                             max-width: 25%;
                              padding: span(0.1);
                         display: inline-block;
                         @include txt-cesure();

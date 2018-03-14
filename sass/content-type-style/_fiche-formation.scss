@@ -45,7 +45,9 @@ body .conteneur{
             column-count: 2;
             column-fill: balance;
             column-rule: em(2px) dashed $gris-anthracite;
-
+            h3{
+                @include txt-colonnes;
+            }
         }
     }
 }
@@ -57,6 +59,9 @@ body .conteneur{
             column-count: 2;
             column-fill: balance;
             white-space: nowrap;   
+            h3{
+                @include txt-colonnes;
+            }
         }
     }
 }

@@ -121,6 +121,10 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     hyphens: $hyphenation;
     text-overflow: $surplustxt;
 }
+@mixin txt-colonnes($param1:avoid-column,$param2:avoid){
+    break-inside: $param1;//empêche césure au milieu de l'élément 
+    page-break-inside: $param2;/* fix for Firefox */
+}
 // ==========
 // TRANS-PREP
 // -----
@@ -257,8 +261,7 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
 }
 @mixin ombrage ($contour:0.5em,$decalage-horizontal:0.5em,$decalage-vertical:0.5em,$couleur-ombre:#aaa){
     border: $contour solid #fff;
-    -moz-box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
-    -webkit-box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
+    
     box-shadow: $decalage-horizontal $decalage-vertical 0.3em $couleur-ombre;
 }
 @mixin ombrage-interne($decalage-horizontal:0.5em,$decalage-vertical:0.5em,$profondeur:0.3em,$couleur-ombre:#aaa){
