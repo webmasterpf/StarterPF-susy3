@@ -11,6 +11,79 @@
 //@include breakpoint ($tablet){}
 //@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
 
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+.annonce_2{
+
+    ul.badnews{
+
+        li{
+            width: 95%;
+            margin: 0 auto;
+            float: none;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+
+
+                float: none;
+            }
+
+
+
+        }
+    }
+}
+.logo_partenaires{
+    .acces-partenaires{
+        ul{
+            display: initial;//conserve ordre des lignes : grid,inutile ici
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            li{
+                list-style: none;
+                margin: span(1) 0;
+                text-align:center;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    width: span(1 of 5);
+                    margin: span(0.0001);
+                }
+                img,object{
+                    max-height: 15vw;
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                        max-height: 8vw;
+                    }
+                }
+                a{
+                    display: block;
+                }
+                object{
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+ul.rubriques-administratives{
+    list-style: none;
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        /*margin-left: span(2);*/
+        display: flex;
+    }
+    li{
+        margin: 0 0 em(5px) 0;
+       
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            max-width: span(2 of $desktopcol);
+            float: left;
+            display: block;
+            margin: 0;
+            cursor: pointer;
+        }
+    }}
+/*######-------- ||| STYLE ||| --------######*/
+
 //Code imbriqué à 100%
 body .conteneur {
 
@@ -69,13 +142,9 @@ body .conteneur {
             li{
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
 
-
-                    float: none;
                 }
                 list-style: none;
-                width: 95%;
-                margin: 0 auto;
-                float: none;
+
 
             }
             .breaking-news{
@@ -123,8 +192,7 @@ body .conteneur {
         ul.rubriques-administratives{
             list-style: none;
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                /*margin-left: span(2);*/
-                display: flex;
+                
             }
             li{
                 margin: 0 0 em(5px) 0;
@@ -132,18 +200,14 @@ body .conteneur {
                 background: $gris-anthracite;
                 color: whitesmoke;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                    max-width: 20%;
-                    float: left;
-                    display: block;
-                    margin: 0;
-                    cursor: pointer;
+                
                 }
                 &:hover{
                     background: $orange-fonce;
                 }
                 img{
-                    object-fit: cover;//permet que l'image occupe tout l'espace mais il faut définir une taille
-                    width: 100%;
+                    
+                    
                     &:hover{
                         filter: grayscale(100%);
                     }
@@ -156,7 +220,7 @@ body .conteneur {
                     bottom: 100%;
                     left: 0;
                     right: 0;
-                    background-color: #008CBA;
+                    background-color: $bleu-turquoise;
                     overflow: hidden;
                     width: 100%;
                     height:0;
@@ -428,39 +492,7 @@ body .conteneur {
             }
         }
     }
-    .logo_partenaires{
-        .acces-partenaires{
-            ul{
-                       display: initial;//conserve ordre des lignes : grid,inutile ici
-                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                    display: flex;
-                    justify-content: center;
-                    flex-wrap: wrap;
-                }
-                li{
-                      list-style: none;
-                    margin: span(1) 0;
-                    text-align:center;
-                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                        width: span(1 of 5);
-                        margin: span(0.0001);
-                    }
-                    img,object{
-                        max-height: 15vw;
-                        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                        max-height: 8vw;
-                        }
-                    }
-                    a{
-                        display: block;
-                    }
-                    object{
-                        pointer-events: none;
-                    }
-                }
-            }
-        }
-    }
+
 
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){/*    //Dimensions pour les pc
         //Taille du conteneur du groupe    

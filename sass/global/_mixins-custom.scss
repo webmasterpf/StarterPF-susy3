@@ -145,6 +145,8 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     max-width: 100%;
     height:auto;//proportions
     max-height: 100%;
+    object-fit: cover;//permet que l'image occupe tout l'espace mais il faut définir une taille
+    width: 100%;
     @-moz-document url-prefix() {  
         img{
             width: 100%;

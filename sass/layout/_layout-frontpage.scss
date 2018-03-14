@@ -20,19 +20,23 @@
 //Code imbriqué à 100%
 body section.conteneur{
     //inutile de définir taille
-    iframe,img{
+    iframe,img:not(.close-btn){
         @include adaptable-img;
         @include img-centered;
     }
     .annonce_1{
+               @include clearfixsusy3;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         width: span(10 of $desktopcol);
         margin-left: span(1 wide);//push
-        @include clearfixsusy3;
+        }
     }
     .annonce_2{
+                @include clearfixsusy3;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         width: span(10 of $desktopcol);
         margin-left: span(1 wide);//push
-        @include clearfixsusy3;
+        }
     }
     .HPDiapo{
         @include clearfixsusy3;
