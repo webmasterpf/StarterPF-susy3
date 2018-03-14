@@ -57,7 +57,7 @@
 $imagedir:'../images/'; // definir ici le chemin vers le dossier image
 
 @mixin backgroundImage($filename,$position:0 0,$repeat: no-repeat) {
-    background: transparent url('#{$imagedir}#{$filename}') $repeat $position;
+    background: transparent url('#{$imagedir}#{$filename}') $position $repeat;
 }
 @mixin maskImage($filename,$position:0 0,$repeat: no-repeat, $taille: 50%) {
     mask: url('#{$imagedir}#{$filename}') $repeat $position;
@@ -182,6 +182,17 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     z-index: 20;
     transition: all 100ms ease-in;
 
+}
+@mixin image-overlay($filename,$position:0 0,$repeat: repeat){
+     content: "";
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        position: absolute;
+                        z-index: 2;
+                        background: transparent url('#{$imagedir}#{$filename}') $position $repeat;
+                        
 }
 /*----------  FORMULAIRES RWD -----------*/
 @mixin FormulaireRWD($largeurFormulaire:65%,$largeurChamp:98%){

@@ -163,23 +163,16 @@ ______________________________*/
                             content: "";  
                             padding: 0 span(0.01) 0 0;
                         }
+                        a{
+                       &:before{
+                                                    
+                        @include image-overlay('motif_img_overlay.png', 0 0, repeat);
+                        
                     }
-                    div > a > img.imagecache{
-                        content: "";  
-                        position: relative;
-                        &:after,&:before
-                            { /* add the transparent pattern overlay */
-                            @include backgroundImage('motif_img_overlay.png');
-
-                            content: "";
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            right: 0;
-                            top: 0;
-                            opacity: 0.7;
-                            z-index: -1;
-                        }
+                            
+                        
+                    }
+                     
                     }
 
                 }
@@ -225,14 +218,8 @@ ______________________________*/
                     }
                     a {
                         &:before{
-                        content: "";
-                        top: 0;
-                        left: 0;
-                        bottom: 0;
-                        right: 0;
-                        position: absolute;
-                        z-index: 2;
-                        @include backgroundImage('motif_img_overlay.png', 0 0 ,repeat);
+                                                    
+                        @include image-overlay('motif_img_overlay.png', 0 0, repeat);
                         
                     }
                     &:hover{
