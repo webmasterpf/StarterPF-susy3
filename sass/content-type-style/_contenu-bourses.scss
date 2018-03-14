@@ -97,13 +97,14 @@ ______________________________*/
 
 #zone-1.page-bourses{
         .entrefilet{
-            @include maskImage('SVG/quotes.svg', 0,no-repeat,6%);
-            background-color: $gris-anthracite;
+            /*@include maskImage('SVG/quotes.svg', 0,no-repeat,6%);*/
             
+            @include rgba-background($gris-anthracite,0.7);
+            @include arrondis();
             display: block;
             color: $orange-fonce;
             @include font-size(l);//utilisation de typey
-            text-transform: capitalize;
+            text-transform: uppercase;
             font-weight: bold;
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             padding: span(0.2);
@@ -112,6 +113,14 @@ ______________________________*/
                 margin: span(0.1);
                 min-width: span(3);
                 max-width: span(5);
+            }
+            &::before{
+                content: "«";
+                color: $orange-fonce;
+            }
+            &::after{
+                content: '»';
+                color: $orange-fonce;
             }
         }
         aside{
