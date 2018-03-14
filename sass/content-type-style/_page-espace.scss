@@ -138,7 +138,7 @@ ______________________________*/
                         text-decoration: none;
                         font-weight: bold;
                         @include font-size(l);//utilisation de typey
-                        
+
                     }
                     span{
                         color: $blanc-casse;
@@ -146,22 +146,22 @@ ______________________________*/
                         display: inline-block;
                         float: left;
                         @include breakpoint(($mobilelandscape,$tablet,$tabletlandscape)){
-                         max-width: span(1);
-                        
+                            max-width: span(1);
+
                         }
                         @include breakpoint(($desktop,$desktopwide)){
-                        max-width: 25%;
-                                             
-                        
+                            max-width: 25%;
+
+
                         }
-                        
+
                     }
                     div{
                         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                        /*display: inline-block;*/
-                        float: left;
-                        content: "";  
-                        padding: 0 span(0.01) 0 0;
+                            /*display: inline-block;*/
+                            float: left;
+                            content: "";  
+                            padding: 0 span(0.01) 0 0;
                         }
                     }
                     div > a > img.imagecache{
@@ -170,7 +170,7 @@ ______________________________*/
                         &:after,&:before
                             { /* add the transparent pattern overlay */
                             @include backgroundImage('motif_img_overlay.png');
-                            
+
                             content: "";
                             position: absolute;
                             bottom: 0;
@@ -198,22 +198,46 @@ ______________________________*/
                     font-weight: bold;
                     @include font-size(l);//utilisation de typey
                     @include txt-ellipse();
+                    display: inherit;
                 }
+              
                 span{
                     color: $blanc-casse;
                     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                             max-width: 25%;
-                             padding: span(0.1);
+                        max-width: 25%;
+                        padding: span(0.1);
                         display: inline-block;
                         @include txt-cesure();
                         /*float: left;*/
                     }
+                }
+                img{
+                    &:hover{
+
                     }
+                }
                 //Float de la div contenant l'image,structure HTML différente de page lycées 
                 li > div{
+                    position: relative;
                     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                    float: right;
-                    padding: 0 0 0 span(0.01);
+                        float: right;
+                        padding: 0 0 0 span(0.01);
+                    }
+                    a {
+                        &:before{
+                        content: "";
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        position: absolute;
+                        z-index: 2;
+                        @include backgroundImage('motif_img_overlay.png', 0 0 ,repeat);
+                        
+                    }
+                    &:hover{
+                            background: none;
+                        }
                     }
                 }
             }
