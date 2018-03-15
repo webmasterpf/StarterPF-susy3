@@ -208,6 +208,7 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
           width: $largeurChamp;
           display: block;
           padding: 0;margin: 0;
+          font-family: $FontRaleway;
       }
     input[type="submit"]{
           margin: 0 auto;  display: block;

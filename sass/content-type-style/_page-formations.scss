@@ -60,20 +60,20 @@ body .conteneur{
         }
     }
     aside.liste-formations-initiales{
-           div.bef-select-as-radios{
-               @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-               column-count: 4;
+        div.bef-select-as-radios{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                column-count: 4;
                 column-fill: balance;
                 white-space: normal;
-                 padding: span(0.02);
-               }
+                padding: span(0.02);
+            }
             div.form-item{
                 margin: 0 0 span(0.01) 0;   
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                   @include  txt-colonnes();
-                   
-                   padding: span(0.01);
-                   }
+                    @include  txt-colonnes();
+
+                    padding: span(0.01);
+                }
             }
         }
         ul.formations-initiales{
@@ -85,17 +85,19 @@ body .conteneur{
             }
             li{
                 padding: 0;
-                margin: 0;
+                margin: span(0.1) 0;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     @include  txt-colonnes();
+                    margin: 0 0 span(0.1) 0;
                     :not(img):not(a):not(.complement){
                         padding: span(0.1);
+                        
                     }
-                    
+
                 }
                 a{
-                        display: inherit;
-                    }
+                    display: inherit;
+                }
             }
         }
     }
@@ -128,13 +130,35 @@ ______________________________*/
                 background: $orange-fonce;
                 color: $blanc-casse;
                 text-align: center;
+                cursor: pointer;
+                label{
+                    cursor: pointer;
+                }
+                &:hover{
+                    @include backgroundImage('bg_nav_backoffice.gif',0, repeat );
+                }
             }
         }
         .views-exposed-form{
+            //Masquer la roue bleue de drupal
+            .ajax-progress-throbber {
+                display: none;
+            }
             .views-submit-button{
                 float: none;
                 margin: 0 auto;
-                width: 5%;
+                width:25vw;
+                padding:0;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                width: 10vw;
+                }
+                input[type="submit"] {
+                    background: $orange-fonce;
+                    border: em(1px) dashed $gris-anthracite;
+                    color: $blanc-casse;
+                    @include font-size(l);//utilisation de typey
+                    font-family: $FontArvo;
+                }
             }
         }
         //Masquage du module additionnel du module (bug peut être corrigé via patch)
@@ -144,7 +168,7 @@ ______________________________*/
                 visibility: hidden;
             }
         }
-        
+
         //Style des éléments de la vue
         ul.formations-initiales{
             li{
@@ -152,29 +176,31 @@ ______________________________*/
                 color: $blanc-casse;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     @include ombrage-bloc(0em,0em,0.5em,$gris-anthracite);
-                    margin: 0 0 span(0.1) 0;
+                    
                 }
-                &:not(img):not(a):not(.complement),
-                    &:not(.complement) span{
-                        font-weight: bold;
-                        /*-webkit-text-stroke:em(1px) $gris-anthracite;//Contour de texte*/
-                    }
-/*                    &:matches(.complement){
-                        font-weight: initial;
-                    }*/
+                span{
+                    font-weight: bold;
+                    /*-webkit-text-stroke:em(1px) $gris-anthracite;//Contour de texte*/
+                }
+                span.complement {
+                    font-weight:initial; /*we revert back the inherited style*/
+                }
+                /*                    &:matches(.complement){
+                                        font-weight: initial;
+                                    }*/
                 a{
                     color: $blanc-casse;
                     text-decoration: none;
                     font-weight: bold;
                     @include font-size(l);//utilisation de typey
-                    
+
                 }
                 >a{//uniquement les "a" sur l'image
-                    position:relative;//pour overlay image
-                    &:before{
+                   position:relative;//pour overlay image
+                   &:before{
 
-                        @include image-overlay('motif_img_overlay.png', 0 0, repeat);
-                    }
+                       @include image-overlay('motif_img_overlay.png', 0 0, repeat);
+                   }
                 }
                 &.tid-98{
                     background: $violet;
@@ -205,11 +231,11 @@ ______________________________*/
                     background: $bleu-turquoise;
                 }
                 img{
-                    
+
                 }
                 span{
                     display: block;
-                    
+
                 }
             }
         }

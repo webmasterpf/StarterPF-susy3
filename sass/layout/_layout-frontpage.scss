@@ -20,10 +20,13 @@
 //Code imbriqué à 100%
 body section.conteneur{
     //inutile de définir taille
-    iframe,img:not(.close-btn){
+    .content-inner{
+        iframe,img:not(.close-btn){
         @include adaptable-img;
         @include img-centered;
     }
+    }
+    
     .annonce_1{
                @include clearfixsusy3;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
