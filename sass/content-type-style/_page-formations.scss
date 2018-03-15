@@ -60,6 +60,19 @@ body .conteneur{
         }
     }
     aside.liste-formations-initiales{
+           div.bef-select-as-radios{
+               @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+               column-count: 4;
+                column-fill: balance;
+                white-space: normal;    
+               }
+            div.form-item{
+                   @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                   @include  txt-colonnes();
+                   margin: 0 0 span(0.01) 0;
+                   }
+            }
+        }
         ul.formations-initiales{
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 column-count: 6;
@@ -70,7 +83,7 @@ body .conteneur{
             li{
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     @include  txt-colonnes();
-                    :not(img) :not(a){
+                    :not(img):not(a):not(.complement){
                         padding: span(0.1);
                     }
                     a{
@@ -103,19 +116,49 @@ ______________________________*/
 
 #zone-1.page-formations{
     aside.liste-formations-initiales{
+        //Style du filtrage de la vue
+        div.bef-select-as-radios{
+            div.form-item{
+                background: $orange-fonce;
+            }
+        }
+        //Masquage du module additionnel du module (bug peut être corrigé via patch)
+        .view-filters{
+            #edit-children-of-wrapper{
+                display: none;
+                visibility: hidden;
+            }
+        }
+        
+        //Style des éléments de la vue
         ul.formations-initiales{
             li{
                 list-style: none;
                 color: $blanc-casse;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                     @include ombrage-bloc(0em,0em,0.5em,$gris-anthracite);
-                    margin: span(0.1) 0;
+                    margin: 0 0 span(0.1) 0;
                 }
+                &:not(img):not(a):not(.complement){
+                        font-weight: bold;
+                        /*-webkit-text-stroke:em(1px) $gris-anthracite;//Contour de texte*/
+                    }
+/*                    &:matches(.complement){
+                        font-weight: initial;
+                    }*/
                 a{
                     color: $blanc-casse;
                     text-decoration: none;
                     font-weight: bold;
                     @include font-size(l);//utilisation de typey
+                    
+                }
+                >a{//uniquement les "a" sur l'image
+                    position:relative;//pour overlay image
+                    &:before{
+
+                        @include image-overlay('motif_img_overlay.png', 0 0, repeat);
+                    }
                 }
                 &.tid-98{
                     background: $violet;
@@ -146,6 +189,10 @@ ______________________________*/
                     background: $bleu-turquoise;
                 }
                 img{
+                    
+                }
+                span{
+                    display: block;
                     
                 }
             }
