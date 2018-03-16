@@ -69,6 +69,12 @@
     <div id="zone-3" class="zone_layout_max_centre fiche-formation">
         
         
+             <?php if ($node->field_section_specifique[0]['view']): ?>
+                    <h2 class="lien-section-europe">
+                        <?php (print $node->field_section_specifique[0]['view']); /* Terme de Taxo pour lien avec Rubrique Europe */ ?>
+                    </h2>
+                <?php endif; ?>        
+        
         <?php if ($node->field_texte_section_europe[0]['view']): ?>
         <article class="paragraphe-section-europe">
                         <?php (print $node->field_texte_section_europe[0]['view']); /* Textfield pour § Section Europe */ ?>

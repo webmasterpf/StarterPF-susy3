@@ -113,7 +113,7 @@ ______________________________*/
 
 
         max-width: fit-content;
-        p{
+        *{
             background: $gris-anthracite;
             color: $jaune;
             font-weight: bold;
@@ -121,6 +121,18 @@ ______________________________*/
             margin: span(0.01) 0;
             @include font-size(m);//utilisation de typey
         }
+    }
+    .content{
+         h3{
+        transform: rotate(-1deg);
+        max-width: fit-content;
+
+        color: $blanc-casse;
+        background: $orange-fonce;
+        padding: em(3px);
+        margin: em(5px) em(20px);
+
+    }
     }
     aside.ficheform-savoirplus{}
 }
@@ -142,6 +154,36 @@ ______________________________*/
         li{
             list-style: square;
         }
+    }
+    h2.lien-section-europe{
+        
+        margin: span(0.01) auto;
+        padding:0;
+        *{
+             @include font-size(l);//utilisation de typey
+            color: $bleu-turquoise;
+            background: $blanc-casse;
+            position: relative;
+            padding: span(0.01);
+            
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            display: block;
+            margin: 0 auto;
+            max-width: fit-content;//Marche pas sous Edge
+            width: 30%;
+            }
+            //Effet coin retourné
+            &:before{
+                 content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 0 em(10px) em(10px) 0;
+  border-style: solid;
+  border-color: $bleu-turquoise ;
+            }
+        }
+           
     }
     article.paragraphe-section-europe{
         h3{

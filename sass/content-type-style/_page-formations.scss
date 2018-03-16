@@ -88,9 +88,15 @@ body .conteneur{
                 padding: 0;
                 margin: span(0.1) 0;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                    //ciblage de MS Edge et IE11
+                    //ciblage de IE10+
+                    @media screen and (min-width:0\0) {
+                        display: inline-block;
+                        width:100%;
+                    }
+                    //ciblage de MS Edge                    
                     @supports (-ms-ime-align: auto) {
                         display: inline-block;
+                        width:100%;
                     }
                     
                     @include  txt-colonnes();
@@ -246,10 +252,11 @@ ______________________________*/
 
                 }
                 &.tid-101{
-                    background: $orange-fonce;
+                    background: $rouge;
                 }
                 &.tid-102{
-                    background: $rouge;
+                    background: $orange-fonce;
+                    
                 }
                 &.tid-103{
                     background: $rose-fushia;
