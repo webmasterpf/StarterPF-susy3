@@ -3,9 +3,19 @@
 *------------------------------------------------------*/
 
 /*------------------------------------------------*
- *---  Provence Formation 2013-14 --*
+ *---  Provence Formation 2018--*
  *------------------------------------------------*/
 
+/*######-------- ||| LAYOUT  PAGES BO ||| --------######*/
+body.logged-in{
+    article.middle-content{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+         width: span(10 of $desktopcol);
+        margin-left: span(1 wide);//push
+        @include clearfix;
+        }
+    }
+}
 
 /*----Navigation backoffice------*/
 
@@ -14,12 +24,12 @@
   padding: 0;
   margin: 0;
   a {
-    color: #EB512F;
+    color: $orange-fonce;
     text-decoration: none;
     background: white;
     padding: 0 em(2px);
     &:hover {
-      background: #EB512F;
+      background: $orange-fonce;
       color: white;
     }
   }
