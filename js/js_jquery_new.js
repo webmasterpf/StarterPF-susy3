@@ -315,7 +315,7 @@ $("#zone-2 #media-youtube-1").height('23vw').width('100vw');
 
 // Taille auto pour les images des logos partenaires sur accueil
 $(".logo_partenaires img").height('auto').width('auto');
-$(".acces-lycees #media-vimeo-1 iframe").height('11.5vw').width('100vw');
+$(".acces-lycees #media-vimeo-1 iframe").height('11.5vw').width('20vw');
 
 
         //Retrait position:absolute sur le Views Slideshow       
