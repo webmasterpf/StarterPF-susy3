@@ -49,6 +49,16 @@ body .conteneur{
         }
     }
 }
+aside.selecteur-langue{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            ul{
+                column-count: 2;
+                li{
+                    max-width: 20%;
+                }
+            }
+        }
+    }
 aside.contenu-rubrique{
     padding:span(0.2) 0;
     li{
@@ -61,7 +71,7 @@ aside.contenu-rubrique{
             /*float: left;*/
         }
     }
-    .rubrique-lycees,.rubrique-association{
+    .rubrique-lycees,.rubrique-association,.rubrique-international{
         column-count: 0;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             column-count: 2;
@@ -92,13 +102,69 @@ aside.contenu-rubrique{
 #zone-3.page-espace,
 #zone-4.page-espace,
 #zone-5.page-espace
-{}
+{
+       p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    strong{
+        color: $orange-fonce;
+    }
+}
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 
 #zone-1.page-espace{
+    aside.selecteur-langue{
+        ul{
+            list-style: none;
+            background: $gris-anthracite;
+            li{
+                
+                &.active{
+                    font-weight: bold;
+                    background: $gris-anthracite;
+                    
+                    a{
+                        
+                        &.active{
+                            color: $blanc-casse;
+                        }
+                    }
+                                    
+                }
+                a{
+                        color:$jaune;
+                        
+                    }
+            }
+        }
+        
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        }
+    }
     aside.contenu-rubrique{
         .rubrique-lycees{
             ul{
@@ -132,7 +198,7 @@ ______________________________*/
                     list-style: none;
                     background: $orange-fonce;
                     @include txt-cesure();
-
+                    
                     a{
                         color: $blanc-casse;
                         text-decoration: none;
@@ -151,7 +217,7 @@ ______________________________*/
                         }
                         @include breakpoint(($desktop,$desktopwide)){
                             max-width: 25%;
-
+                            padding: 0 0 0 span(0.01);
 
                         }
 
@@ -162,7 +228,7 @@ ______________________________*/
                             
                             float: left;
                             content: "";  
-                            padding: 0 span(0.01) 0 0;
+                            
                         }
                         a{
                        &:before{
