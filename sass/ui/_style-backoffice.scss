@@ -8,7 +8,7 @@
 
 /*######-------- ||| LAYOUT  PAGES BO ||| --------######*/
 body.logged-in{
-    article.middle-content{
+    section.conteneur{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
          width: span(10 of $desktopcol);
         margin-left: span(1 wide);//push

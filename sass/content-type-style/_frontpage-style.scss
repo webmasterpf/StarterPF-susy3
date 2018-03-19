@@ -49,6 +49,7 @@
                     margin: span(0.0001);
                 }
                 img,object{
+                    @include adaptable-img;
                     max-height: 15vw;
                     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         max-height: 8vw;
@@ -67,16 +68,17 @@
 
 ul.rubriques-administratives{
     list-style: none;
+    column-count: inherit;
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-        /*margin-left: span(2);*/
+        column-count: 5;
         display: flex;
     }
     li{
         margin: 0 0 em(5px) 0;
        
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-            max-width: span(2 of $desktopcol);
-            float: left;
+            max-width: 20%;
+            @include txt-colonnes;
             display: block;
             margin: 0;
             cursor: pointer;
@@ -196,7 +198,6 @@ body .conteneur {
             }
             li{
                 margin: 0 0 em(5px) 0;
-
                 background: $gris-anthracite;
                 color: whitesmoke;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
@@ -470,8 +471,9 @@ body .conteneur {
             }
 
             img { 
-                width: 100%;
-                height: auto;
+                @include adaptable-img();
+                contain:content;
+                
                 opacity: 0;
                 transition-duration: 0.4s;
                 &:hover{
