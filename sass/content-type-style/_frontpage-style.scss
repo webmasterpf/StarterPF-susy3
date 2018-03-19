@@ -206,8 +206,8 @@ body .conteneur {
                     background: $orange-fonce;
                 }
                 img{
-                    
-                    
+                    object-fit: cover;//permet que l'image occupe tout l'espace mais il faut définir une taille
+                    width: 100%;
                     &:hover{
                         filter: grayscale(100%);
                     }
