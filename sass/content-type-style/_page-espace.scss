@@ -50,15 +50,15 @@ body .conteneur{
     }
 }
 aside.selecteur-langue{
-        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-            ul{
-                column-count: 2;
-                li{
-                    max-width: 20%;
-                }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        ul{
+            column-count: 2;
+            li{
+                max-width: 100%;
             }
         }
     }
+}
 aside.contenu-rubrique{
     padding:span(0.2) 0;
     li{
@@ -103,7 +103,7 @@ aside.contenu-rubrique{
 #zone-4.page-espace,
 #zone-5.page-espace
 {
-       p,ul,li{
+    p,ul,li{
         @include font-size(m);//utilisation de typey
         padding: em(5px);
         line-height: 1.5em;
@@ -142,31 +142,36 @@ ______________________________*/
             list-style: none;
             background: $gris-anthracite;
             li{
+
                 &.fr{
                     @include backgroundImage("SVG/flag-france.svg");
+                    background-size: cover;
+                    background-position: 0 40%;
                 }
                 &.en{
                     @include backgroundImage("SVG/union-jack.svg");
+                    background-size: cover;
+                    background-position: 0 75%;
                 }
                 &.active{
                     font-weight: bold;
-                    background: $gris-anthracite;
-                    
+                    /*background: $gris-anthracite;*/
+
                     a{
-                        
+
                         &.active{
                             color: $blanc-casse;
                         }
                     }
-                                    
+
                 }
                 a{
-                        color:$jaune;
-                        
-                    }
+                    color:$jaune;
+
+                }
             }
         }
-        
+
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         }
     }
@@ -203,7 +208,7 @@ ______________________________*/
                     list-style: none;
                     background: $orange-fonce;
                     @include txt-cesure();
-                    
+
                     a{
                         color: $blanc-casse;
                         text-decoration: none;
@@ -230,21 +235,21 @@ ______________________________*/
                     div{
                         position: relative;
                         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                            
+
                             float: left;
                             content: "";  
-                            
+
                         }
                         a{
-                       &:before{
-                                                    
-                        @include image-overlay('motif_img_overlay.png', 0 0, repeat);
-                        
-                    }
-                            
-                        
-                    }
-                     
+                            &:before{
+
+                                @include image-overlay('motif_img_overlay.png', 0 0, repeat);
+
+                            }
+
+
+                        }
+
                     }
 
                 }
@@ -265,7 +270,7 @@ ______________________________*/
                     @include txt-ellipse();
                     display: inherit;
                 }
-              
+
                 span{
                     color: $blanc-casse;
                     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
@@ -290,11 +295,11 @@ ______________________________*/
                     }
                     a {
                         &:before{
-                                                    
-                        @include image-overlay('motif_img_overlay.png', 0 0, repeat);
-                        
-                    }
-                    &:hover{
+
+                            @include image-overlay('motif_img_overlay.png', 0 0, repeat);
+
+                        }
+                        &:hover{
                             background: none;
                         }
                     }
