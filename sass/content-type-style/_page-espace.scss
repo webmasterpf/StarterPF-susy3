@@ -53,6 +53,7 @@ aside.selecteur-langue{
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         ul{
             column-count: 2;
+            column-rule: 0;
             li{
                 max-width: 100%;
             }
@@ -142,7 +143,7 @@ aside.contenu-rubrique{
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 
-#zone-1.page-espace{
+#zone-1.page-espace,#zone-1.contenu-international{
     aside.selecteur-langue{
         ul{
             list-style: none;

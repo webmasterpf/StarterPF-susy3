@@ -16,11 +16,11 @@
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #zone-1.CLASS_NAME_CONTENU{order:1;}
-    #zone-2.CLASS_NAME_CONTENU{order:2;}
-    #zone-3.CLASS_NAME_CONTENU{order:3;}
-    #zone-4.CLASS_NAME_CONTENU{}
-    #zone-5.CLASS_NAME_CONTENU{}
+    #zone-1.contenu-international{order:1;}
+    #zone-2.contenu-international{order:2;}
+    #zone-3.contenu-international{order:3;}
+    #zone-4.contenu-international{}
+    #zone-5.contenu-international{}
     @include breakpoint ($desktop){}
 }
 
@@ -33,24 +33,101 @@ body .conteneur{
 }
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.contenu-international{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
 
+    img{
+        transform: translate(0%,0%);
 
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-15%);
+        }
+    }
+}
+aside.selecteur-langue{
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        ul{
+            column-count: 2;
+            li{
+                max-width: 100%;
+            }
+        }
+    }
+}
+#zone-1.contenu-international{
+        .content-body{
+        column-count: inherit;
+        @include breakpoint(($desktop,$desktopwide,$tabletlandscape)){
+            column-count: 3;
+            column-fill: balance;
+            column-rule: em(2px) dashed $gris-anthracite;
+            h3{
+             
+            }
+        }
+    }
+}
 /*######-------- ||| STYLE ||| --------######*/
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
-#zone-1.CLASS_NAME_CONTENU,
-#zone-2.CLASS_NAME_CONTENU,
-#zone-3.CLASS_NAME_CONTENU,
-#zone-4.CLASS_NAME_CONTENU,
-#zone-5.CLASS_NAME_CONTENU
-{}
+#zone-illustration.contenu-international{
+    h1.titre_overlay{
+        @include titre_overlay();
+        
+    }
+}
+
+#zone-1.contenu-international,
+#zone-2.contenu-international,
+#zone-3.contenu-international,
+#zone-4.contenu-international,
+#zone-5.contenu-international
+{
+/*        p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    strong{
+        color: $orange-fonce;
+    }*/
+}
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 
-#zone-1.CLASS_NAME_CONTENU{}
-#zone-2.CLASS_NAME_CONTENU{}
-#zone-3.CLASS_NAME_CONTENU{}
-#zone-4.CLASS_NAME_CONTENU{}
-#zone-5.CLASS_NAME_CONTENU{}
+#zone-1.contenu-international{
+    aside.selecteur-langue{
+        //Voir style fichier page-espace.scss
+    }
+}
+#zone-2.contenu-international{}
+#zone-3.contenu-international{}
+#zone-4.contenu-international{}
+#zone-5.contenu-international{}
