@@ -1,0 +1,56 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _CONTENT-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                     |
+|               CONTENU                     |
+|     EUROPE INTERNATIONAL        |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #zone-1.CLASS_NAME_CONTENU{order:1;}
+    #zone-2.CLASS_NAME_CONTENU{order:2;}
+    #zone-3.CLASS_NAME_CONTENU{order:3;}
+    #zone-4.CLASS_NAME_CONTENU{}
+    #zone-5.CLASS_NAME_CONTENU{}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur .conteneur-flex,
+body .conteneur{
+    @include breakpoint(($desktop,$tablet)){
+    }
+
+}
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+
+
+/*######-------- ||| STYLE ||| --------######*/
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-1.CLASS_NAME_CONTENU,
+#zone-2.CLASS_NAME_CONTENU,
+#zone-3.CLASS_NAME_CONTENU,
+#zone-4.CLASS_NAME_CONTENU,
+#zone-5.CLASS_NAME_CONTENU
+{}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#zone-1.CLASS_NAME_CONTENU{}
+#zone-2.CLASS_NAME_CONTENU{}
+#zone-3.CLASS_NAME_CONTENU{}
+#zone-4.CLASS_NAME_CONTENU{}
+#zone-5.CLASS_NAME_CONTENU{}

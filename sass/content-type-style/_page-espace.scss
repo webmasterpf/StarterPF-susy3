@@ -61,9 +61,15 @@ aside.selecteur-langue{
 }
 aside.contenu-rubrique{
     padding:span(0.2) 0;
+    margin:0;
+    ul{
+    margin:0;
+    
+    }
     li{
         display: table;
         margin: 0 0 span(0.2) 0;
+        padding: span(0.2) 0;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             min-width: 95%;
         }
@@ -152,6 +158,12 @@ ______________________________*/
                     @include backgroundImage("SVG/union-jack.svg");
                     background-size: cover;
                     background-position: 0 75%;
+                    &:hover{
+                        opacity: 0.5;
+                    }
+                }
+                &:hover{
+
                 }
                 &.active{
                     font-weight: bold;
@@ -255,7 +267,7 @@ ______________________________*/
                 }
             }
         }
-        .rubrique-association{
+        .rubrique-association,.rubrique-international{
             ul{
                 li{
                     list-style: none;
@@ -291,7 +303,7 @@ ______________________________*/
                     position: relative;
                     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         float: right;
-                        padding: 0 0 0 span(0.01);
+                        padding: 0;
                     }
                     a {
                         &:before{
@@ -303,6 +315,14 @@ ______________________________*/
                             background: none;
                         }
                     }
+                }
+            }
+        }
+   .rubrique-international{
+       //réglages différents pour page Europe/International
+            ul{
+                li{
+                    background: $bleu-turquoise;
                 }
             }
         }
