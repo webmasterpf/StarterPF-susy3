@@ -66,16 +66,20 @@
              <?php endif; ?>   
   
         <!-- liste dynamique des fichiers et liens -->
-
+       <?php
+              global $theme_path;
+              include ($theme_path.'/includes/dedicates_inc/inc_docs_rub_international.php');
+              ?>
             
             
         </div>
          <!--______________ZONE 3________________ -->
          <div id="zone-3" class="zone2_layout_7_5 contenu-international">
-                      <?php if ($node->field_lycee_gmap[0]['view']): ?>
-      <span id="gmap-lycee">
-                 <?php  print $node->field_lycee_gmap[0]['view'] ?>
-      </span>
+       
+             <?php if ($node->field_lycee_gmap[0]['view']): ?>
+                 <span class="map-deco">
+                     <?php print $node->field_lycee_gmap[0]['view'] ?>
+                 </span>
              <?php endif; ?>
              
              
@@ -83,7 +87,7 @@
       </div><!-- /zone3-->
        
               <!--______________ZONE 4________________ -->
-              <div id="zone-4" class="zone2_layout_7_5 contenu-international">
+              <div id="zone-4" class="zone_layout_max_centre contenu-international">
                   
            <?php if ($node->field_diapo_lycee_type[0]['view']): ?>
                  <aside class="galerie">

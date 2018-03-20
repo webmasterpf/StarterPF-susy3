@@ -59,6 +59,7 @@ body .conteneur #header {
     }
     .headSearch{
         margin: 0 30%;
+        padding: 0;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             padding: em(5px) 0 0 0; //Ajoute un padding pour positionner boite de recherche
             margin: 0 span(0.2);
@@ -81,9 +82,6 @@ body .conteneur #header {
 
 .headSearch {
 
-    padding: 0 0.5em;
-    text-align: right;
-    margin: 0;
     //background: transparent url("../images/'bg_recherche.gif') no-repeat scroll 6em em(7px);
     /*.form-item > label{color: #DDD;font-family: $AristaFont;font-size: medium;}*/
     input[type=image]{

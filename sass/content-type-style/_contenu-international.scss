@@ -34,6 +34,7 @@ body .conteneur{
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
 #zone-illustration.contenu-international{
+
     min-height: 35vw;
     max-height: 90vw;
     overflow: hidden;
@@ -49,27 +50,60 @@ body .conteneur{
             transform: translate(0%,-15%);
         }
     }
-}
-aside.selecteur-langue{
-    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-        ul{
-            column-count: 2;
-            li{
-                max-width: 100%;
-            }
+    #illustration-pleinepage{
+        @include backgroundImage('SVG/Erasmus_VET.svg');
+        @include background-size(cover);
+        background-position: 0 -10vw;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            background-position: 0 -20vw;
         }
     }
 }
+aside.selecteur-langue{
+    //Voir style fichier page-espace.scss
+}
 #zone-1.contenu-international{
-        .content-body{
+    .content-body{
         column-count: inherit;
         @include breakpoint(($desktop,$desktopwide,$tabletlandscape)){
             column-count: 3;
             column-fill: balance;
             column-rule: em(2px) dashed $gris-anthracite;
             h3{
-             
+
             }
+        }
+    }
+}
+#zone-2.contenu-international{
+    span.liste-section-euro{
+        display: block;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            padding: 0 0 0 span(0.1);
+        }
+    }
+    .docs-joints-international{
+        ul{
+            column-count: inherit;
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                column-count: 3;
+                column-fill: balance;    
+            }    
+        }
+    }
+}
+#zone-3.contenu-international{
+    span.map-deco{
+        display: inherit;
+    }
+
+}
+#zone-4.contenu-international{
+    clear: both;
+    aside.galerie{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            display: flow-root;
+            background: $orange-fonce;
         }
     }
 }
@@ -79,7 +113,7 @@ aside.selecteur-langue{
 #zone-illustration.contenu-international{
     h1.titre_overlay{
         @include titre_overlay();
-        
+
     }
 }
 
@@ -89,7 +123,7 @@ aside.selecteur-langue{
 #zone-4.contenu-international,
 #zone-5.contenu-international
 {
-/*        p,ul,li{
+    p,ul,li{
         @include font-size(m);//utilisation de typey
         padding: em(5px);
         line-height: 1.5em;
@@ -115,7 +149,7 @@ aside.selecteur-langue{
     }
     strong{
         color: $orange-fonce;
-    }*/
+    }
 }
 
 /*------------------------------------
@@ -127,7 +161,38 @@ ______________________________*/
         //Voir style fichier page-espace.scss
     }
 }
-#zone-2.contenu-international{}
+#zone-2.contenu-international{
+    span.liste-section-euro{
+        background:$orange-fonce;
+        .view-header{
+            color: $blanc-casse;
+            font-weight: bold;
+            @include font-size(m);//utilisation de typey
+        }
+        ul.formations-section-euro{
+            li{
+                a{
+                    color: $blanc-casse;
+                }
+            }
+        }
+
+    }
+    .docs-joints-international{
+        background:$blanc-casse;
+        ul{
+            list-style:none;
+            li{
+                img.filefield-icon{
+                    width: inherit;
+                    margin: 0;
+                    display: initial;
+                }
+            }
+        }
+
+    }
+}
 #zone-3.contenu-international{}
 #zone-4.contenu-international{}
 #zone-5.contenu-international{}

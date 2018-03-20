@@ -29,7 +29,7 @@ body .conteneur {
     h1.titre_page_tpl{
         display: none;//Effacement du titre issue de page.tpl
     }
-    #zone-illustration{
+    #zone-illustration.actu-presse{
         @include backgroundImage('SVG/image_defaut_actu_2500.svg');
         @include background-size(cover);
     }

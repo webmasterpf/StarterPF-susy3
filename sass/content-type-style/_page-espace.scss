@@ -50,10 +50,19 @@ body .conteneur{
     }
 }
 aside.selecteur-langue{
+    ul{
+        padding: 0;
+        li{
+            a{
+                padding: 0 0 0 em(10px);
+            }
+        }
+    }
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         ul{
             column-count: 2;
             column-rule: 0;
+            
             li{
                 max-width: 100%;
             }
