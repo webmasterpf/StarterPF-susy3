@@ -13,6 +13,9 @@
 //@include breakpoint(($desktop,$tablet)){}
 //@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
 
+//Ressources sur Attributs et PseudoElements
+// https://tympanus.net/codrops/2013/07/05/using-custom-data-attributes-and-pseudo-elements/
+
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
     #zone-1.CLASS_NAME_CONTENU{order:1;}

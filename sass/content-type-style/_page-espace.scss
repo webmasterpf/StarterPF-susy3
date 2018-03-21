@@ -163,13 +163,14 @@ ______________________________*/
             list-style: none;
             background: $gris-anthracite;
             li{
-
+                
                 &.fr{
                     @include backgroundImage("SVG/flag-france.svg");
                     background-size: cover;
                     background-position: 0 40%;
                 }
                 &.en{
+     
                     @include backgroundImage("SVG/union-jack.svg");
                     background-size: cover;
                     background-position: 0 75%;

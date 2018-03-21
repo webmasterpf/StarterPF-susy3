@@ -102,7 +102,7 @@ aside.selecteur-langue{
     clear: both;
     aside.galerie{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-            display: flow-root;
+            padding: span(0.1);
             background: $orange-fonce;
         }
     }
@@ -186,16 +186,42 @@ ______________________________*/
                 a{
                     text-indent: 2em;
                     display: block;
+                    &:hover{
+                        
+                    }
                 }
-                .filefield-file,a[type*="pdf"]{
-                    /*@include backgroundImage("SVG/flag-france.svg");*/
-                    @include backgroundImage("PNG/Fichiers@3x.png");
-                    background-size: contain;
+                a[type*="pdf"]{
+                &::before{
+                        @include backgroundImage("PNG/Fichiers@3x.png");
+                        background-size: contain;
+                        content: "";
+                        position: relative;
+                        vertical-align: sub;
+                        padding: em(10px);
+                        margin:em(3px);
+                        transition:0.5s all;
+                        &:hover::before{
+                        content: "";
+                        position: relative;
+                        transform:rotate(50deg);
+                        }
+                    }
                 }
+                
                 a[href*="http"] {
-                    @include backgroundImage("PNG/liens@3x.png");
+                    &::before{
+                        @include backgroundImage("PNG/liens@3x.png");
                     background-size: contain;
+                    content: "";
+                        position: relative;
+                        vertical-align: sub;
+                        padding: em(10px);
+                        margin:em(3px);
+                        transition:0.5s all;
+                    }
+                    
                 }
+                
                 img.filefield-icon{
                     width: inherit;
                     margin: 0;
