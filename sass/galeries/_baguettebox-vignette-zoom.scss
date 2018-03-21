@@ -13,12 +13,18 @@ Override du style de galerie vignettes BaguetteBox
 {
     aside.galerie .galerieBaguetteBox .view-content
 {
-    > div{
-               width: span(1 of 3);
-                margin: span(0.0001);
-                float: left;
-            @include breakpoint(($desktop,$tablet)){
-                width: span(1 of 6);
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+     column-count: 6;
+                column-fill: balance; 
+    }
+    > div.views-row{
+        /*Technique des colonnes plus efficace et passe sous Edge*/
+               /*width: span(1 of 3);*/
+                /*margin: span(0.0001);*/
+                /*float: left;*/
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                
+                @include txt-colonnes;
                               
             }
     }
