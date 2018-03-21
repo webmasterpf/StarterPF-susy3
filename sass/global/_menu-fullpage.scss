@@ -52,7 +52,8 @@ body .conteneur{
         ul{
             list-style: none;
             width: span(7 of $desktopcol);
-        margin-left: span(2  wide);//push
+            margin: 0 auto;
+        /*margin-left: span(2  wide);//push*/
         font-family: $FontRaleway;
         }
         li {
