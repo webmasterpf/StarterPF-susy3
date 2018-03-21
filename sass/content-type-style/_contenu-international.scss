@@ -183,10 +183,23 @@ ______________________________*/
         ul{
             list-style:none;
             li{
+                a{
+                    text-indent: 2em;
+                    display: block;
+                }
+                .filefield-file,a[type*="pdf"]{
+                    /*@include backgroundImage("SVG/flag-france.svg");*/
+                    @include backgroundImage("PNG/Fichiers@3x.png");
+                    background-size: contain;
+                }
+                a[href*="http"] {
+                    @include backgroundImage("PNG/liens@3x.png");
+                    background-size: contain;
+                }
                 img.filefield-icon{
                     width: inherit;
                     margin: 0;
-                    display: initial;
+                    display: none;//initial
                 }
             }
         }

@@ -102,6 +102,11 @@ aside.contenu-rubrique{
             }
         }
     }
+    .rubrique-international{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+               white-space: unset;
+        }
+    }
 }
 /*######-------- ||| STYLE ||| --------######*/
 
