@@ -1,4 +1,4 @@
-<?php
+    <?php
 /* Ce template permet la création d'un layout multicolonne pour les pages de base, en permettant la disposition facile
  * des champs CCK custom, si nécessaires pour une page de base.
 */?>
@@ -81,14 +81,26 @@
         </article>
                 <?php endif; ?>             
         
+        <?php if ($node->field_lycee_possible[0]['view']): ?>
+        <aside class="lycees-possibles">
+                        <?php 
+                        global $theme_path;
+              include ($theme_path.'/includes/dedicates_inc/inc_liste_lycees_CCKTaxo.php');
+                        ?>
+        </aside>
+                <?php endif; ?>             
         
-           <?php if ($node->field_savoir_plus_fiche_formatio[0]['view']): ?>
+        
+           <?php if ($node->field_savoir_plus_fiche_formatio[0]['view']     ): ?>
                     <div class="savoir-plus-fiche">
-                        <?php (print $node->field_savoir_plus_fiche_formatio[0]['view']); /* Inutile */ ?>
+                    
+                        <?php (print $node->field_savoir_plus_fiche_formatio[0]['view']); /* Vue Liens et docs utiles */ ?>
+                  
+                        
                     </div>
                 <?php endif; ?>             
         
-
+        
            <?php
               global $theme_path;
               include ($theme_path.'/includes/regions_inc/inc_region_zone_2.php');

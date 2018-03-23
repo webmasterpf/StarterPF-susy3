@@ -131,10 +131,21 @@ if (!empty($node->field_NAME[0]['view'])): ?>
 <?php
   $match = FALSE;
  
+  //bloc visible sur les NiD suivants
+  $nids = array(1, 28);
+  
   // block is visible on the content types entered here
   $types = array('page_association' => 1, 'page_erreur' => 1, 'actu_association_revue_presse'=>1);
   $url = request_uri();
 
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    $nid = arg(1);
+  
+    // check on id
+    $node = node_load(array('nid' => $nid));
+    $match = isset($nids[$node->nid]);
+      
+  }
   if ((arg(0) == 'node') && is_numeric(arg(1))) {
     $node = node_load(arg(1));
     $match = isset($types[$node->type]);

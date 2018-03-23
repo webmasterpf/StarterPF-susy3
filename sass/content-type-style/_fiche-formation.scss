@@ -64,6 +64,23 @@ body .conteneur{
             }
         }
     }
+    aside.ficheform-savoirplus,aside.lycees-possibles{
+        margin: span(0.01) auto;
+        padding: span(0.01);
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            width: span(5);
+            
+        }
+    }
+    aside.lycees-possibles{
+        ul{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                 column-count: 2;
+            column-fill: balance;
+            }
+        }    
+        
+    }
 }
 
 /*######-------- ||| STYLE ||| --------######*/
@@ -202,13 +219,10 @@ ______________________________*/
     aside.ficheform-savoirplus{
         
         background-color: $gris-clair;
-        margin: span(0.01) auto;
-        padding: span(0.01);
+        
         @include arrondis(1em);
         
-        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-            width: span(5);
-        }
+    
         a{
             color: $bleu-turquoise;
             text-decoration: none;
@@ -234,6 +248,26 @@ ______________________________*/
                 list-style: square;
                 list-style-position: inside;
                 @include font-size(s);//utilisation de typey
+            }
+        }
+    }
+    aside.lycees-possibles{
+        @include backgroundImage("PNG/Fichiers@3x.png", bottom right);
+        background-size: contain;
+        ul{
+            position:relative;
+            &::after{
+                @include image-overlay('motif_img_overlay.png', 0 0, repeat);
+            }
+            
+            li{
+                list-style: none;
+                a{
+                    &:hover{
+                        background: $orange-fonce;
+                        color: $gris-anthracite;
+                    }
+                }
             }
         }
     }
