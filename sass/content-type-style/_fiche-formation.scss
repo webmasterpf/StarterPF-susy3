@@ -252,24 +252,25 @@ ______________________________*/
         }
     }
     aside.lycees-possibles{
-        @include backgroundImage("PNG/Fichiers@3x.png", bottom right);
+        @include backgroundImage("PNG/lieux@3x.png", bottom right);
         background-size: contain;
         ul{
-            position:relative;
-            &::after{
-                @include image-overlay('motif_img_overlay.png', 0 0, repeat);
-            }
+            @include backgroundImage("motif_img_overlay.png", repeat, top left);
             
             li{
                 list-style: none;
                 a{
+         
                     &:hover{
                         background: $orange-fonce;
                         color: $gris-anthracite;
+                        text-decoration: none;
                     }
                 }
+                
             }
         }
+    
     }
 }
 #zone-4.fiche-formation{}
