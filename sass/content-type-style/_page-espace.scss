@@ -253,10 +253,12 @@ ______________________________*/
                             max-width: span(1);
 
                         }
-                        @include breakpoint(($desktop,$desktopwide)){
+                        @include breakpoint($desktop){
+                            max-width: 20%;
+                        }
+                        @include breakpoint($desktopwide){
                             max-width: 25%;
                             padding: 0 0 0 span(0.01);
-
                         }
 
                     }
