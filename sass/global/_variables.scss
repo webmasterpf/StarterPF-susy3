@@ -76,8 +76,8 @@ box-sizing: $value;
   large: 1024px,
   xlarge: 1200px,
   xxlarge: 1440px,*/
-$mobile   :  (max-width 799px);//500px
-$tablet   :  (min-width 800px) (max-width 1024px);//800px
+$mobile   :  (max-width 767px);//500px
+$tablet   :  (min-width 768px) (max-width 1024px);//800px
 
 $desktop  :  1200px;// sortie=>> min-width: XXXpx
 $desktopwide  :  1440px;// sortie=>> min-width: XXXpx
