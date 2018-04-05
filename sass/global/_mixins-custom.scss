@@ -125,23 +125,11 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
 @mixin txt-colonnes($param1:avoid-column,$param2:avoid){
     break-inside: $param1;//empêche césure au milieu de l'élément 
     page-break-inside: $param2;/* fix for Firefox */
+    break-after: $param1;
+    break-before: $param1;
 }
 
-/*------- HACK pour Navigateurs -------------*/
-@mixin hack-IE(){
-    //ciblage de IE10+
-    @media screen and (min-width:0\0) {
-        display: inline-block;
-        width:100%;
-    }
-}
-@mixin hack-Edge(){
-    //ciblage de MS Edge                    
-    @supports (-ms-ime-align: auto) {
-        display: inline-block;
-        width:100%;
-    }
-}
+
 // ==========
 // TRANS-PREP
 // -----
@@ -318,6 +306,7 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     box-shadow: $decalage-horizontal $decalage-vertical $force-degrade $couleur-ombre;
 }
 
+
 @mixin ombrage-texte($angle:0.5em,$distance:0.2em,$flou:0.6em,$couleur:#1a181a){
     text-shadow: $angle $distance $flou $couleur;
     filter: dropshadow(color=$couleur, offx=$angle, offy=$distance);
@@ -474,3 +463,19 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
 @mixin border-L-rouge { border-left: em(1px) solid $rouge;}
 @mixin border-L-orangePF { border-left: em(1px) solid $orange-fonce;}
 @mixin border-L-orange { border-left: em(1px) solid $orange;}
+
+/*------- HACK pour Navigateurs -------------*/
+@mixin hack-IE(){
+    //ciblage de IE10+
+    @media screen and (min-width:0\0) {
+        display: inline-block;
+        width:100%;
+    }
+}
+@mixin hack-Edge(){
+    //ciblage de MS Edge                    
+    @supports (-ms-ime-align: auto) {
+        display: inline-block;
+        width:100%;
+    }
+}

@@ -122,7 +122,7 @@ aside.contenu-rubrique{
         }
     }
 }
-aside.nav-espace-entreprise{
+aside.nav-espace-entreprise,aside.nav-espace-partenaire{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             column-count: 4;
             column-fill: balance;
@@ -140,6 +140,36 @@ aside.nav-espace-entreprise{
             padding: span(0.1);
         }
     
+}
+.part-institutionnels{
+    ul{
+        li{
+            list-style: none;
+        }
+    }
+    
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+           
+        ul{
+            column-count: 6;
+            column-fill: balance;
+            white-space: normal;
+            padding: span(0.1);
+            display: block;
+            @include clearfixsusy3;
+            
+            li{
+                @include txt-cesure;
+               @include txt-colonnes;
+                @include hack-Edge;
+                @include hack-IE;
+                a{
+                    clear: left;
+                    display: block;
+                }
+            }
+        }
+    }
 }
 /*######-------- ||| STYLE ||| --------######*/
 
@@ -434,6 +464,24 @@ ______________________________*/
                      color:$gris-clair;
                      background:$gris-clair-moyen;
                     &:hover{color: $orange-fonce;}
+                }
+            }
+        }
+    }
+    
+    //Style page Espace Partenaire
+    aside.espace-partenaire{
+        border-bottom: em(5px) $orange-fonce dotted;
+        h3{
+            color: $rose-fushia;
+        @include font-size(l);//utilisation de typey
+        }
+        ul{
+            li{
+                  background: $gris-clair;
+        
+                &:hover{
+                    @include ombrage-bloc(0,0,1em);
                 }
             }
         }

@@ -324,6 +324,11 @@ $(".acces-lycees #media-vimeo-1 iframe").height('11.5vw').width('20vw');
         });
 //$(".page-espace li img").height('auto').width('auto');
 
+//Retrait Taille des images sur les pages espace Entreprise et Partenaires
+$(".nav-espace-entreprise li img").removeAttr("style");
+$(".nav-espace-partenaire li img").removeAttr("style");
+
+
         //Retrait position:absolute sur le Views Slideshow       
         $('.views_slideshow_cycle_slide:visible').css('position', 'relative', 'important');
         $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
