@@ -126,6 +126,22 @@ $imagedir:'../images/'; // definir ici le chemin vers le dossier image
     break-inside: $param1;//empêche césure au milieu de l'élément 
     page-break-inside: $param2;/* fix for Firefox */
 }
+
+/*------- HACK pour Navigateurs -------------*/
+@mixin hack-IE(){
+    //ciblage de IE10+
+    @media screen and (min-width:0\0) {
+        display: inline-block;
+        width:100%;
+    }
+}
+@mixin hack-Edge(){
+    //ciblage de MS Edge                    
+    @supports (-ms-ime-align: auto) {
+        display: inline-block;
+        width:100%;
+    }
+}
 // ==========
 // TRANS-PREP
 // -----
