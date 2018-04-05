@@ -88,18 +88,11 @@ body .conteneur{
                 padding: 0;
                 margin: span(0.1) 0;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                    //ciblage de IE10+
-                    @media screen and (min-width:0\0) {
-                        display: inline-block;
-                        width:100%;
-                    }
-                    //ciblage de MS Edge                    
-                    @supports (-ms-ime-align: auto) {
-                        display: inline-block;
-                        width:100%;
-                    }
+                
+                    @include hack-Edge;
+                    @include hack-IE;
                     
-                    @include  txt-colonnes();
+                @include  txt-colonnes();
                     margin: 0 0 span(0.1) 0;
                     
                     :not(img):not(a):not(.complement){
