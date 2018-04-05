@@ -317,6 +317,12 @@ $("#zone-2 #media-youtube-1").height('23vw').width('100vw');
 $(".logo_partenaires img").height('auto').width('auto');
 $(".acces-lycees #media-vimeo-1 iframe").height('11.5vw').width('20vw');
 
+//Taille auto des images sur les pages espace
+     $('.page-espace li img').each(function () {
+            $(this).removeAttr('width');
+            $(this).removeAttr('height');
+        });
+//$(".page-espace li img").height('auto').width('auto');
 
         //Retrait position:absolute sur le Views Slideshow       
         $('.views_slideshow_cycle_slide:visible').css('position', 'relative', 'important');
