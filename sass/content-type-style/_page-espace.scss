@@ -118,9 +118,20 @@ aside.contenu-rubrique{
     }
     .rubrique-international{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-               /*white-space: unset;*/
+               white-space: unset;
         }
     }
+}
+aside.nav-espace-entreprise{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            column-count: 4;
+            column-fill: balance;
+            white-space: normal;
+            padding: span(0.1);
+        }
+        ul{
+            list-style: none;
+        }
 }
 /*######-------- ||| STYLE ||| --------######*/
 
@@ -346,6 +357,58 @@ ______________________________*/
             ul{
                 li{
                     background: $bleu-turquoise;
+                }
+            }
+        }
+    }
+    
+    //Style propre pour listes espace entreprise
+    .espace-devenir-partenaire{
+        ul{
+
+            li{
+
+                a{
+                    background:$gris-clair;
+                        &:hover{color: $orange-fonce;}
+                }
+            }
+        }
+    }
+    .espace-accueillir-jeune{
+        ul{
+
+            li{
+
+                a{
+                     color:$gris-clair;
+                     background:$gris-clair-moyen;
+                    &:hover{color: $orange-fonce;}
+                }
+            }
+        }
+    }
+    .espace-taxe-apprentissage{
+        ul{
+
+            li{
+
+                a{
+                        background:$gris-clair;
+                        &:hover{color: $orange-fonce;}
+                }
+            }
+        }
+    }
+    .espace-vie-lycees{
+        ul{
+
+            li{
+
+                a{
+                     color:$gris-clair;
+                     background:$gris-clair-moyen;
+                    &:hover{color: $orange-fonce;}
                 }
             }
         }
