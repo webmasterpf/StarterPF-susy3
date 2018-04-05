@@ -133,6 +133,14 @@ aside.nav-espace-entreprise{
             list-style: none;
         }
 }
+.espace-accueillir-jeune,.espace-devenir-partenaire,.espace-taxe-apprentissage,.espace-vie-lycees{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            float: left;
+            max-width: 25%;
+            padding: span(0.1);
+        }
+    
+}
 /*######-------- ||| STYLE ||| --------######*/
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
@@ -363,6 +371,23 @@ ______________________________*/
     }
     
     //Style propre pour listes espace entreprise
+    .espace-accueillir-jeune,.espace-devenir-partenaire,.espace-taxe-apprentissage,.espace-vie-lycees{
+      ul{
+           
+            li{
+                 list-style: none;
+                 margin:0 0 span(0.01) span(0.1);
+                a{
+                    text-decoration: none;
+                    color:$gris-anthracite;
+                    font-size: large;
+                    display:block;
+                    padding: span(0.1);
+                   // &:hover{color: inherit;}
+                }
+            }
+        }
+    }
     .espace-devenir-partenaire{
         ul{
 
