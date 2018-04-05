@@ -96,6 +96,20 @@ aside.contenu-rubrique{
             padding: span(0.1);
             li{
                 @include  txt-colonnes();
+                    span{
+                        @include breakpoint(($mobilelandscape,$tablet,$tabletlandscape)){
+                            max-width: span(1);
+
+                        }
+                        @include breakpoint($desktop){
+                            max-width: 7vw;
+                        }
+                        @include breakpoint($desktopwide){
+                            max-width: 10vw;
+                            padding: 0 0 0 span(0.01);
+                        }
+
+                    }
                 a{
                     display: inherit;
                 }
@@ -104,7 +118,7 @@ aside.contenu-rubrique{
     }
     .rubrique-international{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-               white-space: unset;
+               /*white-space: unset;*/
         }
     }
 }
@@ -249,23 +263,13 @@ ______________________________*/
                         @include txt-cesure();
                         display: inline-block;
                         float: left;
-                        @include breakpoint(($mobilelandscape,$tablet,$tabletlandscape)){
-                            max-width: span(1);
-
-                        }
-                        @include breakpoint($desktop){
-                            max-width: 20%;
-                        }
-                        @include breakpoint($desktopwide){
-                            max-width: 25%;
-                            padding: 0 0 0 span(0.01);
-                        }
+      
 
                     }
                     div{
                         position: relative;
                         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-
+                            max-width: 70%;
                             float: left;
                             content: "";  
 
@@ -274,7 +278,7 @@ ______________________________*/
                             &:before{
 
                                 @include image-overlay('motif_img_overlay.png', 0 0, repeat);
-
+                                
                             }
 
 
@@ -298,14 +302,14 @@ ______________________________*/
                     font-weight: bold;
                     @include font-size(l);//utilisation de typey
                     @include txt-ellipse();
-                    display: inherit;
+                    display: block;
                 }
 
                 span{
                     color: $blanc-casse;
                     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                        max-width: 25%;
-                        padding: span(0.1);
+                        
+                        /*padding: span(0.1);*/
                         display: inline-block;
                         @include txt-cesure();
                         /*float: left;*/
@@ -322,12 +326,13 @@ ______________________________*/
                     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                         float: right;
                         padding: 0;
+                        max-width: 70%;
                     }
                     a {
                         &:before{
 
                             @include image-overlay('motif_img_overlay.png', 0 0, repeat);
-
+                            @include adaptable-img;
                         }
                         &:hover{
                             background: none;
