@@ -22,6 +22,7 @@ body .conteneur #header {
             padding: span(1) 0 0;
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
                 padding: span(0.1) 0 1em 0;
+                float: left;
             }
             img{
                 margin: 0 auto;
