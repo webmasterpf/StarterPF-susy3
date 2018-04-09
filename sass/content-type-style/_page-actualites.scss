@@ -129,6 +129,98 @@ ______________________________*/
     aside.liste-actu-presse{
         //Style du filtrage de la vue
         div.bef-select-as-radios{
+            div.form-item{
+                background: $orange-fonce;
+                color: $blanc-casse;
+                text-align: center;
+                cursor: pointer;
+                label{
+                    cursor: pointer;
+                    &:after{
+                        content: "PôLE";
+                        color:$orange-fonce;
+                        @include font-size(l);//utilisation de typey
+                        font-family: $FontRaleway;
+                    }
+                }
+                &:hover:not(#edit-term-node-tid-depth-limited-All-wrapper){
+
+                    /*@include backgroundImage('bg_filtre_pole.png',center, no-repeat );*/
+                    background-size:60%;
+                    background-color: $orange-fonce;
+                    label{
+                        @include opacity(0.45);
+                    }
+                }
+            }
+        }
+          .views-exposed-form{
+            //Masquer la roue bleue de drupal
+            .ajax-progress-throbber {
+                display: none;
+            }
+            .views-exposed-widget{
+                padding: 0;
+                margin: 0;
+                float: none;
+            }
+            //Style du bouton de filtrage
+            .views-submit-button{
+                float: none;
+                margin: 0 auto;
+                width:25vw;
+                padding:0;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                width: 10vw;
+                }
+                input[type="submit"] {
+                    background: $orange-fonce;
+                    border: em(1px) dashed $gris-anthracite;
+                    color: $blanc-casse;
+                    @include font-size(l);//utilisation de typey
+                    font-family: $FontArvo;
+                }
+            }
+        }
+            //Masquage du module additionnel du module (bug peut être corrigé via patch)
+        .view-filters{
+            #edit-children-of-wrapper{
+                display: none;
+                visibility: hidden;
+            }
+        }
+            //Style des éléments de la vue
+        ul.actu-presse-mur{
+            li{
+                list-style:none;
+                color: $blanc-casse;
+                &.tid-68{
+                    background: $gris-anthracite;
+                }
+                &.tid-69{
+                    background: $orange-fonce;
+                }
+                &.tid-70{
+                    background: $jaune;
+                    *{
+                        color: $gris-anthracite;//cas particulier du fond clair
+                    }
+                }
+                         a{
+                    color: $blanc-casse;
+                    text-decoration: none;
+                    font-weight: bold;
+                    @include font-size(l);//utilisation de typey
+
+                }
+                div.image_actu >a{//uniquement les "a" sur l'image
+                   position:relative;//pour overlay image
+                   &:before{
+
+                       @include image-overlay('motif_img_overlay.png', 0 0, repeat);
+                   }
+                }
+            }
             
         }
     }
