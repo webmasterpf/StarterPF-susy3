@@ -15,7 +15,7 @@
                  OR
                  $title
                  ): ?>
-            <div id="illustration-pleinepage" class="illustration-espace">
+            <div id="illustration-pleinepage" class="illustration-actualites">
                    <h1 class="titre_overlay titre_page"><?php print $title; ?></h1>
                  <?php  print $node->field_illus_administratif[0]['view'] ?>
             </div>

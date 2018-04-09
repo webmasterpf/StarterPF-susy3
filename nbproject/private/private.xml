@@ -3,15 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="D6-Susy3">
-            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/js/jquery_exit.js</file>
-            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/template.php</file>
             <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/README.md</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/js/jquery_exit.js</file>
             <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/gulpfile.js</file>
             <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/application.scss</file>
-            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/layout/_layout-bp-desktop.scss</file>
-            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/page-front.tpl.php</file>
             <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/global/_variables.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/page-front.tpl.php</file>
             <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/layout/_layout.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/layout/_layout-bp-desktop.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/layout/_layout-frontpage.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/layout/_layout-header.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_frontpage-style.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/layout/_layout-debug-colour.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/layout/_layout-footer.scss</file>
+        </group>
+        <group name="Drupal6-Susy3">
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_page-espace.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_frontpage-style.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-contenu_rubrique_international.tpl.php</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/galeries/_baguettebox-vignette-zoom.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/js/js_jquery_new.js</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_page-formations.scss</file>
+            <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-page_actualites.tpl.php</file>
+        </group>
+        <group name="Starter D6">
+            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_page-actualites.scss</file>
+            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-page_actualites.tpl.php</file>
         </group>
     </open-files>
 </project-private>

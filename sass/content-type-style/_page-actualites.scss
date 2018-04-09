@@ -12,184 +12,129 @@
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #colonne-1.page-actualites{order:2;}
-    #colonne-2.page-actualites{order:1;}
-    #colonne-3.page-actualites{order:3;}
+    #zone-1.page-actualites{order:2;}
+    #zone-2.page-actualites{order:1;}
+    #zone-3.page-actualites{order:3;}
     @include breakpoint ($desktop){
-    #colonne-1.page-actualites{order:1;}
-    #colonne-2.page-actualites{order:2;}
-    #colonne-3.page-actualites{order:3;}
+    #zone-1.page-actualites{order:1;}
+    #zone-2.page-actualites{order:2;}
+    #zone-3.page-actualites{order:3;}
     }
 }
 
 /*######-------- ||| BORDURES ||| --------######*/
 body .conteneur {
     @include breakpoint ($desktop){
-        #colonne-2.page-actualites{}
+        #zone-2.page-actualites{}
     }
     
 }
-/*######-------- ||| STYLE ||| --------######*/
-h1.titre_page_actualites{
-    margin: em(3px);
-    color: $rose-fushia;
-    text-align: center;
-}
-/*¤¤¤ STYLES COMMUNS ¤¤¤*/
-#colonne-1.page-actualites,
-#colonne-2.page-actualites,
-#colonne-3.page-actualites{
-    .titre-actu{
-    bottom: -20px;
-    left: 3px;
-    position: relative;
-    width: 98%;
-    z-index: 20;
-    }
-.img-actu img{
-    float: left;
-    border: em(1px) solid white;
-    @include zoom-css3(1);
-    &:hover{
-        @include zoom-css3-hover(0.95);
-    }
-}
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.page-actualites{
+   min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
 
-    p{
-    padding: em(5px);
-}
-strong,b{
-    color: $prune;
-}
-    a{
-        color: $violet;
-        text-decoration: none;
-        &:hover{
-            text-decoration: underline;
+    img{
+        transform: translate(0%,0%);
+            
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-35%);
         }
-        
     }
-    span{
-        @include font-size(s);
+}
+#zone-1.page-actualites{
+    >.content{
+        column-count: 0;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            column-count: 2;
+            column-fill: balance;
+            white-space: normal;
+            padding: span(0.1);
+        }
     }
-    tbody{
-     background: 0;
-     border: 0;
- }
- tr{
-      background: 0;
-     border: 0;
- }
+    aside.liste-actu-presse{
+        div.bef-select-as-radios{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                column-count: 4;
+                column-fill: balance;
+                white-space: normal;
+                padding: span(0.02);
+            }
+            div.form-item{
+                margin: 0 0 span(0.01) 0;   
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    @include  txt-colonnes();
+
+                    padding: span(0.01);
+                }
+            }
+        }
+        ul.actu-presse-mur{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                column-count: 6;
+                
+                column-fill: auto;
+                white-space: normal;
+
+            }
+            li{
+                padding: 0;
+                margin: span(0.1) 0;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                
+                    @include hack-Edge;
+                    @include hack-IE;
+                    
+                @include  txt-colonnes();
+                    margin: 0 0 span(0.1) 0;
+                    
+                    :not(img):not(a):not(.complement){
+                        padding: span(0.1);
+                        
+                    }
+
+                }
+                a{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+/*######-------- ||| STYLE ||| --------######*/
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-illustration.page-actualites{
+    h1.titre_overlay{
+        @include titre_overlay();
+    }
+}
+#zone-1.page-actualites,
+#zone-2.page-actualites,
+#zone-3.page-actualites{
+  
 }
 
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
-#colonne-1.page-actualites{
-    /*Liste actu europe*/
-    #actu-liste-europe p.txt-vide-actu-globale{
-        width: 98%;
-        text-align: center;
-    }
-    #actu-liste-europe{
-        width: 98%;
-        margin: 0 auto;
-    }
-    #actu-liste-europe h3{
-        font-size: larger;
-        color: $violet;
-        margin: em(5px);
-        text-align: center;
-        font-family:$AristaFont;
-    }
-    #actu-liste-europe table{
-        border: 3px solid $violet;
-        background: $gris-clair;
-        @include ombrage-table-actu;
-        @include PIE;
-        position: relative;
-    }
-    #actu-liste-europe tbody{}
-    #actu-liste-europe tr{}
-    #actu-liste-europe td{
-        padding: em(2px);
-    }
-    #actu-liste-europe a{
-        color: $prune;
-        font-weight: bold;
-        text-decoration: none;
-    }
-    #actu-liste-europe a:hover{
-        color: $rose-fushia;
-    }
-}
-#colonne-2.page-actualites{
-    /*Liste annonce RP - Big*/
-    #actu-liste-rp-annonce {
-        margin: 0 auto;
-        width: 98%;
-        p.txt-vide-actu-globale{
-            margin: 0 auto;
-            width: 98%;
-            text-align: center;
-            color: $orange-fonce;
-        }
-
-        h3{
-            color:$bleu-turquoise;
-            text-align: center;
-            margin: em(5px) 0;
-            font-size:large;
-        }
-        img{
-            border: em(2px) solid $rose-fushia;
-            padding: em(1px);
-        }
-        a{
-            color: $rose-fushia;
-            text-decoration: none;
-            &:hover{
-                color: $violet;
-            }
-        }
-
-    }
-/*Liste annonce RP - Small*/
-#actu-liste-rp-annonce2{
-     img{
-    border: em(1px) solid $rose-fushia;
-    padding: em(1px);
-}
- a{
-    color: $rose-fushia;
-    text-decoration: none;
-    text-align: center;
-     &:hover{
-    color: $violet;
-}
-}
-
- table{}
- tbody{
+#zone-1.page-actualites{
    
- }
- tr{
+    aside.liste-actu-presse{
+        //Style du filtrage de la vue
+        div.bef-select-as-radios{
+            
+        }
+    }
+}
+#zone-2.page-actualites{
 
- }
- td{
-    padding: em(3px);
-    vertical-align: top;
-}
-td.col-2{
-    padding-left: em(5px);
-}
-p.txt-vide-actu-globale{
-     margin: 0 auto;
-    width: 98%;
-    text-align: center;
-    color: $orange-fonce;
-}
 }
 
 
@@ -238,40 +183,8 @@ BLOC FLUX RSS ACTU DE L'ASSO
 
 } 
 
-}
 
-#colonne-3.page-actualites{
-   /*Liste actu VDL*/
-#actu-liste-vdl p.txt-vide-actu-globale{}
-#actu-liste-vdl{
-     margin: 0 auto;
-    width: 98%;
-}
-#actu-liste-vdl h3{
-    font-size: larger;
-    color: $rose-fushia;
-    margin: em(5px);
-    text-align: center;
-    font-family:Arista,trebuchet-MS,sans-serif;
-}
-#actu-liste-vdl table{
-    border: em(3px) solid $rose-fushia;
-    background: $gris-clair;
-    @include ombrage-table-actu;
-    @include PIE;
-   position: relative;
-}
-#actu-liste-vdl tbody{}
-#actu-liste-vdl tr{}
-#actu-liste-vdl td{
-    padding: em(2px);
-}
-#actu-liste-vdl a{
-    color: #564E4E;
-    font-weight: bold;
-    text-decoration: none;
-}
-#actu-liste-vdl a:hover{
-    color: $rose-fushia;
-}
+
+#zone-3.page-actualites{
+ 
 }
