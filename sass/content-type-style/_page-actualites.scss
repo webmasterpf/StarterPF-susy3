@@ -83,6 +83,7 @@ body .conteneur {
 /*                    column-count: 6;
                     column-fill: auto;
                     white-space: normal;*/
+//Flex pour avoir classement horizontal
                     display: flex;
                     flex-wrap:wrap;
                     padding: 0 0 0 span(0.1);
@@ -125,7 +126,33 @@ body .conteneur {
 #zone-1.page-actualites,
 #zone-2.page-actualites,
 #zone-3.page-actualites{
-
+     p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    strong{
+        color: $orange-fonce;
+    }
 }
 
 
@@ -221,7 +248,7 @@ ______________________________*/
                     color: $blanc-casse;
                     text-decoration: none;
                     font-weight: bold;
-                    @include font-size(l);//utilisation de typey
+                    @include font-size(m);//utilisation de typey
 
                 }
                 div.image_actu >a{//uniquement les "a" sur l'image
@@ -242,49 +269,6 @@ ______________________________*/
 
 
 
-/*------------------------
-BLOC FLUX RSS ACTU DE L'ASSO
------------------------------*/
-#block-aggregator-feed-1{
-    h3{
-        color: $rose-fushia;
-        font-family: $AristaFont;
-        padding: 5px;
-        text-align: center;
-        font-size: large;
-    }
-    ul{
-        list-style: none;
-        background:  url(../images/bg_doc_utile_rp.jpg) repeat left top ;
-        margin: 0 auto;
-        width: 85%;
-        padding: em(20px) 0;
-        @include arrondis (em(10px));
-        position: relative;
-    }
-    ul li{
-        margin: em(5px) 0;
-        list-style: none;
-
-    }
-    li a{
-        text-decoration: none;
-        padding: 2px;
-        display: block;
-        @include arrondis (em(5px));
-        position: relative;
-        width: 85%;
-        margin: 0 auto;
-        color: white;
-        background: $rose-fushia;
-        &:hover{
-            background: white;
-            color: $rose-fushia;
-            text-decoration: none;
-        }
-    }
-
-} 
 
 
 
