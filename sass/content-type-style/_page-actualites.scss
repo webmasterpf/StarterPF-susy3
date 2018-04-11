@@ -16,9 +16,9 @@ body .conteneur .conteneur-flex{
     #zone-2.page-actualites{order:1;}
     #zone-3.page-actualites{order:3;}
     @include breakpoint ($desktop){
-    #zone-1.page-actualites{order:1;}
-    #zone-2.page-actualites{order:2;}
-    #zone-3.page-actualites{order:3;}
+        #zone-1.page-actualites{order:1;}
+        #zone-2.page-actualites{order:2;}
+        #zone-3.page-actualites{order:3;}
     }
 }
 
@@ -27,17 +27,17 @@ body .conteneur {
     @include breakpoint ($desktop){
         #zone-2.page-actualites{}
     }
-    
+
 }
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
 #zone-illustration.page-actualites{
-   min-height: 35vw;
+    min-height: 35vw;
     max-height: 90vw;
     overflow: hidden;
 
     img{
         transform: translate(0%,0%);
-            
+
     }
     @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
         min-height: 25vw;
@@ -74,36 +74,44 @@ body .conteneur {
                 }
             }
         }
-        ul.actu-presse-mur{
+        .item-list{
             @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                column-count: 6;
-                
-                column-fill: auto;
-                white-space: normal;
-
+                width: span(12);
             }
-            li{
-                padding: 0;
-                margin: span(0.1) 0;
+            ul.actu-presse-mur{
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                
-                    @include hack-Edge;
-                    @include hack-IE;
-                    
-                @include  txt-colonnes();
-                    margin: 0 0 span(0.1) 0;
-                    
-                    :not(img):not(a):not(.complement){
-                        padding: span(0.1);
-                        
-                    }
-
+/*                    column-count: 6;
+                    column-fill: auto;
+                    white-space: normal;*/
+                    display: flex;
+                    flex-wrap:wrap;
+                    padding: 0 0 0 span(0.1);
                 }
-                a{
-                    display: block;
+                li{
+                    padding: 0;
+                    margin: span(0.1) 0;
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+
+                        /*@include hack-Edge;*/
+                        @include hack-IE;
+                        @include  txt-colonnes();
+                        margin: 0 span(0.1) span(0.1) 0;
+                            display: inline-block;
+                        width: span(1.8);
+
+                        :not(img):not(a):not(.complement){
+                            padding: span(0.1);
+
+                        }
+
+                    }
+                    a{
+                        display: block;
+                    }
                 }
             }
         }
+
     }
 }
 /*######-------- ||| STYLE ||| --------######*/
@@ -117,7 +125,7 @@ body .conteneur {
 #zone-1.page-actualites,
 #zone-2.page-actualites,
 #zone-3.page-actualites{
-  
+
 }
 
 
@@ -125,7 +133,7 @@ body .conteneur {
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 #zone-1.page-actualites{
-   
+
     aside.liste-actu-presse{
         //Style du filtrage de la vue
         div.bef-select-as-radios{
@@ -154,7 +162,7 @@ ______________________________*/
                 }
             }
         }
-          .views-exposed-form{
+        .views-exposed-form{
             //Masquer la roue bleue de drupal
             .ajax-progress-throbber {
                 display: none;
@@ -171,7 +179,7 @@ ______________________________*/
                 width:25vw;
                 padding:0;
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-                width: 10vw;
+                    width: 10vw;
                 }
                 input[type="submit"] {
                     background: $orange-fonce;
@@ -182,14 +190,14 @@ ______________________________*/
                 }
             }
         }
-            //Masquage du module additionnel du module (bug peut être corrigé via patch)
+        //Masquage du module additionnel du module (bug peut être corrigé via patch)
         .view-filters{
             #edit-children-of-wrapper{
                 display: none;
                 visibility: hidden;
             }
         }
-            //Style des éléments de la vue
+        //Style des éléments de la vue
         ul.actu-presse-mur{
             li{
                 list-style:none;
@@ -206,7 +214,10 @@ ______________________________*/
                         color: $gris-anthracite;//cas particulier du fond clair
                     }
                 }
-                         a{
+                &.tid-152{
+                    background: $violet;
+                }
+                a{
                     color: $blanc-casse;
                     text-decoration: none;
                     font-weight: bold;
@@ -214,14 +225,14 @@ ______________________________*/
 
                 }
                 div.image_actu >a{//uniquement les "a" sur l'image
-                   position:relative;//pour overlay image
-                   &:before{
+                                  position:relative;//pour overlay image
+                                  &:before{
 
-                       @include image-overlay('motif_img_overlay.png', 0 0, repeat);
-                   }
+                                      @include image-overlay('motif_img_overlay.png', 0 0, repeat);
+                                  }
                 }
             }
-            
+
         }
     }
 }
@@ -278,5 +289,5 @@ BLOC FLUX RSS ACTU DE L'ASSO
 
 
 #zone-3.page-actualites{
- 
+
 }
