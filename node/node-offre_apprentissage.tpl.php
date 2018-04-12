@@ -1,4 +1,4 @@
-<!--_________ NODE TEMPLATE POUR OFFRE de CONTRAT PRO BTS -->
+<!--_________ NODE TEMPLATE POUR OFFRE de CONTRAT APPRENTISSAGE  -->
 <div class="node <?php print $classes; ?>" id="node-<?php print $node->nid; ?>">
   <div class="node-inner">
         <!--______________ ILLUSTRATION et TITRE ________________ -->
@@ -31,7 +31,8 @@
             <span class="submitted"><?php print $submitted; ?></span>
             <?php endif; ?>
 
-                 <table class="table-poste-bts">
+
+       <table class="table-offre-apprentissage">
            <tr class="line1">
                <td>  <?php  print $node->content['field_reference_pbts']['field']['#title']  ?></td>
                <td>  <?php  print $node->field_reference_pbts[0]['view'] ?></td>
@@ -43,8 +44,8 @@
 
            </tr>
               <tr class="line1">
-               <td>  <?php  print $node->content['field_formation_bts']['field']['#title'] ?></td>
-               <td>  <?php  print $node->field_formation_bts[0]['view'] ?></td>
+               <td>  <?php  print $node->content['field_formation_apprenti']['field']['#title'] ?></td>
+               <td>  <?php  print $node->field_formation_apprenti[0]['view'] ?></td>
 
            </tr>
               <tr class="line2">
@@ -52,20 +53,30 @@
                <td>  <?php  print $node->field_domaine_activite_bts[0]['view'] ?></td>
 
            </tr>
-             <tr class="line1">
-               <td>  Etat du recrutement</td>
-               <td class="etat">  <?php  print $my_terms; ?></td>
+     <tr class="line1">
+               <td>  <?php  print $node->content['field_etat_poste']['field']['#title'] ?></td>
+               <td class="etat">  <?php  print $node->field_etat_poste[0]['view'] ?></td>
 
            </tr>
             <tr class="line2">
                <td> Postuler à l'offre</td>
-               <td> <?php print '<a href=/node/184?destinataire='.$node->field_centre_bts[0]['value'].'&ref_offre='.$node->field_reference_pbts[0]['value'].'>ICI</a>';?></td>
+               <td>
+                   <?php
+//                   drupal_set_message(print_r($node->field_etat_poste, TRUE));
+                   $etats_possible = [76, 77];
+                   if (in_array($node->field_etat_poste [0]['value'], $etats_possible)) {//si le tid est dans le tableau
+                       print '<a href=/node/739?destinataire=' . $node->field_centre_bts[0]['value'] . '&ref_offre=' . $node->field_reference_pbts[0]['value'] . '>ICI</a>';
+                   } else {//sinon
+                       print 'Vous ne pouvez plus postuler pour cette offre';
+                   }
+                   ?>
+               </td>
 
            </tr>
           
        </table>
-            
-            <div class="content">
+
+       <div class="content">
            
 
                 <?php print $node->content['body']['#value'];?>
