@@ -402,6 +402,15 @@ ______________________________*/
                 }
             }
         }
+        //**** liste contenu alternance ***//
+        ul.acces-contenus-alternance{
+            //classes dynamique attribuées dans la vue
+            li.page-offre-contrat-pro{
+                background: $gris-anthracite;
+            }
+            li.page-bts{}
+        }
+
     }
     
     //Style propre pour listes espace entreprise

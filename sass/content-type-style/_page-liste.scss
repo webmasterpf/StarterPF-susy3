@@ -11,163 +11,279 @@
 //@include breakpoint ($desktop){}
 //@include breakpoint ($tablet){}
 //@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+
+//Ressources sur Attributs et PseudoElements
+// https://tympanus.net/codrops/2013/07/05/using-custom-data-attributes-and-pseudo-elements/
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #colonne-1.CLASS_NAME{order:1;}
-    #colonne-2.CLASS_NAME{order:2;}
-    #colonne-3.CLASS_NAME{order:3;}
+    #zone-1.page-offres{order:1;}
+    #zone-2.page-offres{order:2;}
+    #zone-3.page-offres{order:3;}
+    #zone-4.page-offres{}
+    #zone-5.page-offres{}
     @include breakpoint ($desktop){}
 }
 
 /*######-------- ||| BORDURES ||| --------######*/
-body .conteneur .conteneur-flex{
-   @include breakpoint(($desktop,$tablet)){
-        }
-    
-}
+body .conteneur .conteneur-flex,
 body .conteneur{
     @include breakpoint(($desktop,$tablet)){
-        #colonne-2.page-lycee-entreprise{
-            @include border-orange-violet;
-        }
     }
 
 }
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.page-offres{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
+
+    img{
+        transform: translate(0%,0%);
+
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-10%);
+        }
+    }
+}
+#zone-1.page-offres{
+    >.content{
+        column-count: 0;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            column-count: 2;
+            column-fill: balance;
+            white-space: normal;
+            padding: span(0.1);
+        }
+    }
+    aside.offres-contrat{
+        div.bef-select-as-radios{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                column-count: 4;
+                column-fill: balance;
+                white-space: normal;
+                padding: span(0.02);
+            }
+            div.form-item{
+                margin: 0 0 span(0.01) 0;   
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    @include  txt-colonnes();
+
+                    padding: span(0.01);
+                }
+            }
+        }
+        .item-list{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                width: span(12);
+            }
+            ul.liste-offre-contrat{
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+
+                    //Flex pour avoir classement horizontal
+                    display: flex;
+                    flex-wrap:wrap;
+                    padding: 0 0 0 span(0.1);
+                }
+                li{
+                    padding: 0;
+                    margin: span(0.1) 0;
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+
+                        /*@include hack-Edge;*/
+                        @include hack-IE;
+                        @include  txt-colonnes();
+                        margin: 0 span(0.1) span(0.1) 0;
+                        display: inline-block;
+                        width: span(1.8);
+
+                        :not(img):not(a):not(.complement){
+                            padding: span(0.1);
+
+                        }
+
+                    }
+                    a{
+                        display: block;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
 /*######-------- ||| STYLE ||| --------######*/
-h1.titre_page_lycee_entreprise{
-    color: $orange;
-}
-#cg_logo_entreprise img{
-    display: block;
-    margin: 0 auto;
-}
-#colonne-2.page-lycee-entreprise{
-    p{
-        line-height: 1em;
-        padding: 0.05em;
-        margin: 0;
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-illustration.page-offres{
+    h1.titre_overlay{
+        @include titre_overlay();
     }
 }
-.table_liste_vdl{
-    padding: em(5px);
-    tbody{}
-    tr{
-        margin: em(5px) 0;
-        border: 0;
-        background: none;
+#zone-1.page-offres,
+#zone-2.page-offres,
+#zone-3.page-offres,
+#zone-4.page-offres,
+#zone-5.page-offres
+{
+    p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
     }
-    td{
-        margin: em(5px) 0;
-        display: block;
-        padding: em(3px);
-        float: left;
-        width: 95%;
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
     }
     a{
         text-decoration: none;
-        font-size: inherit;
-        font-weight: bold;
-        margin: 0 em(10px);
-        color: $orange;
+        color: $orange-fonce;
         &:hover{
-            color: $violet;
+            text-decoration: underline;
         }
     }
-    hr{
-        border: 0.09em solid $orange;
-        width: 75%;
-        margin: 0 auto;
-        
-    }
-    .deco_vdl img{
-        float: right;
-        border: 0.2em solid $orange;
+    strong{
+        color: $orange-fonce;
     }
 }
 
-/*==
-== Pager pour pages archives(listes) ===
-==*/
-#bloc_liste_vdl ul.pager,#bloc_liste_lycee-entreprise ul.pager,#bloc_liste_actus ul.pager{margin: em(3px) auto;width: 95%;display: block;padding: em(3px);}
-#bloc_liste_vdl .pager li,#bloc_liste_lycee-entreprise .pager li,#bloc_liste_actus .pager li
-{float: left;}
-#bloc_liste_vdl .pager li a,#bloc_liste_lycee-entreprise .pager li a,#bloc_liste_actus .pager li a{color: $gris-anthracite;}
-#bloc_liste_vdl .pager li.pager-item,#bloc_liste_lycee-entreprise .pager li.pager-item,#bloc_liste_actus .pager li.pager-item,
-#bloc_liste_vdl .pager li.pager-current,#bloc_liste_lycee-entreprise .pager li.pager-current,#bloc_liste_actus .pager li.pager-current
-{padding: em(3px);border-radius: em(10px); height: em(15px);width: em(15px);}
-#bloc_liste_vdl .pager li.pager-item,#bloc_liste_lycee-entreprise .pager li.pager-item,#bloc_liste_actus .pager li.pager-item
-{background:$violet ;color:$gris-clair;}
-#bloc_liste_vdl .pager li.pager-item a,#bloc_liste_lycee-entreprise .pager li.pager-item a,#bloc_liste_actus .pager li.pager-item a{color:#EFEFEF;}
-#bloc_liste_vdl .pager li.pager-current,#bloc_liste_lycee-entreprise .pager li.pager-current,#bloc_liste_actus .pager li.pager-current
-{background: $orange;color:$gris-anthracite;}
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
 
-/*********************************
-----------------------------------
----- PAGE LYCEE-ENTREPRISE NODE.TPL --
------------ LISTE --------------
-¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤*/
+#zone-1.page-offres{
+    aside.offres-contrat{
+        //Style du filtrage de la vue
+        div.bef-select-as-radios{
+            div.form-item{
+                background: $orange-fonce;
+                color: $blanc-casse;
+                text-align: center;
+                cursor: pointer;
+                label{
+                    cursor: pointer;
+                    &:after{
+                        content: "Alternance";
+                        color:$orange-fonce;
+                        @include font-size(l);//utilisation de typey
+                        font-family: $FontRaleway;
+                    }
+                }
+                &:hover:not(#edit-term-node-tid-depth-limited-All-wrapper){
 
+                    /*@include backgroundImage('bg_filtre_pole.png',center, no-repeat );*/
+                    background-size:60%;
+                    background-color: $orange-fonce;
+                    label{
+                        @include opacity(0.45);
+                    }
+                }
+                &#edit-field-etat-poste-value-76-wrapper{
+                    border-left:0.3em solid $vert;
+                }
+                  &#edit-field-etat-poste-value-77-wrapper{
+                    border-left:0.3em solid $orange;
+                }
+                  &#edit-field-etat-poste-value-78-wrapper{
+                    border-left:0.3em solid $rouge;
+                }
+            }
+        }
+        .views-exposed-form{
+            //Masquer la roue bleue de drupal
+            .ajax-progress-throbber {
+                display: none;
+            }
+            .views-exposed-widget{
+                padding: 0;
+                margin: 0;
+                float: none;
+            }
+            //Style du bouton de filtrage
+            .views-submit-button{
+                float: none;
+                margin: 0 auto;
+                width:25vw;
+                padding:0;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    width: 10vw;
+                }
+                input[type="submit"] {
+                    background: $orange-fonce;
+                    border: em(1px) dashed $gris-anthracite;
+                    color: $blanc-casse;
+                    @include font-size(l);//utilisation de typey
+                    font-family: $FontArvo;
+                }
+            }
+        }
+        //Masquage du module additionnel du module (bug peut être corrigé via patch)
+        .view-filters{
+            #edit-children-of-wrapper{
+                display: none;
+                visibility: hidden;
+            }
+        }
+        ul.liste-offre-contrat{
+            li{
+                list-style:none;
+                &.views-row-odd{
+                    color: $blanc-casse;
+                    background: $gris-anthracite;
+                }
+                &.views-row-even{
+                    color: $blanc-casse;
+                    background: $orange-fonce;
+                }
+                &.tid-76{/*a pourvoir*/
 
-h1.titre_page_lycee_entreprise{
-    margin: em(3px);
-}
+                    border-left:0.3em solid $vert;
+                }
+                &.tid-77{/*en cours*/
 
-#bloc_liste_lycee-entreprise .views-exposed-form{
- width: 95%;
- margin: 0 auto;
-  .date-views-filter-wrapper{
-    width: auto;
-    min-width: 20%;
-}
- span.views-field-name, span.views-field-created, span.views-field-field-date-evenement-value{
-    font-style: italic;
-    font-size: small;
-    padding: 0 em(5px);
-    text-align: right;
+                    border-left:0.3em solid $orange;
+                }
+                &.tid-78{/*pourvu*/
 
-}
- span.date-display-single{
-    font-style: italic;
-    font-size: small;
-    padding: 0 em(5px);
-    text-align: right;
-}
-}
+                    border-left:0.3em solid $rouge;
+                }
+                h2.offre-titre{
+                    a{
+                        @include txt-cesure;
+                        @include txt-ellipse;
+                        color: $gris-clair;
+                        &:hover{
+                            color: $gris-clair-moyen;
+                        }
+                    }
+                }
+                span{
+                    display: block;
+                    clear: left;
+                    padding: 0;
+                    margin: 0;
+                }
 
-.table_liste_lycee_entreprise{
-    padding: em(5px);
-    tbody{}
-    tr{
-        margin:  em(5px) 0;
-        border: 0;
-        background: none;
-    }
-    td{
-        margin: em(5px) 0;
-        display: block;
-        padding: em(3px);
-    }
-    a{
-        text-decoration: none;
-        font-size: medium;
-        font-weight: bold;
-        margin: 0 em(10px);
-        color: $orange;
-        &:hover{
-            color: $violet;
+            }
         }
     }
-
-    hr{
-        border-top: 0.2em solid $orange;
-        width: 75%;
-        margin: 0 auto;
-    }
 }
-
-/*Vue dans region via bloc*/
-#block-views-Liste_lycee_entreprise-block_1 .views-exposed-form{
-    width: 90%;display: block;margin: em(2px) auto;
-}
-#block-views-Liste_lycee_entreprise-block_1 .views-widget-filter-field_date_evenement_value{width: 90%;display: block;}
+#zone-2.page-offres{}
+#zone-3.page-offres{}
+#zone-4.page-offres{}
+#zone-5.page-offres{}
