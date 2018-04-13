@@ -19,11 +19,11 @@
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #zone-1.CLASS_NAME_CONTENU{order:1;}
-    #zone-2.CLASS_NAME_CONTENU{order:2;}
-    #zone-3.CLASS_NAME_CONTENU{order:3;}
-    #zone-4.CLASS_NAME_CONTENU{}
-    #zone-5.CLASS_NAME_CONTENU{}
+    #zone-1.offre-contrat-alternance{order:1;}
+    #zone-2.offre-contrat-alternance{order:2;}
+    #zone-3.offre-contrat-alternance{order:3;}
+    #zone-4.offre-contrat-alternance{}
+    #zone-5.offre-contrat-alternance{}
     @include breakpoint ($desktop){}
 }
 
@@ -36,24 +36,129 @@ body .conteneur{
 }
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
-
+#zone-1.offre-contrat-alternance{
+    .content{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        padding: span(0.2);
+        }
+    }
+    .table-poste-bts,.table-offre-apprentissage{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            margin: 0 auto;
+          width: span(4);
+        }
+    }
+}
+#zone-2.offre-contrat-alternance{
+    ul.liste-autre-offres {
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        width: 95%;
+        margin: span(0.01) auto;
+           display: inline-block;
+           li{
+               a{
+                   float: left;
+               }
+           }
+                }
+    }
+}
 
 /*######-------- ||| STYLE ||| --------######*/
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
-#zone-1.CLASS_NAME_CONTENU,
-#zone-2.CLASS_NAME_CONTENU,
-#zone-3.CLASS_NAME_CONTENU,
-#zone-4.CLASS_NAME_CONTENU,
-#zone-5.CLASS_NAME_CONTENU
-{}
+#zone-1.offre-contrat-alternance,
+#zone-2.offre-contrat-alternance,
+#zone-3.offre-contrat-alternance,
+#zone-4.offre-contrat-alternance,
+#zone-5.offre-contrat-alternance
+{
+     p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    strong{
+        color: $orange-fonce;
+    }
+}
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 
-#zone-1.CLASS_NAME_CONTENU{}
-#zone-2.CLASS_NAME_CONTENU{}
-#zone-3.CLASS_NAME_CONTENU{}
-#zone-4.CLASS_NAME_CONTENU{}
-#zone-5.CLASS_NAME_CONTENU{}
+#zone-1.offre-contrat-alternance{
+    
+    .table-poste-bts,.table-offre-apprentissage{
+     
+    tbody{border: 0;
+          
+    }
+    tr.line1.even{
+        color: $violet;
+        background: white;
+    }
+    tr.line2.odd{
+        background: $gris-clair;
+        color: $rose-fushia;
+    }
+    td.etat{
+        font-weight: bold;
+    }
+    td{
+        @include txt-cesure;
+    }
+    a{color: $orange-fonce;text-decoration: none;font-weight: bold;
+      &:hover{text-decoration: underline;}
+    }
+
+}
+}
+#zone-2.offre-contrat-alternance{
+    ul.liste-autre-offres {
+    
+     
+        background: $gris-clair;
+        li{
+            list-style: none;
+        }
+        h4{
+            @include font-size(s);//utilisation de typey
+        }
+        .ref-offre-autre{float: none;
+        @include font-size(s);//utilisation de typey
+        
+        }
+        a{
+            margin: 0 span(0.1) 0 0;
+            text-decoration: none;
+          color: $violet;
+          
+          padding: em(3px);
+        &:hover{text-decoration: underline;}
+        }
+    }
+
+}
+#zone-3.offre-contrat-alternance{}
+#zone-4.offre-contrat-alternance{}
+#zone-5.offre-contrat-alternance{}
