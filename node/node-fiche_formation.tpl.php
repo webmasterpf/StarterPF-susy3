@@ -16,7 +16,7 @@
             ):
                 ?>
                 <div id="illustration-pleinepage" class="illustration-fiche">
-                    <h1 class="titre_overlay titre_page"><?php print $title; ?></h1>
+                    <h1 class="titre_overlay titre_page <?php print 'pole-'. $node->field_pole_metiers[0]['value']; //TiD du terme du Vocabulaire Pôle Métiers ?>"><?php print $title; ?></h1>
                 <?php print $node->field_illus_fiche_bts[0]['view'] ?>
                 </div>
 <?php endif; ?>
@@ -30,6 +30,11 @@
 <?php if ($submitted): ?>
                 <span class="submitted"><?php print $submitted; ?></span>
 <?php endif; ?>
+                
+                            <?php
+              global $theme_path;
+              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
+              ?>
 
                <?php if ($node->field_complement_info_formation[0]['view']): ?>
                     <div class="complement-titre-fiche">
@@ -49,10 +54,7 @@
                 </div>
 
                 
-                     <?php
-              global $theme_path;
-              include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
-              ?>
+         
          
         </div><!--  /zone-1-->
 
