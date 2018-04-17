@@ -194,13 +194,13 @@ ______________________________*/
                     }
                 }
                 &#edit-field-etat-poste-value-76-wrapper{
-                    border-left:0.3em solid $vert;
+                    border-top:0.3em solid $vert;
                 }
                   &#edit-field-etat-poste-value-77-wrapper{
-                    border-left:0.3em solid $orange;
+                    border-top:0.3em solid $orange;
                 }
                   &#edit-field-etat-poste-value-78-wrapper{
-                    border-left:0.3em solid $rouge;
+                    border-top:0.3em solid $rouge;
                 }
             }
         }
@@ -252,15 +252,15 @@ ______________________________*/
                 }
                 &.tid-76{/*a pourvoir*/
 
-                    border-left:0.3em solid $vert;
+                    border-top:0.3em solid $vert;
                 }
                 &.tid-77{/*en cours*/
 
-                    border-left:0.3em solid $orange;
+                    border-top:0.3em solid $orange;
                 }
                 &.tid-78{/*pourvu*/
 
-                    border-left:0.3em solid $rouge;
+                    border-top:0.3em solid $rouge;
                 }
                 h2.offre-titre{
                     a{
@@ -274,7 +274,7 @@ ______________________________*/
                 }
                 span{
                     display: block;
-                    clear: left;
+                    clear: top;
                     padding: 0;
                     margin: 0;
                 }

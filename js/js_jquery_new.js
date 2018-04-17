@@ -27,6 +27,9 @@
     jQuery(document).ready(function ()
     {
 
+
+
+
 //OffCanvas avec fonction anonyme
         console.log('Chargement du script pour volet coulissant');
         var $transformer = $('.transformer'),
@@ -386,6 +389,13 @@ $(".nav-espace-partenaire li img").removeAttr("style");
             $('.mid-menu').toggleClass('mid-animate');
             $('.bottom-menu').toggleClass('bottom-animate');
         });
+        
+        //Cache / Affiche les enfants dans le menu overlay - Pas fonctionnel
+$('#block-menu-menu-menu-general').click(function() {
+  $('.collapsed').toggle( "slow", function() {
+    // Animation complete.
+  });
+});
         
 //Retrait de l'autoplay des videos Vimeo
 //https://stackoverflow.com/questions/49053072/change-part-of-src-attribute-of-iframe-with-jquery

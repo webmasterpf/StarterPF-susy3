@@ -53,8 +53,8 @@
 
            </tr>
              <tr class="line1">
-               <td>  Etat du recrutement</td>
-               <td class="etat">  <?php  print $my_terms; ?></td>
+               <td>  <?php  print $node->content['field_etat_poste']['field']['#title'] ?></td>
+               <td class="etat">  <?php  print $node->field_etat_poste[0]['view'] ?></td>
 
            </tr>
             <tr class="line2">

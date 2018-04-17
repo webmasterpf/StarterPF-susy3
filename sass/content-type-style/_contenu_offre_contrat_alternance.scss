@@ -36,6 +36,23 @@ body .conteneur{
 }
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.offre-contrat-alternance{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
+
+    img{
+        transform: translate(0%,0%);
+
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-15%);
+        }
+    }
+}
 #zone-1.offre-contrat-alternance{
     .content{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
@@ -44,7 +61,7 @@ body .conteneur{
     }
     .table-poste-bts,.table-offre-apprentissage{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
-            margin: 0 auto;
+            margin: span(0.1) auto;
           width: span(4);
         }
     }
@@ -110,8 +127,9 @@ ______________________________*/
     
     .table-poste-bts,.table-offre-apprentissage{
      
-    tbody{border: 0;
-          
+    tbody{
+        border: 0;
+        @include ombrage-table-actu;  
     }
     tr.line1.even{
         color: $violet;
