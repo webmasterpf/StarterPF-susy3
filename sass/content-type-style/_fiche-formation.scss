@@ -124,7 +124,26 @@ body .conteneur{
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
-
+.illustration-fiche{
+    h1{
+        &.pole-98{
+            &::before{
+                @include backgroundImage("PNG/CAP_ATMFC@4x.png");
+                    background-size: contain;
+                             content: "";
+                        position: relative;
+                        vertical-align: sub;
+                        padding: em(10px);
+                        margin:em(3px);
+                        transition:0.5s all;
+            }
+            
+        }
+        &.pole-98{}
+        &.pole-98{}
+        &.pole-98{}
+    }
+}
 #zone-1.fiche-formation{
     .complement-titre-fiche{
 
