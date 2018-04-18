@@ -1,0 +1,320 @@
+// Regroupe le style pour le contenu des node.tpl custom
+// créer des fichiers _CONTENT-TYPE.scss et les importer dans application.scss
+
+/*-------------------------------------|
+|       CONTENU CUSTOM               |
+|               NODE.TPL                      |
+|               MON TYPE                      |
+|--------------------------------------*/
+
+//@include breakpoint ($mobile){}
+//@include breakpoint ($desktop){}
+//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+
+//Ressources sur Attributs et PseudoElements
+// https://tympanus.net/codrops/2013/07/05/using-custom-data-attributes-and-pseudo-elements/
+
+/*######-------- ||| ORDRE FLEXBOX ||| --------######*/
+body .conteneur .conteneur-flex{
+    #zone-1.page-recrutement{order:1;}
+    #zone-2.page-recrutement{order:2;}
+    #zone-3.page-recrutement{order:3;}
+    #zone-4.page-recrutement{}
+    #zone-5.page-recrutement{}
+    @include breakpoint ($desktop){}
+}
+
+/*######-------- ||| BORDURES ||| --------######*/
+body .conteneur .conteneur-flex,
+body .conteneur{
+    @include breakpoint(($desktop,$tablet)){
+    }
+
+}
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.page-recrutement{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
+
+    img{
+        transform: translate(0%,0%);
+
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-10%);
+        }
+    }
+}
+#zone-1.page-recrutement{
+     aside.offre-poste-enseignement{
+        div.bef-select-as-radios{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                column-count: 4;
+                column-fill: balance;
+                white-space: normal;
+                padding: span(0.02);
+            }
+            div.form-item{
+                margin: 0 0 span(0.01) 0;   
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    @include  txt-colonnes();
+
+                    padding: span(0.01);
+                }
+            }
+        }
+        .item-list{
+            @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                width: span(12);
+                margin: 0 auto;
+            }
+            ul.liste-offre-poste-enseignement{
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+
+                    //Flex pour avoir classement horizontal
+                    display: flex;
+                    flex-wrap:wrap;
+                    padding: 0 0 0 span(0.8);
+                }
+                li{
+                    padding: 0;
+                    margin: span(0.1) 0;
+                    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+
+                        /*@include hack-Edge;*/
+                        @include hack-IE;
+                        @include  txt-colonnes();
+                        margin: 0 span(0.1) span(0.1) 0;
+                        display: inline-block;
+                        width: span(2.5);
+
+                        :not(img):not(a):not(.complement){
+                            padding: span(0.1);
+
+                        }
+
+                    }
+                    a{
+                        display: block;
+                    }
+                }
+            }
+        }
+
+    }
+}
+#zone-2.page-recrutement{
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        padding: span(0.1);
+        margin: 0;
+        #block-webform-client-block-68{
+        padding: span(0.1);
+        }
+    }
+}
+/*######-------- ||| STYLE ||| --------######*/
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-1.page-recrutement,
+#zone-2.page-recrutement,
+#zone-3.page-recrutement,
+#zone-4.page-recrutement,
+#zone-5.page-recrutement
+{
+      p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    strong{
+        color: $orange-fonce;
+    }
+}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#zone-1.page-recrutement{
+    .docs-enseignant{
+        @include arrondis;
+        @include backgroundImage("zebra-gros-clair.gif", 0 0 , repeat);
+        width: 90%;
+        margin:span(0.1) auto;
+        padding:span(0.1);
+        img.filefield-icon{
+            display: none;
+            visibility: hidden;
+        }
+        a{
+            display: block;
+            margin:span(0.1) auto;
+        }
+        a[type*="pdf"]{
+            
+                &::before{
+                        @include backgroundImage("PNG/Fichiers@3x.png");
+                        background-size: contain;
+                        content: "";
+                        position: relative;
+                        vertical-align: sub;
+                        padding: em(10px);
+                        margin:em(3px);
+                        transition:0.5s all;
+                  
+                    }
+                }
+    }
+      //Liste des offres de postes disponibles
+      aside.offre-poste-enseignement
+      {
+        //Style du filtrage de la vue
+        div.bef-select-as-radios{
+            div.form-item{
+                background: $orange-fonce;
+                color: $blanc-casse;
+                text-align: center;
+                cursor: pointer;
+                label{
+                    cursor: pointer;
+                    &:after{
+                        content: "Alternance";
+                        color:$orange-fonce;
+                        @include font-size(l);//utilisation de typey
+                        font-family: $FontRaleway;
+                    }
+                }
+                &:hover:not(#edit-term-node-tid-depth-limited-All-wrapper){
+
+                    /*@include backgroundImage('bg_filtre_pole.png',center, no-repeat );*/
+                    background-size:60%;
+                    background-color: $orange-fonce;
+                    label{
+                        @include opacity(0.45);
+                    }
+                }
+                &#edit-field-etat-poste-value-76-wrapper{
+                    border-top:0.3em solid $vert;
+                }
+                  &#edit-field-etat-poste-value-77-wrapper{
+                    border-top:0.3em solid $orange;
+                }
+                  &#edit-field-etat-poste-value-78-wrapper{
+                    border-top:0.3em solid $rouge;
+                }
+            }
+        }
+        .views-exposed-form{
+            //Masquer la roue bleue de drupal
+            .ajax-progress-throbber {
+                display: none;
+            }
+            .views-exposed-widget{
+                padding: 0;
+                margin: 0;
+                float: none;
+            }
+            //Style du bouton de filtrage
+            .views-submit-button{
+                float: none;
+                margin: 0 auto;
+                width:25vw;
+                padding:0;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    width: 10vw;
+                }
+                input[type="submit"] {
+                    background: $orange-fonce;
+                    border: em(1px) dashed $gris-anthracite;
+                    color: $blanc-casse;
+                    @include font-size(l);//utilisation de typey
+                    font-family: $FontArvo;
+                }
+            }
+        }
+        //Masquage du module additionnel du module (bug peut être corrigé via patch)
+        .view-filters{
+            #edit-children-of-wrapper{
+                display: none;
+                visibility: hidden;
+            }
+        }
+      ul.liste-offre-poste-enseignement{
+            li{
+                list-style:none;
+                &.views-row-odd{
+                    color: $blanc-casse;
+                    background: $gris-anthracite;
+                }
+                &.views-row-even{
+                    color: $blanc-casse;
+                    background: $orange-fonce;
+                }
+                &.tid-76{/*a pourvoir*/
+
+                    border-top:0.3em solid $vert;
+                }
+                &.tid-77{/*en cours*/
+
+                    border-top:0.3em solid $orange;
+                }
+                &.tid-78{/*pourvu*/
+
+                    border-top:0.3em solid $rouge;
+                }
+                h2.offre-titre{
+                    a{
+                        @include txt-cesure;
+                        @include txt-ellipse;
+                        color: $gris-clair;
+                        &:hover{
+                            color: $gris-clair-moyen;
+                        }
+                    }
+                }
+                span{
+                    display: block;
+                    clear: top;
+                    padding: 0;
+                    margin: 0;
+                }
+
+            }
+        }
+    }
+   
+}
+#zone-2.page-recrutement{
+    #block-webform-client-block-68{
+        background: $gris-clair;
+    }
+}
+#zone-3.page-recrutement{}
+#zone-4.page-recrutement{}
+#zone-5.page-recrutement{}
