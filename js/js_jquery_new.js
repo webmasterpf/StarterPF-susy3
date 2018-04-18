@@ -298,6 +298,8 @@ $('#block-service_links-service_links').floatit({
         $("#zone-2 p").removeAttr("style");
         $("#zone-2 ul").removeAttr("style");
         $(".masonry-brick").removeAttr("style");//pas d'effet
+        $("img.filefield-icon").removeAttr("style");
+        
 
         //Retrait du style des objets imbriqués comme object,iframe,etc...
         $("#media-youtube-default-external-object-1").removeAttr("style");
