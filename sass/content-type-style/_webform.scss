@@ -58,7 +58,35 @@ body .conteneur{
 #zone-3.webform,
 #zone-4.webform,
 #zone-5.webform
-{}
+{
+     p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    strong{
+        color: $orange-fonce;
+    }
+}
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
