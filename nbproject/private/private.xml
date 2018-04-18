@@ -27,13 +27,14 @@
             <file>file://dg-file-001/PARTAGE.DG.ADM/Internet_et_Communication/04_Sites/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-page_actualites.tpl.php</file>
         </group>
         <group name="Starter D6">
-            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_page-actualites.scss</file>
             <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_contenu_offre_contrat_alternance.scss</file>
-            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_page-espace.scss</file>
+            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-poste_bts_alternance.tpl.php</file>
             <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-offre_apprentissage.tpl.php</file>
             <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_page-liste.scss</file>
-            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-poste_bts_alternance.tpl.php</file>
-            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/layout/_layout-frontpage.scss</file>
+            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-fiche_formation.tpl.php</file>
+            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_fiche-formation.scss</file>
+            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/sass/content-type-style/_webform.scss</file>
+            <file>file:/Z:/01_Drupal_%20Ressources/02_Themes/04_Starter_PF/04_01_StarterD6/Starter-d6-susy3-2018/node/node-webform.tpl.php</file>
         </group>
     </open-files>
 </project-private>

@@ -9,124 +9,92 @@
 
 //@include breakpoint ($mobile){}
 //@include breakpoint ($desktop){}
-//@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #colonne-1.CLASS_NAME{order:1;}
-    #colonne-2.CLASS_NAME{order:2;}
-    #colonne-3.CLASS_NAME{order:3;}
+    #zone-1.webform{order:1;}
+    #zone-2.webform{order:2;}
+    #zone-3.webform{order:3;}
+    #zone-4.webform{}
+    #zone-5.webform{}
     @include breakpoint ($desktop){}
 }
 
 /*######-------- ||| BORDURES ||| --------######*/
-body .conteneur {
-    @include breakpoint ($desktop){
-        #colonne-2.webform{
-            @include border-L-violet;
-        }
-        }
+body .conteneur .conteneur-flex,
+body .conteneur{
+    @include breakpoint(($desktop,$tablet)){
     }
-/*######-------- ||| STYLE ||| --------######*/
-#colonne-2.webform{
-    table,tbody,tr,td{
-        //pas de display:block sinon stacktable conflit
-          width: 98%;
-          margin: 0 auto;
-          border: 0;
-      }
-      table{
-          tr.odd{
-              background: transparent;
-          }
-          tr.even{
-              background: transparent;
-          }
-      }
 
+}
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.webform{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
     
-}
-
-h1.titre-webform{
-    font-size: em(24px);
-    color: $violet;
-    line-height: 1.0em;
-}
-
-#colonne-2.webform{
-    h2{
-        color: $rose-fushia;
-        padding: em(5px);
-    }
-    h3{
-        color: $violet;
-        padding: em(5px);
-        font-size: large;
-    }
-    h4{
-        padding: em(5px);
-        color: $rose-fushia;
-    }
-    p{
-        padding: em(3px);
-        font-size: small;
-    }
-    ul{
-        padding: em(5px);
-    }
+        @include backgroundImage('SVG/image_defaut_actu_2500.svg');
+        @include background-size(cover);
+    
     img{
-        @include border-fuschia-violet;
-        margin: 0 auto;
-        display: block;
+        transform: translate(0%,0%);
     }
-    a{
-        color: $rose-fushia;
-        text-decoration: none;
-        padding: 2px;
-        &:hover{
-            color: white;
-            background: $rose-fushia;
-        }
-    }
-    a.gmap{
-
-        &:hover{
-
-            background: 0;
-        }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
         img{
-            @include zoom-css3(1);
-            &:hover{
-                @include zoom-css3-hover(0.97);
-            }
+            transform: translate(0%,-10%);
         }
     }
-    form{
-    background: transparent url(../images/bg_doc_utile_rp.gif) repeat ;
-    padding: 0.2em;
-    position: relative;
-    @include arrondis;
-    @include PIE;
-    }        
 }
-/*---- STYLE ELEMENTS FORMULAIRE ----*/
+
+/*######-------- ||| STYLE ||| --------######*/
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-1.webform,
+#zone-2.webform,
+#zone-3.webform,
+#zone-4.webform,
+#zone-5.webform
+{}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#zone-1.webform{
+    /*---- STYLE ELEMENTS FORMULAIRE ----*/
+    
+           
 form.webform-client-form{
-        width: 95%;margin: 0 auto;  display: block;
+        width: 75%;
+        margin: span(0.1) auto; 
+        padding: span(0.1);
+        @include arrondis(1.5em);
+        @include backgroundImage("motif_img_overlay.png",0 0, repeat);
+                    
     label{font-size: smaller;}
-    input[type="text"],input[type="email"],input[type="submit"],select{
+    .webform-component{
+        margin: 0;
+        padding: 0;
+    }
+    input[type="text"],input[type="email"],input[type="submit"],select,textarea{
     width: 95%;margin: 0 auto;  display: block;
     }
     input[type="submit"]{
         width: 95%;margin: 0 auto;  display: block;
         @include txt-cesure;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        width: span(4);
+        }
     }
     .form-item{margin-bottom: 0.5em;margin-top: 0.5em;}
 }
-
-/*------------------------------------
-        PAGE INSCRIPTIONS WEBFORM
-_______________________________________*/
-#texte-sous-formulaire{
-    margin: 1em 0;
-    font-size: small;
 }
+#zone-2.webform{}
+#zone-3.webform{}
+#zone-4.webform{}
+#zone-5.webform{}
+
