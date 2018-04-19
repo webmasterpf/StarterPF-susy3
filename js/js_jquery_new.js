@@ -341,7 +341,7 @@ $(".nav-espace-partenaire li img").removeAttr("style");
 //Style pour les iframes contenus dans des § pour le RWD - ajout de classe pour traitement CSS
         $(".contenu-vdl p:has(iframe)").addClass('external-content');
         $(".page-lycee p:has(iframe)").addClass('external-content');
-
+$(".page-contact p:has(iframe)").addClass('external-content');
     });
 
 

@@ -10,31 +10,104 @@
 //@include breakpoint ($mobile){}
 //@include breakpoint ($desktop){}
 //@include breakpoint ($tablet){}
+//@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+
+//Ressources sur Attributs et PseudoElements
+// https://tympanus.net/codrops/2013/07/05/using-custom-data-attributes-and-pseudo-elements/
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #colonne-1.CLASS_NAME{order:1;}
-    #colonne-2.CLASS_NAME{order:2;}
-    #colonne-3.CLASS_NAME{order:3;}
+    #zone-1.page-contact{order:1;}
+    #zone-2.page-contact{order:2;}
+    #zone-3.page-contact{order:3;}
+    #zone-4.page-contact{}
+    #zone-5.page-contact{}
     @include breakpoint ($desktop){}
 }
 
 /*######-------- ||| BORDURES ||| --------######*/
-body .conteneur {
-    @include breakpoint ($desktop){
-        #colonne-1.contact{
-            @include border-R-violet;
+body .conteneur .conteneur-flex,
+body .conteneur{
+    @include breakpoint(($desktop,$tablet)){
+    }
+
+}
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.page-contact{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
+
+    @include backgroundImage('defaut_image_illustration_offre_ct.jpg');
+        @include background-size(cover);
+        
+    img{
+        transform: translate(0%,0%);
+
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-15%);
         }
     }
-    
+        
 }
+
 /*######-------- ||| STYLE ||| --------######*/
-#colonne-1.contact{
-    table,tbody,tr,td,form,input[type="text"],input[type="email"]{
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-1.page-contact,
+#zone-2.page-contact,
+#zone-3.page-contact,
+#zone-4.page-contact,
+#zone-5.page-contact
+{
+     p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    strong{
+        color: $orange-fonce;
+    }
+}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#zone-1.page-contact{
+        table,tbody,tr,td,form,input[type="text"],input[type="email"]{
           width: 98%;display: block;
       }
       tbody{
           border: 0;
       }
-    
 }
+#zone-2.page-contact{}
+#zone-3.page-contact{}
+#zone-4.page-contact{}
+#zone-5.page-contact{}

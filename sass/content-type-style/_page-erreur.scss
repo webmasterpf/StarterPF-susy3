@@ -11,39 +11,48 @@
 //@include breakpoint ($desktop){}
 //@include breakpoint ($tablet){}
 //@include breakpoint(($desktop,$tablet)){}
+//@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){}
+
+//Ressources sur Attributs et PseudoElements
+// https://tympanus.net/codrops/2013/07/05/using-custom-data-attributes-and-pseudo-elements/
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #colonne-1.CLASS_NAME{order:1;}
-    #colonne-2.CLASS_NAME{order:2;}
-    #colonne-3.CLASS_NAME{order:3;}
+    #zone-1.CLASS_NAME_CONTENU{order:1;}
+    #zone-2.CLASS_NAME_CONTENU{order:2;}
+    #zone-3.CLASS_NAME_CONTENU{order:3;}
+    #zone-4.CLASS_NAME_CONTENU{}
+    #zone-5.CLASS_NAME_CONTENU{}
     @include breakpoint ($desktop){}
 }
 
 /*######-------- ||| BORDURES ||| --------######*/
-body .conteneur {
+body .conteneur .conteneur-flex,
+body .conteneur{
     @include breakpoint(($desktop,$tablet)){
-        #colonne-2.page-erreur{
-            @include border-L-orange;
-        }
     }
 
 }
+
+/*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+
+
 /*######-------- ||| STYLE ||| --------######*/
-h1.titre_page-erreur{
-    color: $rose-fushia;
-    font-size: x-large;
-}
-#colonne-2.page-erreur{
-    background: $gris-clair;
-    h2{
-        color: $rose-fushia;
-    }
-    a{
-        color: $rose-fushia;
-        text-decoration: none;
-        &:hover{
-            text-decoration: underline;
-        }
-    }
-}
+
+/*¤¤¤ STYLES COMMUNS ¤¤¤*/
+#zone-1.CLASS_NAME_CONTENU,
+#zone-2.CLASS_NAME_CONTENU,
+#zone-3.CLASS_NAME_CONTENU,
+#zone-4.CLASS_NAME_CONTENU,
+#zone-5.CLASS_NAME_CONTENU
+{}
+
+/*------------------------------------
+        ¤¤¤ STYLES PROPRES ¤¤¤
+______________________________*/
+
+#zone-1.CLASS_NAME_CONTENU{}
+#zone-2.CLASS_NAME_CONTENU{}
+#zone-3.CLASS_NAME_CONTENU{}
+#zone-4.CLASS_NAME_CONTENU{}
+#zone-5.CLASS_NAME_CONTENU{}
