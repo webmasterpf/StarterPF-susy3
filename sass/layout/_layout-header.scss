@@ -29,7 +29,7 @@ body .conteneur #header {
                 width: 100%;
                 @include breakpoint(($mobile,$mobilelandscape)){           }
                 @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){    
-                    width: auto;
+                    width: 70%;
                     margin: 0;
                     padding: 0;
                     //display: block;//commenter si logo pas collé à gauche

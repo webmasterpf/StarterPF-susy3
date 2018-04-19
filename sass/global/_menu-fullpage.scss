@@ -44,11 +44,16 @@ body .conteneur{
                 @include font-size(s);//utilisation de typey
                 font-family: $FontRaleway;
                     left: -4em;
+                    top:0.9em;
     position: relative;
     text-decoration: none;
     min-width: 4em;
     display: block;
      transition:0.5s all;
+                @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+                    top:0.35em;
+                }
+                
             }
         }
     }
