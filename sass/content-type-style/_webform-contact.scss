@@ -56,7 +56,39 @@ body .conteneur{
     }
         
 }
-
+#zone-1.page-contact{
+      .content{
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        padding: span(0.2);
+        }
+    }
+        table,tbody,tr,td,form,input[type="text"],input[type="email"]{
+            width: 95%;
+            margin: 0 auto;
+            @include arrondis(1.5em);
+        @include backgroundImage("motif_img_overlay.png",0 0, repeat);
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            width: 75%;
+        margin: span(0.1) auto; 
+        padding: span(0.1);
+        
+    }
+      }
+      textarea{
+            @include arrondis(1em);
+      }
+}
+#zone-2.page-contact{
+        iframe[src*="maps"],
+    iframe[src*="umap"]
+    {
+        min-height: 110vw;
+        min-width: 30vw;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            min-height: 30vw;    
+        }
+    }
+}
 /*######-------- ||| STYLE ||| --------######*/
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
@@ -81,7 +113,7 @@ body .conteneur{
     }
     h3{
         @include font-size(m);//utilisation de typey
-        color: $orange-fonce;
+        color: $gris-anthracite;
     }
     a{
         text-decoration: none;
@@ -101,13 +133,22 @@ ______________________________*/
 
 #zone-1.page-contact{
         table,tbody,tr,td,form,input[type="text"],input[type="email"]{
-          width: 98%;display: block;
+    
+      }
+      input[type="text"],input[type="email"],textarea{
+          background: $gris-clair-moyen;
+          color: $blanc-casse;
+          padding: span(0.01);
       }
       tbody{
           border: 0;
       }
 }
-#zone-2.page-contact{}
+#zone-2.page-contact{
+    .localisation-lycees{
+        background: $gris-anthracite;
+    }
+}
 #zone-3.page-contact{}
 #zone-4.page-contact{}
 #zone-5.page-contact{}

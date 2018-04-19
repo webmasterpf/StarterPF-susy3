@@ -87,7 +87,7 @@
                           <?php if (!empty($mission)): ?>
                 <div class="objectif">
                     <?php print $mission; ?>
-                </div><!-- /site-slogan -->
+                </div><!-- /site-mission -->
             <?php endif; ?>
 
 

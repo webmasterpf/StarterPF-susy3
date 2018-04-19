@@ -164,9 +164,11 @@ h2#logo_lpp{
     font-size: large;
 }
 a{
-    color:$orange;
+    color:$blanc-casse;
+    font-weight:bold;
     &:hover{
-        color: $blanc-casse;
+    color:$orange-fonce;
+        
     }
 }
     }

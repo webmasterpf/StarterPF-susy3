@@ -280,6 +280,10 @@ $('#block-service_links-service_links').floatit({
 //Action sur taille des images : retrait de toutes les tailles en dur (HTML) de manière ciblée
         //$('img').each(function(){
         console.log('Nettoyage sur divers éléments : objets,iframe,....');
+        
+     
+  
+  
         $('.fiche-formation img').each(function () {
             $(this).removeAttr('width');
             $(this).removeAttr('height');
@@ -338,12 +342,21 @@ $(".nav-espace-partenaire li img").removeAttr("style");
         $('.views_slideshow_cycle_slide:visible').css('position', 'relative', 'important');
         $('.views_slideshow_cycle_slide').not(':visible').css('position', 'absolute', 'important');
 
-//Style pour les iframes contenus dans des § pour le RWD - ajout de classe pour traitement CSS
+//Style pour les iframes contenus dans des § pour le RWD - ajout de classe pour traitement CSS+JS
         $(".contenu-vdl p:has(iframe)").addClass('external-content');
         $(".page-lycee p:has(iframe)").addClass('external-content');
 $(".page-contact p:has(iframe)").addClass('external-content');
+$(".contenu-international p:has(iframe)").addClass('external-content');
     });
 
+     function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+  }
+  //Ajout d'un évènement onLoad sur l'iframe concernée
+  $("p.external-content iframe").on( "load", function() {
+            resizeIframe(this);
+  console.log( $( this ).text() );
+});
 
     //Views Slideshow Cycle RWD    
 

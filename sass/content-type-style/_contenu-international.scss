@@ -93,6 +93,15 @@ aside.selecteur-langue{
     }
 }
 #zone-3.contenu-international{
+        iframe[src*="maps"],
+    iframe[src*="umap"]
+    {
+        min-height: 110vw;
+        min-width: 30vw;
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+            min-height: 30vw;    
+        }
+    }
     span.map-deco{
         display: inherit;
     }

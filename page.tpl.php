@@ -1,4 +1,4 @@
-<!-- ______________________ PAGE TPL _______________________ -->
+<!-- ______________________ PAGE BASE TPL _______________________ -->
 <?php
 global $theme_path;
 include ($theme_path . '/includes/inc_header.php');
