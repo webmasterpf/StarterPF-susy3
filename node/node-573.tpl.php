@@ -4,7 +4,7 @@
  * NODE-WEBFORM.TPL GENERIK si besoin possible faire theme pour webform selon node-webform-NID.tpl.php
  */
 ?>
-<!--______________NODE TPL POUR PAGE.TPL WEBFORM CLASSIQUE ________________ -->
+<!--______________NODE TPL POUR PAGE.TPL WEBFORM POSTULE OFFRE ________________ -->
 
 <div class="node<?php if ($sticky) { print " sticky"; } ?><?php if (!$status) { print " node-unpublished"; } ?>" id="node-<?php print $node->nid; ?>">
      <div class="node-inner">
@@ -39,20 +39,13 @@
               include ($theme_path.'/includes/regions_inc/inc_region_zone_1.php');
               ?>
 
-               <?php if ($node->field_complement_info_formation[0]['view']): ?>
-                    <div class="complement-titre-fiche">
-                        <?php (print $node->field_complement_info_formation[0]['view']); /* Info complementaire sur formation */ ?>
-                    </div>
-                <?php endif; ?>
-                
-                   <?php if ($node->field_intro_fiche_formation[0]['view']): ?>
-                    <div class="intro-fiche">
-                        <?php (print $node->field_intro_fiche_formation[0]['view']); /* Inutile */?>
-                    </div>
-                <?php endif; ?>
+      
                 
                 
                         <div class="content">
+                            
+                            <a href="javascript:history.back();" class="retour-liste"> << Retour au détail de l'offre </a>
+                            
                 <?php   print $node->content['body']['#value'];/*déplacer le contenu dans la colonne désirée*/ ?>
                             
                             <?php print $node->content['webform']['#value']; ?>

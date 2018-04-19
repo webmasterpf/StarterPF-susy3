@@ -26,7 +26,7 @@ body .conteneur{
         top: 0;
         left: -10%;
         bottom: 0;
-   
+        text-decoration: none;
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             padding: em(9px);
         height: em(32px);
@@ -36,6 +36,21 @@ body .conteneur{
         left: em(0px);
         }
         
+        div.hamburger{
+            &::before{
+                //Ajout d'une indication sur présence du menu
+                content: "Menu ->";
+                color:$orange-fonce;
+                @include font-size(s);//utilisation de typey
+                font-family: $FontRaleway;
+                    left: -4em;
+    position: relative;
+    text-decoration: none;
+    min-width: 4em;
+    display: block;
+     transition:0.5s all;
+            }
+        }
     }
 
     .mobilenav {
