@@ -18,11 +18,11 @@
 
 /*######-------- ||| ORDRE FLEXBOX ||| --------######*/
 body .conteneur .conteneur-flex{
-    #zone-1.CLASS_NAME_CONTENU{order:1;}
-    #zone-2.CLASS_NAME_CONTENU{order:2;}
-    #zone-3.CLASS_NAME_CONTENU{order:3;}
-    #zone-4.CLASS_NAME_CONTENU{}
-    #zone-5.CLASS_NAME_CONTENU{}
+    #zone-1.page-erreur{order:1;}
+    #zone-2.page-erreur{order:2;}
+    #zone-3.page-erreur{order:3;}
+    #zone-4.page-erreur{}
+    #zone-5.page-erreur{}
     @include breakpoint ($desktop){}
 }
 
@@ -35,24 +35,68 @@ body .conteneur{
 }
 
 /*######-------- ||| LAYOUT SPECIFIQUE ||| --------######*/
+#zone-illustration.page-erreur{
+    min-height: 35vw;
+    max-height: 90vw;
+    overflow: hidden;
 
+    img{
+        transform: translate(0%,0%);
+
+    }
+    @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        min-height: 25vw;
+        max-height: 30vw;
+        img{
+            transform: translate(0%,-10%);
+        }
+    }
+}
 
 /*######-------- ||| STYLE ||| --------######*/
 
 /*¤¤¤ STYLES COMMUNS ¤¤¤*/
-#zone-1.CLASS_NAME_CONTENU,
-#zone-2.CLASS_NAME_CONTENU,
-#zone-3.CLASS_NAME_CONTENU,
-#zone-4.CLASS_NAME_CONTENU,
-#zone-5.CLASS_NAME_CONTENU
-{}
+#zone-1.page-erreur,
+#zone-2.page-erreur,
+#zone-3.page-erreur,
+#zone-4.page-erreur,
+#zone-5.page-erreur
+{
+     p,ul,li{
+        @include font-size(m);//utilisation de typey
+        padding: em(5px);
+        line-height: 1.5em;
+    }
+    u{
+        font-weight: bold;
+        color: $bleu-turquoise;
+    }
+    h2{
+        @include font-size(l);//utilisation de typey
+        color: $orange-fonce;
+    }
+    h3{
+        @include font-size(m);//utilisation de typey
+        color: $orange-fonce;
+    }
+    a{
+        text-decoration: none;
+        color: $orange-fonce;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    strong{
+        color: $orange-fonce;
+    }
+}
 
 /*------------------------------------
         ¤¤¤ STYLES PROPRES ¤¤¤
 ______________________________*/
 
-#zone-1.CLASS_NAME_CONTENU{}
-#zone-2.CLASS_NAME_CONTENU{}
-#zone-3.CLASS_NAME_CONTENU{}
-#zone-4.CLASS_NAME_CONTENU{}
-#zone-5.CLASS_NAME_CONTENU{}
+#zone-1.page-erreur{}
+#zone-2.page-erreur{}
+#zone-3.page-erreur{}
+#zone-4.page-erreur{}
+#zone-5.page-erreur{}
