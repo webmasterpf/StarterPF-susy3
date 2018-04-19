@@ -194,6 +194,10 @@ ______________________________*/
       //Liste des offres de postes disponibles
       aside.offre-poste-enseignement
       {
+          //Style éléments de la vue
+          h3,.view-header{
+                padding:  0 span(0.1);
+            }
         //Style du filtrage de la vue
         div.bef-select-as-radios{
             div.form-item{
@@ -240,6 +244,10 @@ ______________________________*/
                 margin: 0;
                 float: none;
             }
+            label{
+                margin: 0 span(0.1);
+            }
+            
             //Style du bouton de filtrage
             .views-submit-button{
                 float: none;
