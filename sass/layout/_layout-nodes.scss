@@ -84,6 +84,28 @@ body .conteneur{
             float:left;
         }
     }
+    //Variante de largeur de colonnes différentes
+        .zone1_layout_8_4{
+        
+        @include breakpoint(($desktop)){
+            width: span(8 of $desktopcol);
+            float:left;
+            
+        }
+        @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+        
+            
+        }
+    }
+    .zone2_layout_8_4{
+@include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
+
+            width: span(4 of $desktopcol);
+            float:left;
+        }
+    }
+    
+    //Partie fixe
     .acces_rubriques{
         @include breakpoint(($desktop,$desktopwide,$mobilelandscape,$tablet,$tabletlandscape)){
             @include clearfix;
